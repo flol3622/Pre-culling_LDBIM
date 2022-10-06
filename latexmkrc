@@ -1,0 +1,1 @@
+$ENV{'TEXINPUTS'}='./cls//:' . $ENV{'TEXINPUTS'};
