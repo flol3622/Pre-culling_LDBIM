@@ -129,7 +129,7 @@ To view tutorials, user guides, and further documentation, please visit our \hre
 
 \subsection{How to create Sections, Subsections and Subsubsections}
 
-Simply use the section, subsection and subsubsection commands, as in this example document! 
+Simply use the section, subsection and subsubsection commands, as in this example document!
 With Overleaf, all the formatting and numbering is handled automatically according to the template you've chosen.
 If you're using Rich Text mode, you can also create new section and subsections via the buttons in the editor toolbar.
 
@@ -148,9 +148,9 @@ Use the figure environment and the caption command to add a number and a caption
 See the code for Figure \ref{fig:frog} in this subsection for an example.
 
 \begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.3\textwidth]{frog.jpg}
-    \caption{\label{fig:frog}This is an example image.}
+	\centering
+	\includegraphics[width=0.3\textwidth]{frog.jpg}
+	\caption{\label{fig:frog}This is an example image.}
 \end{figure}
 
 Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by.
@@ -161,16 +161,16 @@ You can find out more about adding images to your documents in this help article
 \subsection{How to add Tables}
 
 Use the table and tabular environments for basic tables --- see Table~\ref{tab:widgets}, for example.
-For more information, please see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}. 
+For more information, please see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}.
 
 \begin{table}[h]
-\centering
-    \begin{tabular}{l|r}
-        Item & Quantity \\\hline
-        Widgets & 42 \\
-        Gadgets & 13
-    \end{tabular}
-    \caption{\label{tab:widgets}An example table.}
+	\centering
+	\begin{tabular}{l|r}
+		Item    & Quantity \\\hline
+		Widgets & 42       \\
+		Gadgets & 13
+	\end{tabular}
+	\caption{\label{tab:widgets}An example table.}
 \end{table}
 
 % ---------------------------------------------------------------------
@@ -180,21 +180,21 @@ For more information, please see this help article on \href{https://www.overleaf
 You can make lists with automatic numbering \dots
 
 \begin{enumerate}
-    \item Like this,
-    \item and like this.
+	\item Like this,
+	\item and like this.
 \end{enumerate}
 \dots or bullet points \dots
 \begin{itemize}
-    \item Like this,
-    \item and like this.
+	\item Like this,
+	\item and like this.
 \end{itemize}
 \dots or custom lists \dots
 \begin{itemize}
-    \item[a.] Like this,
-    \item[b.] and like this.
+	\item[a.] Like this,
+	\item[b.] and like this.
 \end{itemize}
 
-Note that specialized packages exist that give you more flexible ways of creating lists (for example \verb|enumitem|). 
+Note that specialized packages exist that give you more flexible ways of creating lists (for example \verb|enumitem|).
 
 % ---------------------------------------------------------------------
 
@@ -203,7 +203,7 @@ Note that specialized packages exist that give you more flexible ways of creatin
 \LaTeX{} is great at typesetting mathematics.
 Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
 \[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i\]
+	= \frac{1}{n}\sum_{i}^{n} X_i\]
 denote their mean.
 Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
 
