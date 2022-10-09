@@ -1,0 +1,15 @@
+{
+    "files.exclude": {
+        "**/*.aux": true,
+        "**/*.bbl": true,
+        "**/*.bcf": true,
+        "**/*.blg": true,
+        "**/*.gz": true,
+        "**/*.lof": true,
+        "**/*.log": true,
+        "**/*.out": true,
+        "**/*.toc": true,
+        "**/*.xml": true,
+        "**/*.synctex": true,
+    }
+}

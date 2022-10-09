@@ -1,37 +1,26 @@
-\documentclass[12pt,a4paper,faculty=ea,language=en,doctype=article]{ugent-doc}
-
-% Optional: margins and spacing
-%-------------------------------
-% Uncomment and adjust to change the default values set by the template
-% Note: the defaults are suggested values by Ghent University
+\documentclass[12pt,a4paper,faculty=ea,language=en,doctype=report]{ugent-doc}
 \geometry{bottom=2.5cm,top=2.5cm,left=3cm,right=2cm} 
-\renewcommand{\baselinestretch}{1.15}  %line spacing
+\renewcommand{\baselinestretch}{1.15}
 
-% Font
-%------
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc} % allows non-ascii input characters
-% Comment or remove the two lines below to use the default Computer Modern font
+\usepackage[english]{babel}
 \usepackage{libertine}
 \usepackage{libertinust1math}
-% NOTE: because the UGent font Panno is proprietary, it is not possible to use it
-% in Overleaf. But UGent does not suggest to use Panno for documents (or maybe only for
-% the titlepage). For the body, the UGent suggestion is to use a good serif font (for
-% LaTeX this could be libertine or Computer Modern).
+\usepackage{amsmath} % math equations
+\usepackage{listings} % code snippets
 
-% Proper word splitting
-%-----------------------
-\usepackage[english]{babel} 
-
-% Mathematics
-%-------------
-\usepackage{amsmath}
-\usepackage{listings}
+\usepackage{graphicx} % figures
+\graphicspath{{./figures/}}
+\usepackage[backend=biber, style=apa, sorting=nyt, hyperref=true]{biblatex} % Bibliography
+\addbibresource{references.bib}
+\usepackage{csquotes} % Suggested when using babel+biblatex
+\usepackage[colorlinks=true, allcolors=ugentblue]{hyperref} % Hyperreferences
+\usepackage[parfill]{parskip} % Whitespace between paragraphs and no indentation
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 \definecolor{mygray}{rgb}{0.95, 0.95, 0.95}
-
 \lstset{ %
   backgroundcolor=\color{mygray},   % choose the background color
   basicstyle=\footnotesize,        % size of fonts used for the code
@@ -43,46 +32,15 @@
   stringstyle=\color{mymauve},     % string literal style
 }
 
+% ---------------------------------------------
 
-% Figures
-%---------
-\usepackage{graphicx} % optional: the package is already loaded by the template
-\graphicspath{{./figures/}}
-
-% Bibliography settings
-%-----------------------
-\usepackage[backend=biber, style=apa, sorting=nyt, hyperref=true]{biblatex}
-\addbibresource{./references.bib}
-\usepackage{csquotes} % Suggested when using babel+biblatex
-
-% Hyperreferences
-%-----------------
-\usepackage[colorlinks=true, allcolors=ugentblue]{hyperref}
-
-% Whitespace between paragraphs and no indentation
-%--------------------------------------------------
-\usepackage[parfill]{parskip} 
-
-% Input for title page
-%----------------------
-
-% The title
-\thesubtitle{Linked Data} % Optional
-
-%% Note: a stricter UGent style could be achieved with, e.g.:
+\thesubtitle{Linked Data}
 \usepackage{ulem} % for colored underline
 \renewcommand{\ULthickness}{2pt} % adjust thickness of underline
-\thetitle{\uline{\color{ugentblue} Augmented Reality visualisation on site:\newline BIM semantics and communication}}
-% Note: do not forget to reset the \ULthickness to 1pt after invoking \maketitle
-% (otherwise all underlines in the rest of your document will be too thick):
-%\renewcommand{\ULthickness}{1pt}
-
-% The first (top) infobox at bottom of titlepage
-\infoboxa{\bfseries\large Master's dissertation submitted in order to obtain the academic degree of \newline
+\thetitle{\uline{\color{ugentblue} Augmented Reality visualisation on site: \\ BIM semantics and communication}}
+\infoboxa{\bfseries\large Master's dissertation submitted in order to obtain the academic degree of \\
 Master of Science in de ingenieurswetenschappen: architectuur
 }
-
-% The second infobox at bottom of titlepage
 \infoboxb{Supervisors: 
 \begin{tabular}[t]{lll}
     Prof.\ Dr.\ Paulus Present\\ % note syntax 'short space'
@@ -90,47 +48,24 @@ Master of Science in de ingenieurswetenschappen: architectuur
     Dr.\ Jeroen Werbrouck
 \end{tabular}
 }
-
-% The third infobox at bottom of titlepage
 \infoboxc{Philippe Soubrier 01702837 philippe.soubrier@ugent.be}
+\infoboxd{Academic year: 2022--2023}
 
-% The last (bottom) infobox at bottom of titlepage
-\infoboxd{Academic year: 2022--2023} % note dash, not hyphen
-
+% ---------------------------------------------
 
 \begin{document}
-
-% =====================================================================
-% Cover
-% =====================================================================
-
-% ------------ TITLE PAGE ---------
 \maketitle
 \renewcommand{\ULthickness}{1pt}
-
-% =====================================================================
-% Front matter
-% =====================================================================
-
-% ------------ TABLE OF CONTENTS ---------
 {\hypersetup{hidelinks}\tableofcontents} % hide link color in toc
+\listoffigures
 \newpage
 
+\include{chapters/shortAbstract.tex}
+\include{chapters/abstract.tex}
+\include{chapters/firstChapter.tex}
 
-% =====================================================================
-% Main matter
-% =====================================================================
-\section*{Short summary}
-
-% =====================================================================
-% End matter
-% =====================================================================
-
-% ------------ REFERENCES ------------
-
-% ------------ APPENDIX ------------
 \appendix
-\section{Appendix: Your first appendix}
-Thesis
+\include{chapters/firstAppendix.tex}
 
+\printbibliography[heading=bibintoc,title={References}]
 \end{document}
