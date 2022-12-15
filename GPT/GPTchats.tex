@@ -1,0 +1,11 @@
+\documentclass[a5paper,11pt]{memoir}    
+\usepackage{dramatist}  
+\usepackage{calc}
+\begin{document}
+\Character[Me - a person]{Me}{me}
+\Character[GPT chat - an AI]{GPT chat}{gpt}
+\setlength{\speakswidth}{\widthof{\speaksfont Frederico}}
+\addtolength{\speakswidth}{\Dlabelsep}
+\addtolength{\speaksindent}{\speakswidth}
+\include{discussions/toc.tex}
+\end{document}
