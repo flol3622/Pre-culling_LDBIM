@@ -2,16 +2,15 @@
 \geometry{bottom=2.5cm,top=2.5cm,left=3cm,right=2cm} 
 \renewcommand{\baselinestretch}{1.15}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc} % allows non-ascii input characters
+\usepackage{fontspec}
+\setmainfont{Zurich BT.ttf}
 \usepackage[english]{babel}
-\usepackage{libertine}
-\usepackage{libertinust1math}
+% \usepackage{libertine}
+% \usepackage{libertinust1math}
 \usepackage{amsmath} % math equations
 
 % code snippets
-\usepackage{fontspec}
-\setmonofont{FiraCode-Medium.ttf}[Contextuals=Alternate]
+\setmonofont{FiraCode-Regular.ttf}[Contextuals=Alternate]
 \usepackage{listings}
 \usepackage[verbatim]{lstfiracode}
 
@@ -39,8 +38,7 @@
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 \definecolor{mygray}{rgb}{0.95, 0.95, 0.95}
 \lstset{ %
-  backgroundcolor=\color{mygray},   % choose the background color
-  basicstyle=\footnotesize,        % size of fonts used for the code
+  backgroundcolor=\color{mygray},  % choose the background color
   breaklines=true,                 % automatic line breaking only at whitespace
   captionpos=b,                    % sets the caption-position to bottom
   commentstyle=\color{mygreen},    % comment style
@@ -48,7 +46,7 @@
   keywordstyle=\color{blue},       % keyword style
   stringstyle=\color{mymauve},     % string literal style
   style=FiraCodeStyle,
-  basicstyle=\scriptsize\ttfamily
+  basicstyle=\footnotesize\ttfamily
 }
 
 
