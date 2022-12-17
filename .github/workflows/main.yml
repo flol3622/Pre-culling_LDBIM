@@ -16,7 +16,6 @@ jobs:
       with:
         source_file: 'main.pdf'
         destination_repo: 'flol3622/AR-Linked-BIM-viewer'
-        destination_folder: ''
         user_email: 'philippe.soubrier@gmail.com'
         user_name: 'flol3622'
         commit_message: 'New thesis publishing'
