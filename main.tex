@@ -8,13 +8,30 @@
 \usepackage{libertine}
 \usepackage{libertinust1math}
 \usepackage{amsmath} % math equations
-\usepackage{listings} % code snippets
 
-\usepackage{graphicx} % figures
+% code snippets
+\usepackage{fontspec}
+\setmonofont{FiraCode-Medium.ttf}[Contextuals=Alternate]
+\usepackage{listings}
+\usepackage[verbatim]{lstfiracode}
+
+% transcriptions:
+\usepackage{xparse}
+\usepackage{enumitem}
+
+% acronyms
+\usepackage[printonlyused,withpage]{acronym}
+
+% figures
+\usepackage{graphicx} 
 \graphicspath{{./figures/}}
-\usepackage[backend=biber, style=apa, sorting=nyt, hyperref=true]{biblatex} % Bibliography
+
+% Bibliography
+\usepackage[backend=biber, style=apa, sorting=nyt, hyperref=true]{biblatex} 
 \addbibresource{references.bib}
 \usepackage{csquotes} % Suggested when using babel+biblatex
+
+% Ugent specific
 \usepackage[colorlinks=true, allcolors=ugentblue]{hyperref} % Hyperreferences
 \usepackage[parfill]{parskip} % Whitespace between paragraphs and no indentation
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -30,7 +47,10 @@
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
   keywordstyle=\color{blue},       % keyword style
   stringstyle=\color{mymauve},     % string literal style
+  style=FiraCodeStyle,
+  basicstyle=\scriptsize\ttfamily
 }
+
 
 % ---------------------------------------------
 
@@ -63,6 +83,7 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \include{chapters/shortAbstract.tex}
 \include{chapters/abstract.tex}
 % \include{chapters/firstChapter.tex}
+\include{GPT/GPTchats.tex}
 \chapter{Introduction}
   \section{Litterature study}
     \subsection{Linked Data}
@@ -86,6 +107,18 @@ Master of Science in de ingenieurswetenschappen: architectuur
 
 % \appendix
 % \include{chapters/firstAppendix.tex}
-
+\clearpage
+\chapter*{List of Acronyms}
+\begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
+  \acro{bim}[BIM]{Building Information Modeling}
+  \acro{ar}[AR]{Augmented Reality}
+  \acro{rdf}[RDF]{Resource Description Framework}
+  \acro{lod}[LOD]{Level of Detail}
+  \acro{gltf}[GLTF]{GL Transmission Format}
+  \acro{ifc}[IFC]{Industry Foundation Classes}
+  \acro{owl}[OWL]{Web Ontology Language}
+  \acro{rdfs}[RDFS]{Resource Description Framework Schema}
+  \acro{sparql}[SPARQL]{SPARQL Protocol and RDF Query Language}
+\end{acronym}
 \printbibliography[heading=bibintoc,title={References}]
 \end{document}

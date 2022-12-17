@@ -1,13 +1,123 @@
-\scene[]
-\StageDir{
-    \begin{center} Table of contents
-     \end{center}
-}
-\begin{drama}
-\mespeaks What is linked data?
-\gptspeaks Linked data is a way of representing and sharing data on the internet so that it can be easily linked to related data and more easily used by machines. This is achieved by using standardized formats and protocols, such as RDF (Resource Description Framework), which allows data from different sources to be connected and used together. The goal of linked data is to create a web of interconnected data that can be easily accessed and used by anyone, with the ultimate aim of enabling people and machines to better understand the world around them.
-\mespeaks What are the opportunities for the AEC industry?
-The AEC (architecture, engineering, and construction) industry has many opportunities to benefit from linked data. For example, linked data can be used to more easily share and integrate data from different sources, such as building information models (BIM) and GIS (geographic information systems), which can help improve collaboration and decision-making among different stakeholders in a construction project. Linked data can also be used to create more accurate and detailed models of buildings and infrastructure, which can help improve the design and planning of projects. Additionally, linked data can be used to create more comprehensive and accessible datasets that can be used for research and analysis, helping to drive innovation and progress in the AEC industry.
-\mespeaks Will the ifc format still have a future?
+\section*{\ac{bim} and \ac{ar}}
+\begin{description}
+	\me What is linked data?
 
-\end{drama}
+	\gpt Linked data is a way of representing and sharing data on the internet so that it can be easily linked to related data and more easily used by machines. This is achieved by using standardized formats and protocols, such as RDF (Resource Description Framework), which allows data from different sources to be connected and used together. The goal of linked data is to create a web of interconnected data that can be easily accessed and used by anyone, with the ultimate aim of enabling people and machines to better understand the world around them.
+
+
+	\me What are the opportunities for the AEC industry?
+
+	\gpt The AEC (architecture, engineering, and construction) industry has many opportunities to benefit from linked data. For example, linked data can be used to more easily share and integrate data from different sources, such as building information models (BIM) and GIS (geographic information systems), which can help improve collaboration and decision-making among different stakeholders in a construction project. Linked data can also be used to create more accurate and detailed models of buildings and infrastructure, which can help improve the design and planning of projects. Additionally, linked data can be used to create more comprehensive and accessible datasets that can be used for research and analysis, helping to drive innovation and progress in the AEC industry.
+
+	\me Will the ifc format still have a future?
+
+	\gpt Yes, linked data is interoperable with the IFC (Industry Foundation Classes) standards. IFC is a standardized data model for building and construction, and it can be used to represent and share data in a consistent and standardized way. This makes it possible to easily integrate linked data with IFC data, allowing different sources of data to be more easily combined and used together. Additionally, RDF, the standard format for linked data, is designed to be interoperable with other data formats, including IFC, which further enhances its ability to integrate with other data sources and systems.
+
+	\me How can IFC 3d data be translated into the RDF graph?
+
+	\gpt One way to represent the 3D geometry of an IFC file in an RDF graph would be to use a geometry-specific vocabulary, such as the GeoSPARQL vocabulary, to describe the geometry. This vocabulary defines a set of terms and properties that can be used to represent geometric objects and their spatial relationships, such as points, lines, and polygons. Using this vocabulary, the 3D geometry from an IFC file could be represented as a series of RDF triples, with each triple consisting of a subject, predicate, and object. The subject would be the IFC element or object that the geometry represents, the predicate would be a term from the GeoSPARQL vocabulary that describes the geometry, and the object would be a representation of the geometry in a standardized format, such as WKT (well-known text) or GML (geography markup language). This would allow the 3D geometry to be integrated into the RDF graph and linked to other data in the graph using the standardized vocabulary and formats.
+
+	\me Wouldn't it be better to store 3d data in GLTF files outside the graph an link to them?
+
+	\gpt Storing 3D data in GLTF (GL Transmission Format) files and linking to them from an RDF graph can be a good approach in some cases, but it also has some limitations. One advantage of using GLTF files is that they are a widely-used and well-supported format for storing 3D geometry, and many tools and applications can read and use GLTF files. Additionally, GLTF files are designed to be small and efficient, which can be important for large or complex 3D models. However, using GLTF files also has some disadvantages. For example, it can be difficult to link or relate the data in a GLTF file to other data in an RDF graph, because the data in a GLTF file is not structured in the same way as RDF data. Additionally, using GLTF files can make it more difficult to query or analyze the 3D data using the full range of capabilities offered by RDF and SPARQL (the standard query language for RDF), because the data is not directly integrated into the RDF graph. Overall, whether it is better to store 3D data in GLTF files or to represent it directly in an RDF graph will depend on the specific requirements and goals of the project.
+
+	\me What if that project is about visualizing BIM data via augmented reality?
+
+	\gpt If the project is about visualizing BIM (building information modeling) data via augmented reality, then representing the 3D geometry directly in the RDF graph can be a more effective approach. This is because AR (augmented reality) applications typically require real-time access to the 3D geometry, and accessing this data from a separate GLTF file can be slow and cumbersome. By representing the 3D geometry directly in the RDF graph, it can be accessed more quickly and easily, which can improve the performance and user experience of the AR application. Additionally, representing the 3D geometry in the RDF graph can also make it easier to link the geometry to other data in the graph, such as metadata about the elements in the BIM model, which can provide more context and information to the user of the AR application.
+
+	\me But would it not overpopulate the graph with geometric data, especially in the AEC industry?
+
+	\gpt Representing the 3D geometry of a BIM model directly in an RDF graph can potentially increase the size of the graph, but this can be managed in various ways to avoid overpopulating the graph. For example, the 3D geometry can be represented using a compact and efficient format, such as WKT or GML, which can help reduce the size of the data in the graph. Additionally, the RDF graph can be partitioned or divided into smaller sub-graphs, with each sub-graph containing the data for a specific aspect or element of the BIM model. This can help to distribute the data and avoid overloading any one part of the graph. Furthermore, the RDF graph can be stored and managed using specialized tools and technologies, such as triple stores or graph databases, which are designed to efficiently manage and query large amounts of RDF data. Overall, there are various approaches that can be used to effectively manage the size and complexity of an RDF graph containing 3D geometry data from a BIM model, and these approaches can help to support the use of linked data in the AEC industry.
+
+	\me What are the options when it comes to query that 3d data if it would be for example in the view of an augmented reality interface?
+
+	\gpt If the 3D data is represented in an RDF graph, it can be queried using SPARQL, the standard query language for RDF. SPARQL allows you to specify the data that you want to retrieve from the graph in the form of a query, and the query engine will return the matching data from the graph. This can be useful for an augmented reality (AR) interface, because it allows you to specify exactly what data you want to retrieve from the graph and display in the AR view. For example, you could use SPARQL to query the graph for the 3D geometry of specific elements in the BIM model, or to query for metadata about those elements. You could also use SPARQL to query for information about the spatial relationships between different elements in the BIM model, such as the distance between two elements or the orientation of an element relative to another element. Overall, using SPARQL to query an RDF graph containing 3D data can provide a powerful and flexible way to access and use that data in an AR interface.
+	can you give me an example for a sparql query for the visible objects in the ar view?
+	Here is an example of a SPARQL query that can be used to retrieve the visible objects in an augmented reality (AR) view:
+
+	\begin{lstlisting}[language=SPARQL]
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ar: <http://example.org/ar#>
+PREFIX bim: <http://example.org/bim#>
+
+SELECT ?object ?geometry
+WHERE {
+    ?object rdf:type bim:Object .
+    ?object ar:isVisible true .
+    ?object bim:hasGeometry ?geometry .
+}
+\end{lstlisting}
+
+	This query uses the ar:isVisible property to select only those objects that are marked as being visible in the AR view. It then uses the bim:hasGeometry property to retrieve the 3D geometry for each of those objects. The ?object and ?geometry variables represent the objects and their corresponding geometry that are returned by the query. This query can be modified and extended as needed to meet the specific requirements of the AR application.
+
+	\me yes, but how is that 'ar:isVisible' property computed in the first place? Do you have a code for that?
+
+	\gpt The ar:isVisible property in the SPARQL query above is a hypothetical property that is used to indicate whether an object is visible in the AR view. In order to compute this property, you would need to write code that determines which objects are currently visible in the AR view, based on the user's current location and orientation, the position and orientation of the objects in the 3D model, and any other relevant factors. The code for computing this property would depend on the specific details of the AR application, such as the types of objects that are being modeled, the algorithms and data structures that are used to represent the 3D geometry, and the capabilities and limitations of the AR platform. Therefore, it is not possible to provide a specific code example for computing the ar:isVisible property without more information about the AR application.
+
+	\me Let us pretend we are writing a web-based AR app, and that the 3d geometry is in its simplest form 3d points defined in the graph, which points are in the view if you have the 3d position and orientation of the camera?
+
+	\gpt If you have the 3D position and orientation of the camera in a web-based AR app, and the 3D geometry of the objects in the scene is represented as a series of 3D points in an RDF graph, then you can use a SPARQL query to retrieve the points that are visible in the current view. Here is an example of a SPARQL query that can be used to do this:
+
+	\begin{lstlisting}[language=SPARQL]
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ar: <http://example.org/ar#>
+PREFIX bim: <http://examporg/bim#>
+
+SELECT ?point
+WHERE {
+    ?point rdf:type bim:Point .
+    ?point bim:hasCoordinates ?coordinates .
+    ?coordinates bim:x ?x .
+    ?coordinates bim:y ?y .
+    ?coordinates bim:z ?z .
+    FILTER (
+        ?x > ?minX &&
+        ?x < ?maxX &&
+        ?y > ?minY &&
+        ?y < ?maxY &&
+        ?z > ?minZ &&
+        ?z < ?maxZ
+    )
+}
+\end{lstlisting}
+
+	This query uses the bim:hasCoordinates and bim:x, bim:y, and bim:z properties to retrieve the coordinates of each point in the 3D model. It then uses a FILTER clause to select only those points that have coordinates within the specified range for each dimension (?minX, ?maxX, ?minY, ?maxY, ?minZ, and ?maxZ). These ranges would need to be set to the minimum and maximum values for each dimension that are within the current view of the camera. This query can be modified and extended as needed to meet the specific requirements of the AR application.
+
+	\me and if you add a parameter to filter points at a certain distance of the camera?
+
+	\gpt If you want to filter the points in the 3D model based on their distance from the camera in a web-based AR app, then you can add a FILTER clause to the SPARQL query to do this. Here is an example of how this could be done:
+
+	\begin{lstlisting}[language=SPARQL]
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ar: <http://example.org/ar#>
+PREFIX bim: <http://example.org/bim#>
+
+SELECT ?point
+WHERE {
+    ?point rdf:type bim:Point .
+    ?point bim:hasCoordinates ?coordinates .
+    ?coordinates bim:x ?x .
+    ?coordinates bim:y ?y .
+    ?coordinates bim:z ?z .
+    FILTER (
+        ?x > ?minX &&
+        ?x < ?maxX &&
+        ?y > ?minY &&
+        ?y < ?maxY &&
+        ?z > ?minZ &&
+        ?z < ?maxZ &&
+        (
+            (?x - ?cameraX) * (?x - ?cameraX) +
+            (?y - ?cameraY) * (?y - ?cameraY) +
+            (?z - ?cameraZ) * (?z - ?cameraZ)
+        ) < ?distance * ?distance
+    )
+}    
+\end{lstlisting}
+
+	This query is similar to the previous example, but it includes an additional FILTER clause that uses the distance formula to calculate the distance between each point and the camera. The ?distance variable specifies the maximum distance that a point can be from the camera in order to be included in the query results. This query can be modified and extended as needed to meet the specific requirements of the AR application.
+
+	\me what if you now don't have points but links to gltf files for each object, and that you would first need to compute there center points?
+
+	\dots
+\end{description}

@@ -1,0 +1,47 @@
+\section*{URIs}
+\begin{description}
+	\me What are URI
+
+	\gpt A URI, or Uniform Resource Identifier, is a string of characters that identify a name or a resource on the Internet. URIs can be broken down into two types: URLs and URNs. A URL, or Uniform Resource Locator, is the web address of a specific page or file on the internet, while a URN, or Uniform Resource Name, is a unique identifier for a resource that may or may not be available on the internet. For example, "http://www.example.com" is a URL, while "urn:isbn:978-1-60309-024-3" is a URN
+
+	\me does everything have a uri in an rdf graph?
+
+	\gpt In an RDF graph, every resource is identified by a URI. The URI serves as a unique identifier for the resource, and it can be used to refer to the resource in RDF statements. The URI can be thought of as the name of the resource, and it is used to distinguish the resource from other resources in the graph.
+
+	\me but does every triple have a uri?
+
+	\gpt In an RDF graph, every resource is identified by a URI, but not every triple necessarily has a URI. A triple in an RDF graph consists of a subject, a predicate, and an object, and each of these components can be either a URI or a literal value. In some cases, all three components of a triple may be URIs, while in other cases, one or more of the components may be a literal value. For example, the following triple has a URI for the subject and predicate, but the object is a literal string:
+
+	\begin{lstlisting}[language=SPARQL]
+`<http://www.example.com/books/book1> <http://www.example.com/ns/title> "The Great Gatsby"`	
+\end{lstlisting}
+
+	In this triple, the subject is the URI http://www.example.com/books/book1, the predicate is the URI http://www.example.com/ns/title, and the object is the string "The Great Gatsby".
+
+	\me why does querying ressources gives back uri's?
+
+	\gpt When you query a resource in an RDF graph, the response typically includes the URI of the resource. The URI serves as a unique identifier for the resource, and it can be used to refer to the resource in other queries or statements. Additionally, the URI may be used to dereference the resource and retrieve additional information about it.
+
+	\me Is that ressource URI automatically assigned by the sparql endpoint you are querying?
+
+	\gpt The URI for a resource in an RDF graph is not automatically assigned by a SPARQL endpoint. In most cases, the URI for a resource is determined by the creator of the RDF data, and it is typically chosen to be a unique and meaningful identifier for the resource. For example, a URI for a book might include the title of the book and the author's name, while a URI for a person might include their full name and date of birth. The URI is then used to identify the resource in the RDF data, and it can be used to query the resource using a SPARQL endpoint.
+
+	\me can you give me an example of triple data with an ressource uri?
+
+	\gpt Sure, here is an example of a triple with a resource URI:
+
+	\begin{lstlisting}[language=SPARQL]
+`<http://www.example.com/books/book1> <http://www.example.com/ns/title> <http://www.example.com/ns/TheGreatGatsby>`	
+\end{lstlisting}
+
+	In this triple, the subject is the URI http://www.example.com/books/book1, the predicate is the URI http://www.example.com/ns/title, and the object is the URI http://www.example.com/ns/TheGreatGatsby.
+	The subject of this triple identifies a specific book, the predicate specifies that the object of the triple is the title of the book, and the object is the URI of the resource that represents the title of the book. This URI could be used in other triples to provide additional information about the title of the book, such as the language in which it was written or the author who wrote it.
+
+	\me Does that uri then directly refers to data? I mean, can I look it up in my browser, or is it just semantics for the sparql endpoint?
+
+	\gpt A URI in an RDF graph typically does not directly refer to data that can be looked up in a web browser. Instead, the URI serves as a unique identifier for a resource in the RDF graph, and it is used to distinguish that resource from other resources in the graph. The URI itself does not contain any information about the resource, but it can be used to retrieve additional information about the resource through a process called dereferencing.
+	To dereference a URI, you can send a request to the URI using a web client, such as a web browser or a SPARQL endpoint. If the URI is associated with a resource that is available on the internet, the request will return information about the resource. For example, if the URI identifies a web page, the request will return the contents of the web page.
+	However, not all URIs are associated with resources that are available on the internet. In some cases, the URI may simply serve as a unique identifier for a concept or an idea, without referring to any specific data. In these cases, dereferencing the URI will not return any information about the resource.
+
+	\dots
+\end{description}
