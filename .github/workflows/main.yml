@@ -1,27 +1,22 @@
-name: Overwrite file
+name: Publish thesis update
 
-on:
-  push:
-    branches: [ master ]
+on: push
 
 jobs:
-  build:
+  copy-file:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Publish thesis update
-        uses: actions/upload-artifact@v2
-        with:
-          name: file-to-overwrite
-          path: main.pdf
-      - name: Commit and push
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.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 }}
-          branch: master
-          message: "${{ github.event.head_commit.message }}"
-          committer_name: "${{ github.actor }}"
-          committer_email: "${{ github.actor }}@users.noreply.github.com"
-          repository: "flol3622/AR-Linked-BIM-viewer"
-          src: file-to-overwrite
-          dst: main.pdf
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Push file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.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 }}
+      with:
+        source_file: 'main.pdf'
+        destination_repo: 'flol3622/AR-Linked-BIM-viewer'
+        destination_folder: ''
+        user_email: 'philippe.soubrier@gmail.com'
+        user_name: 'flol3622'
+        commit_message: 'New thesis publishing'
