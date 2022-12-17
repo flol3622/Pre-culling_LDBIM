@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Push file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-        API_TOKEN_GITHUB: ${{ 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 }}
+        API_TOKEN_GITHUB: ${{ secrets.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 }}
       with:
         source_file: 'main.pdf'
         destination_repo: 'flol3622/AR-Linked-BIM-viewer'
