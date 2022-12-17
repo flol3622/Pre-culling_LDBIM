@@ -12,7 +12,7 @@ jobs:
     - name: Push file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
-        API_TOKEN_GITHUB: ${{ secrets.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 }}
+        API_TOKEN_GITHUB: ${{ secrets.PUBLISHING }}
       with:
         source_file: 'main.pdf'
         destination_repo: 'flol3622/AR-Linked-BIM-viewer'
