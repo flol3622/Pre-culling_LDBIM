@@ -1,0 +1,6 @@
+{
+    "forceReCreateRepo": true,
+    "targetRepoPath": "AR Linked BIM viewer - thesis",
+    "sourceRepoPath": ".",
+    "allowedPaths": ["main.pdf"]
+}
