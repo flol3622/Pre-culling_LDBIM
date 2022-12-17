@@ -35,7 +35,7 @@
 	can you give me an example for a sparql query for the visible objects in the ar view?
 	Here is an example of a SPARQL query that can be used to retrieve the visible objects in an augmented reality (AR) view:
 
-	\begin{lstlisting}[language=SPARQL]
+	\begin{lstlisting}[language=SQL]
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ar: <http://example.org/ar#>
 PREFIX bim: <http://example.org/bim#>
@@ -58,7 +58,7 @@ WHERE {
 
 	\gpt If you have the 3D position and orientation of the camera in a web-based AR app, and the 3D geometry of the objects in the scene is represented as a series of 3D points in an RDF graph, then you can use a SPARQL query to retrieve the points that are visible in the current view. Here is an example of a SPARQL query that can be used to do this:
 
-	\begin{lstlisting}[language=SPARQL]
+	\begin{lstlisting}[language=SQL]
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ar: <http://example.org/ar#>
 PREFIX bim: <http://examporg/bim#>
@@ -87,7 +87,7 @@ WHERE {
 
 	\gpt If you want to filter the points in the 3D model based on their distance from the camera in a web-based AR app, then you can add a FILTER clause to the SPARQL query to do this. Here is an example of how this could be done:
 
-	\begin{lstlisting}[language=SPARQL]
+	\begin{lstlisting}[language=SQL]
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ar: <http://example.org/ar#>
 PREFIX bim: <http://example.org/bim#>
