@@ -3,16 +3,16 @@
 \renewcommand{\baselinestretch}{1.15}
 
 \usepackage{fontspec}
-\setmainfont{Archia-Regular.otf}
+\setmainfont{SourceSerifPro-Light.ttf}
+\setsansfont{Archia-Regular.otf}
 \usepackage[english]{babel}
 % \usepackage{libertine}
 % \usepackage{libertinust1math}
 \usepackage{amsmath} % math equations
 
 % code snippets
-\setmonofont{JetBrainsMono-Medium.ttf}[Contextuals=Alternate]
+\setmonofont{SourceCodePro-Regular.ttf}
 \usepackage{listings}
-\usepackage[verbatim]{lstfiracode}
 
 % transcriptions:
 \usepackage{xparse}
@@ -44,8 +44,7 @@
   commentstyle=\color{mygreen},    % comment style
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
   keywordstyle=\color{blue},       % keyword style
-  stringstyle=\color{mymauve},     % string literal style
-  style=FiraCodeStyle,
+  stringstyle=\color{mymauve},
   basicstyle=\footnotesize\ttfamily
 }
 
