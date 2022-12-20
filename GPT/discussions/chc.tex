@@ -1,0 +1,46 @@
+\section*{\ac{chc}}
+\begin{description}
+	\me Can you explain me the Coherent Hierarchical Culling algorithm?
+
+	\gpt Coherent Hierarchical Culling (CHC) is an algorithm used in computer graphics to improve the performance of rendering 3D scenes by reducing the number of objects that need to be processed by the graphics pipeline. The goal of CHC is to quickly and efficiently determine which objects in a scene are visible to the viewer and which objects are occluded (hidden) by other objects and therefore do not need to be drawn. This can greatly improve the performance of a graphics application, especially when dealing with complex or large scenes.
+
+	CHC works by dividing the scene into a hierarchy of bounding volumes, with each level of the hierarchy representing a different level of detail. The hierarchy is constructed so that each bounding volume encloses one or more objects in the scene, and the bounding volumes at higher levels of the hierarchy enclose groups of objects at lower levels.
+
+	The CHC algorithm begins by determining the bounding volume at the top level of the hierarchy that encloses the viewer's current viewpoint. It then uses this bounding volume to recursively traverse the hierarchy and identify the objects that are potentially visible to the viewer. As the algorithm traverses the hierarchy, it eliminates objects and bounding volumes that are completely occluded by other objects or bounding volumes. This process continues until the algorithm reaches the lowest level of the hierarchy, at which point it has a list of the objects that are potentially visible to the viewer.
+
+	CHC is an efficient algorithm because it can quickly eliminate large groups of objects and bounding volumes that are not visible to the viewer, reducing the number of objects that need to be processed by the graphics pipeline. It is also a "coherent" algorithm because it takes advantage of spatial coherence in the scene, meaning that objects that are near each other in the scene are likely to be occluded by similar objects. This allows the algorithm to quickly eliminate large groups of objects that are occluded by other objects.
+
+	\me How does it compute if a bounding volume is completely occluded?
+
+	\gpt In the Coherent Hierarchical Culling (CHC) algorithm, the occlusion of a bounding volume is determined by comparing it to other bounding volumes in the scene. Specifically, the algorithm compares the bounding volume being tested to the bounding volumes of other objects in the scene to see if it is completely contained within another bounding volume. If the bounding volume being tested is completely contained within another bounding volume, it is considered to be occluded and is eliminated from further processing.
+
+	To determine if one bounding volume is completely contained within another bounding volume, the CHC algorithm compares the vertices of the bounding volume being tested to the planes of the bounding volume it is being compared to. If all of the vertices of the bounding volume being tested lie on the same side of all of the planes of the other bounding volume, then the bounding volume being tested is completely contained within the other bounding volume and is considered occluded.
+
+	There are several different types of bounding volumes that can be used with the CHC algorithm, including axis-aligned bounding boxes (AABBs), oriented bounding boxes (OBBs), and bounding spheres. The specific method for determining occlusion will depend on the type of bounding volume being used.
+
+	\me Can you explain it all again in simpler terms? I am confused about what bounding volumes actually are.
+
+	\gpt Certainly! Coherent Hierarchical Culling (CHC) is an algorithm used to improve the performance of rendering 3D graphics by reducing the number of objects that need to be processed. It does this by dividing the scene into a hierarchy of bounding volumes, with each level of the hierarchy representing a different level of detail.
+
+	A bounding volume is a geometric shape that encloses an object or group of objects in the scene. The bounding volume is typically chosen to be as small as possible while still enclosing the object or objects it represents. There are several different types of bounding volumes that can be used, including axis-aligned bounding boxes (AABBs), oriented bounding boxes (OBBs), and bounding spheres.
+
+	The CHC algorithm begins by determining the bounding volume at the top level of the hierarchy that encloses the viewer's current viewpoint. It then uses this bounding volume to recursively traverse the hierarchy and identify the objects that are potentially visible to the viewer. As the algorithm traverses the hierarchy, it eliminates objects and bounding volumes that are completely occluded by other objects or bounding volumes. This process continues until the algorithm reaches the lowest level of the hierarchy, at which point it has a list of the objects that are potentially visible to the viewer.
+
+	To determine if a bounding volume is occluded, the CHC algorithm compares it to the bounding volumes of other objects in the scene. If the bounding volume being tested is completely contained within another bounding volume, it is considered to be occluded and is eliminated from further processing. This allows the CHC algorithm to quickly eliminate large groups of objects that are not visible to the viewer, improving the performance of the graphics application.
+
+	\me And in very simple terms, how does it compute if bounding volumes are occluded?
+
+	\gpt To determine if a bounding volume is occluded (hidden) by another bounding volume, the Coherent Hierarchical Culling (CHC) algorithm compares the vertices of the bounding volume being tested to the planes of the bounding volume it is being compared to. If all of the vertices of the bounding volume being tested lie on the same side of all of the planes of the other bounding volume, then the bounding volume being tested is considered to be completely contained within the other bounding volume and is therefore occluded.
+
+	For example, if the bounding volume being tested is an axis-aligned bounding box (AABB) and the bounding volume it is being compared to is also an AABB, the CHC algorithm would compare the vertices of the AABB being tested to the planes of the other AABB. If all of the vertices of the AABB being tested lie on the same side of all of the planes of the other AABB, then the AABB being tested is considered to be occluded.
+
+	This process is repeated for each bounding volume in the scene, allowing the CHC algorithm to quickly eliminate objects and bounding volumes that are not visible to the viewer and improve the performance of the graphics application.
+
+	\me A bounding volume A sitting inside another bounding volume B means all of the geometry in A is not visible outside of B?
+
+	\gpt Yes, that's correct! If a bounding volume (A) is completely contained within another bounding volume (B), it means that all of the geometry represented by bounding volume A is completely occluded (hidden) by the geometry represented by bounding volume B. This is because the geometry represented by bounding volume A is completely enclosed by the geometry represented by bounding volume B, and therefore none of it is visible to the viewer.
+
+	In the context of the Coherent Hierarchical Culling (CHC) algorithm, this means that the objects represented by bounding volume A can be eliminated from further processing, since they are not visible to the viewer. This can greatly improve the performance of a graphics application, especially when dealing with complex or large scenes.
+
+	\dots
+\end{description}
