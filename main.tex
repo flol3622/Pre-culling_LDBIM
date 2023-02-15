@@ -48,6 +48,10 @@
   basicstyle=\footnotesize\ttfamily
 }
 
+% styling table of contents
+% \setcounter{tocdepth}{4}
+% \setcounter{secnumdepth}{4}
+
 
 % ---------------------------------------------
 
@@ -69,7 +73,6 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \infoboxd{Academic year: 2022--2023}
 
 % ---------------------------------------------
-
 \begin{document}
 \maketitle
 \renewcommand{\ULthickness}{1pt}
@@ -82,24 +85,58 @@ Master of Science in de ingenieurswetenschappen: architectuur
 % \include{chapters/firstChapter.tex}
 \include{GPT/GPTchats.tex}
 \chapter{Introduction}
-  \section{Litterature study}
-    \subsection{Linked Data}
-    \subsection{AR and BIM}
-    \subsection{AR and Linked BIM}
+  \section{Research questions}
+    \subsection{Linked data approach to \acs{bim}-\acs{ar}}
+    \subsection{\acs{ldbim} \acs{lod} streaming to \acs{hhd}}
+  \section{Research objectives}
+  
 \chapter{State of the art}
-  \section{AR and BIM}
-  \section{BIM viewers}
-  \section{Linked BIM model querying}
-    \subsection{spacial queries}
+  \section{\acs{ar} on-site approaches}
+    \subsection{Autodesk xyz - Atom}
+    \subsection{Openspace AI}
 
-\chapter{Approach}
-  \section{RDF data}
-    \subsection{Useful data}
+  \section{Ontologies}
+    \subsection{\acs{bcfowl}}
+    \subsection{\acs{bot}}
+    \subsection{\acs{ifcowl}}    
+  
+  \section{\acs{ldbim} viewers}
+    \subsection{ld-bim.web.app}
+
+  \section{Rendering optimizations}
+    \subsection{Culling algorithms}
+      \subsubsection{Bounding Box Culling}
+      \subsubsection{Frustum Culling}
+      \subsubsection{Octree Culling}
+      \subsubsection{Quadtree Culling}
+      \subsubsection{Spatial Hashing}
+      \subsubsection{Spatial Partitioning}
+      \subsubsection{Visibility Culling}
+      \subsubsection{Z-Buffer Culling}
+      \subsubsection{Coherent Hierarchical Culling}
+    \subsection{Qonic}
+
+\chapter{Methodology}
+  \section{\acs{rdf} data}
+    \subsection{Existing data}
     \subsection{Adding data}
-  \section{LOD streaming model}  
-    \subsection{filters}
-  \section{Querying}    
-    \subsection{ARCore}
+  \section{\acs{lod} streaming model}  
+    \subsection{Culling}
+    \subsection{Redundancy avoidance with \acs{bcf}}
+  \section{Querying}
+    \subsection{Front-end}
+    \subsection{Back-end}
+  \section{Rendering}
+    \subsection{Three.js}
+    \subsection{Shader}
+
+\chapter{Website}
+  \section{Setup}
+    \subsection{Software}
+    \subsection{Hardware}
+  \section{User interface}
+
+\chapter{Results}
 
 
 % \appendix
@@ -107,16 +144,22 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \clearpage
 \chapter*{List of Acronyms}
 \begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
-  \acro{bim}[BIM]{Building Information Modeling}
   \acro{ar}[AR]{Augmented Reality}
-  \acro{rdf}[RDF]{Resource Description Framework}
-  \acro{lod}[LOD]{Level of Detail}
+  \acro{bcf}[BCF]{\acs{bim} Collaboration Format}
+  \acro{bcfowl}[bcfOWL]{\acs{bim} Collaboration Format Ontology}
+  \acro{bim}[BIM]{Building Information Modeling}
+  \acro{bot}[BOT]{Building Topology Ontology}
+  \acro{chc}[CHC]{Coherent Hierarchical Culling algorithm}
   \acro{gltf}[GLTF]{GL Transmission Format}
+  \acro{hhd}[HHD]{Hand Held Device}
   \acro{ifc}[IFC]{Industry Foundation Classes}
+  \acro{ifcowl}[ifcOWL]{Industry Foundation Classes Ontology}
+  \acro{ldbim}[LDBIM]{Linked Data \acs{bim}}
+  \acro{lod}[LOD]{Level of Detail}
   \acro{owl}[OWL]{Web Ontology Language}
+  \acro{rdf}[RDF]{Resource Description Framework}
   \acro{rdfs}[RDFS]{Resource Description Framework Schema}
   \acro{sparql}[SPARQL]{SPARQL Protocol and RDF Query Language}
-  \acro{chc}[CHC]{Coherent Hierarchical Culling algorithm}
 \end{acronym}
 
 \printbibliography[heading=bibintoc,title={References}]

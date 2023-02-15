@@ -1,35 +1,35 @@
 \section*{RDF reasoners}
 \begin{description}
 	\me What is a rdf reasoner?
-	
+
 	\gpt An RDF reasoner is a type of software that can automatically infer new information based on existing data in an RDF (Resource Description Framework) graph. An RDF graph is a way of representing information using the RDF data model, which is a set of interconnected statements about resources. For example, if an RDF graph contains statements that indicate that a particular person is the child of a certain parent, an RDF reasoner could infer that the person is also the sibling of the parent's other children. In this way, an RDF reasoner can help to automatically organize and make sense of complex data in an RDF graph.
-	
+
 	\me Does it add data to the graph or is only used for the query?
-	
+
 	\gpt An RDF reasoner does not add data to the RDF graph directly. Instead, it analyzes the existing data in the graph and uses rules of inference to automatically generate new statements that can be added to the graph. These new statements are typically derived from the existing data in the graph and reflect relationships or connections that can be logically inferred from that data. For example, if an RDF graph contains statements indicating that person A is the child of person B, and person B is the child of person C, an RDF reasoner could infer that person A is the grandchild of person C and generate a new statement to that effect. In this way, an RDF reasoner can help to enrich the data in an RDF graph and make it more useful for querying and analysis.
-	
+
 	\me Does it then run continuously, searching for new correlations?
-	
+
 	\gpt It depends on the specific implementation of the RDF reasoner. Some RDF reasoners may be designed to run continuously, continuously analyzing the data in an RDF graph and generating new statements as needed. Other RDF reasoners may be designed to run only when explicitly invoked by a user or application, in which case they would not be continuously searching for new correlations. In general, whether an RDF reasoner runs continuously or not will depend on the specific requirements and goals of the system in which it is being used.
-	
+
 	\me Is it part of the triplestore or the sparql endpoint?
-	
+
 	\gpt An RDF reasoner is not necessarily part of a triplestore or a SPARQL endpoint. A triplestore is a type of database specifically designed for storing and managing RDF data, while a SPARQL endpoint is a web service that allows users to query an RDF graph using the SPARQL query language. An RDF reasoner, on the other hand, is a type of software that can automatically infer new information from an RDF graph, but it is not necessarily part of a triplestore or a SPARQL endpoint. In some cases, an RDF reasoner may be used in conjunction with a triplestore or a SPARQL endpoint as part of a larger system for managing and querying RDF data. In other cases, an RDF reasoner may be used independently of these technologies.
-	
+
 	\me Wait a minute. Does all triplestores have sparql endpoints?
-	
+
 	\gpt Not all triplestores have SPARQL endpoints. A triplestore is a type of database specifically designed for storing and managing RDF data, while a SPARQL endpoint is a web service that allows users to query an RDF graph using the SPARQL query language. A triplestore and a SPARQL endpoint are separate, but related, technologies. A triplestore provides a backend storage mechanism for RDF data, while a SPARQL endpoint provides a way for users to access and query that data. In some cases, a triplestore may include a SPARQL endpoint as part of its functionality, allowing users to query the data stored in the triplestore using SPARQL. In other cases, a triplestore may not include a SPARQL endpoint, and a separate SPARQL endpoint may need to be used in order to query the data stored in the triplestore.
-	
+
 	\me how would a sparql endpoint talk to a separate triplestore? By using lots of http requests?
-	
+
 	\gpt A SPARQL endpoint can talk to a separate triplestore by using a network protocol such as HTTP to send SPARQL queries to the triplestore and receive the results of those queries. The exact details of how this communication occurs will depend on the specific implementation of the SPARQL endpoint and the triplestore. In some cases, the SPARQL endpoint and the triplestore may be part of the same system and may be designed to communicate with each other using a custom, proprietary protocol. In other cases, the SPARQL endpoint and the triplestore may be part of separate systems and may communicate with each other using a standard network protocol such as HTTP. In either case, the goal is to allow the SPARQL endpoint to send queries to the triplestore and receive the results of those queries in a way that is efficient and transparent to the user.
-	
+
 	\me So a triplestore CAN interpret sparql queries?
-	
+
 	\gpt A SPARQL endpoint is a web service that allows users to query an RDF graph using the SPARQL query language. It provides a convenient way for users to access and query RDF data without having to directly interact with the underlying triplestore. This can be useful in a number of situations. For example, a SPARQL endpoint can provide a standard, consistent interface for querying RDF data, allowing different applications and users to access the data in the same way. Additionally, a SPARQL endpoint can provide additional features and functionality beyond what is available in a triplestore, such as support for querying multiple RDF graphs, advanced query optimization, and caching of query results. In this way, a SPARQL endpoint can provide a useful layer of abstraction between the triplestore and the applications and users that need to access the data stored in the triplestore.
-	
+
 	\me So, in a certain way it is a standardisation of the querying?
-	
+
 	\gpt Yes, you could say that a SPARQL endpoint provides a standardized interface for querying RDF data. The SPARQL query language is a standardized, widely-used language for querying RDF data, and a SPARQL endpoint provides a way for users and applications to access RDF data using this standard language. This can help to ensure that different applications and users are able to access RDF data in a consistent and predictable way, regardless of the specific triplestore or other backend technology being used to store the data. In this way, a SPARQL endpoint can help to promote interoperability and facilitate the use of RDF data in a variety of different contexts.
 
 	\dots
