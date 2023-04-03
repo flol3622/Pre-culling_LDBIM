@@ -62,15 +62,20 @@
 \infoboxa{\bfseries\large Master's dissertation submitted in order to obtain the academic degree of \\
 Master of Science in de ingenieurswetenschappen: architectuur
 }
-\infoboxb{Supervisors: 
+\infoboxb{Supervisor: 
 \begin{tabular}[t]{lll}
-    Prof.\ Dr.\ Paulus Present\\ % note syntax 'short space'
-    Prof.\ Dr.\ Ruben Verstraeten\\
-    Dr.\ Jeroen Werbrouck
+    Prof.\ ir.-arch.\ Paulus Present\\ % note syntax 'short space'
 \end{tabular}
 }
-\infoboxc{Philippe Soubrier 01702837 philippe.soubrier@ugent.be}
-\infoboxd{Academic year: 2022--2023}
+\infoboxc{Counselors: 
+\begin{tabular}[t]{lll}
+    Ir.-arch.\ Jeroen Werbrouck\\ % note syntax 'short space'
+    Prof.\ dr.\ ir.\ arch.\ Ruben Verstraeten
+\end{tabular}
+}
+
+\infoboxd{Philippe Soubrier 01702837 philippe.soubrier@ugent.be}
+\infoboxe{Academic year: 2022--2023}
 
 % ---------------------------------------------
 \begin{document}
@@ -82,23 +87,19 @@ Master of Science in de ingenieurswetenschappen: architectuur
 
 \include{chapters/shortAbstract.tex}
 \include{chapters/abstract.tex}
-% \include{chapters/firstChapter.tex}
+\include{chapters/Introduction.tex}
 \include{GPT/GPTchats.tex}
-\chapter{Introduction}
-  \section{Research questions}
-    \subsection{Linked data approach to \acs{bim}-\acs{ar}}
-    \subsection{\acs{ldbim} \acs{lod} streaming to \acs{hhd}}
-  \section{Research objectives}
   
 \chapter{State of the art}
   \section{\acs{ar} on-site approaches}
     \subsection{Autodesk xyz - Atom}
-    \subsection{Openspace AI}
+    \subsection{Openspace AI}    
 
-  \section{Ontologies}
-    \subsection{\acs{bcfowl}}
+  \section{Linked geometric data}
     \subsection{\acs{bot}}
-    \subsection{\acs{ifcowl}}    
+    \subsection{\acs{ifcowl}}
+    \subsection{Other ontologies} 
+      \subsubsection{\acs{bcfowl}}
   
   \section{\acs{ldbim} viewers}
     \subsection{ld-bim.web.app}
@@ -122,13 +123,13 @@ Master of Science in de ingenieurswetenschappen: architectuur
     \subsection{Adding data}
   \section{\acs{lod} streaming model}  
     \subsection{Culling}
-    \subsection{Redundancy avoidance with \acs{bcf}}
+    \subsection{Redundancy avoidance with \acs{bcf} history}
   \section{Querying}
     \subsection{Front-end}
     \subsection{Back-end}
   \section{Rendering}
     \subsection{Three.js}
-    \subsection{Shader}
+    \subsection{Shaders}
 
 \chapter{Website}
   \section{Setup}
@@ -145,6 +146,7 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \chapter*{List of Acronyms}
 \begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
   \acro{ar}[AR]{Augmented Reality}
+  \acro{aec}[AEC]{Architecture, Engineering and Construction}
   \acro{bcf}[BCF]{\acs{bim} Collaboration Format}
   \acro{bcfowl}[bcfOWL]{\acs{bim} Collaboration Format Ontology}
   \acro{bim}[BIM]{Building Information Modeling}

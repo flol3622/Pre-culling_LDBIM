@@ -73,6 +73,7 @@
 \def\infoboxb#1{\def\@infoboxb{#1}}
 \def\infoboxc#1{\def\@infoboxc{#1}}
 \def\infoboxd#1{\def\@infoboxd{#1}}
+\def\infoboxe#1{\def\@infoboxe{#1}}
 
 % Initialize new commands as 'empty'
 \def\@thetitle{}
@@ -81,6 +82,7 @@
 \def\@infoboxb{}
 \def\@infoboxc{}
 \def\@infoboxd{}
+\def\@infoboxe{}
 
 % Define lengths based on UGent document grid
 % See: https://styleguide.ugent.be/basic-principles/grid-and-layout.html
@@ -170,6 +172,14 @@
                 \@infoboxd
             \end{minipage}%}
         \fi
+
+        \ifx\@infoboxe\empty\else % ony put box if not empty
+        \hskip\gridunit % left margin of infobox
+        %\fbox{%
+        \begin{minipage}[b]{\subpaperwidth-3\gridunit} % right margin of 1
+            \@infoboxe
+        \end{minipage}%}
+    \fi
 
         \baselineskip0pt\mystrut[-1]
     \end{minipage}
