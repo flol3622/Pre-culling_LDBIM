@@ -50,7 +50,7 @@
 
 % styling table of contents
 % \setcounter{tocdepth}{4}
-% \setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{4}
 
 
 % ---------------------------------------------
@@ -81,63 +81,21 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \begin{document}
 \maketitle
 \renewcommand{\ULthickness}{1pt}
-{\hypersetup{hidelinks}\tableofcontents} % hide link color in toc
-\listoffigures
+
+% hide link color in toc and list of figures
+{\hypersetup{hidelinks}
+  \tableofcontents
+  \listoffigures
+}
+
 \newpage
 
 \include{chapters/shortAbstract.tex}
 \include{chapters/abstract.tex}
 \include{chapters/Introduction.tex}
-\include{GPT/GPTchats.tex}
-  
-\chapter{State of the art}
-  \section{\acs{ar} on-site approaches}
-    \subsection{Autodesk xyz - Atom}
-    \subsection{Openspace AI}    
-
-  \section{Linked geometric data}
-    \subsection{\acs{bot}}
-    \subsection{\acs{ifcowl}}
-    \subsection{Other ontologies} 
-      \subsubsection{\acs{bcfowl}}
-  
-  \section{\acs{ldbim} viewers}
-    \subsection{ld-bim.web.app}
-
-  \section{Rendering optimizations}
-    \subsection{Culling algorithms}
-      \subsubsection{Bounding Box Culling}
-      \subsubsection{Frustum Culling}
-      \subsubsection{Octree Culling}
-      \subsubsection{Quadtree Culling}
-      \subsubsection{Spatial Hashing}
-      \subsubsection{Spatial Partitioning}
-      \subsubsection{Visibility Culling}
-      \subsubsection{Z-Buffer Culling}
-      \subsubsection{Coherent Hierarchical Culling}
-    \subsection{Qonic}
-
-\chapter{Methodology}
-  \section{\acs{rdf} data}
-    \subsection{Existing data}
-    \subsection{Adding data}
-  \section{\acs{lod} streaming model}  
-    \subsection{Culling}
-    \subsection{Redundancy avoidance with \acs{bcf} history}
-  \section{Querying}
-    \subsection{Front-end}
-    \subsection{Back-end}
-  \section{Rendering}
-    \subsection{Three.js}
-    \subsection{Shaders}
-
-\chapter{Website}
-  \section{Setup}
-    \subsection{Software}
-    \subsection{Hardware}
-  \section{User interface}
-
-\chapter{Results}
+\include{chapters/StateOfTheArt.tex}
+\include{chapters/CullingApproaches.tex}
+\include{chapters/Setup.tex}
 
 
 % \appendix
@@ -145,22 +103,26 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \clearpage
 \chapter*{List of Acronyms}
 \begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
-  \acro{ar}[AR]{Augmented Reality}
   \acro{aec}[AEC]{Architecture, Engineering and Construction}
+  \acro{ar}[AR]{Augmented Reality}
   \acro{bcf}[BCF]{\acs{bim} Collaboration Format}
   \acro{bcfowl}[bcfOWL]{\acs{bim} Collaboration Format Ontology}
   \acro{bim}[BIM]{Building Information Modeling}
   \acro{bot}[BOT]{Building Topology Ontology}
   \acro{chc}[CHC]{Coherent Hierarchical Culling algorithm}
+  \acro{fog}[FOG]{File Ontology for Geometry formats}
+  \acro{gis}[GIS]{Geographic Information System}
   \acro{gltf}[GLTF]{GL Transmission Format}
   \acro{hhd}[HHD]{Hand Held Device}
   \acro{ifc}[IFC]{Industry Foundation Classes}
   \acro{ifcowl}[ifcOWL]{Industry Foundation Classes Ontology}
   \acro{ldbim}[LDBIM]{Linked Data \acs{bim}}
   \acro{lod}[LOD]{Level of Detail}
+  \acro{omg}[OMG]{Object Management Group}
   \acro{owl}[OWL]{Web Ontology Language}
   \acro{rdf}[RDF]{Resource Description Framework}
   \acro{rdfs}[RDFS]{Resource Description Framework Schema}
+  \acro{sdk}[SDK]{Software Development Kit}
   \acro{sparql}[SPARQL]{SPARQL Protocol and RDF Query Language}
 \end{acronym}
 

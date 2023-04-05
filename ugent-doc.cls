@@ -15,7 +15,7 @@
 \SetupKeyvalOptions{family=ugd,prefix=ugd@} %UGentArticle
 
 % Declare the class specific options
-\DeclareStringOption[eb]{faculty}[eb]
+\DeclareStringOption[ea]{faculty}[ea]
 \DeclareStringOption[en]{language}[en]
 \DeclareStringOption[article]{doctype}[article]
 \DeclareBoolOption[true]{sftitles} % Default: true
