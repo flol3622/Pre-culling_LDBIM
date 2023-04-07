@@ -12,12 +12,12 @@
 
 % -> Extend of \ac{bim} geometry?
 % -> Complexity of \ac{bim} geometry?
-The 3D model of a building consists of a multitude of sub-models, describing objects for all the different stakeholders participating in the project. Some describe very large objects, and some very small parts. Both can be defined in their most simple and abstract form or have an intricate and complex geometry. As a basic example, can a door simply be defined as a box, or up to the level of the screw-thread for the hinge system. The level of abstraction is here described as the \ac{lod} and is most of the time pre-selected for the needs of a \ac{bim} model, and is applied throughout a single model.
+The 3D model of a building consists of a multitude of sub-models, describing objects for all the different stakeholders participating in the project. Some describe very large objects, and some very small parts. Both can be defined in their most simple and abstract form or have an intricate and complex geometry. As a basic example, can a door simply be defined as a box, or up to the level of the screw-thread for the hinge system. The level of abstraction is here described as the \ac{lod}, it is most of the time pre-selected for the needs of a \ac{bim} model, and is applied throughout a single model.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/BIM grafiek.png}
-    \caption{Evolution of \ac{lod} during the life-cycle of a building.}
+    \caption{Evolution of \acs{lod} during the life-cycle of a building.}
     \label{fig:bimGraph}
 \end{figure}
 
@@ -67,19 +67,23 @@ Figure~\ref{fig:firstIdea} illustrates the basic idea of this thesis. Being the 
 \subsection[Can \acs{ldbim} be culled?]{To which extent can \acs{ldbim} geometry be culled \\
     to be streamed to lightweight viewers?}
 % -> What can be culled exactly?
-This thesis focuses on cumputing with data snippets or triples inside a \ac{ldbim} model, not wihtin. Meaning that the smallest unit of data that can be culled is the one described is one triple, in the most likely scenario: a single \ac{lod} of a single element. It implies that culling thechniques such as back-face will not be handled in this thesis, and will be left to the viewer itself, not the data it receives. It also implies that geometry is defined and separated at the object-level.
+This thesis focuses on cumputing with data snippets or triples inside a \ac{ldbim} model, not wihtin. Meaning that the smallest unit of data that can be culled is the one described in one triple, in the most likely scenario: a single \ac{lod} of a single element. It implies that geometry is defined and separated at the object-level. It also implies that culling thechniques such as back-face culling will not be handled in this thesis, and will be left to the viewer itself, not the database.
 
 % -> What needs to be streamed?
-Which semantic of the model will dictate the use of certain filter? Is part of the question. Basic filtering steps 
+Which snippets of data are needed by the viewer? Is part of the question. The basic needs of the viewer consists firstly of the geometry itself, selecting the right geometry format for the application as well as the additional visual information such as color, texture, etc. Secondly, the identifier of each element is of crucial importance to maintain the link to other semantic ressources in the graph. Enabling the viewer to retrieve those ressources for a multitude of usecases. Transforming it into a user-friendly visual query tool.
+
 % -> What is the impact of culling on the viewing experience?
+The impact of the culling on the performance of the viewer will greatly determine the mutl
 
 \subsection[Can existing semantic be used?]{Can existing semantic and ontologies be used\\
     to feed possible culling algorithms?}
 -> What are ontologies?
 
--> Can GIS ontologies be used too?
+% -> What are the advantages of using ontologies?
+The 
 
--> What are the advantages of using ontologies?
+% -> Can GIS ontologies be used too?
+
 
 \section{Research objectives}
 \subsection[Advantages of LDBIM]{Bring forward the advantages of \acs{ldbim} for visualization of big 3D models}
