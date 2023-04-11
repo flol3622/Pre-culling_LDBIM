@@ -1,4 +1,30 @@
 \chapter{Introduction}
+\section{Linked Data}
+-> what is linked data
+
+-> what is a graph
+
+\subsection{RDF and triples}
+-> what is a triple (subject, predicate, object)
+
+-> what is a turtle file
+
+-> what is an rdf file
+
+\subsection{Ontologies and reasoning}
+-> what is an ontology
+
+-> what is inference
+
+-> what is a reasoner
+
+\subsection{Triplestores and SPARQL}
+-> what is a triplestore
+
+-> what is SPARQL
+
+-> what is a SPARQL endpoint
+
 \section{Context}
 \subsection{3D viewers}
 -> Applications?
@@ -12,11 +38,15 @@
 
 % -> Extend of \ac{bim} geometry?
 % -> Complexity of \ac{bim} geometry?
+\enquote{
+    In recent years, there has been a shift from vision to realization regarding the use of Building Information Models (BIM) within the architecture, engineering and construction (AEC) industries. Using modern modeling tools, such as Revit Architecture, ArchiCAD or Tekla Structures, the content produced by architects, designers and engineers has evolved from traditional 2D-drawings, sketches and written specifications to parametric, object-oriented 3D-models embedded with information to describe any building or facility in detail. As a digital representation of the physical and functional characteristics of a building, a BIM serves as a repository of information supporting a multitude of applications along the design and construction processes, including cost-estimation, energy analysis and production planning.
+} \cite{Eastman2008}
+
 The 3D model of a building consists of a multitude of sub-models, describing objects for all the different stakeholders participating in the project. Some describe very large objects, and some very small parts. Both can be defined in their most simple and abstract form or have an intricate and complex geometry. As a basic example, can a door simply be defined as a box, or up to the level of the screw-thread for the hinge system. The level of abstraction is here described as the \ac{lod}, it is most of the time pre-selected for the needs of a \ac{bim} model, and is applied throughout a single model.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/BIM grafiek.png}
+    \input{figures/diagrams/lodEvolution.tex}
     \caption{Evolution of \acs{lod} during the life-cycle of a building.}
     \label{fig:bimGraph}
 \end{figure}
@@ -24,7 +54,9 @@ The 3D model of a building consists of a multitude of sub-models, describing obj
 As shown in Figure~\ref{fig:bimGraph}, a standard BIM workflow goes through multiple phases each with their associated model and \ac{lod}. The \ac{lod} is a very important concept in the \ac{aec} industry, as it allows for a very efficient workflow. Approaching the modelling step from a top-down perspective, starting with rougher geometries describing the rougher ideas of a concept model and evoluting to a more refined model for the construction phase. As last and longest standing model, can a higher \ac{lod} be used to describe subtle changes in the evolution of a building.
 
 This amount of data, both accounting for the \\
--> Some data BB models
+\textcolor{red}{
+    -> Some data BB models
+}
 
 \subsection{\acs{ldbim}}
 % -> ! Focus on geometry
@@ -52,16 +84,19 @@ Although most office computers used in the \ac{aec} industry are powerful enough
 % -> What is the possible solution? (Culling algorithms)
 % -> Why the need for research questions?
 % (culling algorithms are not new, always progress, see later)-
+-> Taking advantage of database approach instead of file to avoid excess storage on high computational tasks
+
 It can be inferred from \ref{subsec:computingPower} that filtering is necessary in order to visualize the geometry of a \ac{ldbim} model, due to its complexity and size. This filtering step, as shown in Figure~\ref{fig:firstIdea}, is also known as culling in 3D computer graphics. Culling is the process of removing objects, or parts of objects, from the scene that are not visible to the user. This is done to reduce the amount of data that needs to be processed and stored. Implementing such technology in the context of \ac{ldbim} is the proposal of this thesis. The main goal being the introduction of similar algorithms within this context. As culling algorithms are not new and part of a field of research in continuous expansion.
 
 The research questions are therefore focused on the feasibility of this introduction. And propose a set of possible solutions tailored to this specific problem, while highlighting possibilities for future research and specific use cases.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.4\textwidth]{figures/firstIdea.png}
+    \input{figures/diagrams/firstIdea.tex}
     \caption{Basic principle}
     \label{fig:firstIdea}
 \end{figure}
+
 Figure~\ref{fig:firstIdea} illustrates the basic idea of this thesis. Being the extra step inside the communication between a user, here represented as a \ac{hhd}, and a database storing the model. A \ac{hhd} has been chosen to illustrate a low-powered device used in the field, that requires a lightweight 3D viewer to visualize and explore the digital twin of the building. The \ac{hhd} is assumed to have no knowledge of the \ac{ldbim} model, and only receives the geometry that is required to be displayed from the database. On the other hand, the database is assumed to have, or access to, all the knowledge of the model and the needed semantic to perform the culling.
 
 \subsection[Can \acs{ldbim} be culled?]{To which extent can \acs{ldbim} geometry be culled \\
@@ -80,7 +115,7 @@ The impact of the culling on the performance of the viewer will greatly determin
 -> What are ontologies?
 
 % -> What are the advantages of using ontologies?
-The 
+The
 
 % -> Can GIS ontologies be used too?
 
