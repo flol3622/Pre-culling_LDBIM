@@ -2791,10 +2791,25 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Eastman2008</bcf:citekey>
-    <bcf:citekey order="2">UnityWebGL</bcf:citekey>
-    <bcf:citekey order="3">Eastman2008</bcf:citekey>
-    <bcf:citekey order="4">UnityWebGL</bcf:citekey>
+    <bcf:citekey order="2">Werbrouck2018</bcf:citekey>
+    <bcf:citekey order="3">ldbimGroup</bcf:citekey>
+    <bcf:citekey order="4">Johansson2015</bcf:citekey>
+    <bcf:citekey order="5">Johansson2015</bcf:citekey>
+    <bcf:citekey order="6">Johansson2015</bcf:citekey>
+    <bcf:citekey order="7">Werbrouck2018</bcf:citekey>
+    <bcf:citekey order="8">Johansson2015</bcf:citekey>
+    <bcf:citekey order="9">Johansson2015</bcf:citekey>
+    <bcf:citekey order="10">Johansson2015</bcf:citekey>
+    <bcf:citekey order="11">Johansson2009</bcf:citekey>
+    <bcf:citekey order="12">UnityWebGL</bcf:citekey>
+    <bcf:citekey order="13">Johansson2015</bcf:citekey>
+    <bcf:citekey order="14">Johansson2015</bcf:citekey>
+    <bcf:citekey order="15">Johansson2015</bcf:citekey>
+    <bcf:citekey order="16">Werbrouck2018</bcf:citekey>
+    <bcf:citekey order="17">ldbimGroup</bcf:citekey>
+    <bcf:citekey order="18">Johansson2015</bcf:citekey>
+    <bcf:citekey order="19">Johansson2009</bcf:citekey>
+    <bcf:citekey order="20">UnityWebGL</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

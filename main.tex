@@ -54,9 +54,14 @@
 
 % hbox warning margin
 \hfuzz=2pt
+
+% for diagrams using Mathcha
 \usepackage{tikz}
 \usepackage{pgf-umlsd}
 \usepgflibrary{arrows} % for pgf-uml
+
+% for tables
+\usepackage{booktabs}
 
 % ---------------------------------------------
 
@@ -91,6 +96,8 @@ Master of Science in de ingenieurswetenschappen: architectuur
 {\hypersetup{hidelinks}
   \tableofcontents
   \listoffigures
+  \let\clearpage\relax
+  \listoftables
 }
 
 \newpage
