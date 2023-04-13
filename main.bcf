@@ -2798,21 +2798,23 @@
     <bcf:citekey order="7">Johansson2015</bcf:citekey>
     <bcf:citekey order="8">CullingPrinciples</bcf:citekey>
     <bcf:citekey order="9">w3c</bcf:citekey>
-    <bcf:citekey order="10">Johansson2015</bcf:citekey>
+    <bcf:citekey order="10">w3cInfering</bcf:citekey>
     <bcf:citekey order="11">Johansson2015</bcf:citekey>
     <bcf:citekey order="12">Johansson2015</bcf:citekey>
-    <bcf:citekey order="13">Johansson2009</bcf:citekey>
-    <bcf:citekey order="14">UnityWebGL</bcf:citekey>
-    <bcf:citekey order="15">Johansson2015</bcf:citekey>
+    <bcf:citekey order="13">Johansson2015</bcf:citekey>
+    <bcf:citekey order="14">Johansson2009</bcf:citekey>
+    <bcf:citekey order="15">UnityWebGL</bcf:citekey>
     <bcf:citekey order="16">Johansson2015</bcf:citekey>
     <bcf:citekey order="17">Johansson2015</bcf:citekey>
-    <bcf:citekey order="18">Werbrouck2018</bcf:citekey>
-    <bcf:citekey order="19">ldbimGroup</bcf:citekey>
-    <bcf:citekey order="20">Johansson2015</bcf:citekey>
-    <bcf:citekey order="21">CullingPrinciples</bcf:citekey>
-    <bcf:citekey order="22">w3c</bcf:citekey>
-    <bcf:citekey order="23">Johansson2009</bcf:citekey>
-    <bcf:citekey order="24">UnityWebGL</bcf:citekey>
+    <bcf:citekey order="18">Johansson2015</bcf:citekey>
+    <bcf:citekey order="19">Werbrouck2018</bcf:citekey>
+    <bcf:citekey order="20">ldbimGroup</bcf:citekey>
+    <bcf:citekey order="21">Johansson2015</bcf:citekey>
+    <bcf:citekey order="22">CullingPrinciples</bcf:citekey>
+    <bcf:citekey order="23">w3c</bcf:citekey>
+    <bcf:citekey order="24">w3cInfering</bcf:citekey>
+    <bcf:citekey order="25">Johansson2009</bcf:citekey>
+    <bcf:citekey order="26">UnityWebGL</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
