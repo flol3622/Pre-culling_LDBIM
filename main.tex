@@ -3,7 +3,9 @@
 \renewcommand{\baselinestretch}{1.15}
 
 \usepackage{fontspec}
-\setmainfont{SourceSerifPro-Light.ttf}
+\setmainfont[
+  ItalicFont=SourceSerifPro-LightItalic.ttf
+]{SourceSerifPro-Light.ttf}
 \setsansfont{WorkSans-Regular.ttf}
 \usepackage[english]{babel}
 % \usepackage{libertine}
@@ -33,19 +35,15 @@
 % Ugent specific
 \usepackage[colorlinks=true, allcolors=ugentblue]{hyperref} % Hyperreferences
 \usepackage[parfill]{parskip} % Whitespace between paragraphs and no indentation
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+% code snippets
+\usepackage{minted}
 \definecolor{mygray}{rgb}{0.95, 0.95, 0.95}
-\lstset{ %
-  backgroundcolor=\color{mygray},  % choose the background color
-  breaklines=true,                 % automatic line breaking only at whitespace
-  captionpos=b,                    % sets the caption-position to bottom
-  commentstyle=\color{mygreen},    % comment style
-  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  keywordstyle=\color{blue},       % keyword style
-  stringstyle=\color{mymauve},
-  basicstyle=\footnotesize\ttfamily
+\setminted{
+  breaklines=true,
+  breakanywhere=true,
+  fontsize=\footnotesize,
+  bgcolor={mygray}
 }
 
 % styling table of contents
@@ -91,7 +89,7 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \begin{document}
 \maketitle
 \renewcommand{\ULthickness}{1pt}
-
+\normalem
 % hide link color in toc and list of figures
 {\hypersetup{hidelinks}
   \tableofcontents
@@ -136,6 +134,8 @@ Master of Science in de ingenieurswetenschappen: architectuur
   \acro{rdfs}[RDFS]{Resource Description Framework Schema}
   \acro{sdk}[SDK]{Software Development Kit}
   \acro{sparql}[SPARQL]{SPARQL Protocol and RDF Query Language}
+  \acro{uml}[UML]{Unified Modelling Language}
+  \acro{w3c}[W3C]{World Wide Web Consortium}
 \end{acronym}
 
 \printbibliography[nottype=web_page, heading=bibintoc,title={References}]

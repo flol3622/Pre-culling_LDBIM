@@ -2,8 +2,10 @@
 From 2D, to 3D and now to \acs{bim}. The evolution of the \ac{aec} industry has been a long and complex one. The introduction of 3D modeling was the first major step in the industry's evolution, as it allowed for more accurate representations of buildings. No longer solely relying on 2D drawings, a 3D model of a building can be used to create various representations, from a simple 2D floor plan to a full 3D model. Following the adoption of 3D modeling, the implementation of \ac{bim} emerged as another significant milestone. \ac{bim} adds an extra layer of information on top of the 3D model. As the digital representation of a building's physical and functional characteristics, BIM serves as a repository for semantics originating from various applications throughout the design and construction processes, including cost estimation, energy analysis, and production planning.\\
 -> needs refs to support point (about infustries in AEC)
 
+\label{sec:intro}
 However, as mentioned in \cite{Werbrouck2018}, the next chalenge for the \ac{aec} industry is related to the ecosystem of current \ac{bim} softwares, which remains closed off to other disciplines. This data management challenge is currently being adressed by the Linked Building Data Community Group and other research entities, such as the University of Ghent, through the use of Web of Data technologies \footcite{ldbimGroup}. This emerging milestone will be discussed in this thesis under the term \ac{ldbim}.
 
+\subsubsection*{Proposal}
 Each of these evolutions has brought, and will continue to bring, a significant amount of data together. This volume is expected to grow exponentially in the future as the industry shifts towards a more digital approach and opens up to other stakeholders. The data graphs will not only expand in terms of semantics but also in geometry. This makes visual querying, or simply put, 3D exploration of models, an increasingly difficult task. Especially when looking at newer devices used in the industry such as mobile phones, and tablet, which are becoming more and more powerful, but still have limited computational resources in comparision to office computers.
 
 To bring this volume of geometric data in perspective, Table \ref{tab:sizeModels} shows the size of the test-models used in \cite{Johansson2015} , a study from 2015 on the performance of \ac{bim} viewers for large models with the following description:
@@ -31,28 +33,36 @@ These models demonstrate how basic \ac{bim} models can already contain a signifi
 \begin{figure}[h]
 	\centering
 	\input{figures/diagrams/firstIdea.tex}
-	\caption{Basic concept}
+	\caption{Sequence diagram - basic concept}
 	\label{fig:firstIdea}
 \end{figure}
--> add explanation
+
+Figure \ref{fig:firstIdea} illustrates the basic idea of this thesis, presenting an extra step in the communication between a user, represented here by a \ac{hhd}, and a database storing the model. An \ac{hhd} has been chosen to exemplify a low-powered device used in the field, which requires a lightweight 3D viewer to visualize and explore the digital twin of the building. The \ac{hhd} is assumed to have no knowledge of the \ac{ldbim} model and only receives the geometry that needs to be displayed from the database. On the other hand, the database is assumed to possess, or have access to, all the knowledge of the model and the necessary semantics to perform the culling.
+
 \begin{figure}[h]
 	\centering
-	\input{figures/diagrams/firstIdea.tex}
-	\caption{Illustration of culling principle, based on ...}
+	\input{figures/diagrams/cullingPrinciple.tex}
+	\caption{Illustration of culling principle, based on \cite{CullingPrinciples}}
 	\label{fig:cullingPrinciple}
 \end{figure}
--> add explanation
+
+Figure \ref{fig:cullingPrinciple} showcases multiple culling techniques to give an idea of what culling means. The first technique, \emph{frustum culling}, is used to determine which objects are visible to the user. The second technique, \emph{occlusion culling}, is used to determine which objects are occluded by or behind other objects. And lastly, \emph{back-face culling}, is used to determine which faces, and not whole objects, are facing away from the user.
 
 \section{Linked Data}
--> what is linked data \cite{Werbrouck2018}\\
--> what is a graph \url{https://www.w3.org/standards/semanticweb/}\\
--> Why the need / What are the advantages\\
--> explain that this will be a very short introduction
+% -> what is linked data \cite{Werbrouck2018}\\
+% -> what is a graph \url{https://www.w3.org/standards/semanticweb/}\\
+% -> Why the need / What are the advantages\\
+% -> explain that this will be a very short introduction
+
+As mentioned in the \nameref{sec:intro}, the evolution from \ac{bim} to \ac{ldbim} is an evolution of the data \emph{management} layer. \enquote{Linked Data}, as stated by the \ac{w3c}, is a collection of interrelated datasets on the Web, formatted in a standard way that is accessible and manageable by Semantic Web tools. The same applies to the relationships among them.\footcite{w3c} The following collection of Semantic Web technologies provides the required environment to achieve this goal.
 
 \subsection{RDF and triples}
--> what is a triple (subject, predicate, object)\\
--> what is a turtle file\\
--> what is an rdf file
+% -> what is a triple (subject, predicate, object)\\
+% -> what is a turtle file\\
+% -> what is an rdf file
+At the origin of this
+
+\inputminted{turtle}{figures/snippets/rdfSample.ttl}
 
 \subsection{Ontologies and reasoning}
 -> what is an ontology\\
@@ -64,22 +74,12 @@ These models demonstrate how basic \ac{bim} models can already contain a signifi
 -> what is SPARQL\\
 -> what is a SPARQL endpoint
 
-\section{\acs{ldbim}}
--> Own definition of \ac{ldbim}
--> how translated
-
-\section{Context}
-\subsection{3D viewers}
--> Applications?\\
--> Who uses them?\\
--> What for?
-
-\subsection{\acs{bim} geometry} \label{subsec:bimGeometry}
+\subsection{Complexity of the graph}
 % -> What is \ac{bim}? (short)\\
 % -> Extend of \ac{bim} geometry?\\
 % -> Complexity of \ac{bim} geometry?
 -> new start
-
+\subsubsection{\ac{bim} geometry} \label{subsec:bimGeometry}
 The 3D model of a building consists of a multitude of sub-models, describing objects for all the different stakeholders participating in the project. Some describe very large objects, and some very small parts. Both can be defined in their most simple and abstract form or have an intricate and complex geometry. As a basic example, can a door simply be defined as a box, or up to the level of the screw-thread for the hinge system. The level of abstraction is here described as the \ac{lod}, it is most of the time pre-selected for the needs of a \ac{bim} model, and is applied throughout a single model.
 
 \begin{figure}[h]
@@ -99,7 +99,7 @@ This amount of data, both accounting for the
 --> table with data\\
 --> final conclusion about LOD here applicable
 
-\subsection{\acs{ldbim}}
+\subsubsection{\acs{ldbim} geometry}
 % -> ! Focus on geometry\\
 % -> Context od enrichment and complexity\\
 -> Own definition of \ac{ldbim}\\
@@ -107,7 +107,7 @@ This amount of data, both accounting for the
 
 The interconnectivity of semantics can also be applied to geometry descriptions. Which could allow the co-existence of multiple \ac{lod}s in a single model. Besides storing the evolution of a single element's geometry, it allows the linking of the different \ac{lod}s to each other. In contrary to standard \ac{bim} models, as explained in \ref{subsec:bimGeometry}.
 
-\subsection{Computing power dilemma} \label{subsec:computingPower}
+\subsubsection{Computing power dilemma} \label{subsec:computingPower}
 The enrichment of the \ac{ldbim}-graph also comes with a cost. The amount of data that needs to be stored and processed is much larger than a standard \ac{bim} model. Viewers greatly suffer from enrichment as most standard applications require the full model to be loaded in memory.
 
 % -> What is the hardware problem?
@@ -125,16 +125,9 @@ Although most office computers used in the \ac{aec} industry are powerful enough
 -> Taking advantage of database approach instead of file to avoid excess storage on high computational tasks\\
 -> even before BIM viewer itself as in \cite{Johansson2015}
 
-It can be inferred from \ref{subsec:computingPower} that filtering is necessary in order to visualize the geometry of a \ac{ldbim} model, due to its complexity and size. This filtering step, as shown in Figure~\ref{fig:firstIdea}, is also known as culling in 3D computer graphics. Culling is the process of removing objects, or parts of objects, from the scene that are not visible to the user. This is done to reduce the amount of data that needs to be processed and stored. Implementing such technology in the context of \ac{ldbim} is the proposal of this thesis. The main goal being the introduction of similar algorithms within this context. As culling algorithms are not new and part of a field of research in continuous expansion.
+It can be inferred from \ref{subsec:computingPower} that filtering is necessary in order to visualize the geometry of a \ac{ldbim} model, due to its complexity and size. This filtering step, as shown in Figure \ref{fig:firstIdea}, is also known as culling in 3D computer graphics. Culling is the process of removing objects, or parts of objects, from the scene that are not visible to the user. This is done to reduce the amount of data that needs to be processed and stored. Implementing such technology in the context of \ac{ldbim} is the proposal of this thesis. The main goal being the introduction of similar algorithms within this context. As culling algorithms are not new and part of a field of research in continuous expansion.
 
 The research questions are therefore focused on the feasibility of this introduction. And propose a set of possible solutions tailored to this specific problem, while highlighting possibilities for future research and specific use cases.
-
-\begin{figure}[h]
-	\centering
-	\input{figures/diagrams/firstIdea.tex}
-	\caption{Basic principle}
-	\label{fig:firstIdea}
-\end{figure}
 
 Figure~\ref{fig:firstIdea} illustrates the basic idea of this thesis. Being the extra step inside the communication between a user, here represented as a \ac{hhd}, and a database storing the model. A \ac{hhd} has been chosen to illustrate a low-powered device used in the field, that requires a lightweight 3D viewer to visualize and explore the digital twin of the building. The \ac{hhd} is assumed to have no knowledge of the \ac{ldbim} model, and only receives the geometry that is required to be displayed from the database. On the other hand, the database is assumed to have, or access to, all the knowledge of the model and the needed semantic to perform the culling.
 
