@@ -10,32 +10,12 @@
 
 flupke:room1 rdf:type bot:Zone ;
     bot:containsElement flupke:coneOBJ ;
-    bot:containsElement flupke:coneOBJlit ;
     bot:containsElement flupke:cubeGLTF ;
-    bot:containsElement flupke:cubeGLTF2 ;
-    bot:containsElement flupke:cubeGLTFlit ;
-    bot:containsElement flupke:IcosphereSTL ;
-    bot:containsElement flupke:IcosphereSTLlit .
 
 flupke:coneOBJ omg:hasGeometry flupke:coneOBJ_geometry-1 ;
     rdf:type bot:Element .
 
-flupke:coneOBJlit omg:hasGeometry flupke:coneOBJlit_geometry-1 ;
-    rdf:type bot:Element .
-
 flupke:cubeGLTF omg:hasGeometry flupke:cubeGLTF_geometry-1 ;
-    rdf:type bot:Element .
-
-flupke:cubeGLTF2 omg:hasGeometry flupke:cubeGLTF2_geometry-1 ;
-    rdf:type bot:Element .
-
-flupke:cubeGLTFlit omg:hasGeometry flupke:cubeGLTFlit_geometry-1 ;
-    rdf:type bot:Element .
-
-flupke:IcosphereSTL omg:hasGeometry flupke:IcosphereSTL_geometry-1 ;
-    rdf:type bot:Element .
-
-flupke:IcosphereSTLlit omg:hasGeometry flupke:IcosphereSTLlit_geometry-1 ;
     rdf:type bot:Element .
 
 flupke:coneOBJ_geometry-1 rdf:type omg:Geometry ;
@@ -43,12 +23,3 @@ flupke:coneOBJ_geometry-1 rdf:type omg:Geometry ;
 
 flupke:cubeGLTF_geometry-1 rdf:type omg:Geometry ;
     fog:asGltf_v1.0-gltf "https://raw.githubusercontent.com/flol3622/AR-Linked-BIM-viewer/main/public/assets/database_1/cubeGLTF.gltf"^^xsd:anyURI .
-
-flupke:cubeGLTF2_geometry-1 rdf:type omg:Geometry ;
-    fog:asGltf_v1.0-gltf "https://raw.githubusercontent.com/flol3622/AR-Linked-BIM-viewer/main/public/assets/database_1/cubeGLTF2.gltf"^^xsd:anyURI .
-
-flupke:IcosphereSTL_geometry-1 rdf:type omg:Geometry ;
-    fog:asStl_v1.0-ascii "https://raw.githubusercontent.com/flol3622/AR-Linked-BIM-viewer/main/public/assets/database_1/IcosphereSTL.stl"^^xsd:anyURI .
-
-flupke:coneOBJlit_geometry-1 rdf:type omg:Geometry ;
-    fog:asObj_v3.0-obj """# Blender 3.4.1

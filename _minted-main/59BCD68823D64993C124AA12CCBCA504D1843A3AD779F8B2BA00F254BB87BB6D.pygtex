@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{fog:}\PYG{+w}{ }\PYG{n+nv}{\PYGZlt{}https://w3id.org/fog\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{omg:}\PYG{+w}{ }\PYG{n+nv}{\PYGZlt{}https://w3id.org/omg\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{bot:}\PYG{+w}{ }\PYG{n+nv}{\PYGZlt{}https://w3id.org/bot\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{rdf:}\PYG{+w}{      }\PYG{n+nv}{\PYGZlt{}http://www.w3.org/1999/02/22\PYGZhy{}rdf\PYGZhy{}syntax\PYGZhy{}ns\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{rdfs:}\PYG{+w}{     }\PYG{n+nv}{\PYGZlt{}http://www.w3.org/2000/01/rdf\PYGZhy{}schema\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{rdf:}\PYG{+w}{      }\PYG{n+nv}{\PYGZlt{}http://www.w3.org/1999/02/22\PYGZhy{}rdf\PYGZhy{}syntax\PYGZhy{}ns\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{rdfs:}\PYG{+w}{     }\PYG{n+nv}{\PYGZlt{}http://www.w3.org/2000/01/rdf\PYGZhy{}schema\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{xsd:}\PYG{+w}{      }\PYG{n+nv}{\PYGZlt{}http://www.w3.org/2001/XMLSchema\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+\PYG{k}{@prefix}\PYG{+w}{ }\PYG{n+nn}{flupke:}\PYG{+w}{   }\PYG{n+nv}{\PYGZlt{}http://flupke.archi\PYGZsh{}\PYGZgt{}}\PYG{+w}{ }\PYG{p}{.}
+
+\PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{room1} \PYG{n+nn}{rdf}\PYG{p}{:}\PYG{n+nt}{type} \PYG{n+nn}{bot}\PYG{p}{:}\PYG{n+nt}{Zone} \PYG{p}{;}
+    \PYG{n+nn}{bot}\PYG{p}{:}\PYG{n+nt}{containsElement} \PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{coneOBJ} \PYG{p}{;}
+    \PYG{n+nn}{bot}\PYG{p}{:}\PYG{n+nt}{containsElement} \PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{cubeGLTF} \PYG{p}{;}
+
+\PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{coneOBJ} \PYG{n+nn}{omg}\PYG{p}{:}\PYG{n+nt}{hasGeometry} \PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{coneOBJ\PYGZus{}geometry\PYGZhy{}1} \PYG{p}{;}
+    \PYG{n+nn}{rdf}\PYG{p}{:}\PYG{n+nt}{type} \PYG{n+nn}{bot}\PYG{p}{:}\PYG{n+nt}{Element} \PYG{p}{.}
+
+\PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{cubeGLTF} \PYG{n+nn}{omg}\PYG{p}{:}\PYG{n+nt}{hasGeometry} \PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{cubeGLTF\PYGZus{}geometry\PYGZhy{}1} \PYG{p}{;}
+    \PYG{n+nn}{rdf}\PYG{p}{:}\PYG{n+nt}{type} \PYG{n+nn}{bot}\PYG{p}{:}\PYG{n+nt}{Element} \PYG{p}{.}
+
+\PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{coneOBJ\PYGZus{}geometry\PYGZhy{}1} \PYG{n+nn}{rdf}\PYG{p}{:}\PYG{n+nt}{type} \PYG{n+nn}{omg}\PYG{p}{:}\PYG{n+nt}{Geometry} \PYG{p}{;}
+    \PYG{n+nn}{fog}\PYG{p}{:}\PYG{n+nt}{asObj\PYGZus{}v3.0\PYGZhy{}obj} \PYG{l+s}{\PYGZdq{}https://raw.githubusercontent.com/flol3622/AR\PYGZhy{}Linked\PYGZhy{}BIM\PYGZhy{}viewer/main/public/assets/database\PYGZus{}1/coneOBJ.obj\PYGZdq{}}\PYG{p}{\PYGZca{}\PYGZca{}}\PYG{n+nn}{xsd}\PYG{p}{:}\PYG{n+nt}{anyURI} \PYG{p}{.}
+
+\PYG{n+nn}{flupke}\PYG{p}{:}\PYG{n+nt}{cubeGLTF\PYGZus{}geometry\PYGZhy{}1} \PYG{n+nn}{rdf}\PYG{p}{:}\PYG{n+nt}{type} \PYG{n+nn}{omg}\PYG{p}{:}\PYG{n+nt}{Geometry} \PYG{p}{;}
+    \PYG{n+nn}{fog}\PYG{p}{:}\PYG{n+nt}{asGltf\PYGZus{}v1.0\PYGZhy{}gltf} \PYG{l+s}{\PYGZdq{}https://raw.githubusercontent.com/flol3622/AR\PYGZhy{}Linked\PYGZhy{}BIM\PYGZhy{}viewer/main/public/assets/database\PYGZus{}1/cubeGLTF.gltf\PYGZdq{}}\PYG{p}{\PYGZca{}\PYGZca{}}\PYG{n+nn}{xsd}\PYG{p}{:}\PYG{n+nt}{anyURI} \PYG{p}{.}
+\end{Verbatim}

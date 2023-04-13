@@ -56,13 +56,20 @@ Figure \ref{fig:cullingPrinciple} showcases multiple culling techniques to give 
 
 As mentioned in the \nameref{sec:intro}, the evolution from \ac{bim} to \ac{ldbim} is an evolution of the data \emph{management} layer. \enquote{Linked Data}, as stated by the \ac{w3c}, is a collection of interrelated datasets on the Web, formatted in a standard way that is accessible and manageable by Semantic Web tools. The same applies to the relationships among them.\footcite{w3c} The following collection of Semantic Web technologies provides the required environment to achieve this goal.
 
-\subsection{RDF and triples}
+\subsection{\acs{rdf} and triples}
 % -> what is a triple (subject, predicate, object)\\
 % -> what is a turtle file\\
 % -> what is an rdf file
-At the origin of this
+At the core of the Semantic Web is \ac{rdf}, a data model for describing resources on the Web. RDF is a graph data model that consists of \emph{triples}, which are statements about a resources. A triple consists of a subject, a predicate, and an object. The subject is the resource that is being described, the predicate is the property of the subject, and the object is the value of the property. Listing \ref{lst:rdfSample} shows an example of an \ac{rdf} database described in the Turtle format.
 
-\inputminted{turtle}{figures/snippets/rdfSample.ttl}
+\begin{listing}
+	\inputminted{turtle}{figures/snippets/rdfSample.ttl}
+	\vspace{-0.7cm}
+	\caption{Example of an \ac{rdf} database in turtle format}
+	\label{lst:rdfSample}
+\end{listing}
+
+
 
 \subsection{Ontologies and reasoning}
 -> what is an ontology\\

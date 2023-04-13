@@ -13,7 +13,10 @@
 \usepackage{amsmath} % math equations
 
 % code snippets
-\setmonofont{SourceCodePro-Regular.ttf}
+\setmonofont[
+  ItalicFont=SourceCodePro-Italic.ttf,
+  BoldFont=SourceCodePro-SemiBold.ttf,
+]{SourceCodePro-Regular.ttf}
 \usepackage{listings}
 
 % transcriptions:
@@ -37,13 +40,15 @@
 \usepackage[parfill]{parskip} % Whitespace between paragraphs and no indentation
 
 % code snippets
+\usepackage{listings}
 \usepackage{minted}
 \definecolor{mygray}{rgb}{0.95, 0.95, 0.95}
 \setminted{
   breaklines=true,
   breakanywhere=true,
   fontsize=\footnotesize,
-  bgcolor={mygray}
+  bgcolor={mygray},
+  style=lovelace
 }
 
 % styling table of contents
