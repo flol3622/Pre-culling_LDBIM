@@ -69,14 +69,28 @@ At the core of the Semantic Web is \ac{rdf}, a data model for describing resourc
 	\label{lst:rdfSample}
 \end{listing}
 
+-> mathcha figure of flupke:room1 rdf:type bot:Zone ;
+bot:containsElement flupke:coneOBJ ; with minted
+
+\mintinline[bgcolor=white]{turtle}|flupke:room1|
+
+\mintinline[bgcolor=white]{turtle}|rdf:type|
+
+\mintinline[bgcolor=white]{turtle}|bot:Zone|
+
+-> bith expretion for variables as for predicates
 
 
-\subsection{Ontologies and reasoning}
--> what is an ontology\\
--> what is inference\\
--> what is a reasoner
+\subsection{Ontologies and reasoning}\label{subsec:ontologies}
+In Figure ..., we can differentiate between two types of statements: some refer to classes or properties: \mintinline{turtle}|flupke:room1|, while others refer to facts associated with them: \mintinline{turtle}|rdf:type|. The former is referred to as TBox for \enquote{terminology}, and the latter is referred to as ABox for \enquote{assertions}. The TBox is the part of the ontology that describes the classes and properties of the domain, while the ABox is the part of the ontology that describes the facts about the domain.
+
+By developing an ontology, we can describe the domain of interest and the relationships between the classes and properties. This is achieved by defining the classes and properties of the domain and their relationships. The ontology is then used to reason about the domain, allowing us to infer new facts based on the ontology and the facts we know about the domain. This is done by a reasoner, which is a software capable of performing reasoning on the ontology and associated data. The reasoner can be used to infer new facts, check if the facts we know are consistent with the ontology, and check if the ontology itself is consistent. It is often integrated with \ac{rdf} databases, also known as triplestores or graph databases.
+
+Classes, properties, and their relationships can be defined using \ac{rdfs}, which is a vocabulary for describing \ac{rdf} schemas using a basic set of constructs. As an extension of \ac{rdfs}, \ac{owl} is a vocabulary for describing ontologies using a more expressive set of constructs tailored to the needs of ontologies. Both \ac{rdfs} and \ac{owl} are considered to be formal ontologies themselves, as they describe the classes and properties of the domain of \ac{rdf}.
 
 \subsection{Triplestores and SPARQL}
+As briefly discussed in \ref{subsec:ontologies}, 
+
 -> what is a triplestore\\
 -> what is SPARQL\\
 -> what is a SPARQL endpoint
