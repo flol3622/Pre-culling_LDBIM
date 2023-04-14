@@ -46,7 +46,7 @@ Figure \ref{fig:firstIdea} illustrates the basic idea of this thesis, presenting
 	\label{fig:cullingPrinciple}
 \end{figure}
 
-Figure \ref{fig:cullingPrinciple} showcases multiple culling techniques to give an idea of what culling means. The first technique, \emph{frustum culling}, is used to determine which objects are visible to the user. The second technique, \emph{occlusion culling}, is used to determine which objects are occluded by or behind other objects. And lastly, \emph{back-face culling}, is used to determine which faces, and not whole objects, are facing away from the user.
+Figure \ref{fig:cullingPrinciple} showcases multiple culling techniques to showcase some culling principles. The first technique, \emph{frustum culling}, is used to determine which objects are visible to the user. The second technique, \emph{occlusion culling}, is used to determine which objects are occluded by or behind other objects. And lastly, \emph{back-face culling}, is used to determine which faces, and not whole objects, are facing away from the user.
 
 \section{Linked Data}
 % -> what is linked data \cite{Werbrouck2018}\\
@@ -54,124 +54,72 @@ Figure \ref{fig:cullingPrinciple} showcases multiple culling techniques to give 
 % -> Why the need / What are the advantages\\
 % -> explain that this will be a very short introduction
 
-As mentioned in the \nameref{sec:intro}, the evolution from \ac{bim} to \ac{ldbim} is an evolution of the data \emph{management} layer. \enquote{Linked Data}, as stated by the \ac{w3c}, is a collection of interrelated datasets on the Web, formatted in a standard way that is accessible and manageable by Semantic Web tools. The same applies to the relationships among them.\footcite{w3c} The following collection of Semantic Web technologies provides the required environment to achieve this goal.
+As mentioned in the \nameref{sec:intro}, the evolution from \ac{bim} to \ac{ldbim} is an evolution of the data \emph{management} layer. \enquote{Linked Data}, as stated by the \ac{w3c}, is a collection of interrelated datasets on the Web, formatted in a standard way that is accessible and manageable by Semantic Web tools. The same applies to the relationships among them.\footcite{w3c} The following collection of Semantic Web technologies explores the required environment to achieve this goal.
 
 \subsection{\acs{rdf} and triples}
-% -> what is a triple (subject, predicate, object)\\
-% -> what is a turtle file\\
-% -> what is an rdf file
-At the core of the Semantic Web is \ac{rdf}, a data model for describing resources on the Web. RDF is a graph data model that consists of \emph{triples}, which are statements about a resources. A triple consists of a subject, a predicate, and an object. The subject is the resource that is being described, the predicate is the property of the subject, and the object is the value of the property. Listing \ref{lst:rdfSample} shows an example of an \ac{rdf} database described in the Turtle format.
 
-\begin{listing}
+\begin{listing}[h]
 	\inputminted{turtle}{figures/snippets/rdfSample.ttl}
 	\vspace{-0.7cm}
 	\caption{Example of an \ac{rdf} database in turtle format}
 	\label{lst:rdfSample}
 \end{listing}
 
--> mathcha figure of flupke:room1 rdf:type bot:Zone ;
-bot:containsElement flupke:coneOBJ ; with minted
+At the core of the Semantic Web is the \ac{rdf}, a data model for describing resources on the Web. RDF is a graph data model that consists of \emph{triples}, which are statements about resources. A triple consists of a subject, a predicate, and an object. The subject is the resource that is being described, the predicate is the property of the subject, and the object is the value of the property. Both the predicate and the object can, in turn, become the subjects of other triples. Listing \ref{lst:rdfSample} shows an example of an \ac{rdf} database described in the Turtle format.
 
-\mintinline[bgcolor=white]{turtle}|flupke:room1|
 
-\mintinline[bgcolor=white]{turtle}|rdf:type|
+\begin{figure}[h]
+	\centering
+	\input{figures/diagrams/triple.tex}
+	\caption{Triple structure}
+	\label{fig:triple}
+\end{figure}
 
-\mintinline[bgcolor=white]{turtle}|bot:Zone|
+The basic, yet versatile, structure of a triple is illustrated in Figure \ref{fig:triple}. Both the subject and object are considered as nodes in the data graph, and they are linked by the predicate, which is considered as an edge. Multiple triples can thus create and link multiple nodes or enrich a connection between two by creating new edges between them. Each element contains a single resource that can be one of the three types: a \acs{uri}, a literal, or a blank node. A \ac{uri} points to a resource on the web and, as its name states, is unique and unambiguous, thus enabling queries and reasoning of the same nature. A literal is a value, and a blank node is an anonymous resource, sometimes used as a placeholder when the exact resource is not known or not necessary to specify. Due to their nature, a subject must be either a \ac{uri} or a blank node, a predicate exclusively a \ac{uri}, and the object may be any of the three types. As \ac{uri} descriptions can be very long, a prefix can be used to shorten them. This is illustrated in Listing \ref{lst:rdfSample} with the \mintinline{turtle}|@prefix bot: <https://w3id.org/bot#>|, which declares that \mintinline{turtle}|bot:Zone| refers, in its full length, to the address \mintinline{turtle}|<https://w3id.org/bot#Zone>|.
 
--> bith expretion for variables as for predicates
-
+This basic concept can be extrapolated to describe and store any kind of data. The advantage for the \ac{aec} industry would be to allow any stakeholders to describe and enrich the knowledge base of a building.
 
 \subsection{Ontologies and reasoning}\label{subsec:ontologies}
-In Figure ..., we can differentiate between two types of statements: some refer to classes or properties: \mintinline{turtle}|flupke:room1|, while others refer to facts associated with them: \mintinline{turtle}|rdf:type|. The former is referred to as TBox for \enquote{terminology}, and the latter is referred to as ABox for \enquote{assertions}. The TBox is the part of the ontology that describes the classes and properties of the domain, while the ABox is the part of the ontology that describes the facts about the domain.
+When looking at Listing \ref{lst:rdfSample}, we can differentiate between two types of statements: some refer to classes or properties: \mintinline{turtle}|flupke:room1|, while others refer to facts associated with them: \mintinline{turtle}|rdf:type|. The former is referred to as TBox for \enquote{terminology}, and the latter is referred to as ABox for \enquote{assertions}. The TBox is the part of the ontology that describes the classes and properties of the domain, while the ABox is the part of the ontology that describes the facts about the domain.
 
 By developing an ontology, we can describe the domain of interest and the relationships between the classes and properties. This is achieved by defining the classes and properties of the domain and their relationships. The ontology is then used to reason about the domain, allowing us to infer new facts based on the ontology and the facts we know about the domain. This is done by a reasoner, which is a software capable of performing reasoning on the ontology and associated data. The reasoner can be used to infer new facts, check if the facts we know are consistent with the ontology, and check if the ontology itself is consistent.\footcite{w3cInfering} It is often integrated with \ac{rdf} databases, also known as triplestores or graph databases.
 
 Classes, properties, and their relationships can be defined using \ac{rdfs}, which is a vocabulary for describing \ac{rdf} schemas using a basic set of constructs. As an extension of \ac{rdfs}, \ac{owl} is a vocabulary for describing ontologies using a more expressive set of constructs tailored to the needs of ontologies. Both \ac{rdfs} and \ac{owl} are considered to be formal ontologies themselves, as they describe the classes and properties of the domain of \ac{rdf}.
 
-\subsection{Triplestores and SPARQL}
-As briefly discussed in \ref{subsec:ontologies}, 
-
--> what is a triplestore\\
--> what is SPARQL\\
--> what is a SPARQL endpoint
+\subsection{Triplestores and \acs{sparql}}
+As briefly discussed in \ref{subsec:ontologies}, triplestores are \ac{rdf} databases that store data in the form of a graph. They are used to store and query Linked Data and are often integrated with a reasoner. The data itself is retrieved and modified using the \ac{sparql}.\footcite{w3cQuery} In contrast to \ac{sql}, \ac{sparql} queries are able to work across multiple triplestores, called \ac{sparql} endpoints. These are known as federated queries, and their results are combined into a single result set. This is useful when the data is distributed across multiple triplestores in a decentralized manner.\footcite{ontotextSpaql} For example, multiple stakeholders participating in a project, each with their own database.
 
 \subsection{Complexity of the graph}
-% -> What is \ac{bim}? (short)\\
-% -> Extend of \ac{bim} geometry?\\
-% -> Complexity of \ac{bim} geometry?
--> new start
-\subsubsection{\ac{bim} geometry} \label{subsec:bimGeometry}
-The 3D model of a building consists of a multitude of sub-models, describing objects for all the different stakeholders participating in the project. Some describe very large objects, and some very small parts. Both can be defined in their most simple and abstract form or have an intricate and complex geometry. As a basic example, can a door simply be defined as a box, or up to the level of the screw-thread for the hinge system. The level of abstraction is here described as the \ac{lod}, it is most of the time pre-selected for the needs of a \ac{bim} model, and is applied throughout a single model.
+The complexity of the graph is a major concern when working with \ac{ldbim}. This section discusses the origins of the different sources of geometric data that enrich it.
 
+\subsubsection{\ac{bim} geometry} \label{subsec:bimGeometry}
 \begin{figure}[h]
 	\centering
 	\input{figures/diagrams/lodEvolution.tex}
-	\caption{Evolution of \acs{lod} during the life-cycle of a building.}
+	\vspace{-0.3cm}
+	\caption{Evolution of \acs{lod} during the life-cycle of a building. Based upon the Macleamy Curve \parencite{Ilozor2012}}
 	\label{fig:bimGraph}
 \end{figure}
 
-As shown in Figure~\ref{fig:bimGraph}, a standard BIM workflow goes through multiple phases each with their associated model and \ac{lod}. The \ac{lod} is a very important concept in the \ac{aec} industry, as it allows for a very efficient workflow. Approaching the modelling step from a top-down perspective, starting with rougher geometries describing the rougher ideas of a concept model and evoluting to a more refined model for the construction phase. As last and longest standing model, can a higher \ac{lod} be used to describe subtle changes in the evolution of a building.
+The 3D model of a building consists of a multitude of sub-models, describing objects for all the different stakeholders participating in the project. Some describe very large objects, and some very small parts. Both can be defined in their most simple and abstract form or have an intricate and complex geometry. For instance, a door can simply be defined as a box, or up to the level of the screw-thread for the hinge system. The level of abstraction is here described as the \ac{lod}, which is most of the time pre-selected for the needs of a \ac{bim} model, and is applied throughout a single model.
 
-This amount of data, both accounting for the
-
--> +MEP + structural\\
--> bim model size in \cite{Johansson2015}\\
---> old models\\
---> table with data\\
---> final conclusion about LOD here applicable
+As shown in Figure~\ref{fig:bimGraph}, a standard BIM workflow goes through multiple phases, each with their associated model and \ac{lod}. This makes it an important concept in the \ac{aec} industry, as it allows for a very efficient workflow. The modeling step is approached from a top-down perspective, starting with rougher geometries describing the broader ideas of a concept model and evolving to a more refined model for the construction documentation fase. As the last and longest-standing model, a higher \ac{lod} can be used to describe subtle changes in the evolution of a building during the operation fase.
 
 \subsubsection{\acs{ldbim} geometry}
-% -> ! Focus on geometry\\
-% -> Context od enrichment and complexity\\
--> Own definition of \ac{ldbim}\\
--> Why the need / What are the advantages of \ac{ldbim}?
-
-The interconnectivity of semantics can also be applied to geometry descriptions. Which could allow the co-existence of multiple \ac{lod}s in a single model. Besides storing the evolution of a single element's geometry, it allows the linking of the different \ac{lod}s to each other. In contrary to standard \ac{bim} models, as explained in \ref{subsec:bimGeometry}.
-
-\subsubsection{Computing power dilemma} \label{subsec:computingPower}
-The enrichment of the \ac{ldbim}-graph also comes with a cost. The amount of data that needs to be stored and processed is much larger than a standard \ac{bim} model. Viewers greatly suffer from enrichment as most standard applications require the full model to be loaded in memory.
-
-% -> What is the hardware problem?
-Although most office computers used in the \ac{aec} industry are powerful enough to handle large models, the hardware used in the field is not. The most common hardware used in the field is a tablet or a laptop. Both of these are not powerful enough to handle the amount of data required to display a \ac{ldbim} model. This is a problem as these low-power devices are the only solution when it comes to mobility. Furthermore, the size of the models that are more and more enriched can, in some cases, pose a problem to the hardware of a standard office computer.
-% -> Why is it that important for the \ac{aec} industry?
-
--> \cite{Johansson2015} \\
---> refer to table scene size + fps => problem (cite fps sources)
+The interconnectivity of semantics can also be applied to geometry descriptions. This could allow the co-existence of multiple \ac{lod}s in a single model database. Besides storing the evolution of a single element's geometry, it enables the linking of the different \ac{lod}s described in \ref{subsec:bimGeometry} to each other. Not only this, but extending onto the size of the models described in Table \ref{tab:sizeModels}, already existing \ac{mep} as structural geometry can be added alongside many other stakeholders.
 
 \section{Research questions}
-% -> Why the need for this thesis? (why a \ac{ldbim} viewer?)
-% -> What is the possible solution? (Culling algorithms)
-% -> Why the need for research questions?
-% (culling algorithms are not new, always progress, see later)-
--> Taking advantage of database approach instead of file to avoid excess storage on high computational tasks\\
--> even before BIM viewer itself as in \cite{Johansson2015}
-
-It can be inferred from \ref{subsec:computingPower} that filtering is necessary in order to visualize the geometry of a \ac{ldbim} model, due to its complexity and size. This filtering step, as shown in Figure \ref{fig:firstIdea}, is also known as culling in 3D computer graphics. Culling is the process of removing objects, or parts of objects, from the scene that are not visible to the user. This is done to reduce the amount of data that needs to be processed and stored. Implementing such technology in the context of \ac{ldbim} is the proposal of this thesis. The main goal being the introduction of similar algorithms within this context. As culling algorithms are not new and part of a field of research in continuous expansion.
-
-The research questions are therefore focused on the feasibility of this introduction. And propose a set of possible solutions tailored to this specific problem, while highlighting possibilities for future research and specific use cases.
-
-Figure~\ref{fig:firstIdea} illustrates the basic idea of this thesis. Being the extra step inside the communication between a user, here represented as a \ac{hhd}, and a database storing the model. A \ac{hhd} has been chosen to illustrate a low-powered device used in the field, that requires a lightweight 3D viewer to visualize and explore the digital twin of the building. The \ac{hhd} is assumed to have no knowledge of the \ac{ldbim} model, and only receives the geometry that is required to be displayed from the database. On the other hand, the database is assumed to have, or access to, all the knowledge of the model and the needed semantic to perform the culling.
+Implementing culling algorithms technology in the context of \ac{ldbim} is the proposal of this thesis. The main goal being the introduction of similar algorithms within this context. As culling algorithms are not new and part of a field of research in continuous expansion, the research questions are therefore focused on the feasibility of this introduction. It aims to propose a set of possible solutions tailored to this specific problem, while highlighting possibilities for future research and specific use cases.
 
 \subsection[Can \acs{ldbim} be culled?]{To which extent can \acs{ldbim} geometry be culled \\
 	to be streamed to lightweight viewers?}
-% -> What can be culled exactly?
-% -> What needs to be streamed?
-% -> What is the impact of culling on the viewing experience?
+This thesis focuses on computing with data snippets or triples inside a \ac{ldbim} model, not within. Meaning that the smallest unit of data that can be culled is the one described in one triple, in the most likely scenario: a single \ac{lod} of a single element. It implies that geometry is defined and separated at the object-level. It also implies that culling techniques such as back-face culling will not be handled in this thesis, and will be left to the viewer itself, not the database.
 
-This thesis focuses on cumputing with data snippets or triples inside a \ac{ldbim} model, not wihtin. Meaning that the smallest unit of data that can be culled is the one described in one triple, in the most likely scenario: a single \ac{lod} of a single element. It implies that geometry is defined and separated at the object-level. It also implies that culling thechniques such as back-face culling will not be handled in this thesis, and will be left to the viewer itself, not the database.
-
-Which snippets of data are needed by the viewer? Is part of the question. The basic needs of the viewer consists firstly of the geometry itself, selecting the right geometry format for the application as well as the additional visual information such as color, texture, etc. Secondly, the identifier of each element is of crucial importance to maintain the link to other semantic ressources in the graph. Enabling the viewer to retrieve those ressources for a multitude of usecases. Transforming it into a user-friendly visual query tool.
-
-The impact of the culling on the performance of the viewer will greatly determine the mutl
-
--> complete
+Which snippets of data are needed by the viewer? Is part of the question. The basic needs of the viewer consist firstly of the geometry itself, selecting the right geometry format for the application as well as the additional visual information such as color, texture, etc. Secondly, the identifier of each element is of crucial importance to maintain the link to other semantic resources in the graph. This enables the viewer to retrieve those resources for a multitude of use cases, transforming it into a user-friendly visual query tool.
 
 \subsection[Can existing semantic be used?]{Can existing semantic and ontologies be used\\
 	to feed possible culling algorithms?}
--->\cite{Johansson2009}\\
----> specitfic terminology also used in linked data\\
--> Can GIS ontologies be used too?
-
+In contrast to the computer graphics industry, this interconnected context already contains both explicit and implicit, through inferencing, relationships inside the graph. Similarly to \cite{Johansson2009} and their paper where they used the semantics of a \ac{bim} model in \ac{ifc} format to develop culling techniques. However, this thesis will focus on the use of Semantic Web resources. Therefore, it will analyze both \ac{aec}-specific and \ac{aec}-related ontologies, such as \ac{gis}-related, to see if they can be used to feed culling algorithms.
 
 % \section{Research objectives}
 % \subsection[Advantages of LDBIM]{Bring forward the advantages of \acs{ldbim} for visualization of big 3D models}

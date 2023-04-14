@@ -2791,30 +2791,36 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="3">Werbrouck2018</bcf:citekey>
-    <bcf:citekey order="4">ldbimGroup</bcf:citekey>
-    <bcf:citekey order="5">Johansson2015</bcf:citekey>
+    <bcf:citekey order="4">Werbrouck2018</bcf:citekey>
+    <bcf:citekey order="5">ldbimGroup</bcf:citekey>
     <bcf:citekey order="6">Johansson2015</bcf:citekey>
     <bcf:citekey order="7">Johansson2015</bcf:citekey>
-    <bcf:citekey order="8">CullingPrinciples</bcf:citekey>
-    <bcf:citekey order="9">w3c</bcf:citekey>
-    <bcf:citekey order="10">w3cInfering</bcf:citekey>
-    <bcf:citekey order="11">Johansson2015</bcf:citekey>
-    <bcf:citekey order="12">Johansson2015</bcf:citekey>
-    <bcf:citekey order="13">Johansson2015</bcf:citekey>
-    <bcf:citekey order="14">Johansson2009</bcf:citekey>
-    <bcf:citekey order="15">UnityWebGL</bcf:citekey>
-    <bcf:citekey order="16">Johansson2015</bcf:citekey>
-    <bcf:citekey order="17">Johansson2015</bcf:citekey>
-    <bcf:citekey order="18">Johansson2015</bcf:citekey>
-    <bcf:citekey order="19">Werbrouck2018</bcf:citekey>
-    <bcf:citekey order="20">ldbimGroup</bcf:citekey>
+    <bcf:citekey order="8">Johansson2015</bcf:citekey>
+    <bcf:citekey order="9">Johansson2015</bcf:citekey>
+    <bcf:citekey order="10">CullingPrinciples</bcf:citekey>
+    <bcf:citekey order="11">CullingPrinciples</bcf:citekey>
+    <bcf:citekey order="12">w3c</bcf:citekey>
+    <bcf:citekey order="13">w3cInfering</bcf:citekey>
+    <bcf:citekey order="14">w3cQuery</bcf:citekey>
+    <bcf:citekey order="15">ontotextSpaql</bcf:citekey>
+    <bcf:citekey order="16">Ilozor2012</bcf:citekey>
+    <bcf:citekey order="17">Ilozor2012</bcf:citekey>
+    <bcf:citekey order="18">Johansson2009</bcf:citekey>
+    <bcf:citekey order="19">UnityWebGL</bcf:citekey>
+    <bcf:citekey order="20">Johansson2015</bcf:citekey>
     <bcf:citekey order="21">Johansson2015</bcf:citekey>
-    <bcf:citekey order="22">CullingPrinciples</bcf:citekey>
-    <bcf:citekey order="23">w3c</bcf:citekey>
-    <bcf:citekey order="24">w3cInfering</bcf:citekey>
-    <bcf:citekey order="25">Johansson2009</bcf:citekey>
-    <bcf:citekey order="26">UnityWebGL</bcf:citekey>
+    <bcf:citekey order="22">Johansson2015</bcf:citekey>
+    <bcf:citekey order="23">Werbrouck2018</bcf:citekey>
+    <bcf:citekey order="24">ldbimGroup</bcf:citekey>
+    <bcf:citekey order="25">Johansson2015</bcf:citekey>
+    <bcf:citekey order="26">CullingPrinciples</bcf:citekey>
+    <bcf:citekey order="27">w3c</bcf:citekey>
+    <bcf:citekey order="28">w3cInfering</bcf:citekey>
+    <bcf:citekey order="29">w3cQuery</bcf:citekey>
+    <bcf:citekey order="30">ontotextSpaql</bcf:citekey>
+    <bcf:citekey order="31">Ilozor2012</bcf:citekey>
+    <bcf:citekey order="32">Johansson2009</bcf:citekey>
+    <bcf:citekey order="33">UnityWebGL</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
