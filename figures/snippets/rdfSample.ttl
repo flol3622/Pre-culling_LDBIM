@@ -10,7 +10,7 @@
 
 flupke:room1 rdf:type bot:Zone ;
     bot:containsElement flupke:coneOBJ ;
-    bot:containsElement flupke:cubeGLTF ;
+    bot:containsElement flupke:cubeGLTF .
 
 flupke:coneOBJ omg:hasGeometry flupke:coneOBJ_geometry-1 ;
     rdf:type bot:Element .

@@ -1,7 +1,7 @@
 \chapter{State of the art}
 As mentioned in \cite{Johansson2015}, existing research on the performance of currently used \ac{bim} viewers is quite limited. This state-of-the-art research will, therefore, focus on the overall features of some promising newer viewers and the ontologies that will be used in this thesis.
 
-\section{Related Technologies and Tools}
+\section{Existing \acs{bim} viewers and ontologies}
 \subsection{Qoniq and \acs{lod} Streaming for \acs{bim}}
 Qonic focuses on developing an open platform \ac{bim} viewer. With the use of Unity to enable cross-platform compatibility, they focused on two main aspects: performance and aesthetics. The latter refers to the visual quality of the viewer, offering both a seamless experience for the viewer as well as a pleasant one, with, for example, the implementation of ambient lighting and shadow castings. The first and most researched aspect of their viewer, the performance, is mainly focusing on a \ac{lod} culling algorithm.
 \\(T. Strobbe, personal communication, November 25, 2022)
@@ -28,7 +28,7 @@ Being able to run on many platforms, offering a smooth viewer experience and a p
 As mentioned in the second research question \ref{subsec:rq2}, this section will discuss \ac{aec}-related technologies, some of which are not yet approved by the \ac{w3c} but are actively researched by the \ac{lbd-cg}\footcites{lbdOntologies}
 
 \subsubsection{\acs{bot}}
-The \ac{bot} proposes a set of classes and properties, \enquote{which provides a high-level description of the topology of buildings including storeys and spaces, the building elements they may contain, and the 3D mesh geometry of these spaces and elements.}\parencite{Rasmussen2020}, as illustrated in Figure \ref{fig:bot}. This high-level description could be fed to portal-culling algorithms in a situation where the visibility is contained within one \mintinline{turtle}|bot:Space| or \mintinline{turtle}|bot:Storey|, or it could extend the scope to \mintinline{turtle}|bot:adjacentZone|\footcite{GodotPortal}. Additionally, it could play a part in the construction of the \ac{bvh} needed for other occlusion culling algorithms, such as the \ac{chc}++ \parencite{Johansson2015}.
+The \ac{bot} proposes a set of classes and properties, \enquote{which provides a high-level description of the topology of buildings including storeys and spaces, the building elements they may contain, and the 3D mesh geometry of these spaces and elements.} \parencite{Rasmussen2020}, as illustrated in Figure \ref{fig:bot}. This high-level description could be fed to portal-culling algorithms in a situation where the visibility is contained within one \mintinline{turtle}|bot:Space| or \mintinline{turtle}|bot:Storey|, or it could extend the scope to \mintinline{turtle}|bot:adjacentZone|\footcite{GodotPortal}. Additionally, it could play a part in the construction of the \ac{bvh} needed for other occlusion culling algorithms, such as the \ac{chc}++ \parencite{Johansson2015}.
 
 \begin{figure}[H]
     \begin{adjustwidth}{-0.8cm}{-0.8cm}
@@ -41,14 +41,41 @@ The \ac{bot} proposes a set of classes and properties, \enquote{which provides a
 \end{figure}
 
 \subsubsection{\acs{fog} and \acs{omg}}
-\cite{Bonduel2019}
+With the help of \ac{fog} and \ac{omg}, geometry descriptions can be linked in the data graph. The innovation lies in the choice to store it either inside or outside the graph, by means of one triple referring to a literal or an \ac{uri}. Listing \ref{lst:rdfSample} showcases multiple examples of objects assigned with a geometry description using an \ac{uri}\parencite{Bonduel2019}.
+
+\begin{listing}[H]
+    \begin{minted}{turtle}
+flupke:coneOBJ_geometry-1 fog:asObj_v3.0-obj "https://..."^^xsd:anyURI .
+    \end{minted}
+    \vspace{-0.7cm}
+    \caption{Example of \acs{fog} usage}
+    \label{lst:fogSample}
+\end{listing}
+
+Listing \ref{lst:fogSample} describes a subject of datatype \mintinline{turtle}|xsd:anyURI| from the \ac{xsd}\footcites{xsd}. The versatile approach of \cite{Bonduel2019} also proposes the following datatypes: \mintinline{turtle}|xsd:string| for \ac{ascii}-based geometry descriptions or \mintinline{turtle}|xsd:base64Binary| for binary geometry descriptions.
+
+The format of the geometry is assigned directly by the predicate in Listing \ref{lst:fogSample}, which is \mintinline{turtle}|fog:asObj_v3.0-obj|. This further infers the statements in Listing \ref{lst:fogInference}.\footcite{fog}
+
+\begin{listing}[H]
+    \begin{minted}{turtle}
+flupke:coneOBJ_geometry-1 fog:asObj "https://..."^^xsd:anyURI ;
+    ex:LOD "100"^^xsd:integer .
+    \end{minted}
+    \vspace{-0.7cm}
+    \caption{\ac{fog} inference examples}
+    \label{lst:fogInference}
+\end{listing}
+
+\cite{Bonduel2019} refers to the proposal of the \ac{lbd-cg} stated in \cite{Wagner2019} \enquote{to allow the modelling of
+properties on three levels}. The first and second levels are illustrated in Figure \ref{fig:fogGom}. 
+
 \begin{figure}[H]
     \begin{adjustwidth}{-0.8cm}{-0.8cm}
         \centering
         \ttfamily
         \input{figures/diagrams/fogGom.tex}
         \vspace{-0.3cm}
-        \caption{Illustration of the \ac{bot} ontology based on \cite{Rasmussen2020}.}
+        \caption{Illustration of the \acs{fog} and \acs{omg} ontology based on. \textcolor{red}{LOD can't be assigned to literal, needs to be changed}}
         \label{fig:fogGom}
     \end{adjustwidth}
 \end{figure}
@@ -59,7 +86,7 @@ The \ac{bot} proposes a set of classes and properties, \enquote{which provides a
 \subsubsection{geoSPARQL}
 -> 2D Limitations
 
-\section{Existing \acs{bim} Viewers and Visualization Techniques}
+\section{On the market viewers comparison}
 \begin{itemize}
     \item DDS CAD Viewer
     \item Tekla BIMsight
