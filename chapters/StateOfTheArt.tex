@@ -1,43 +1,65 @@
 \chapter{State of the art}
--> Introduction to the chapter, both tools and existing approaches to create overview of the state of the art
+As mentioned in \cite{Johansson2015}, existing research on the performance of currently used \ac{bim} viewers is quite limited. This state-of-the-art research will, therefore, focus on the overall features of some promising newer viewers and the ontologies that will be used in this thesis.
 
 \section{Related Technologies and Tools}
-\subsection{Qoniq and LOD Streaming for BIM}
--> Why I chose this one (why special)\\
--> LOD streaming principle\\
--> Probably present it as a goal but in the older framework (for effectiveness(esthetics and performance))\\
-->In unity, the maximum amount of ram cannot exceed 2Gb\footcite{UnityWebGL}
+\subsection{Qoniq and \acs{lod} Streaming for \acs{bim}}
+Qonic focuses on developing an open platform \ac{bim} viewer. With the use of Unity to enable cross-platform compatibility, they focused on two main aspects: performance and aesthetics. The latter refers to the visual quality of the viewer, offering both a seamless experience for the viewer as well as a pleasant one, with, for example, the implementation of ambient lighting and shadow castings. The first and most researched aspect of their viewer, the performance, is mainly focusing on a \ac{lod} culling algorithm.
+\\(T. Strobbe, personal communication, November 25, 2022)
 
-\subsubsection{Qoniq's approach to LOD streaming}
-(T. Strobbe, personal communication, November 25, 2022)\\
--> in contrary to \cite{Johansson2015}
+\subsubsection{Qoniq's approach to \acs{lod} streaming}
+Their core research is developing a dynamic \ac{lod} streaming model. Starting from the geometry and semantics of an \ac{ifc} file, they compute an \ac{lod} hierarchy tree of the model. Through multiple mesh decimation algorithms, they reduce the number of triangles of each object's mesh, regardless of the semantics associated with that object. On top of that, a filtering algorithm is implemented in the streaming model to filter out objects, regarding their semantics, that are not relevant to the current camera position. In doing so, they both reduce the size of models far from the viewpoint and evaluate the need to show certain objects based on their nature, extracted from semantics in the \ac{ifc} file, and their distance to the camera. The resulting dynamic \ac{lod} streaming model is reevaluated at each camera move in Unity.
+\\(T. Strobbe, personal communication, November 25, 2022)
 
-\subsubsection{Advantages and challenges}
+Unity was chosen as it allows for writing once and deploying everywhere. This means that the viewer can be used on any platform, including mobile devices and browsers. The performance results are thus related to the hardware capabilities of each device, with the exception of the browser, where the performance of Unity's WebGL build is limited to a scene size of 2Gb.\footcite{UnityWebGL}
 
-\subsubsection{Potential applicability to LDBIM}
--> as stated before advantage of LOD existing
+\subsubsection{Advantages and trade-offs}
+Being able to run on many platforms, offering a smooth viewer experience and a pleasing aesthetic makes it an ideal candidate for lightweight viewers on the job site. However, the \ac{lod} library has to be computed on every model update. The decimation algorithms are furthermore computational results that are not humanly reviewed. This means that the quality of the resulting meshes is not guaranteed for the lower \ac{lod}s, which are, as illustrated in Figure \ref{fig:bimGraph}, already modeled in previous design phases. \ac{ldbim} could, by interconnection, recall previous \ac{lod}s in the viewer's scene. Without the need for computational remodeling. Nevertheless, Qonic serves as this thesis's goal, outside the \ac{ldbim} context.
 
 \subsection{ld-bim.web.app}
-\url{https://ld-bim.web.app/}
--> Where does it come from\\
--> Detailed explanation of the features / capabilities\\
--> Detailed fragmentation of missed opportunities / how this thesis positions itself to it
+\enquote{The purpose of the app is to showcase our LBD toolset and to demonstrate the capabilities of Linked Building Data to newcomers.} \footcite{lbdimApp}
+
+\url{https://ld-bim.web.app/} demonstrates a viewer built around an \ac{rdf} database. It separates the data from an \ac{ifc} file into semantics, stored in the previously mentioned graph, and a glTF model, together with a \ac{json} file containing a reference table. Extra local or remote graphs can be added to the \ac{ui}. As it contains a \ac{sparql} engine to query and visualize, in the form of highlighting, the results of the query in a 3D viewer. The viewer is based on the ifc.js project, which is itself based on the three.js 3D JavaScript library.
 
 \subsection{\acs{aec} related ontologies}
--> as proposed in \cite{Johansson2015}\\
---> using BIM semantics to introduce new culling Techniques (5)\\
---> CHC++ \\
--> Present the following as related work but still in early stage, needs way more research (for computer scientists)
+% \cite{Johansson2015} presented in 
+% --> using BIM semantics to introduce new culling Techniques (5)\\
+% --> CHC++ \\
+% -> Present the following as related work but still in early stage, needs way more research (for computer scientists)
+As mentioned in the second research question \ref{subsec:rq2}, this section will discuss \ac{aec}-related technologies, some of which are not yet approved by the \ac{w3c} but are actively researched by the \ac{lbd-cg}\footcites{lbdOntologies}
 
 \subsubsection{\acs{bot}}
+The \ac{bot} proposes a set of classes and properties, \enquote{which provides a high-level description of the topology of buildings including storeys and spaces, the building elements they may contain, and the 3D mesh geometry of these spaces and elements.}\parencite{Rasmussen2020}, as illustrated in Figure \ref{fig:bot}. This high-level description could be fed to portal-culling algorithms in a situation where the visibility is contained within one \mintinline{turtle}|bot:Space| or \mintinline{turtle}|bot:Storey|, or it could extend the scope to \mintinline{turtle}|bot:adjacentZone|\footcite{GodotPortal}. Additionally, it could play a part in the construction of the \ac{bvh} needed for other occlusion culling algorithms, such as the \ac{chc}++ \parencite{Johansson2015}.
+
+\begin{figure}[H]
+    \begin{adjustwidth}{-0.8cm}{-0.8cm}
+        \centering
+        \input{figures/diagrams/bot.tex}
+        \vspace{-0.3cm}
+        \caption{Illustration of the \ac{bot} ontology based on \cite{Rasmussen2020}.}
+        \label{fig:bot}
+    \end{adjustwidth}
+\end{figure}
+
 \subsubsection{\acs{fog} and \acs{omg}}
+\cite{Bonduel2019}
+\begin{figure}[H]
+    \begin{adjustwidth}{-0.8cm}{-0.8cm}
+        \centering
+        \ttfamily
+        \input{figures/diagrams/fogGom.tex}
+        \vspace{-0.3cm}
+        \caption{Illustration of the \ac{bot} ontology based on \cite{Rasmussen2020}.}
+        \label{fig:fogGom}
+    \end{adjustwidth}
+\end{figure}
+
 \subsection{\acs{gis} related ontologies}
 -> Highlighting maturity and usefull data
 
 \subsubsection{geoSPARQL}
 -> 2D Limitations
 
-\section{Existing Approaches in BIM 3D Viewers and Visualization Techniques}
+\section{Existing \acs{bim} Viewers and Visualization Techniques}
 \begin{itemize}
     \item DDS CAD Viewer
     \item Tekla BIMsight
