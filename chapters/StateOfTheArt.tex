@@ -21,10 +21,6 @@ Being able to run on many platforms, offering a smooth viewer experience and a p
 \url{https://ld-bim.web.app/} demonstrates a viewer built around an \ac{rdf} database. It separates the data from an \ac{ifc} file into semantics, stored in the previously mentioned graph, and a glTF model, together with a \ac{json} file containing a reference table. Extra local or remote graphs can be added to the \ac{ui}. As it contains a \ac{sparql} engine to query and visualize, in the form of highlighting, the results of the query in a 3D viewer. The viewer is based on the ifc.js project, which is itself based on the three.js 3D JavaScript library.
 
 \subsection{\acs{aec} related ontologies}
-% \cite{Johansson2015} presented in 
-% --> using BIM semantics to introduce new culling Techniques (5)\\
-% --> CHC++ \\
-% -> Present the following as related work but still in early stage, needs way more research (for computer scientists)
 As mentioned in the second research question \ref{subsec:rq2}, this section will discuss \ac{aec}-related technologies, some of which are not yet approved by the \ac{w3c} but are actively researched by the \ac{lbd-cg}\footcites{lbdOntologies}
 
 \subsubsection{\acs{bot}}
@@ -35,7 +31,7 @@ The \ac{bot} proposes a set of classes and properties, \enquote{which provides a
         \centering
         \input{figures/diagrams/bot.tex}
         \vspace{-0.3cm}
-        \caption{Illustration of the \ac{bot} ontology based on \cite{Rasmussen2020}.}
+        \caption[Illustration of the \acs{bot} ontology]{Illustration of the \acs{bot} ontology, based on \cite{Rasmussen2020}.}
         \label{fig:bot}
     \end{adjustwidth}
 \end{figure}
@@ -62,7 +58,7 @@ flupke:coneOBJ_geometry-1 fog:asObj "https://..."^^xsd:anyURI ;
     ex:LOD "100"^^xsd:integer .
     \end{minted}
     \vspace{-0.7cm}
-    \caption{\ac{fog} inference examples}
+    \caption{\acs{fog} inference examples}
     \label{lst:fogInference}
 \end{listing}
 
@@ -74,7 +70,7 @@ flupke:coneOBJ_geometry-1 fog:asObj "https://..."^^xsd:anyURI ;
         \ttfamily
         \input{figures/diagrams/fogGom.tex}
         \vspace{-0.3cm}
-        \caption{Illustration of Level 1 (left) and Level 2 (right) of the \acs{fog} and \acs{omg} ontologies, based on \cite{Bonduel2019}. \textcolor{red}{LOD can't be assigned to literal, needs to be changed}}
+        \caption[Illustration of the \acs{fog} and \acs{omg} ontologies]{Illustration of Level 1 (left) and Level 2 (right) of the \acs{fog} and \acs{omg} ontologies, based on \cite{Bonduel2019}. \textcolor{red}{LOD can't be assigned to literal, needs to be changed}}
         \label{fig:fogGom}
     \end{adjustwidth}
 \end{figure}

@@ -1,6 +1,5 @@
 \chapter{Introduction}
-From 2D, to 3D and now to \acs{bim}. The evolution of the \ac{aec} industry has been a long and complex one. The introduction of 3D modeling was the first major step in the industry's evolution, as it allowed for more accurate representations of buildings. No longer solely relying on 2D drawings, a 3D model of a building can be used to create various representations, from a simple 2D floor plan to a full 3D model. Following the adoption of 3D modeling, the implementation of \ac{bim} emerged as another significant milestone. \ac{bim} adds an extra layer of information on top of the 3D model. As the digital representation of a building's physical and functional characteristics, BIM serves as a repository for semantics originating from various applications throughout the design and construction processes, including cost estimation, energy analysis, and production planning.\\
--> needs refs to support point (about infustries in AEC)
+From 2D, to 3D and now to \acs{bim}. The evolution of the \ac{aec} industry has been a long and complex one. The introduction of 3D modeling was the first major step in the industry's evolution, as it allowed for more accurate representations of buildings. No longer solely relying on 2D drawings, a 3D model of a building can be used to create various representations, from a simple 2D floor plan to a full 3D model. Following the adoption of 3D modeling, the implementation of \ac{bim} emerged as another significant milestone. \ac{bim} adds an extra layer of information on top of the 3D model. As the digital representation of a building's physical and functional characteristics, BIM serves as a repository for semantics originating from various applications throughout the design and construction processes, including cost estimation, energy analysis, and production planning.
 
 \label{sec:intro}
 However, as mentioned in \cite{Werbrouck2018}, the next challenge for the \ac{aec} industry is related to the ecosystem of current \ac{bim} softwares, which remains closed off to other disciplines. This data management challenge is currently being adressed by the \ac{lbd-cg} and other research entities, such as the University of Ghent, through the use of Web of Data technologies \footcite{ldbimGroup}. This emerging milestone will be discussed in this thesis under the term \ac{ldbim}.
@@ -42,7 +41,7 @@ Figure \ref{fig:firstIdea} illustrates the basic idea of this thesis, presenting
 \begin{figure}[h]
 	\centering
 	\input{figures/diagrams/cullingPrinciple.tex}
-	\caption{Illustration of culling principle, based on \cite{CullingPrinciples}}
+	\caption[Illustration of culling principle]{Illustration of culling principle, based on \cite{CullingPrinciples}}
 	\label{fig:cullingPrinciple}
 \end{figure}
 
@@ -58,7 +57,7 @@ At the core of the Semantic Web is the \ac{rdf}, a data model for describing res
 \begin{listing}[hp]
 	\inputminted{turtle}{figures/snippets/rdfSample.ttl}
 	\vspace{-0.7cm}
-	\caption{Example of an \ac{rdf} database in turtle format}
+	\caption{Example of an \acs{rdf} database in turtle format}
 	\label{lst:rdfSample}
 \end{listing}
 
@@ -90,17 +89,15 @@ The complexity of the data graph is a major concern when working with \ac{ldbim}
 	\centering
 	\input{figures/diagrams/lodEvolution.tex}
 	\vspace{-0.3cm}
-	\caption{Evolution of \acs{lod} during the life-cycle of a building. Based upon the Macleamy Curve \parencite{Ilozor2012}\\
+	\caption[Evolution of \acs{lod} during the life-cycle of a building]{Evolution of \acs{lod} during the life-cycle of a building. Based upon the Macleamy Curve \parencite{Ilozor2012}\\
 	\textcolor{red}{randow values at the moment}}
 	\label{fig:bimGraph}
 \end{figure}
 
-\subsubsection{\ac{bim} geometry} \label{subsec:bimGeometry}
+\subsubsection{\acs{bim} geometry} \label{subsec:bimGeometry}
 The 3D model of a building consists of a multitude of sub-models, describing objects for all the different stakeholders participating in the project. Some describe very large objects, and some very small parts. Both can be defined in their most simple and abstract form or have an intricate and complex geometry. For instance, a door can simply be defined as a box, or up to the level of the screw-thread for the hinge system. The level of abstraction is here described as the \ac{lod}, which is most of the time pre-selected for the needs of a \ac{bim} model, and is applied throughout a single model.
 
 As shown in Figure~\ref{fig:bimGraph}, a standard BIM workflow goes through multiple phases, each with their associated model and \ac{lod}. This makes it an important concept in the \ac{aec} industry, as it allows for a very efficient workflow. The modeling step is approached from a top-down perspective, starting with rougher geometries describing the broader ideas of a concept model and evolving to a more refined model for the construction documentation phase. As the last and longest-standing model, a higher \ac{lod} can be used to describe subtle changes in the evolution of a building during the operation phase.
-
-
 
 \subsubsection{\acs{ldbim} geometry}
 The interconnectivity of semantics can also be applied to geometry descriptions. This could allow the co-existence of multiple \ac{lod}s in a single model database. Besides storing the evolution of a single element's geometry, it enables the linking of the different \ac{lod}s, described in \ref{subsec:bimGeometry}, to each other. Not only that, but extending onto the size of the models described in Table \ref{tab:sizeModels}, already existing \ac{mep}, structural, alongside many other stakeholders' geometry can be added.
