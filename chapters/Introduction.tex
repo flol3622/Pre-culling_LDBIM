@@ -90,7 +90,8 @@ The complexity of the data graph is a major concern when working with \ac{ldbim}
 	\centering
 	\input{figures/diagrams/lodEvolution.tex}
 	\vspace{-0.3cm}
-	\caption{Evolution of \acs{lod} during the life-cycle of a building. Based upon the Macleamy Curve \parencite{Ilozor2012}}
+	\caption{Evolution of \acs{lod} during the life-cycle of a building. Based upon the Macleamy Curve \parencite{Ilozor2012}\\
+	\textcolor{red}{randow values at the moment}}
 	\label{fig:bimGraph}
 \end{figure}
 
@@ -104,7 +105,7 @@ As shown in Figure~\ref{fig:bimGraph}, a standard BIM workflow goes through mult
 \subsubsection{\acs{ldbim} geometry}
 The interconnectivity of semantics can also be applied to geometry descriptions. This could allow the co-existence of multiple \ac{lod}s in a single model database. Besides storing the evolution of a single element's geometry, it enables the linking of the different \ac{lod}s, described in \ref{subsec:bimGeometry}, to each other. Not only that, but extending onto the size of the models described in Table \ref{tab:sizeModels}, already existing \ac{mep}, structural, alongside many other stakeholders' geometry can be added.
 
-\section{Research questions}
+\section{Research questions}\label{sec:researchQuestions}
 \cite{Johansson2015} presented in their paper a new \ac{bim} viewer equipped with the powerful \ac{chc}++. This is a third-generation occlusion culling algorithm developed by \cite{Mattausch2008}, the first being the \ac{chc} \parencite{Bittner2004}, followed by the \ac{nohc} \parencite{Michael2006}. Their conclusion stated that although occlusion culling is very efficient, it is still bound to the scene size, which is limited by hardware capabilities. More precisely, the \ac{gpu}, \ac{vram}, and \ac{ram} capacities.
 
 This thesis proposes the introduction of culling algorithm technology within the context of \ac{ldbim} to address the previously mentioned issue of the scene's size, by culling the scene at its source prior to sending it to the viewer. As culling algorithms have been extensively researched and continue to evolve, as described in the previous paragraph, the research questions in this thesis concentrate on assessing the feasibility of introducing such algorithms in \ac{ldbim}. It aims to propose a set of possible solutions tailored to this specific problem, while highlighting possibilities for future research and specific use cases.

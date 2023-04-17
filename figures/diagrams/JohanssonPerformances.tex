@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+    \pgfplotstableread[row sep=\\,col sep=&]{
+        model    & sitA & sitB  & sitC  & sitD \\
+        Library   & 200	& 57	& 89	& 32 \\
+        Student  & 162	& 55	& 29	& 15  \\
+        Hospital & 127	& 87	& 28	& 17 \\
+        Hotel    & 40	& 30	& 12	& 9 \\
+    }\viewerResults
+
+    \begin{axis}[
+            axis x line*=bottom,
+            axis y line*=left,
+            ybar,
+            bar width=.5cm,
+            width=\textwidth,
+            height=.4\textwidth,
+            legend style={at={(0.45,-0.2)},
+                    anchor=north,legend columns=-1},
+            symbolic x coords={Library, Student, Hospital, Hotel},
+            xtick=data,
+            ymin=0,ymax=210,
+            ylabel={Frame rate (Hz)},
+        ]
+        \addplot[fill=ugentblue] table[x=model,y=sitA]{\viewerResults};
+        \addplot[fill=ugentblue, opacity=0.2] table[x=model,y=sitB]{\viewerResults};
+        \addplot[fill=black, opacity=0.5]  table[x=model,y=sitC]{\viewerResults};
+        \addplot[fill=black, opacity=0.2]  table[x=model,y=sitD]{\viewerResults};
+        \legend{\footnotesize Prototype (WORKSTATION), \footnotesize Prototype (LAPTOP), \footnotesize Solibri OPT (WORKSTATION), \footnotesize Solibri (LAPTOP)}
+    \end{axis}
+\end{tikzpicture}

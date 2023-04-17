@@ -66,8 +66,7 @@ flupke:coneOBJ_geometry-1 fog:asObj "https://..."^^xsd:anyURI ;
     \label{lst:fogInference}
 \end{listing}
 
-\cite{Bonduel2019} refers to the proposal of the \ac{lbd-cg} stated in \cite{Wagner2019} \enquote{to allow the modelling of
-properties on three levels}. The first and second levels are illustrated in Figure \ref{fig:fogGom}. 
+\cite{Bonduel2019} refers to the proposal of the \ac{lbd-cg} stated in \cite{Wagner2019} \enquote{to allow the modeling of properties on three levels}. The first and second levels are illustrated in Figure \ref{fig:fogGom}. Level 2 allows assigning multiple geometry descriptions to a single object, each with, for example, a different \ac{lod}.
 
 \begin{figure}[H]
     \begin{adjustwidth}{-0.8cm}{-0.8cm}
@@ -75,18 +74,21 @@ properties on three levels}. The first and second levels are illustrated in Figu
         \ttfamily
         \input{figures/diagrams/fogGom.tex}
         \vspace{-0.3cm}
-        \caption{Illustration of the \acs{fog} and \acs{omg} ontology based on. \textcolor{red}{LOD can't be assigned to literal, needs to be changed}}
+        \caption{Illustration of Level 1 (left) and Level 2 (right) of the \acs{fog} and \acs{omg} ontologies, based on \cite{Bonduel2019}. \textcolor{red}{LOD can't be assigned to literal, needs to be changed}}
         \label{fig:fogGom}
     \end{adjustwidth}
 \end{figure}
 
 \subsection{\acs{gis} related ontologies}
--> Highlighting maturity and usefull data
+The technological field of study, \acf{gis}, is closely related to the \ac{bim} domain. The central standards organization, \ac{ogc}, which actively maintains the \ac{gis} standards, is also prominent on the Semantic Web scene. \footcite{OGC2023SW} With standards such as:
 
-\subsubsection{geoSPARQL}
--> 2D Limitations
+\subsubsection{GeoSPARQL}
+\enquote{The OGC GeoSPARQL standard supports representing and querying geospatial data on the Semantic Web. GeoSPARQL defines a vocabulary for representing geospatial data in RDF, and it defines an extension to the SPARQL query language for processing geospatial data. In addition, GeoSPARQL is designed to accommodate systems based on qualitative spatial reasoning and systems based on quantitative spatial computations.} \footcite{OGC2023}
+
+As multiple triplestores and \ac{sparql} endpoints support the GeoSPARQL extension, it is a viable candidate for spatial and \ac{lod} culling algorithms. Such algorithms require spatial data, such as the distance from the viewpoint to the object. Spatial query functions proposed in this extension are needed for this purpose. The functions can compute on nodes of geospatial geometry as if they are expressed using \ac{wkt} or the \ac{gml}. These expressions can be assigned by using the predicates \mintinline{turtle}|geo:asWKT| or \mintinline{turtle}|geo:asGML|. However, GeoSPARQL comes with some limitations that are less prevalent in the \ac{gis} domain, which mostly requires 2D data \parencite{perry2012ogc}, in contrast to \ac{bim} where 3D distance functions would be needed. Despite such limitations, GeoSPARQL remains a viable solution for spatial querying, and workarounds could be employed to address them.
 
 \section{On the market viewers comparison}
+\cite{Johansson2015} mentioned in their paper the lack of research about objective \ac{bim} viewers comparison and made one as a result. The size of the model they tested can be found in Table \ref{tab:sizeModels}. They evaluted the following viewers:
 \begin{itemize}
     \item DDS CAD Viewer
     \item Tekla BIMsight
@@ -95,26 +97,30 @@ properties on three levels}. The first and second levels are illustrated in Figu
 \end{itemize}
 
 \subsection{General Features}
--> \cite{Johansson2015}\\
---> table 3 about Acceleration techniques\\
+Their study had two main goals. Firstly, evaluating existing viewers and their capabilities, they identified the acceleration techniques used, which are presented in Table \ref{tab:accelerationTechniques}.
 
-\subsection{Interoperability}
-% 1. Importance of supporting multiple file formats.
-% 2. Data exchange standards in BIM.
-% 3. Integrating BIM viewers with other tools.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        \hline
+        \acs{bim} viewer & Acceleration technique                                                                                                                  \\ \hline
+        Solibri 9.0      & \acs{vfc} | \acs{dc} (optional) | \acs{hagi} (optional)                                                                                 \\
+        Naviswork 2015   & \begin{tabular}[c]{@{}l@{}}\acs{vfc} | \acs{dc} (optional) | \acs{cpu} \acs{oc} (optional)\\ \acs{gpu} \acs{oc} (optional)\end{tabular} \\
+        BIMSight 1.9.1   & \acs{vfc}                                                                                                                               \\
+        DDS 8.0          & \acs{vfc} | \acs{dc} (optional)                                                                                                         \\
+        DDS 10.0         & \acs{vfc} | \acs{dc}                                                                                                                    \\ \hline
+    \end{tabular}
+    \caption[Acceleration techniques used by tested viewers]{Acceleration techniques used by tested viewers from \cite{Johansson2015}. {\footnotesize (\acf{vfc}, \acf{dc}, \acf{hagi}, \acf{cpu}, \acf{oc})}}
+    \label{tab:accelerationTechniques}
+\end{table}
 
-\subsection{Scalability}
-% 1. Performance challenges with large-scale BIM models.
-% 2. Memory usage and real-time rendering.
-% 3. Strategies for optimizing viewer performance.
+Secondly, they implemented modern culling algorithms and strategies such as \ac{chc}++. The worst-case scenarios are shown in Figure \ref{fig:performanceJohansson} against the Solibri viewer. The results are quite promising, but as concluded by the authors, the gains are limited to the capacities of the \ac{gpu}, \ac{vram}, and \ac{ram}, as discussed in \ref{sec:researchQuestions}.
 
-\subsection{Collaboration and Data Sharing}
-% 1. BIM viewers' role in project collaboration.
-% 2. Data sharing and communication among stakeholders.
-% 3. Synchronization and version control features.
-
-\subsection{Customization and Extensibility}
-% 1. APIs and plugins for viewer customization.
-% 2. Adapting viewers to specific project requirements.
-% 3. Integrating BIM viewers with other systems.
-
+\begin{figure}[H]
+    \begin{adjustwidth}{-0.8cm}{-0.8cm}
+        \centering
+        \input{figures/diagrams/JohanssonPerformances.tex}
+        \caption[Performance viewers]{Comparison in rendering performance.\\ from \cite{Johansson2015}}
+        \label{fig:performanceJohansson}
+    \end{adjustwidth}
+\end{figure}
