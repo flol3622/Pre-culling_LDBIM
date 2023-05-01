@@ -1,0 +1,60 @@
+\chapter{Dynamic Queries}
+% structure of this chapter:
+% main = dynamic queries
+% Explain:
+% - what I mean by that
+% - basic requirements = viewer
+% - beauty = can be extendend, 
+%   more filetypes, not only geometry
+% - 3 possible implementations, 
+%   computation always in different place
+% - making use of EXISTING DATA,
+%   can be extended to new dedicated ontologies
+
+\section{Viewer}
+% - importance of viewer
+% - refer to state of the art existing viewers
+\subsection{Requirements}
+% - different file formats, different sources.
+% - reusing first diagram
+% - why XEOKIT sdk (practical)
+
+\subsection{Beyong geometry}
+% - possibilities of viewer extends classical approach
+
+\subsubsection{BCF integration}
+% - BCF viewpoints in xeokit
+% - what is bcf...
+
+\subsubsection{Visualising semantic}
+% - element associated data
+% - physical: thermal, acoustic, ...
+% - non-physical: cost, time, pothologies, ...
+% - all  with temporal dimension / history
+
+\section{In situ WKT location}
+% - limited to 2D
+% - viewer: knows location, AR: knnows 
+% - on building site location system 
+%   / BIM model translated into WKT literals in model
+% - use of WKT and GeoSPARQL
+% - to which extends needs every element a location
+% - which queries are possible
+
+
+\section{In viewer bot:Space indentification}
+% - 1 database + 1 3D enabled instance (viewer) 
+%   => viewer can raytrace identify wright space (little computation)
+% - 2 layered viewer visible elements / invisible spaces
+% - sequence diagram
+%   - manual first step + adjacent spaces
+%   - all spaces
+%   - combination of spaces
+% - sample queries
+
+\section{In query OBJ geometry filtering}
+% - no geometric but string analysis in query
+% - AABBox filtering of for example obj rooms
+% - all negative points
+
+

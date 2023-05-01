@@ -21,7 +21,7 @@ Being able to run on many platforms, offering a smooth viewer experience and a p
 \url{https://ld-bim.web.app/} demonstrates a viewer built around an \ac{rdf} database. It separates the data from an \ac{ifc} file into semantics, stored in the previously mentioned graph, and a glTF model, together with a \ac{json} file containing a reference table. Extra local or remote graphs can be added to the \ac{ui}. As it contains a \ac{sparql} engine to query and visualize, in the form of highlighting, the results of the query in a 3D viewer. The viewer is based on the ifc.js project, which is itself based on the three.js 3D JavaScript library.
 
 \subsection{\acs{aec} related ontologies}
-As mentioned in the second research question \ref{subsec:rq2}, this section will discuss \ac{aec}-related technologies, some of which are not yet approved by the \ac{w3c} but are actively researched by the \ac{lbd-cg}\footcites{lbdOntologies}
+As mentioned in the second research question \ref{subsec:rq2}, this section will discuss \ac{aec}-related technologies that are actively researched by the \ac{lbd-cg}\footcite{lbdOntologies}.
 
 \subsubsection{\acs{bot}}
 The \ac{bot} proposes a set of classes and properties, \enquote{which provides a high-level description of the topology of buildings including storeys and spaces, the building elements they may contain, and the 3D mesh geometry of these spaces and elements.} \parencite{Rasmussen2020}, as illustrated in Figure \ref{fig:bot}. This high-level description could be fed to portal-culling algorithms in a situation where the visibility is contained within one \mintinline{turtle}|bot:Space| or \mintinline{turtle}|bot:Storey|, or it could extend the scope to \mintinline{turtle}|bot:adjacentZone|\footcite{GodotPortal}. Additionally, it could play a part in the construction of the \ac{bvh} needed for other occlusion culling algorithms, such as the \ac{chc}++ \parencite{Johansson2015}.
@@ -62,7 +62,7 @@ flupke:coneOBJ_geometry-1 fog:asObj "https://..."^^xsd:anyURI ;
     \label{lst:fogInference}
 \end{listing}
 
-\cite{Bonduel2019} refers to the proposal of the \ac{lbd-cg} stated in \cite{Wagner2019} \enquote{to allow the modeling of properties on three levels}. The first and second levels are illustrated in Figure \ref{fig:fogGom}. Level 2 allows assigning multiple geometry descriptions to a single object, each with, for example, a different \ac{lod}.
+\cite{Bonduel2019} refers to the proposal of the \ac{lbd-cg} stated in \cite{holten2018opm} to write Linked Data patterns on three possible levels, \enquote{each having a different degree of complexity}. The first and second levels are illustrated in Figure \ref{fig:fogGom}. Level 2 allows assigning multiple geometry descriptions to a single object, each with, for example, a different \ac{lod}.
 
 \begin{figure}[H]
     \begin{adjustwidth}{-0.8cm}{-0.8cm}
@@ -76,7 +76,7 @@ flupke:coneOBJ_geometry-1 fog:asObj "https://..."^^xsd:anyURI ;
 \end{figure}
 
 \subsection{\acs{gis} related ontologies}
-The technological field of study, \acf{gis}, is closely related to the \ac{bim} domain. The central standards organization, \ac{ogc}, which actively maintains the \ac{gis} standards, is also prominent on the Semantic Web scene. \footcite{OGC2023SW} With standards such as:
+The technological field of study, \acf{gis}, is closely related to the \ac{bim} domain. The central standards organization, \ac{ogc}, which actively maintains the \ac{gis} standards, is also prominent in the Semantic Web scene. They recognize widely adopted standards such as GeoSPARQL.\footcite{OGC2023SW}
 
 \subsubsection{GeoSPARQL}
 \enquote{The OGC GeoSPARQL standard supports representing and querying geospatial data on the Semantic Web. GeoSPARQL defines a vocabulary for representing geospatial data in RDF, and it defines an extension to the SPARQL query language for processing geospatial data. In addition, GeoSPARQL is designed to accommodate systems based on qualitative spatial reasoning and systems based on quantitative spatial computations.} \footcite{OGC2023}
@@ -120,3 +120,6 @@ Secondly, they implemented modern culling algorithms and strategies such as \ac{
         \label{fig:performanceJohansson}
     \end{adjustwidth}
 \end{figure}
+
+\section{Culling algorithms}\label{sec:historyCulling}
+\cite{Johansson2015} presented in their paper a new \ac{bim} viewer equipped with the powerful \ac{chc}++. This is a third-generation occlusion culling algorithm developed by \cite{Mattausch2008}, the first being the \ac{chc} \parencite{Bittner2004}, followed by the \ac{nohc} \parencite{Michael2006}. Their conclusion stated that although occlusion culling is very efficient, it is still bound to the scene size, which is limited by hardware capabilities. More precisely, the \ac{gpu}, \ac{vram}, and \ac{ram} capacities.
