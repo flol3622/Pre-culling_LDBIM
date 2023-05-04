@@ -12,7 +12,7 @@
 %   can be extended to new dedicated ontologies
 This chapter introduces the concept of dynamic querying. In this thesis, it refers to the automatic generation of queries responsible for obtaining the data needed to visualize building elements from a \ac{bim} model within an \ac{rdf} graph. The examples are presented as static SPARQL queries, since the automation itself depends on the implementation or framework used. A link to the appendix is provided, where the implementation within the prototype of this thesis is explained.
 
-The structure is as follows: first, the requirements for the viewer are researched, as its functioning will dictate the output of the queries. Second, the capabilities of the viewer are explored in relation to the visualization of semantic data, thus emphasizing the added value of working with Linked Data. Third, three types of dynamic queries are presented, each with its own advantages and disadvantages.
+The structure is as follows: first, the requirements for the viewer are researched, as its functioning will dictate the output of the queries. Second, the capabilities of the viewer are explored in relation to the visualization of semantic data, thus emphasizing the added value of working with Linked Data. Third, three types of dynamic queries for culling are presented, each with its own advantages and disadvantages.
 
 % - importance of viewer
 % - refer to state of the art existing viewers
@@ -71,11 +71,35 @@ As such, the viewer is expected to comply with a multitude of requirements, whic
 % - use of WKT and GeoSPARQL
 % - to which extends needs every element a location
 % - which queries are possible
+The first type of dynamic query identifies the room in which the observer/camera is located using the \ac{wkt} serialization of \mintinline{sparql}|bot:Space| entities. It proposes to base its culling algorithm on super-elements such as rooms, thus grouping the scene into a limited number of elements within meaningful boundaries. As entities are primarily viewed within their allocated rooms, this approach takes advantage of the spatial organization of buildings using the \ac{bot} ontology. Moreover, not all building elements have a meaningful \ac{wkt} serialization (e.g., a door), which makes the use of super-elements necessary.
+
+This approach is limited to 2D, as the widely adopted GeoSPARQL functions used to achieve this are constrained to 2D. Nonetheless, the approach can be extended to 3D if the GeoSPARQL functions are extended to 3D in the future or the needed introduction of a 3D \ac{sparql} is adopted.
+
+Listing \ref{lst:GeoSPARQLauto} proposes a static query in which firstly a location is assigned to the variable \mintinline{sparql}|?location| to create an easily reusable query. This location is the \ac{wkt} serialization of a point, of which the coordinates can be updated at each move of the camera in the viewer. It therefore represents the location of the observer both on site, in situ for augmented reality usecases, as in the 3D scene. 
+
+The query then combines two sets of so called entities, represented in the graph as \mintinline{sparql}|bot:Element| or \mintinline{sparql}|bot:Space|, both are linked in the graph to their corresponding \ac{wkt} and geometric serialization using an \ac{omg} level 1 pattern. This pattern level links the literal directly to the entity, without the need of an intermediate node, but without the possibility to assign multiple serialisations of the same type. The geometry literal is assigned using the \ac{fog} ontology, while the \ac{wkt} literal is assigned using the GeoSPARQL ontology. As this last serialization requires a \ac{wkt} format, a literal assigned with \mintinline{sparql}|geo:asWKT| is required, and queried for in the query. 
+
+The separation in two sets lets both query for entities that have a \ac{wkt} serialization but are not located in a \mintinline{sparql}|bot:Space| and entities that are located in a \mintinline{sparql}|bot:Space| that have a \ac{wkt} serialization but themselves do not have a \ac{wkt} serialization. The latter variant uses the \mintinline{sparql}|bot:containsElement| property to select entities within a room.
+
+After filtering out spaces, of which the geometry is not  needed by the viewer, it filters objects geometry based on a list of implemented / accepted formats by the receiving viewer. 
+
+
+\begin{figure}[H]
+    \begin{adjustwidth}{-0.8cm}{-0.8cm}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figures/pdf/omg1.pdf}
+        \caption{omg1}
+        \label{fig:omg1}
+    \end{adjustwidth}
+\end{figure}
+
+
+% query by distance, instance instead adjacent
 
 \begin{listing}[H]
     \inputminted{sparql}{dynamicQueries/inSitu/query.rq}
     \vspace{-0.7cm}
-    \caption{Querying in situ WKT location}
+    \caption{Dynamic culling query using GeoSPARQL}
     \label{lst:GeoSPARQLauto}
 \end{listing}
 

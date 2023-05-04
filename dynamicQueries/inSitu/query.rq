@@ -24,7 +24,7 @@ WHERE {
   
   FILTER NOT EXISTS { ?entity rdf:type bot:Space }
   ?entity ?fog_geometry ?geometryData .
-  FILTER(?fog_geometry IN (fog:asStl)) 
+  FILTER(?fog_geometry IN (fog:asObj, fog:asStl, fog:asGltf, FOG:asIfc)) 
   BIND(DATATYPE(?geometryData) AS ?datatype)  
   FILTER(?datatype = xsd:anyURI)
 } 

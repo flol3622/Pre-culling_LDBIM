@@ -21,7 +21,7 @@ WHERE {
     # select the entities in the room
     ?room bot:containsElement|bot:adjacentElement ?entity .
     ?entity ?fog_geometry ?geometryData .
-    FILTER(?fog_geometry IN (fog:asStl)) 
+    FILTER(?fog_geometry IN (fog:asObj, fog:asStl, fog:asGltf, FOG:asIfc)) 
     BIND(DATATYPE(?geometryData) AS ?datatype)  
     FILTER(?datatype = xsd:anyURI)
     ?entity rdf:type ?botType .
