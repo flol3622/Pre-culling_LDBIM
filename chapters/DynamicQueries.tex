@@ -75,14 +75,9 @@ The first type of dynamic query identifies the room in which the observer/camera
 
 This approach is limited to 2D, as the widely adopted GeoSPARQL functions used to achieve this are constrained to 2D. Nonetheless, the approach can be extended to 3D if the GeoSPARQL functions are extended to 3D in the future or the needed introduction of a 3D \ac{sparql} is adopted.
 
-Listing \ref{lst:GeoSPARQLauto} proposes a static query in which firstly a location is assigned to the variable \mintinline{sparql}|?location| to create an easily reusable query. This location is the \ac{wkt} serialization of a point, of which the coordinates can be updated at each move of the camera in the viewer. It therefore represents the location of the observer both on site, in situ for augmented reality usecases, as in the 3D scene. 
+Listing \ref{lst:GeoSPARQLauto} proposes a static query in which a location is first assigned to the variable \mintinline{sparql}|?location| to create an easily reusable query. This location is the \ac{wkt} serialization of a point, the coordinates of which can be updated at each move of the camera in the viewer. It therefore represents the location of the observer both on-site, \enquote{in situ} for augmented reality use cases, and in the 3D scene.
 
-The query then combines two sets of so called entities, represented in the graph as \mintinline{sparql}|bot:Element| or \mintinline{sparql}|bot:Space|, both are linked in the graph to their corresponding \ac{wkt} and geometric serialization using an \ac{omg} level 1 pattern. This pattern level links the literal directly to the entity, without the need of an intermediate node, but without the possibility to assign multiple serialisations of the same type. The geometry literal is assigned using the \ac{fog} ontology, while the \ac{wkt} literal is assigned using the GeoSPARQL ontology. As this last serialization requires a \ac{wkt} format, a literal assigned with \mintinline{sparql}|geo:asWKT| is required, and queried for in the query. 
-
-The separation in two sets lets both query for entities that have a \ac{wkt} serialization but are not located in a \mintinline{sparql}|bot:Space| and entities that are located in a \mintinline{sparql}|bot:Space| that have a \ac{wkt} serialization but themselves do not have a \ac{wkt} serialization. The latter variant uses the \mintinline{sparql}|bot:containsElement| property to select entities within a room.
-
-After filtering out spaces, of which the geometry is not  needed by the viewer, it filters objects geometry based on a list of implemented / accepted formats by the receiving viewer. 
-
+The query then combines two sets of so-called \enquote{entities}, represented in the graph as \mintinline{sparql}|bot:Element| or \mintinline{sparql}|bot:Space|, both of which are linked in the graph to their corresponding \ac{wkt} and geometric serialization using an \ac{omg} level 1 pattern explained in Figure \ref{fig:fogGom}. This pattern level links the literal directly to the entity, without the need for an intermediate node, but without the possibility to assign multiple serializations of the same type. The geometry literal is assigned using the \ac{fog} ontology, while the \ac{wkt} literal is assigned using the GeoSPARQL ontology, as illustrated in Figure \ref{fig:omg1}. As this last serialization requires a \ac{wkt} format, a literal assigned with \mintinline{sparql}|geo:asWKT| is required, and queried for in the query.
 
 \begin{figure}[H]
     \begin{adjustwidth}{-0.8cm}{-0.8cm}
@@ -94,7 +89,11 @@ After filtering out spaces, of which the geometry is not  needed by the viewer, 
 \end{figure}
 
 
-% query by distance, instance instead adjacent
+The separation into two sets allows for querying entities that have a \ac{wkt} serialization but are not located in a \mintinline{sparql}|bot:Space| (such as a floor, which would not be linked to a room) and entities that are located in a \mintinline{sparql}|bot:Space| that has a \ac{wkt} serialization. The latter variant uses the \mintinline{sparql}|bot:containsElement| or \mintinline{sparql}|bot:adjacentElement| properties to select entities within a room.
+
+After filtering out spaces, the geometry of which is not needed by the viewer, it filters the entities' geometry based on a list of implemented/accepted formats by the receiving viewer. These last consist of a list of \ac{fog} super-properties inferred by their assignment. In other words: a triple in the \ac{rdf} graph of the form \mintinline{sparql}|?entity fog:asObj_v3.0| \mintinline{sparql}|?geometry_data| infers \mintinline{sparql}|?entity fog:asObj ?geometry_data| (as shown in Figure \ref{fig:omg1}). This allows for the use of a single property to query related formats while still permitting the declaration of more specific formats if needed.
+
+In the end, the query returns a list of entities that are located in the same room as the observer, or are not located in a room but have a \ac{wkt} serialization that is validated by the GeoSPARQL filter function. This list can be used to cull the scene or to highlight the entities in the viewer. The query can be extended to include the \mintinline{sparql}|bot:Space| entities, which can be used to highlight the room in which the observer is located.
 
 \begin{listing}[H]
     \inputminted{sparql}{dynamicQueries/inSitu/query.rq}
@@ -103,6 +102,13 @@ After filtering out spaces, of which the geometry is not  needed by the viewer, 
     \label{lst:GeoSPARQLauto}
 \end{listing}
 
+In the case of Listing \ref{lst:GeoSPARQLauto}, the GeoSPARQL \mintinline{sparql}|FILTER| uses the function \mintinline{sparql}|geof:sfWithin| to evaluate if the given point coordinates are within the \ac{wkt} serialization, which in most cases represents a \ac{wkt} polygon. For example:\\
+\mintinline{turtle}|"POLYGON ((40 10, 30 10, 30 40, 40 40, 40 10))"^^geo:wktLiteral|
+
+The use of GeoSPARQL results in a very efficient query, as the filtering is done directly in the query and does not require any post-processing. Although the lack of 3D capabilities is a limitation, it allows, in 2D to easily implement more complex algorithms leveraging the use of different functions. With which, together with a level 2 \ac{omg} pattern, \ac{lod} culling based on the distance to the observer can be implemented. 
+
+Selecting rooms and entities outside the room in which the observer is present is also conceivable when leveraging the use of the \mintinline{sparql}|bot:adjacentZone| property. Or using the GeoSPARQL distance to a room.
+% query by distance, instance instead adjacent
 
 \section{In viewer "bot:Space" identification}
 % - 1 database + 1 3D enabled instance (viewer) 
