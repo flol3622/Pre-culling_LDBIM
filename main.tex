@@ -76,6 +76,9 @@
 % for tables
 \usepackage{booktabs}
 
+% for footnotes
+\counterwithout{footnote}{chapter}
+
 % ---------------------------------------------
 
 \thesubtitle{Linked Data}
@@ -122,11 +125,10 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \include{chapters/LinkedData.tex}
 \include{chapters/StateOfTheArt.tex}
 \include{chapters/DynamicQueries.tex}
-\include{chapters/Setup.tex}
+\include{chapters/ModularApproach.tex}
+\include{chapters/Prototype.tex}
 
 
-% \appendix
-% \include{chapters/firstAppendix.tex}
 \clearpage
 \chapter*{List of Acronyms}
 \begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
@@ -154,6 +156,7 @@ Master of Science in de ingenieurswetenschappen: architectuur
   \acro{lbd-cg}[LBD-CG]{Linked Building Data Community Group}
   \acro{ldbim}[LDBIM]{Linked Data \acs{bim}}
   \acro{lod}[LOD]{Level of Detail}
+  \acro{lru}[LRU]{Least Recently Used}
   \acro{mep}[MEP]{Mechanical, Electrical and Plumbing}
   \acro{nohc}[NOHC]{Near Optimal Hierarchical Culling}
   \acro{oc}[OC]{Occlusion Culling}
@@ -179,4 +182,9 @@ Master of Science in de ingenieurswetenschappen: architectuur
 
 \printbibliography[nottype=web_page, heading=bibintoc,title={References}]
 \printbibliography[type=web_page, heading=bibintoc, title={Referenced webistes}]
+
+
+\appendix
+\include{chapters/Setup.tex}
+
 \end{document}

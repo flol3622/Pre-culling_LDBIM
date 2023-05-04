@@ -1,0 +1,30 @@
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX fog: <https://w3id.org/fog#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX inst: <https://172.16.10.122:8080/projects/1001/>
+
+SELECT DISTINCT ?entity ?fog_geometry ?datatype
+WHERE {
+  BIND(STRDT("POINT(5000 -5000)", geo:wktLiteral) AS ?location)
+
+  {
+    ?entity geo:asWKT ?entityWKT .
+    FILTER(geof:sfWithin(?location, ?entityWKT))
+  }
+  UNION
+  {
+    ?space rdf:type bot:Space .
+    ?space geo:asWKT ?spaceWKT .
+    FILTER(geof:sfWithin(?location, ?spaceWKT))
+    ?space bot:containsElement|bot:adjacentElement ?entity .
+  }
+  
+  FILTER NOT EXISTS { ?entity rdf:type bot:Space }
+  ?entity ?fog_geometry ?geometryData .
+  FILTER(?fog_geometry IN (fog:asStl)) 
+  BIND(DATATYPE(?geometryData) AS ?datatype)  
+  FILTER(?datatype = xsd:anyURI)
+} 

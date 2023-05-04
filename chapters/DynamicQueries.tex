@@ -10,27 +10,58 @@
 %   computation always in different place
 % - making use of EXISTING DATA,
 %   can be extended to new dedicated ontologies
+This chapter introduces the concept of dynamic querying. In this thesis, it refers to the automatic generation of queries responsible for obtaining the data needed to visualize building elements from a \ac{bim} model within an \ac{rdf} graph. The examples are presented as static SPARQL queries, since the automation itself depends on the implementation or framework used. A link to the appendix is provided, where the implementation within the prototype of this thesis is explained.
 
-\section{Viewer}
+The structure is as follows: first, the requirements for the viewer are researched, as its functioning will dictate the output of the queries. Second, the capabilities of the viewer are explored in relation to the visualization of semantic data, thus emphasizing the added value of working with Linked Data. Third, three types of dynamic queries are presented, each with its own advantages and disadvantages.
+
 % - importance of viewer
 % - refer to state of the art existing viewers
 \subsection{Requirements}
 % - different file formats, different sources.
 % - reusing first diagram
 % - why XEOKIT sdk (practical)
+A viewer designed to visualize data stored in an \ac{rdf} graph is required to understand the data stored within it. Therefore, the requirements for the viewer align with those of its source, the \ac{rdf} graph. Section \ref{sec:fog}, which discusses the use of both the \ac{fog} and \ac{omg} ontologies, offers an overview of the available options in terms of file format and file source. The \ac{fog} ontology supports the description of a wide range of geometry formats, as illustrated in Table \ref{tab:geometryFormats}. In conjunction with the \ac{omg} ontology, which allows for the description of the file source using the datatype of the literal, it can be concluded that the viewer should be able to handle a broad spectrum of file formats, preferably described in the \ac{fog} ontology, and accept both remote files and literal values.
 
-\subsection{Beyong geometry}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llll}
+        \toprule
+        COLLADA & Compressed LAS  & Compressed Nexus      & DWG      \\
+        E57     & GeoJSON         & Well Known Text SFA   & GML      \\
+        IFC     & IGES            & LAS Point Cloud       & Nexus    \\
+        OBJ     & PCD Point Cloud & Uncompressed LAS      & Revit    \\
+        Rhino   & Shapefile       & Simple Feature Access & SketchUp \\
+        SPFF    & STEP SPFF       & Uncompressed Nexus    & SVG      \\
+        PLY     & STL             & Well Known Binary SFA & X3D      \\
+        glTF    &                 &                       &          \\ \bottomrule
+    \end{tabular}
+    \caption[\acs{fog} ontology geometry formats]{List of geometry formats that can be assigned with the \acs{fog} ontology.\footnotemark}
+    \label{tab:geometryFormats}
+\end{table}
+\footnotetext{\cite{fog}}
+
+\subsection{Beyond geometry}
 % - possibilities of viewer extends classical approach
+This section highlights the adavantages a viewer based on Linked Data has over a viewer based on traditional file-based systems, by extenting the thought of a 3D viewer to its ability to visualise non geometric data from its source. \ac{ldbim} links geometrical entities to their corresponding semantic data, which can be visualised in the viewer. This allows for the visualisation of data that is not directly related to the geometry of the building elements, such as the physical properties of a wall or the cost of a door. The possibilities are endless, as long as the data is available in the \ac{rdf} graph. The following sections will discuss different possible implementations.
 
-\subsubsection{BCF integration}
+
+\subsubsection{\acs{bcf} integration} \label{sec:bcf}
 % - BCF viewpoints in xeokit
 % - what is bcf...
+As a first possible implementation of non-geometric data, this section examines the \ac{bcf} buildingSMART standard. \ac{bcf} is an open file format that enables the creation and communication of issues about \ac{bim} models \footcite{bcf}. Both it and its translation in the Semantic Web as \ac{bcfowl} \parencite{bcfOWL} link a screenshot, a camera angle, and a list of concerned entities to form a specific issue \footcite{bcfCollab}.
 
-\subsubsection{Visualising semantic}
+This type of semantic offers two types of implementations. The first is the positioning of a screenshot, together with its camera position and orientation, within the 3D scene. This allows for the visualization of issues, which can be linked to the screenshot, in the viewer, offering communication integration. The second implementation involves the metadata surrounding issues that can be used as visual properties to feed specific queries. This type of implementation is discussed in the next section, \nameref{sec:visualSemantic}.
+
+\subsubsection{Visualising semantic} \label{sec:visualSemantic}
 % - element associated data
 % - physical: thermal, acoustic, ...
 % - non-physical: cost, time, pothologies, ...
 % - all  with temporal dimension / history
+When examining semantics such as physical properties of entities, free from geometric and spatial data (see \nameref{sec:bcf}), a visual interpretation superimposed on the viewer offers powerful rendering possibilities. By coloring elements based on their properties, both physical and non-physical, the viewer can be used to detect anomalies or insights in the model, in a feature-rich output medium.
+
+Physical properties such as thermal, acoustic, structural, and others, or non-physical properties like cost, time, and pathologies, can all be described and linked in the \ac{rdf} graph. The expressive capabilities of \ac{sparql} enable complex and fine-grained queries, offering application-specific query creation about these properties. By selecting a specific subset or combining them, a user or developer can transform the viewer into a powerful tool.
+
+As such, the viewer is expected to comply with a multitude of requirements, which are not all covered in this thesis. Chapter \nameref{ch:modularApproach} thus proposes a modular approach, allowing for a step-by-step implementation of the viewer, starting with the most basic requirements, which are adopted in Chapter \nameref{ch:prototype}, while leaving room for future extensions.
 
 \section{In situ WKT location}
 % - limited to 2D
@@ -41,8 +72,15 @@
 % - to which extends needs every element a location
 % - which queries are possible
 
+\begin{listing}[H]
+    \inputminted{sparql}{dynamicQueries/inSitu/query.rq}
+    \vspace{-0.7cm}
+    \caption{Querying in situ WKT location}
+    \label{lst:GeoSPARQLauto}
+\end{listing}
 
-\section{In viewer bot:Space indentification}
+
+\section{In viewer "bot:Space" identification}
 % - 1 database + 1 3D enabled instance (viewer) 
 %   => viewer can raytrace identify wright space (little computation)
 % - 2 layered viewer visible elements / invisible spaces
@@ -52,9 +90,30 @@
 %   - combination of spaces
 % - sample queries
 
+\begin{listing}[H]
+    \inputminted{sparql}{dynamicQueries/inViewer/query.rq}
+    \vspace{-0.7cm}
+    \caption{Querying in viewer "bot:Space" identification}
+    \label{lst:BOTauto}
+\end{listing}
+
+
 \section{In query OBJ geometry filtering}
 % - no geometric but string analysis in query
 % - AABBox filtering of for example obj rooms
 % - all negative points
 
+\begin{listing}[H]
+    \inputminted{sparql}{dynamicQueries/inQuery/query.rq}
+    \vspace{-0.7cm}
+    \caption{Querying in query OBJ geometry filtering}
+    \label{lst:OBJauto}
+\end{listing}
+
+\begin{listing}[H]
+    \inputminted{js}{dynamicQueries/inQuery/function.js}
+    \vspace{-0.7cm}
+    \caption{Querying in situ WKT location}
+    \label{lst:OBJautoFunction}
+\end{listing}
 

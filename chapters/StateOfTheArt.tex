@@ -36,7 +36,7 @@ The \ac{bot} proposes a set of classes and properties, \enquote{which provides a
     \end{adjustwidth}
 \end{figure}
 
-\subsubsection{\acs{fog} and \acs{omg}}
+\subsubsection{\acs{fog} and \acs{omg}} \label{sec:fog}
 With the help of \ac{fog} and \ac{omg}, geometry descriptions can be linked in the data graph. The innovation lies in the choice to store it either inside or outside the graph, by means of one triple referring to a literal or an \ac{uri}. Listing \ref{lst:rdfSample} showcases multiple examples of objects assigned with a geometry description using an \ac{uri}\parencite{Bonduel2019}.
 
 \begin{listing}[H]
@@ -98,13 +98,13 @@ Their study had two main goals. Firstly, evaluating existing viewers and their c
 \begin{table}[H]
     \centering
     \begin{tabular}{ll}
-        \hline
-        \acs{bim} viewer & Acceleration technique                                                                                                                  \\ \hline
+        \toprule
+        \acs{bim} viewer & Acceleration technique                                                                                                                  \\ \midrule
         Solibri 9.0      & \acs{vfc} | \acs{dc} (optional) | \acs{hagi} (optional)                                                                                 \\
         Naviswork 2015   & \begin{tabular}[c]{@{}l@{}}\acs{vfc} | \acs{dc} (optional) | \acs{cpu} \acs{oc} (optional)\\ \acs{gpu} \acs{oc} (optional)\end{tabular} \\
         BIMSight 1.9.1   & \acs{vfc}                                                                                                                               \\
         DDS 8.0          & \acs{vfc} | \acs{dc} (optional)                                                                                                         \\
-        DDS 10.0         & \acs{vfc} | \acs{dc}                                                                                                                    \\ \hline
+        DDS 10.0         & \acs{vfc} | \acs{dc}                                                                                                                    \\ \bottomrule
     \end{tabular}
     \caption[Acceleration techniques used by tested viewers]{Acceleration techniques used by tested viewers from \cite{Johansson2015}. {\footnotesize (\acf{vfc}, \acf{dc}, \acf{hagi}, \acf{cpu}, \acf{oc})}}
     \label{tab:accelerationTechniques}
