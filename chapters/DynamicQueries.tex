@@ -16,7 +16,7 @@ The structure is as follows: first, the requirements for the viewer are research
 
 % - importance of viewer
 % - refer to state of the art existing viewers
-\subsection{Requirements}
+\section{Requirements}
 % - different file formats, different sources.
 % - reusing first diagram
 % - why XEOKIT sdk (practical)
@@ -40,19 +40,19 @@ A viewer designed to visualize data stored in an \ac{rdf} graph is required to u
 \end{table}
 \footnotetext{\cite{fog}}
 
-\subsection{Beyond geometry}
+\section{Beyond geometry}
 % - possibilities of viewer extends classical approach
 This section highlights the adavantages a viewer based on Linked Data has over a viewer based on traditional file-based systems, by extenting the thought of a 3D viewer to its ability to visualise non geometric data from its source. \ac{ldbim} links geometrical entities to their corresponding semantic data, which can be visualised in the viewer. This allows for the visualisation of data that is not directly related to the geometry of the building elements, such as the physical properties of a wall or the cost of a door. The possibilities are endless, as long as the data is available in the \ac{rdf} graph. The following sections will discuss different possible implementations.
 
 
-\subsubsection{\acs{bcf} integration} \label{sec:bcf}
+\subsection{\acs{bcf} integration} \label{sec:bcf}
 % - BCF viewpoints in xeokit
 % - what is bcf...
 As a first possible implementation of non-geometric data, this section examines the \ac{bcf} buildingSMART standard. \ac{bcf} is an open file format that enables the creation and communication of issues about \ac{bim} models \footcite{bcf}. Both it and its translation in the Semantic Web as \ac{bcfowl} \parencite{bcfOWL} link a screenshot, a camera angle, and a list of concerned entities to form a specific issue \footcite{bcfCollab}.
 
 This type of semantic offers two types of implementations. The first is the positioning of a screenshot, together with its camera position and orientation, within the 3D scene. This allows for the visualization of issues, which can be linked to the screenshot, in the viewer, offering communication integration. The second implementation involves the metadata surrounding issues that can be used as visual properties to feed specific queries. This type of implementation is discussed in the next section, \nameref{sec:visualSemantic}.
 
-\subsubsection{Visualising semantic} \label{sec:visualSemantic}
+\subsection{Visualising semantic} \label{sec:visualSemantic}
 % - element associated data
 % - physical: thermal, acoustic, ...
 % - non-physical: cost, time, pothologies, ...
