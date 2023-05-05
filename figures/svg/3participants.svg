@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="svg7151" inkscape:export-filename="..\pdf\3participants.pdf" inkscape:export-xdpi="96" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 322 395"
+	 style="enable-background:new 0 0 322 395;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:0.8;}
+	.st1{fill:none;stroke:#000000;stroke-width:0.8;stroke-dasharray:4,4;}
+	.st2{font-family:'SourceSerifPro-Light';}
+	.st3{font-size:13.6154px;}
+	.st4{fill:none;stroke:#000000;stroke-width:0.8;}
+	.st5{fill:none;}
+	.st6{fill:none;stroke:#000000;stroke-width:0.8;stroke-dasharray:1.6,1.6;}
+	.st7{fill:none;stroke:#1E64C8;stroke-width:0.8;}
+	.st8{fill:#1E64C8;}
+</style>
+<sodipodi:namedview  bordercolor="#000000" borderopacity="0.25" id="namedview7153" inkscape:current-layer="svg7151" inkscape:cx="105.11923" inkscape:cy="124.66062" inkscape:deskcolor="#d1d1d1" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:showpageshadow="2" inkscape:window-height="1009" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:zoom="1.4840292" pagecolor="#ffffff" showgrid="false">
+	</sodipodi:namedview>
+<rect id="rect7051" x="15" y="102" class="st0" width="214" height="104.4"/>
+<rect id="rect7053" x="15" y="220.4" class="st0" width="301" height="61.6"/>
+<line id="line7055" class="st1" x1="43" y1="85" x2="43" y2="299"/>
+<line id="line7057" class="st1" x1="145" y1="85" x2="145" y2="299"/>
+<line id="line7059" class="st1" x1="267" y1="85" x2="267" y2="299"/>
+<text id="text7061" transform="matrix(1 0 0 1 25 82.0898)" class="st2 st3">HHD</text>
+<circle id="ellipse7063" class="st0" cx="43.5" cy="16" r="8"/>
+<path id="path7065" class="st4" d="M43.5,24v27 M30.5,32h26 M43.5,51l-13,15 M43.5,51l13,15"/>
+<path id="rect7073" class="st0" d="M84.5,53h122c1.4,0,2.5,1.1,2.5,2.5v26c0,1.4-1.1,2.5-2.5,2.5h-122c-1.4,0-2.5-1.1-2.5-2.5v-26
+	C82,54.1,83.1,53,84.5,53z"/>
+<rect x="89" y="62.7" class="st5" width="113" height="15.9"/>
+<text id="text7075" transform="matrix(1 0 0 1 96.2949 74.0894)" class="st2 st3">Sparql Endpoint</text>
+<rect x="233" y="53.7" class="st5" width="58" height="15.9"/>
+<text id="text7081" transform="matrix(1 0 0 1 233 65.0747)" class="st2 st3">External</text>
+<rect x="234" y="70.7" class="st5" width="66" height="15.9"/>
+<text id="text7083" transform="matrix(1 0 0 1 234 82.0894)" class="st2 st3">Database</text>
+<path id="path7085" class="st0" d="M249.5,15c0-10,18-10,18-10s18,0,18,10v26c0,10-18,10-18,10s-18,0-18-10V15"/>
+<path id="path7087" class="st4" d="M249.5,15c0,10,18,10,18,10s18,0,18-10"/>
+<path id="path7097" class="st0" d="M15,102h76v7.8l-10,10H15V102"/>
+<rect id="rect7099" x="15" y="102" class="st4" width="214" height="104.4"/>
+<rect x="30" y="104.7" class="st5" width="31" height="15.9"/>
+<text id="text7101" transform="matrix(1 0 0 1 30 116.0986)" class="st2 st3">loop</text>
+<line id="line7103" class="st4" x1="143.5" y1="141.6" x2="133.5" y2="137.6"/>
+<line id="line7105" class="st4" x1="143.5" y1="141.6" x2="133.5" y2="145.6"/>
+<line id="line7107" class="st4" x1="43.5" y1="141.6" x2="144.5" y2="141.6"/>
+<rect x="50.5" y="125.5" class="st5" width="66" height="15.9"/>
+<text id="text7109" transform="matrix(1 0 0 1 50.5 136.8979)" class="st2 st3">first  fetch</text>
+<line id="line7111" class="st6" x1="145.5" y1="171.4" x2="187.5" y2="171.4"/>
+<line id="line7113" class="st6" x1="187.5" y1="171.4" x2="187.5" y2="184.4"/>
+<line id="line7115" class="st6" x1="146.5" y1="184.4" x2="187.5" y2="184.4"/>
+<line id="line7117" class="st4" x1="146.5" y1="184.4" x2="156.5" y2="180.4"/>
+<line id="line7119" class="st4" x1="146.5" y1="184.4" x2="156.5" y2="188.4"/>
+<text id="text7121" transform="matrix(1 0 0 1 152.5 166.6978)" class="st2 st3">culling</text>
+<line id="line7123" class="st4" x1="44.5" y1="198.4" x2="54.5" y2="194.4"/>
+<line id="line7125" class="st4" x1="44.5" y1="198.4" x2="54.5" y2="202.4"/>
+<line id="line7127" class="st6" x1="43.5" y1="198.4" x2="144.5" y2="198.4"/>
+<path id="path7129" class="st0" d="M15,220.4h104v7.8l-10,10H15V220.4"/>
+<rect id="rect7131" x="15" y="220.4" class="st4" width="301" height="61.6"/>
+<rect x="30" y="221.6" class="st5" width="59" height="15.9"/>
+<text id="text7133" transform="matrix(1 0 0 1 30 232.9731)" class="st2 st3">optional</text>
+<line id="line7135" class="st7" x1="265.5" y1="260" x2="255.5" y2="256"/>
+<line id="line7137" class="st7" x1="265.5" y1="260" x2="255.5" y2="264"/>
+<line id="line7139" class="st7" x1="43.5" y1="260" x2="266.5" y2="260"/>
+<rect x="50.5" y="243.9" class="st5" width="87" height="15.9"/>
+<text id="text7141" transform="matrix(1 0 0 1 50.5 255.2959)" class="st8 st2 st3">second fetch</text>
+<line id="line7143" class="st4" x1="44.5" y1="274" x2="54.5" y2="270"/>
+<line id="line7145" class="st4" x1="44.5" y1="274" x2="54.5" y2="278"/>
+<line id="line7147" class="st6" x1="43.5" y1="274" x2="266.5" y2="274"/>
+</svg>

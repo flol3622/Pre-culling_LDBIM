@@ -1,16 +1,1022 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 832.0192997623026 635.0402426372316" width="832.0192997623026" height="635.0402426372316">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 832.0192997623026 635.0402426372316"
+   width="832.0192997623026"
+   height="635.0402426372316"
+   id="svg292"
+   sodipodi:docname="omg1.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="..\pdf\omg1.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview294"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.92307779"
+     inkscape:cx="246.99977"
+     inkscape:cy="319.58303"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg292" />
   <!-- svg-source:excalidraw -->
-  
-  <defs>
-    <style class="style-fonts">
+  <defs
+     id="defs4">
+    <style
+       class="style-fonts"
+       id="style2">
       @font-face {
-        font-family: "Virgil";
-        src: url("https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/phili/.vscode/extensions/pomdtr.excalidraw-editor-3.5.1/public//dist/excalidraw-assets/Virgil.woff2");
+        font-family: &quot;Virgil&quot;;
+        src: url(&quot;https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/phili/.vscode/extensions/pomdtr.excalidraw-editor-3.5.1/public//dist/excalidraw-assets/Virgil.woff2&quot;);
       }
       @font-face {
-        font-family: "Cascadia";
-        src: url("https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/phili/.vscode/extensions/pomdtr.excalidraw-editor-3.5.1/public//dist/excalidraw-assets/Cascadia.woff2");
+        font-family: &quot;Cascadia&quot;;
+        src: url(&quot;https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/phili/.vscode/extensions/pomdtr.excalidraw-editor-3.5.1/public//dist/excalidraw-assets/Cascadia.woff2&quot;);
       }
     </style>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask987">
+      <g
+         id="g995"
+         transform="translate(-345.96954,-272.08917)">
+        <g
+           id="g993">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="616.16608"
+             height="521.258"
+             id="rect989" />
+          <rect
+             x="207.2435"
+             y="328.94788"
+             fill="#000000"
+             width="131.25"
+             height="19"
+             opacity="1"
+             id="rect991" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1006">
+      <g
+         id="g1014"
+         transform="translate(-376.08797,-272.44742)">
+        <g
+           id="g1012">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="528.49384"
+             height="527.13422"
+             id="rect1008" />
+          <rect
+             x="336.26382"
+             y="360.51962"
+             fill="#000000"
+             width="84.375"
+             height="19"
+             opacity="1"
+             id="rect1010" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1025">
+      <g
+         id="g1033"
+         transform="translate(-376.08797,-272.44742)">
+        <g
+           id="g1031">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="528.49384"
+             height="527.13422"
+             id="rect1027" />
+          <rect
+             x="336.26382"
+             y="360.51962"
+             fill="#000000"
+             width="84.375"
+             height="19"
+             opacity="1"
+             id="rect1029" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1044">
+      <g
+         id="g1052"
+         transform="translate(-345.96954,-272.08917)">
+        <g
+           id="g1050">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="616.16608"
+             height="521.258"
+             id="rect1046" />
+          <rect
+             x="207.2435"
+             y="328.94788"
+             fill="#000000"
+             width="131.25"
+             height="19"
+             opacity="1"
+             id="rect1048" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1063">
+      <g
+         id="g1071"
+         transform="translate(-376.08797,-272.44742)">
+        <g
+           id="g1069">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="528.49384"
+             height="527.13422"
+             id="rect1065" />
+          <rect
+             x="336.26382"
+             y="360.51962"
+             fill="#000000"
+             width="84.375"
+             height="19"
+             opacity="1"
+             id="rect1067" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1082">
+      <g
+         id="g1090"
+         transform="translate(-345.96954,-272.08917)">
+        <g
+           id="g1088">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="616.16608"
+             height="521.258"
+             id="rect1084" />
+          <rect
+             x="207.2435"
+             y="328.94788"
+             fill="#000000"
+             width="131.25"
+             height="19"
+             opacity="1"
+             id="rect1086" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1102">
+      <g
+         id="g1110"
+         transform="translate(-416.26658,-271.46711)">
+        <g
+           id="g1108">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="716.16547"
+             height="523.17419"
+             id="rect1104" />
+          <rect
+             x="477.17358"
+             y="336.88431"
+             fill="#000000"
+             width="84.375"
+             height="19.200001"
+             opacity="1"
+             id="rect1106" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1122">
+      <g
+         id="g1130"
+         transform="translate(-466.18098,-257.85089)">
+        <g
+           id="g1128">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="851.20203"
+             height="524.38879"
+             id="rect1124" />
+          <rect
+             x="618.28101"
+             y="348.07785"
+             fill="#000000"
+             width="187.5"
+             height="19"
+             opacity="1"
+             id="rect1126" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1141">
+      <g
+         id="g1149"
+         transform="translate(-466.18098,-257.85089)">
+        <g
+           id="g1147">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="851.20203"
+             height="524.38879"
+             id="rect1143" />
+          <rect
+             x="618.28101"
+             y="348.07785"
+             fill="#000000"
+             width="187.5"
+             height="19"
+             opacity="1"
+             id="rect1145" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1162">
+      <g
+         id="g1170"
+         transform="translate(-466.18098,-257.85089)">
+        <g
+           id="g1168">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="851.20203"
+             height="524.38879"
+             id="rect1164" />
+          <rect
+             x="618.28101"
+             y="348.07785"
+             fill="#000000"
+             width="187.5"
+             height="19"
+             opacity="1"
+             id="rect1166" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1182">
+      <g
+         id="g1190"
+         transform="translate(-416.26658,-271.46711)">
+        <g
+           id="g1188">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="716.16547"
+             height="523.17419"
+             id="rect1184" />
+          <rect
+             x="477.17358"
+             y="336.88431"
+             fill="#000000"
+             width="84.375"
+             height="19.200001"
+             opacity="1"
+             id="rect1186" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1203">
+      <g
+         id="g1211"
+         transform="translate(-416.26658,-271.46711)">
+        <g
+           id="g1209">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="716.16547"
+             height="523.17419"
+             id="rect1205" />
+          <rect
+             x="477.17358"
+             y="336.88431"
+             fill="#000000"
+             width="84.375"
+             height="19.200001"
+             opacity="1"
+             id="rect1207" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1228">
+      <g
+         id="g1236"
+         transform="translate(-378.87557,-84.314261)">
+        <g
+           id="g1234">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="479.03842"
+             height="286.85693"
+             id="rect1230" />
+          <rect
+             x="289.8945"
+             y="126.0856"
+             fill="#000000"
+             width="178.125"
+             height="19"
+             opacity="1"
+             id="rect1232" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1247">
+      <g
+         id="g1255"
+         transform="translate(-378.87557,-84.314261)">
+        <g
+           id="g1253">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="479.03842"
+             height="286.85693"
+             id="rect1249" />
+          <rect
+             x="289.8945"
+             y="126.0856"
+             fill="#000000"
+             width="178.125"
+             height="19"
+             opacity="1"
+             id="rect1251" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1266">
+      <g
+         id="g1274"
+         transform="translate(-286.80608,-253.25386)">
+        <g
+           id="g1272">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="565.17468"
+             height="524.29761"
+             id="rect1268" />
+          <rect
+             x="10"
+             y="285.24487"
+             fill="#000000"
+             width="196.875"
+             height="38"
+             opacity="1"
+             id="rect1270" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1285">
+      <g
+         id="g1293"
+         transform="translate(-286.80608,-253.25386)">
+        <g
+           id="g1291">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="565.17468"
+             height="524.29761"
+             id="rect1287" />
+          <rect
+             x="10"
+             y="285.24487"
+             fill="#000000"
+             width="196.875"
+             height="38"
+             opacity="1"
+             id="rect1289" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1305">
+      <g
+         id="g1313"
+         transform="translate(-378.87557,-84.314261)">
+        <g
+           id="g1311">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="479.03842"
+             height="286.85693"
+             id="rect1307" />
+          <rect
+             x="289.8945"
+             y="126.0856"
+             fill="#000000"
+             width="178.125"
+             height="19"
+             opacity="1"
+             id="rect1309" />
+        </g>
+      </g>
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask1325">
+      <g
+         id="g1333"
+         transform="translate(-286.80608,-253.25386)">
+        <g
+           id="g1331">
+          <rect
+             x="0"
+             y="0"
+             fill="#ffffff"
+             width="565.17468"
+             height="524.29761"
+             id="rect1327" />
+          <rect
+             x="10"
+             y="285.24487"
+             fill="#000000"
+             width="196.875"
+             height="38"
+             opacity="1"
+             id="rect1329" />
+        </g>
+      </g>
+    </mask>
   </defs>
-  <g stroke-linecap="round" transform="translate(312.4569913262171 14.009899575314193) rotate(0 66.50000000000023 30)"><path d="M15 0 M15 0 C50.42 0, 85.83 0, 118 0 M15 0 C55.38 0, 95.77 0, 118 0 M118 0 C128 0, 133 5, 133 15 M118 0 C128 0, 133 5, 133 15 M133 15 C133 24.19, 133 33.37, 133 45 M133 15 C133 26.71, 133 38.43, 133 45 M133 45 C133 55, 128 60, 118 60 M133 45 C133 55, 128 60, 118 60 M118 60 C84.08 60, 50.15 60, 15 60 M118 60 C84.84 60, 51.69 60, 15 60 M15 60 C5 60, 0 55, 0 45 M15 60 C5 60, 0 55, 0 45 M0 45 C0 34.26, 0 23.52, 0 15 M0 45 C0 38.65, 0 32.3, 0 15 M0 15 C0 5, 5 0, 15 0 M0 15 C0 5, 5 0, 15 0" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(337.9413663262171 32.00989957531419) rotate(0 41.015625 12)"><text x="41.015625" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">&lt;room1&gt;</text></g><g stroke-linecap="round" transform="translate(298.4569913262171 198.90187928500836) rotate(0 80.50000000000023 32.5)"><path d="M16.25 0 M16.25 0 C55.05 0, 93.84 0, 144.75 0 M16.25 0 C62.05 0, 107.85 0, 144.75 0 M144.75 0 C155.58 0, 161 5.42, 161 16.25 M144.75 0 C155.58 0, 161 5.42, 161 16.25 M161 16.25 C161 25.79, 161 35.32, 161 48.75 M161 16.25 C161 23.87, 161 31.49, 161 48.75 M161 48.75 C161 59.58, 155.58 65, 144.75 65 M161 48.75 C161 59.58, 155.58 65, 144.75 65 M144.75 65 C118.46 65, 92.17 65, 16.25 65 M144.75 65 C118.67 65, 92.58 65, 16.25 65 M16.25 65 C5.42 65, 0 59.58, 0 48.75 M16.25 65 C5.42 65, 0 59.58, 0 48.75 M0 48.75 C0 36.05, 0 23.35, 0 16.25 M0 48.75 C0 37.87, 0 27, 0 16.25 M0 16.25 C0 5.42, 5.42 0, 16.25 0 M0 16.25 C0 5.42, 5.42 0, 16.25 0" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(326.2226163262171 219.40187928500836) rotate(0 52.734375 12)"><text x="52.734375" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">&lt;object1&gt;</text></g><g stroke-linecap="round" transform="translate(37.487256865478685 435.9178794143172) rotate(0 174.5 33.5)"><path d="M16.75 0 M16.75 0 C80.5 0, 144.24 0, 332.25 0 M16.75 0 C99.57 0, 182.39 0, 332.25 0 M332.25 0 C343.42 0, 349 5.58, 349 16.75 M332.25 0 C343.42 0, 349 5.58, 349 16.75 M349 16.75 C349 27.58, 349 38.42, 349 50.25 M349 16.75 C349 26.38, 349 36.01, 349 50.25 M349 50.25 C349 61.42, 343.42 67, 332.25 67 M349 50.25 C349 61.42, 343.42 67, 332.25 67 M332.25 67 C247.93 67, 163.61 67, 16.75 67 M332.25 67 C240.74 67, 149.22 67, 16.75 67 M16.75 67 C5.58 67, 0 61.42, 0 50.25 M16.75 67 C5.58 67, 0 61.42, 0 50.25 M0 50.25 C0 41.37, 0 32.5, 0 16.75 M0 50.25 C0 41.05, 0 31.86, 0 16.75 M0 16.75 C0 5.58, 5.58 0, 16.75 0 M0 16.75 C0 5.58, 5.58 0, 16.75 0" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(65.50288186547868 457.4178794143172) rotate(0 146.484375 12)"><text x="146.484375" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">&lt;geometry_data1&gt;^^xsd:...</text></g><g stroke-linecap="round" transform="translate(412.0192997623021 435.4126296639247) rotate(0 205.00000000000023 33.5)"><path d="M16.75 0 M16.75 0 C117.66 0, 218.57 0, 393.25 0 M16.75 0 C147.42 0, 278.09 0, 393.25 0 M393.25 0 C404.42 0, 410 5.58, 410 16.75 M393.25 0 C404.42 0, 410 5.58, 410 16.75 M410 16.75 C410 29.78, 410 42.82, 410 50.25 M410 16.75 C410 28.06, 410 39.37, 410 50.25 M410 50.25 C410 61.42, 404.42 67, 393.25 67 M410 50.25 C410 61.42, 404.42 67, 393.25 67 M393.25 67 C289.29 67, 185.32 67, 16.75 67 M393.25 67 C251.85 67, 110.45 67, 16.75 67 M16.75 67 C5.58 67, 0 61.42, 0 50.25 M16.75 67 C5.58 67, 0 61.42, 0 50.25 M0 50.25 C0 43.47, 0 36.69, 0 16.75 M0 50.25 C0 37.48, 0 24.7, 0 16.75 M0 16.75 C0 5.58, 5.58 0, 16.75 0 M0 16.75 C0 5.58, 5.58 0, 16.75 0" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(435.3786747623021 456.9126296639247) rotate(0 181.64062500000023 12)"><text x="181.640625" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">&lt;spacial_data1&gt;^^geo:wktLiteral</text></g><g mask="url(#mask-US3KCDXk6x0FyGPSmMDFP)" stroke-linecap="round"><g transform="translate(378.87556789213477 84.31426124845166) rotate(0 0.08142343408280794 51.271340171882684)"><path d="M0 0 C0.03 17.09, 0.14 85.45, 0.16 102.54 M0 0 C0.03 17.09, 0.14 85.45, 0.16 102.54" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(378.87556789213477 84.31426124845166) rotate(0 0.08142343408280794 51.271340171882684)"><path d="M-10.14 74.37 C-6.6 84.04, -3.07 93.71, 0.16 102.54 M-10.14 74.37 C-6.76 83.61, -3.38 92.85, 0.16 102.54" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(378.87556789213477 84.31426124845166) rotate(0 0.08142343408280794 51.271340171882684)"><path d="M10.38 74.34 C6.87 84.02, 3.37 93.7, 0.16 102.54 M10.38 74.34 C7.03 83.59, 3.68 92.84, 0.16 102.54" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask id="mask-US3KCDXk6x0FyGPSmMDFP"><rect x="0" y="0" fill="#fff" width="479.0384147603004" height="286.856941592217"></rect><rect x="289.89449132621803" y="126.08560142033434" fill="#000" width="178.125" height="19" opacity="1"></rect></mask><g transform="translate(289.8944913262176 126.08560142033434) rotate(0 89.0625 9.5)"><text x="89.0625" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="16px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">bot:containsElement</text></g><g mask="url(#mask-rwAPjYAT-j0pbhZt-MXY8)" stroke-linecap="round"><g transform="translate(345.96954281351327 272.0891717277659) rotate(0 -85.09825995997676 74.58441702603568)"><path d="M0 0 C-12.18 11.06, -44.73 41.5, -73.1 66.36 C-101.47 91.22, -154.01 135.37, -170.2 149.17 M0 0 C-12.18 11.06, -44.73 41.5, -73.1 66.36 C-101.47 91.22, -154.01 135.37, -170.2 149.17" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(345.96954281351327 272.0891717277659) rotate(0 -85.09825995997676 74.58441702603568)"><path d="M-155.32 123.12 C-159.23 129.96, -163.14 136.81, -170.2 149.17 M-155.32 123.12 C-159.67 130.74, -164.03 138.36, -170.2 149.17" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(345.96954281351327 272.0891717277659) rotate(0 -85.09825995997676 74.58441702603568)"><path d="M-142.06 138.77 C-149.45 141.5, -156.84 144.24, -170.2 149.17 M-142.06 138.77 C-150.29 141.82, -158.52 144.86, -170.2 149.17" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask id="mask-rwAPjYAT-j0pbhZt-MXY8"><rect x="0" y="0" fill="#fff" width="616.1660627334669" height="521.2580057798373"></rect><rect x="207.24350390175414" y="328.9478797846368" fill="#000" width="131.25" height="19" opacity="1"></rect></mask><g transform="translate(207.24350390175414 328.9478797846368) rotate(0 53.627778951782375 17.72570896916477)"><text x="65.625" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="16px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">fog:as..._v...</text></g><g mask="url(#mask-_JA7TDbBM-EO1kfZ9r6a3)" stroke-linecap="round"><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(376.08796812872106 272.4474243456916) rotate(0 -22.215673274113215 77.34339243586192)"><path d="M0 0 C0.39 16.26, 10.7 71.79, 2.36 97.57 C-5.98 123.35, -41.31 145.17, -50.04 154.69" stroke="#000000" stroke-width="1.5" fill="none" stroke-dasharray="8 9"></path></g><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(376.08796812872106 272.4474243456916) rotate(0 -22.215673274113215 77.34339243586192)"><path d="M-35.33 128.54 C-40.1 137.03, -44.88 145.52, -50.04 154.69" stroke="#000000" stroke-width="1.5" fill="none"></path></g><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(376.08796812872106 272.4474243456916) rotate(0 -22.215673274113215 77.34339243586192)"><path d="M-21.96 144.12 C-31.08 147.55, -40.2 150.98, -50.04 154.69" stroke="#000000" stroke-width="1.5" fill="none"></path></g></g><mask id="mask-_JA7TDbBM-EO1kfZ9r6a3"><rect x="0" y="0" fill="#fff" width="528.4938081845779" height="527.1342092174154"></rect><rect x="336.26381757180616" y="360.5196360189675" fill="#000" width="84.375" height="19" opacity="1"></rect></mask><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(336.2638175718057 360.5196360189675) rotate(0 17.60847728280214 -10.728819237413973)"><text x="42.1875" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="16px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">fog:as...</text></g><g mask="url(#mask--0v-n8O1zJqgZBE6IorPS)" stroke-linecap="round"><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(286.8060832015367 253.25386396617432) rotate(0 -94.7802795157379 85.52186740360048)"><path d="M0 0 C-29.73 8.5, -149.89 22.48, -178.37 50.99 C-206.85 79.5, -172.14 151.03, -170.89 171.04" stroke="#000000" stroke-width="1.5" fill="none" stroke-dasharray="8 9"></path></g><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(286.8060832015367 253.25386396617432) rotate(0 -94.7802795157379 85.52186740360048)"><path d="M-187.84 146.29 C-183.39 152.8, -178.93 159.3, -170.89 171.04" stroke="#000000" stroke-width="1.5" fill="none"></path></g><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(286.8060832015367 253.25386396617432) rotate(0 -94.7802795157379 85.52186740360048)"><path d="M-167.97 141.19 C-168.74 149.03, -169.5 156.88, -170.89 171.04" stroke="#000000" stroke-width="1.5" fill="none"></path></g></g><mask id="mask--0v-n8O1zJqgZBE6IorPS"><rect x="0" y="0" fill="#fff" width="565.1746664030732" height="524.2975987733753"></rect><rect x="10" y="285.24487858913744" fill="#000" width="196.875" height="38" opacity="1"></rect></mask><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(10 285.24487858913744) rotate(0 182.0258036857988 53.53085278063736)"><text x="98.4375" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="16px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">omg:hasSimpleGeometry</text><text x="98.4375" y="19" font-family="Cascadia, Segoe UI Emoji" font-size="16px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Description</text></g><g mask="url(#mask-y1p0Fd_HZE8pZgPDzMRew)" stroke-linecap="round"><g transform="translate(416.266583370872 271.46711434862937) rotate(0 99.94943035931487 75.85354385699907)"><path d="M0 0 C17.18 12.5, 69.78 49.73, 103.09 75.02 C136.41 100.3, 183.76 138.93, 199.9 151.71 M0 0 C17.18 12.5, 69.78 49.73, 103.09 75.02 C136.41 100.3, 183.76 138.93, 199.9 151.71" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(416.266583370872 271.46711434862937) rotate(0 99.94943035931487 75.85354385699907)"><path d="M171.49 142.08 C180.51 145.14, 189.54 148.2, 199.9 151.71 M171.49 142.08 C182.57 145.83, 193.65 149.59, 199.9 151.71" stroke="#000000" stroke-width="1" fill="none"></path></g><g transform="translate(416.266583370872 271.46711434862937) rotate(0 99.94943035931487 75.85354385699907)"><path d="M184.32 126.07 C189.27 134.21, 194.22 142.36, 199.9 151.71 M184.32 126.07 C190.4 136.07, 196.47 146.07, 199.9 151.71" stroke="#000000" stroke-width="1" fill="none"></path></g></g><mask id="mask-y1p0Fd_HZE8pZgPDzMRew"><rect x="0" y="0" fill="#fff" width="716.1654440895015" height="523.1742020626275"></rect><rect x="477.1735709841355" y="336.88430558281834" fill="#000" width="84.375" height="19.2" opacity="1"></rect></mask><g transform="translate(477.17357098413504 336.88430558281834) rotate(0 39.04244274605185 10.436352622810091)"><text x="42.1875" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="16px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">geo:asWKT</text></g><g stroke-linecap="round" transform="translate(323.09984595075684 543.0402426372316) rotate(0 71.99999999999977 41)"><path d="M144 41 C144 42.65, 143.82 44.31, 143.48 45.94 C143.13 47.58, 142.6 49.21, 141.91 50.81 C141.22 52.41, 140.35 54, 139.32 55.54 C138.3 57.08, 137.1 58.6, 135.75 60.05 C134.41 61.51, 132.9 62.93, 131.25 64.29 C129.61 65.65, 127.81 66.95, 125.89 68.19 C123.97 69.42, 121.91 70.6, 119.74 71.69 C117.58 72.78, 115.28 73.81, 112.9 74.74 C110.52 75.68, 108.02 76.54, 105.46 77.3 C102.9 78.07, 100.24 78.75, 97.53 79.34 C94.83 79.92, 92.04 80.41, 89.23 80.81 C86.42 81.2, 83.55 81.5, 80.68 81.7 C77.81 81.9, 74.89 82, 72 82 C69.11 82, 66.19 81.9, 63.32 81.7 C60.45 81.5, 57.58 81.2, 54.77 80.81 C51.96 80.41, 49.17 79.92, 46.47 79.34 C43.76 78.75, 41.1 78.07, 38.54 77.3 C35.98 76.54, 33.48 75.68, 31.1 74.74 C28.72 73.81, 26.42 72.78, 24.26 71.69 C22.09 70.6, 20.03 69.42, 18.11 68.19 C16.19 66.95, 14.39 65.65, 12.75 64.29 C11.1 62.93, 9.59 61.51, 8.25 60.05 C6.9 58.6, 5.7 57.08, 4.68 55.54 C3.65 54, 2.78 52.41, 2.09 50.81 C1.4 49.21, 0.87 47.58, 0.52 45.94 C0.18 44.31, 0 42.65, 0 41 C0 39.35, 0.18 37.69, 0.52 36.06 C0.87 34.42, 1.4 32.79, 2.09 31.19 C2.78 29.59, 3.65 28, 4.68 26.46 C5.7 24.92, 6.9 23.4, 8.25 21.95 C9.59 20.49, 11.1 19.07, 12.75 17.71 C14.39 16.35, 16.19 15.05, 18.11 13.81 C20.03 12.58, 22.09 11.4, 24.26 10.31 C26.42 9.22, 28.72 8.19, 31.1 7.26 C33.48 6.32, 35.98 5.46, 38.54 4.7 C41.1 3.93, 43.76 3.25, 46.47 2.66 C49.17 2.08, 51.96 1.59, 54.77 1.19 C57.58 0.8, 60.45 0.5, 63.32 0.3 C66.19 0.1, 69.11 0, 72 0 C74.89 0, 77.81 0.1, 80.68 0.3 C83.55 0.5, 86.42 0.8, 89.23 1.19 C92.04 1.59, 94.83 2.08, 97.53 2.66 C100.24 3.25, 102.9 3.93, 105.46 4.7 C108.02 5.46, 110.52 6.32, 112.9 7.26 C115.28 8.19, 117.58 9.22, 119.74 10.31 C121.91 11.4, 123.97 12.58, 125.89 13.81 C127.81 15.05, 129.61 16.35, 131.25 17.71 C132.9 19.07, 134.41 20.49, 135.75 21.95 C137.1 23.4, 138.3 24.92, 139.32 26.46 C140.35 28, 141.22 29.59, 141.91 31.19 C142.6 32.79, 143.13 34.42, 143.48 36.06 C143.82 37.69, 144 39.35, 144 41" stroke="#364fc7" stroke-width="1.5" fill="none" stroke-dasharray="8 9"></path></g><g transform="translate(354.17253270532547 572.0488646085832) rotate(0 41.015625 12)"><text x="41.015625" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#364fc7" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Literal</text></g><g stroke-linecap="round"><g transform="translate(297.13629199882826 514.9501572185031) rotate(0 16.499124876114365 16.499124876114365)"><path d="M0 0 C5.5 5.5, 27.5 27.5, 33 33 M0 0 C5.5 5.5, 27.5 27.5, 33 33" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(297.13629199882826 514.9501572185031) rotate(0 16.499124876114365 16.499124876114365)"><path d="M11.85 23.14 C16.24 25.18, 20.62 27.23, 33 33 M11.85 23.14 C16.81 25.45, 21.77 27.76, 33 33" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(297.13629199882826 514.9501572185031) rotate(0 16.499124876114365 16.499124876114365)"><path d="M23.14 11.85 C25.18 16.24, 27.23 20.62, 33 33 M23.14 11.85 C25.45 16.81, 27.76 21.77, 33 33" stroke="#364fc7" stroke-width="1" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(506.46893886452835 514.9501572185031) rotate(0 -18.56151548562866 17.01472252849271)"><path d="M0 0 C-6.19 5.67, -30.94 28.36, -37.12 34.03 M0 0 C-6.19 5.67, -30.94 28.36, -37.12 34.03" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(506.46893886452835 514.9501572185031) rotate(0 -18.56151548562866 17.01472252849271)"><path d="M-25.5 11.69 C-29.06 18.53, -32.62 25.37, -37.12 34.03 M-25.5 11.69 C-28.84 18.11, -32.18 24.54, -37.12 34.03" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(506.46893886452835 514.9501572185031) rotate(0 -18.56151548562866 17.01472252849271)"><path d="M-13.86 24.39 C-20.99 27.34, -28.11 30.29, -37.12 34.03 M-13.86 24.39 C-20.55 27.16, -27.24 29.93, -37.12 34.03" stroke="#364fc7" stroke-width="1" fill="none"></path></g></g><mask></mask><g stroke-linecap="round" transform="translate(525.0684546109323 10) rotate(0 81 33)"><path d="M162 33 C162 34.33, 161.8 35.66, 161.41 36.98 C161.02 38.29, 160.43 39.61, 159.65 40.9 C158.87 42.18, 157.89 43.46, 156.74 44.7 C155.58 45.94, 154.23 47.16, 152.72 48.34 C151.21 49.51, 149.51 50.65, 147.66 51.75 C145.81 52.84, 143.79 53.89, 141.63 54.88 C139.47 55.88, 137.15 56.82, 134.71 57.7 C132.28 58.58, 129.69 59.41, 127.01 60.16 C124.33 60.91, 121.52 61.6, 118.64 62.22 C115.76 62.84, 112.77 63.39, 109.72 63.86 C106.68 64.33, 103.54 64.72, 100.38 65.04 C97.22 65.36, 93.99 65.6, 90.76 65.76 C87.53 65.92, 84.25 66, 81 66 C77.75 66, 74.47 65.92, 71.24 65.76 C68.01 65.6, 64.78 65.36, 61.62 65.04 C58.46 64.72, 55.32 64.33, 52.28 63.86 C49.23 63.39, 46.24 62.84, 43.36 62.22 C40.48 61.6, 37.67 60.91, 34.99 60.16 C32.31 59.41, 29.72 58.58, 27.29 57.7 C24.85 56.82, 22.53 55.88, 20.37 54.88 C18.21 53.89, 16.19 52.84, 14.34 51.75 C12.49 50.65, 10.79 49.51, 9.28 48.34 C7.77 47.16, 6.42 45.94, 5.26 44.7 C4.11 43.46, 3.13 42.18, 2.35 40.9 C1.57 39.61, 0.98 38.29, 0.59 36.98 C0.2 35.66, 0 34.33, 0 33 C0 31.67, 0.2 30.34, 0.59 29.02 C0.98 27.71, 1.57 26.39, 2.35 25.1 C3.13 23.82, 4.11 22.54, 5.26 21.3 C6.42 20.06, 7.77 18.84, 9.28 17.66 C10.79 16.49, 12.49 15.35, 14.34 14.25 C16.19 13.16, 18.21 12.11, 20.37 11.12 C22.53 10.12, 24.85 9.18, 27.29 8.3 C29.72 7.42, 32.31 6.59, 34.99 5.84 C37.67 5.09, 40.48 4.4, 43.36 3.78 C46.24 3.16, 49.23 2.61, 52.28 2.14 C55.32 1.67, 58.46 1.28, 61.62 0.96 C64.78 0.64, 68.01 0.4, 71.24 0.24 C74.47 0.08, 77.75 0, 81 0 C84.25 0, 87.53 0.08, 90.76 0.24 C93.99 0.4, 97.22 0.64, 100.38 0.96 C103.54 1.28, 106.68 1.67, 109.72 2.14 C112.77 2.61, 115.76 3.16, 118.64 3.78 C121.52 4.4, 124.33 5.09, 127.01 5.84 C129.69 6.59, 132.28 7.42, 134.71 8.3 C137.15 9.18, 139.47 10.12, 141.63 11.12 C143.79 12.11, 145.81 13.16, 147.66 14.25 C149.51 15.35, 151.21 16.49, 152.72 17.66 C154.23 18.84, 155.58 20.06, 156.74 21.3 C157.89 22.54, 158.87 23.82, 159.65 25.1 C160.43 26.39, 161.02 27.71, 161.41 29.02 C161.8 30.34, 162 31.67, 162 33" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(559.4178053348223 31.16547622084397) rotate(0 46.875 12)"><text x="46.875" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#364fc7" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">bot:Zone</text></g><g stroke-linecap="round" transform="translate(588.8460044054382 139.01756319918832) rotate(0 107 33)"><path d="M214 33 C214 34.15, 213.8 35.31, 213.41 36.45 C213.02 37.59, 212.44 38.74, 211.66 39.86 C210.89 40.99, 209.92 42.1, 208.76 43.2 C207.61 44.29, 206.27 45.37, 204.75 46.42 C203.23 47.47, 201.53 48.5, 199.66 49.5 C197.8 50.5, 195.76 51.47, 193.56 52.4 C191.37 53.33, 189.01 54.23, 186.52 55.08 C184.02 55.94, 181.37 56.75, 178.6 57.52 C175.83 58.29, 172.91 59.02, 169.89 59.7 C166.88 60.37, 163.73 61, 160.5 61.58 C157.27 62.15, 153.93 62.68, 150.52 63.15 C147.11 63.61, 143.61 64.03, 140.06 64.38 C136.52 64.74, 132.89 65.04, 129.25 65.28 C125.6 65.52, 121.89 65.7, 118.18 65.82 C114.48 65.94, 110.73 66, 107 66 C103.27 66, 99.52 65.94, 95.82 65.82 C92.11 65.7, 88.4 65.52, 84.75 65.28 C81.11 65.04, 77.48 64.74, 73.94 64.38 C70.39 64.03, 66.89 63.61, 63.48 63.15 C60.07 62.68, 56.73 62.15, 53.5 61.58 C50.27 61, 47.12 60.37, 44.11 59.7 C41.09 59.02, 38.17 58.29, 35.4 57.52 C32.63 56.75, 29.98 55.94, 27.48 55.08 C24.99 54.23, 22.63 53.33, 20.44 52.4 C18.24 51.47, 16.2 50.5, 14.34 49.5 C12.47 48.5, 10.77 47.47, 9.25 46.42 C7.73 45.37, 6.39 44.29, 5.24 43.2 C4.08 42.1, 3.11 40.99, 2.34 39.86 C1.56 38.74, 0.98 37.59, 0.59 36.45 C0.2 35.31, 0 34.15, 0 33 C0 31.85, 0.2 30.69, 0.59 29.55 C0.98 28.41, 1.56 27.26, 2.34 26.14 C3.11 25.01, 4.08 23.9, 5.24 22.8 C6.39 21.71, 7.73 20.63, 9.25 19.58 C10.77 18.53, 12.47 17.5, 14.34 16.5 C16.2 15.5, 18.24 14.53, 20.44 13.6 C22.63 12.67, 24.99 11.77, 27.48 10.92 C29.98 10.06, 32.63 9.25, 35.4 8.48 C38.17 7.71, 41.09 6.98, 44.11 6.3 C47.12 5.63, 50.27 5, 53.5 4.42 C56.73 3.85, 60.07 3.32, 63.48 2.85 C66.89 2.39, 70.39 1.97, 73.94 1.62 C77.48 1.26, 81.11 0.96, 84.75 0.72 C88.4 0.48, 92.11 0.3, 95.82 0.18 C99.52 0.06, 103.27 0, 107 0 C110.73 0, 114.48 0.06, 118.18 0.18 C121.89 0.3, 125.6 0.48, 129.25 0.72 C132.89 0.96, 136.52 1.26, 140.06 1.62 C143.61 1.97, 147.11 2.39, 150.52 2.85 C153.93 3.32, 157.27 3.85, 160.5 4.42 C163.73 5, 166.88 5.63, 169.89 6.3 C172.91 6.98, 175.83 7.71, 178.6 8.48 C181.37 9.25, 184.02 10.06, 186.52 10.92 C189.01 11.77, 191.37 12.67, 193.56 13.6 C195.76 14.53, 197.8 15.5, 199.66 16.5 C201.53 17.5, 203.23 18.53, 204.75 19.58 C206.27 20.63, 207.61 21.71, 208.76 22.8 C209.92 23.9, 210.89 25.01, 211.66 26.14 C212.44 27.26, 213.02 28.41, 213.41 29.55 C213.8 30.69, 213.9 32.43, 214 33 C214.1 33.57, 214.1 32.43, 214 33" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(631.2324538184776 160.18303942003217) rotate(0 64.453125 12)"><text x="64.453125" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#364fc7" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">bot:Element</text></g><g stroke-linecap="round" transform="translate(589.5236949363652 215.88828394324764) rotate(0 111.5 30)"><path d="M223 30 C223 31.05, 222.8 32.1, 222.39 33.14 C221.98 34.18, 221.37 35.21, 220.56 36.24 C219.76 37.26, 218.74 38.28, 217.54 39.27 C216.34 40.26, 214.94 41.25, 213.36 42.2 C211.78 43.16, 210 44.09, 208.06 45 C206.12 45.91, 203.99 46.79, 201.71 47.63 C199.42 48.48, 196.96 49.3, 194.36 50.07 C191.76 50.85, 189 51.59, 186.11 52.29 C183.22 52.99, 180.18 53.66, 177.04 54.27 C173.9 54.88, 170.61 55.46, 167.25 55.98 C163.89 56.5, 160.4 56.98, 156.85 57.41 C153.3 57.83, 149.65 58.21, 145.96 58.53 C142.26 58.85, 138.48 59.13, 134.68 59.34 C130.88 59.56, 127.02 59.73, 123.15 59.84 C119.29 59.94, 115.38 60, 111.5 60 C107.62 60, 103.71 59.94, 99.85 59.84 C95.98 59.73, 92.12 59.56, 88.32 59.34 C84.52 59.13, 80.74 58.85, 77.04 58.53 C73.35 58.21, 69.7 57.83, 66.15 57.41 C62.6 56.98, 59.11 56.5, 55.75 55.98 C52.39 55.46, 49.1 54.88, 45.96 54.27 C42.82 53.66, 39.78 52.99, 36.89 52.29 C34 51.59, 31.24 50.85, 28.64 50.07 C26.04 49.3, 23.58 48.48, 21.29 47.63 C19.01 46.79, 16.88 45.91, 14.94 45 C13 44.09, 11.22 43.16, 9.64 42.2 C8.06 41.25, 6.66 40.26, 5.46 39.27 C4.26 38.28, 3.24 37.26, 2.44 36.24 C1.63 35.21, 1.02 34.18, 0.61 33.14 C0.2 32.1, 0 31.05, 0 30 C0 28.95, 0.2 27.9, 0.61 26.86 C1.02 25.82, 1.63 24.79, 2.44 23.76 C3.24 22.74, 4.26 21.72, 5.46 20.73 C6.66 19.74, 8.06 18.75, 9.64 17.8 C11.22 16.84, 13 15.91, 14.94 15 C16.88 14.09, 19.01 13.21, 21.29 12.37 C23.58 11.52, 26.04 10.7, 28.64 9.93 C31.24 9.15, 34 8.41, 36.89 7.71 C39.78 7.01, 42.82 6.34, 45.96 5.73 C49.1 5.12, 52.39 4.54, 55.75 4.02 C59.11 3.5, 62.6 3.02, 66.15 2.59 C69.7 2.17, 73.35 1.79, 77.04 1.47 C80.74 1.15, 84.52 0.87, 88.32 0.66 C92.12 0.44, 95.98 0.27, 99.85 0.16 C103.71 0.06, 107.62 0, 111.5 0 C115.38 0, 119.29 0.06, 123.15 0.16 C127.02 0.27, 130.88 0.44, 134.68 0.66 C138.48 0.87, 142.26 1.15, 145.96 1.47 C149.65 1.79, 153.3 2.17, 156.85 2.59 C160.4 3.02, 163.89 3.5, 167.25 4.02 C170.61 4.54, 173.9 5.12, 177.04 5.73 C180.18 6.34, 183.22 7.01, 186.11 7.71 C189 8.41, 191.76 9.15, 194.36 9.93 C196.96 10.7, 199.42 11.52, 201.71 12.37 C203.99 13.21, 206.12 14.09, 208.06 15 C210 15.91, 211.78 16.84, 213.36 17.8 C214.94 18.75, 216.34 19.74, 217.54 20.73 C218.74 21.72, 219.76 22.74, 220.56 23.76 C221.37 24.79, 221.98 25.82, 222.39 26.86 C222.8 27.9, 222.9 29.48, 223 30 C223.1 30.52, 223.1 29.48, 223 30" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(630.8687888340655 233.67508050765127) rotate(0 70.3125 12)"><text x="70.3125" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="20px" fill="#364fc7" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">geo:Geometry</text></g><g mask="url(#mask-lEa4fXYtPJUHhmKKnT-uE)" stroke-linecap="round"><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(466.1809826090548 257.8508885957558) rotate(0 142.5105243656285 83.26895342104581)"><path d="M0 0 C40.98 16.62, 198.35 71.97, 245.85 99.73 C293.35 127.48, 278.49 155.4, 285.02 166.54" stroke="#000000" stroke-width="1.5" fill="none" stroke-dasharray="8 9"></path></g><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(466.1809826090548 257.8508885957558) rotate(0 142.5105243656285 83.26895342104581)"><path d="M270.24 140.43 C274.58 148.09, 278.92 155.75, 285.02 166.54" stroke="#000000" stroke-width="1.5" fill="none"></path></g><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(466.1809826090548 257.8508885957558) rotate(0 142.5105243656285 83.26895342104581)"><path d="M290.48 137.04 C288.88 145.7, 287.28 154.35, 285.02 166.54" stroke="#000000" stroke-width="1.5" fill="none"></path></g></g><mask id="mask-lEa4fXYtPJUHhmKKnT-uE"><rect x="0" y="0" fill="#fff" width="851.2020313403116" height="524.3887954378474"></rect><rect x="618.2810198069647" y="348.07784971818955" fill="#000" width="187.5" height="19" opacity="1"></rect></mask><g stroke-opacity="0.5" fill-opacity="0.5" transform="translate(618.2810198069647 348.07784971818955) rotate(0 -9.589512832281343 -6.958007701387942)"><text x="93.75" y="0" font-family="Cascadia, Segoe UI Emoji" font-size="16px" fill="#000000" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">geo:hasSerialization</text></g><g stroke-linecap="round"><g transform="translate(458.76998452256066 42.86187841156925) rotate(0 26.913901327121494 0)"><path d="M0 0 C8.97 0, 44.86 0, 53.83 0 M0 0 C8.97 0, 44.86 0, 53.83 0" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(458.76998452256066 42.86187841156925) rotate(0 26.913901327121494 0)"><path d="M28.54 9.21 C36.68 6.24, 44.82 3.28, 53.83 0 M28.54 9.21 C34.49 7.04, 40.43 4.88, 53.83 0" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(458.76998452256066 42.86187841156925) rotate(0 26.913901327121494 0)"><path d="M28.54 -9.21 C36.68 -6.24, 44.82 -3.28, 53.83 0 M28.54 -9.21 C34.49 -7.04, 40.43 -4.88, 53.83 0" stroke="#364fc7" stroke-width="1" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(468.19977629199 214.0908567111719) rotate(0 56.367175243555266 -17.944787866029515)"><path d="M0 0 C18.79 -5.98, 93.95 -29.91, 112.73 -35.89 M0 0 C18.79 -5.98, 93.95 -29.91, 112.73 -35.89" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(468.19977629199 214.0908567111719) rotate(0 56.367175243555266 -17.944787866029515)"><path d="M88.98 -17.56 C94.05 -21.47, 99.12 -25.39, 112.73 -35.89 M88.98 -17.56 C97.3 -23.98, 105.62 -30.4, 112.73 -35.89" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(468.19977629199 214.0908567111719) rotate(0 56.367175243555266 -17.944787866029515)"><path d="M82.76 -37.11 C89.16 -36.85, 95.56 -36.59, 112.73 -35.89 M82.76 -37.11 C93.26 -36.69, 103.75 -36.26, 112.73 -35.89" stroke="#364fc7" stroke-width="1" fill="none"></path></g></g><mask></mask><g stroke-linecap="round"><g transform="translate(464.04959590959606 243.928259261814) rotate(0 59.28088258387379 0)"><path d="M0 0 C19.76 0, 98.8 0, 118.56 0 M0 0 C19.76 0, 98.8 0, 118.56 0" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(464.04959590959606 243.928259261814) rotate(0 59.28088258387379 0)"><path d="M90.37 10.26 C96.95 7.87, 103.53 5.47, 118.56 0 M90.37 10.26 C97.12 7.8, 103.87 5.35, 118.56 0" stroke="#364fc7" stroke-width="1" fill="none"></path></g><g transform="translate(464.04959590959606 243.928259261814) rotate(0 59.28088258387379 0)"><path d="M90.37 -10.26 C96.95 -7.87, 103.53 -5.47, 118.56 0 M90.37 -10.26 C97.12 -7.8, 103.87 -5.35, 118.56 0" stroke="#364fc7" stroke-width="1" fill="none"></path></g></g><mask></mask></svg>
+  <path
+     d="m 335.45699,14.0099 m 0,0 c 35.42,0 70.83,0 103,0 m -103,0 c 40.38,0 80.77,0 103,0 m 0,0 c 10,0 15,5 15,15 m -15,-15 c 10,0 15,5 15,15 m 0,0 c 0,9.19 0,18.37 0,30 m 0,-30 c 0,11.71 0,23.43 0,30 m 0,0 c 0,10 -5,15 -15,15 m 15,-15 c 0,10 -5,15 -15,15 m 0,0 c -33.92,0 -67.85,0 -103,0 m 103,0 c -33.16,0 -66.31,0 -103,0 m 0,0 c -10,0 -15,-5 -15,-15 m 15,15 c -10,0 -15,-5 -15,-15 m 0,0 c 0,-10.74 0,-21.48 0,-30 m 0,30 c 0,-6.35 0,-12.7 0,-30 m 0,0 c 0,-10 5,-15 15,-15 m -15,15 c 0,-10 5,-15 15,-15"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path8"
+     style="stroke-linecap:round" />
+  <text
+     x="386.957"
+     y="36.009899"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="20px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text12">&lt;room1&gt;</text>
+  <path
+     d="m 322.70699,198.90188 m 0,0 c 38.8,0 77.59,0 128.5,0 m -128.5,0 c 45.8,0 91.6,0 128.5,0 m 0,0 c 10.83,0 16.25,5.42 16.25,16.25 m -16.25,-16.25 c 10.83,0 16.25,5.42 16.25,16.25 m 0,0 c 0,9.54 0,19.07 0,32.5 m 0,-32.5 c 0,7.62 0,15.24 0,32.5 m 0,0 c 0,10.83 -5.42,16.25 -16.25,16.25 m 16.25,-16.25 c 0,10.83 -5.42,16.25 -16.25,16.25 m 0,0 c -26.29,0 -52.58,0 -128.5,0 m 128.5,0 c -26.08,0 -52.17,0 -128.5,0 m 0,0 c -10.83,0 -16.25,-5.42 -16.25,-16.25 m 16.25,16.25 c -10.83,0 -16.25,-5.42 -16.25,-16.25 m 0,0 c 0,-12.7 0,-25.4 0,-32.5 m 0,32.5 c 0,-10.88 0,-21.75 0,-32.5 m 0,0 c 0,-10.83 5.42,-16.25 16.25,-16.25 m -16.25,16.25 c 0,-10.83 5.42,-16.25 16.25,-16.25"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path16"
+     style="stroke-linecap:round" />
+  <text
+     x="386.957"
+     y="223.40189"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="20px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text20">&lt;object1&gt;</text>
+  <path
+     d="m 62.237257,435.91788 m 0,0 c 63.750003,0 127.490003,0 315.500003,0 m -315.500003,0 c 82.820003,0 165.640003,0 315.500003,0 m 0,0 c 11.17,0 16.75,5.58 16.75,16.75 m -16.75,-16.75 c 11.17,0 16.75,5.58 16.75,16.75 m 0,0 c 0,10.83 0,21.67 0,33.5 m 0,-33.5 c 0,9.63 0,19.26 0,33.5 m 0,0 c 0,11.17 -5.58,16.75 -16.75,16.75 m 16.75,-16.75 c 0,11.17 -5.58,16.75 -16.75,16.75 m 0,0 c -84.32,0 -168.64,0 -315.500003,0 m 315.500003,0 c -91.51,0 -183.03,0 -315.500003,0 m 0,0 c -11.17,0 -16.75,-5.58 -16.75,-16.75 m 16.75,16.75 c -11.17,0 -16.75,-5.58 -16.75,-16.75 m 0,0 c 0,-8.88 0,-17.75 0,-33.5 m 0,33.5 c 0,-9.2 0,-18.39 0,-33.5 m 0,0 c 0,-11.17 5.58,-16.75 16.75,-16.75 m -16.75,16.75 c 0,-11.17 5.58,-16.75 16.75,-16.75"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path24"
+     style="stroke-linecap:round" />
+  <text
+     x="219.98726"
+     y="461.41788"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="20px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text28">&lt;geometry_data1&gt;^^xsd:...</text>
+  <path
+     d="m 436.7693,435.41263 m 0,0 c 100.91,0 201.82,0 376.5,0 m -376.5,0 c 130.67,0 261.34,0 376.5,0 m 0,0 c 11.17,0 16.75,5.58 16.75,16.75 m -16.75,-16.75 c 11.17,0 16.75,5.58 16.75,16.75 m 0,0 c 0,13.03 0,26.07 0,33.5 m 0,-33.5 c 0,11.31 0,22.62 0,33.5 m 0,0 c 0,11.17 -5.58,16.75 -16.75,16.75 m 16.75,-16.75 c 0,11.17 -5.58,16.75 -16.75,16.75 m 0,0 c -103.96,0 -207.93,0 -376.5,0 m 376.5,0 c -141.4,0 -282.8,0 -376.5,0 m 0,0 c -11.17,0 -16.75,-5.58 -16.75,-16.75 m 16.75,16.75 c -11.17,0 -16.75,-5.58 -16.75,-16.75 m 0,0 c 0,-6.78 0,-13.56 0,-33.5 m 0,33.5 c 0,-12.77 0,-25.55 0,-33.5 m 0,0 c 0,-11.17 5.58,-16.75 16.75,-16.75 m -16.75,16.75 c 0,-11.17 5.58,-16.75 16.75,-16.75"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path32"
+     style="stroke-linecap:round" />
+  <text
+     x="625.01929"
+     y="460.91263"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="20px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text36">&lt;spacial_data1&gt;^^geo:wktLiteral</text>
+  <path
+     d="M 0,0 C 0.03,17.09 0.14,85.45 0.16,102.54 M 0,0 c 0.03,17.09 0.14,85.45 0.16,102.54"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path40"
+     transform="translate(386.87557,84.314261)"
+     style="stroke-linecap:round"
+     mask="url(#mask1228)" />
+  <path
+     d="m -10.14,74.37 c 3.54,9.67 7.07,19.34 10.3,28.17 m -10.3,-28.17 c 3.38,9.24 6.76,18.48 10.3,28.17"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path44"
+     transform="translate(386.87557,84.314261)"
+     style="stroke-linecap:round"
+     mask="url(#mask1247)" />
+  <path
+     d="M 10.38,74.34 C 6.87,84.02 3.37,93.7 0.16,102.54 m 10.22,-28.2 c -3.35,9.25 -6.7,18.5 -10.22,28.2"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path48"
+     transform="translate(386.87557,84.314261)"
+     style="stroke-linecap:round"
+     mask="url(#mask1305)" />
+  <text
+     x="386.957"
+     y="128.0856"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="16px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text59">bot:containsElement</text>
+  <path
+     d="m 0,0 c -12.18,11.06 -44.73,41.5 -73.1,66.36 -28.37,24.86 -80.91,69.01 -97.1,82.81 M 0,0 c -12.18,11.06 -44.73,41.5 -73.1,66.36 -28.37,24.86 -80.91,69.01 -97.1,82.81"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path63"
+     transform="translate(353.96954,272.08917)"
+     style="stroke-linecap:round"
+     mask="url(#mask987)" />
+  <path
+     d="m -155.32,123.12 c -3.91,6.84 -7.82,13.69 -14.88,26.05 m 14.88,-26.05 c -4.35,7.62 -8.71,15.24 -14.88,26.05"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path67"
+     transform="translate(353.96954,272.08917)"
+     style="stroke-linecap:round"
+     mask="url(#mask1044)" />
+  <path
+     d="m -142.06,138.77 c -7.39,2.73 -14.78,5.47 -28.14,10.4 m 28.14,-10.4 c -8.23,3.05 -16.46,6.09 -28.14,10.4"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path71"
+     transform="translate(353.96954,272.08917)"
+     style="stroke-linecap:round"
+     mask="url(#mask1082)" />
+  <text
+     x="280.8685"
+     y="328.94788"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="16px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text82">fog:as..._v...</text>
+  <path
+     d="m 0,0 c 0.39,16.26 10.7,71.79 2.36,97.57 -8.34,25.78 -43.67,47.6 -52.4,57.12"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     stroke-dasharray="8, 9"
+     id="path86"
+     transform="translate(384.08797,272.44742)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1063)" />
+  <path
+     d="m -35.33,128.54 c -4.77,8.49 -9.55,16.98 -14.71,26.15"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     id="path90"
+     transform="translate(384.08797,272.44742)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1025)" />
+  <path
+     d="m -21.96,144.12 c -9.12,3.43 -18.24,6.86 -28.08,10.57"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     id="path94"
+     transform="translate(384.08797,272.44742)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1006)" />
+  <text
+     x="386.45132"
+     y="360.51965"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="16px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;fill-opacity:0.5;stroke-opacity:0.5"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text105">fog:as...</text>
+  <path
+     d="m 0,0 c -29.73,8.5 -149.89,22.48 -178.37,50.99 -28.48,28.51 6.23,100.04 7.48,120.05"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     stroke-dasharray="8, 9"
+     id="path109"
+     transform="translate(294.80608,253.25386)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1325)" />
+  <path
+     d="m -187.84,146.29 c 4.45,6.51 8.91,13.01 16.95,24.75"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     id="path113"
+     transform="translate(294.80608,253.25386)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1266)" />
+  <path
+     d="m -167.97,141.19 c -0.77,7.84 -1.53,15.69 -2.92,29.85"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     id="path117"
+     transform="translate(294.80608,253.25386)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1285)" />
+  <text
+     x="116.4375"
+     y="287.24487"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="16px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;fill-opacity:0.5;stroke-opacity:0.5"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text128">omg:hasSimpleGeometry</text>
+  <text
+     x="116.4375"
+     y="306.24487"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="16px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;fill-opacity:0.5;stroke-opacity:0.5"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text130">Description</text>
+  <path
+     d="m 0,0 c 17.18,12.5 69.78,49.73 103.09,75.02 33.32,25.28 80.67,63.91 96.81,76.69 M 0,0 c 17.18,12.5 69.78,49.73 103.09,75.02 33.32,25.28 80.67,63.91 96.81,76.69"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path134"
+     transform="translate(424.26658,271.46711)"
+     style="stroke-linecap:round"
+     mask="url(#mask1203)" />
+  <path
+     d="m 171.49,142.08 c 9.02,3.06 18.05,6.12 28.41,9.63 m -28.41,-9.63 c 11.08,3.75 22.16,7.51 28.41,9.63"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path138"
+     transform="translate(424.26658,271.46711)"
+     style="stroke-linecap:round"
+     mask="url(#mask1182)" />
+  <path
+     d="m 184.32,126.07 c 4.95,8.14 9.9,16.29 15.58,25.64 m -15.58,-25.64 c 6.08,10 12.15,20 15.58,25.64"
+     stroke="#000000"
+     stroke-width="1"
+     fill="none"
+     id="path142"
+     transform="translate(424.26658,271.46711)"
+     style="stroke-linecap:round"
+     mask="url(#mask1102)" />
+  <text
+     x="527.36108"
+     y="336.88431"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="16px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text153">geo:asWKT</text>
+  <path
+     d="m 475.09985,584.04024 c 0,1.65 -0.18,3.31 -0.52,4.94 -0.35,1.64 -0.88,3.27 -1.57,4.87 -0.69,1.6 -1.56,3.19 -2.59,4.73 -1.02,1.54 -2.22,3.06 -3.57,4.51 -1.34,1.46 -2.85,2.88 -4.5,4.24 -1.64,1.36 -3.44,2.66 -5.36,3.9 -1.92,1.23 -3.98,2.41 -6.15,3.5 -2.16,1.09 -4.46,2.12 -6.84,3.05 -2.38,0.94 -4.88,1.8 -7.44,2.56 -2.56,0.77 -5.22,1.45 -7.93,2.04 -2.7,0.58 -5.49,1.07 -8.3,1.47 -2.81,0.39 -5.68,0.69 -8.55,0.89 -2.87,0.2 -5.79,0.3 -8.68,0.3 -2.89,0 -5.81,-0.1 -8.68,-0.3 -2.87,-0.2 -5.74,-0.5 -8.55,-0.89 -2.81,-0.4 -5.6,-0.89 -8.3,-1.47 -2.71,-0.59 -5.37,-1.27 -7.93,-2.04 -2.56,-0.76 -5.06,-1.62 -7.44,-2.56 -2.38,-0.93 -4.68,-1.96 -6.84,-3.05 -2.17,-1.09 -4.23,-2.27 -6.15,-3.5 -1.92,-1.24 -3.72,-2.54 -5.36,-3.9 -1.65,-1.36 -3.16,-2.78 -4.5,-4.24 -1.35,-1.45 -2.55,-2.97 -3.57,-4.51 -1.03,-1.54 -1.9,-3.13 -2.59,-4.73 -0.69,-1.6 -1.22,-3.23 -1.57,-4.87 -0.34,-1.63 -0.52,-3.29 -0.52,-4.94 0,-1.65 0.18,-3.31 0.52,-4.94 0.35,-1.64 0.88,-3.27 1.57,-4.87 0.69,-1.6 1.56,-3.19 2.59,-4.73 1.02,-1.54 2.22,-3.06 3.57,-4.51 1.34,-1.46 2.85,-2.88 4.5,-4.24 1.64,-1.36 3.44,-2.66 5.36,-3.9 1.92,-1.23 3.98,-2.41 6.15,-3.5 2.16,-1.09 4.46,-2.12 6.84,-3.05 2.38,-0.94 4.88,-1.8 7.44,-2.56 2.56,-0.77 5.22,-1.45 7.93,-2.04 2.7,-0.58 5.49,-1.07 8.3,-1.47 2.81,-0.39 5.68,-0.69 8.55,-0.89 2.87,-0.2 5.79,-0.3 8.68,-0.3 2.89,0 5.81,0.1 8.68,0.3 2.87,0.2 5.74,0.5 8.55,0.89 2.81,0.4 5.6,0.89 8.3,1.47 2.71,0.59 5.37,1.27 7.93,2.04 2.56,0.76 5.06,1.62 7.44,2.56 2.38,0.93 4.68,1.96 6.84,3.05 2.17,1.09 4.23,2.27 6.15,3.5 1.92,1.24 3.72,2.54 5.36,3.9 1.65,1.36 3.16,2.78 4.5,4.24 1.35,1.45 2.55,2.97 3.57,4.51 1.03,1.54 1.9,3.13 2.59,4.73 0.69,1.6 1.22,3.23 1.57,4.87 0.34,1.63 0.52,3.29 0.52,4.94"
+     stroke="#364fc7"
+     stroke-width="1.5"
+     fill="none"
+     stroke-dasharray="8, 9"
+     id="path157"
+     style="stroke-linecap:round" />
+  <text
+     x="403.18814"
+     y="576.04889"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="20px"
+     fill="#364fc7"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text161">Literal</text>
+  <path
+     d="m 305.13629,514.95016 c 5.5,5.5 27.5,27.5 33,33 m -33,-33 c 5.5,5.5 27.5,27.5 33,33"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path165"
+     style="stroke-linecap:round" />
+  <path
+     d="m 316.98629,538.09016 c 4.39,2.04 8.77,4.09 21.15,9.86 m -21.15,-9.86 c 4.96,2.31 9.92,4.62 21.15,9.86"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path169"
+     style="stroke-linecap:round" />
+  <path
+     d="m 328.27629,526.80016 c 2.04,4.39 4.09,8.77 9.86,21.15 m -9.86,-21.15 c 2.31,4.96 4.62,9.92 9.86,21.15"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path173"
+     style="stroke-linecap:round" />
+  <mask
+     id="mask179" />
+  <path
+     d="m 514.46894,514.95016 c -6.19,5.67 -30.94,28.36 -37.12,34.03 m 37.12,-34.03 c -6.19,5.67 -30.94,28.36 -37.12,34.03"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path181"
+     style="stroke-linecap:round" />
+  <path
+     d="m 488.96894,526.64016 c -3.56,6.84 -7.12,13.68 -11.62,22.34 m 11.62,-22.34 c -3.34,6.42 -6.68,12.85 -11.62,22.34"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path185"
+     style="stroke-linecap:round" />
+  <path
+     d="m 500.60894,539.34016 c -7.13,2.95 -14.25,5.9 -23.26,9.64 m 23.26,-9.64 c -6.69,2.77 -13.38,5.54 -23.26,9.64"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path189"
+     style="stroke-linecap:round" />
+  <mask
+     id="mask195" />
+  <path
+     d="m 695.06845,43 c 0,1.33 -0.2,2.66 -0.59,3.98 -0.39,1.31 -0.98,2.63 -1.76,3.92 -0.78,1.28 -1.76,2.56 -2.91,3.8 -1.16,1.24 -2.51,2.46 -4.02,3.64 -1.51,1.17 -3.21,2.31 -5.06,3.41 -1.85,1.09 -3.87,2.14 -6.03,3.13 -2.16,1 -4.48,1.94 -6.92,2.82 -2.43,0.88 -5.02,1.71 -7.7,2.46 -2.68,0.75 -5.49,1.44 -8.37,2.06 -2.88,0.62 -5.87,1.17 -8.92,1.64 -3.04,0.47 -6.18,0.86 -9.34,1.18 -3.16,0.32 -6.39,0.56 -9.62,0.72 -3.23,0.16 -6.51,0.24 -9.76,0.24 -3.25,0 -6.53,-0.08 -9.76,-0.24 -3.23,-0.16 -6.46,-0.4 -9.62,-0.72 -3.16,-0.32 -6.3,-0.71 -9.34,-1.18 -3.05,-0.47 -6.04,-1.02 -8.92,-1.64 -2.88,-0.62 -5.69,-1.31 -8.37,-2.06 -2.68,-0.75 -5.27,-1.58 -7.7,-2.46 -2.44,-0.88 -4.76,-1.82 -6.92,-2.82 -2.16,-0.99 -4.18,-2.04 -6.03,-3.13 -1.85,-1.1 -3.55,-2.24 -5.06,-3.41 -1.51,-1.18 -2.86,-2.4 -4.02,-3.64 -1.15,-1.24 -2.13,-2.52 -2.91,-3.8 -0.78,-1.29 -1.37,-2.61 -1.76,-3.92 -0.39,-1.32 -0.59,-2.65 -0.59,-3.98 0,-1.33 0.2,-2.66 0.59,-3.98 0.39,-1.31 0.98,-2.63 1.76,-3.92 0.78,-1.28 1.76,-2.56 2.91,-3.8 1.16,-1.24 2.51,-2.46 4.02,-3.64 1.51,-1.17 3.21,-2.31 5.06,-3.41 1.85,-1.09 3.87,-2.14 6.03,-3.13 2.16,-1 4.48,-1.94 6.92,-2.82 2.43,-0.88 5.02,-1.71 7.7,-2.46 2.68,-0.75 5.49,-1.44 8.37,-2.06 2.88,-0.62 5.87,-1.17 8.92,-1.64 3.04,-0.47 6.18,-0.86 9.34,-1.18 3.16,-0.32 6.39,-0.56 9.62,-0.72 3.23,-0.16 6.51,-0.24 9.76,-0.24 3.25,0 6.53,0.08 9.76,0.24 3.23,0.16 6.46,0.4 9.62,0.72 3.16,0.32 6.3,0.71 9.34,1.18 3.05,0.47 6.04,1.02 8.92,1.64 2.88,0.62 5.69,1.31 8.37,2.06 2.68,0.75 5.27,1.58 7.7,2.46 2.44,0.88 4.76,1.82 6.92,2.82 2.16,0.99 4.18,2.04 6.03,3.13 1.85,1.1 3.55,2.24 5.06,3.41 1.51,1.18 2.86,2.4 4.02,3.64 1.15,1.24 2.13,2.52 2.91,3.8 0.78,1.29 1.37,2.61 1.76,3.92 0.39,1.32 0.59,2.65 0.59,3.98"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path197"
+     style="stroke-linecap:round" />
+  <text
+     x="614.29279"
+     y="35.165474"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="20px"
+     fill="#364fc7"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text201">bot:Zone</text>
+  <path
+     d="m 810.846,172.01756 c 0,1.15 -0.2,2.31 -0.59,3.45 -0.39,1.14 -0.97,2.29 -1.75,3.41 -0.77,1.13 -1.74,2.24 -2.9,3.34 -1.15,1.09 -2.49,2.17 -4.01,3.22 -1.52,1.05 -3.22,2.08 -5.09,3.08 -1.86,1 -3.9,1.97 -6.1,2.9 -2.19,0.93 -4.55,1.83 -7.04,2.68 -2.5,0.86 -5.15,1.67 -7.92,2.44 -2.77,0.77 -5.69,1.5 -8.71,2.18 -3.01,0.67 -6.16,1.3 -9.39,1.88 -3.23,0.57 -6.57,1.1 -9.98,1.57 -3.41,0.46 -6.91,0.88 -10.46,1.23 -3.54,0.36 -7.17,0.66 -10.81,0.9 -3.65,0.24 -7.36,0.42 -11.07,0.54 -3.7,0.12 -7.45,0.18 -11.18,0.18 -3.73,0 -7.48,-0.06 -11.18,-0.18 -3.71,-0.12 -7.42,-0.3 -11.07,-0.54 -3.64,-0.24 -7.27,-0.54 -10.81,-0.9 -3.55,-0.35 -7.05,-0.77 -10.46,-1.23 -3.41,-0.47 -6.75,-1 -9.98,-1.57 -3.23,-0.58 -6.38,-1.21 -9.39,-1.88 -3.02,-0.68 -5.94,-1.41 -8.71,-2.18 -2.77,-0.77 -5.42,-1.58 -7.92,-2.44 -2.49,-0.85 -4.85,-1.75 -7.04,-2.68 -2.2,-0.93 -4.24,-1.9 -6.1,-2.9 -1.87,-1 -3.57,-2.03 -5.09,-3.08 -1.52,-1.05 -2.86,-2.13 -4.01,-3.22 -1.16,-1.1 -2.13,-2.21 -2.9,-3.34 -0.78,-1.12 -1.36,-2.27 -1.75,-3.41 -0.39,-1.14 -0.59,-2.3 -0.59,-3.45 0,-1.15 0.2,-2.31 0.59,-3.45 0.39,-1.14 0.97,-2.29 1.75,-3.41 0.77,-1.13 1.74,-2.24 2.9,-3.34 1.15,-1.09 2.49,-2.17 4.01,-3.22 1.52,-1.05 3.22,-2.08 5.09,-3.08 1.86,-1 3.9,-1.97 6.1,-2.9 2.19,-0.93 4.55,-1.83 7.04,-2.68 2.5,-0.86 5.15,-1.67 7.92,-2.44 2.77,-0.77 5.69,-1.5 8.71,-2.18 3.01,-0.67 6.16,-1.3 9.39,-1.88 3.23,-0.57 6.57,-1.1 9.98,-1.57 3.41,-0.46 6.91,-0.88 10.46,-1.23 3.54,-0.36 7.17,-0.66 10.81,-0.9 3.65,-0.24 7.36,-0.42 11.07,-0.54 3.7,-0.12 7.45,-0.18 11.18,-0.18 3.73,0 7.48,0.06 11.18,0.18 3.71,0.12 7.42,0.3 11.07,0.54 3.64,0.24 7.27,0.54 10.81,0.9 3.55,0.35 7.05,0.77 10.46,1.23 3.41,0.47 6.75,1 9.98,1.57 3.23,0.58 6.38,1.21 9.39,1.88 3.02,0.68 5.94,1.41 8.71,2.18 2.77,0.77 5.42,1.58 7.92,2.44 2.49,0.85 4.85,1.75 7.04,2.68 2.2,0.93 4.24,1.9 6.1,2.9 1.87,1 3.57,2.03 5.09,3.08 1.52,1.05 2.86,2.13 4.01,3.22 1.16,1.1 2.13,2.21 2.9,3.34 0.78,1.12 1.36,2.27 1.75,3.41 0.39,1.14 0.49,2.88 0.59,3.45 0.1,0.57 0.1,-0.57 0,0"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path205"
+     style="stroke-linecap:round" />
+  <text
+     x="703.68555"
+     y="164.18304"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="20px"
+     fill="#364fc7"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text209">bot:Element</text>
+  <path
+     d="m 820.52369,245.88828 c 0,1.05 -0.2,2.1 -0.61,3.14 -0.41,1.04 -1.02,2.07 -1.83,3.1 -0.8,1.02 -1.82,2.04 -3.02,3.03 -1.2,0.99 -2.6,1.98 -4.18,2.93 -1.58,0.96 -3.36,1.89 -5.3,2.8 -1.94,0.91 -4.07,1.79 -6.35,2.63 -2.29,0.85 -4.75,1.67 -7.35,2.44 -2.6,0.78 -5.36,1.52 -8.25,2.22 -2.89,0.7 -5.93,1.37 -9.07,1.98 -3.14,0.61 -6.43,1.19 -9.79,1.71 -3.36,0.52 -6.85,1 -10.4,1.43 -3.55,0.42 -7.2,0.8 -10.89,1.12 -3.7,0.32 -7.48,0.6 -11.28,0.81 -3.8,0.22 -7.66,0.39 -11.53,0.5 -3.86,0.1 -7.77,0.16 -11.65,0.16 -3.88,0 -7.79,-0.06 -11.65,-0.16 -3.87,-0.11 -7.73,-0.28 -11.53,-0.5 -3.8,-0.21 -7.58,-0.49 -11.28,-0.81 -3.69,-0.32 -7.34,-0.7 -10.89,-1.12 -3.55,-0.43 -7.04,-0.91 -10.4,-1.43 -3.36,-0.52 -6.65,-1.1 -9.79,-1.71 -3.14,-0.61 -6.18,-1.28 -9.07,-1.98 -2.89,-0.7 -5.65,-1.44 -8.25,-2.22 -2.6,-0.77 -5.06,-1.59 -7.35,-2.44 -2.28,-0.84 -4.41,-1.72 -6.35,-2.63 -1.94,-0.91 -3.72,-1.84 -5.3,-2.8 -1.58,-0.95 -2.98,-1.94 -4.18,-2.93 -1.2,-0.99 -2.22,-2.01 -3.02,-3.03 -0.81,-1.03 -1.42,-2.06 -1.83,-3.1 -0.41,-1.04 -0.61,-2.09 -0.61,-3.14 0,-1.05 0.2,-2.1 0.61,-3.14 0.41,-1.04 1.02,-2.07 1.83,-3.1 0.8,-1.02 1.82,-2.04 3.02,-3.03 1.2,-0.99 2.6,-1.98 4.18,-2.93 1.58,-0.96 3.36,-1.89 5.3,-2.8 1.94,-0.91 4.07,-1.79 6.35,-2.63 2.29,-0.85 4.75,-1.67 7.35,-2.44 2.6,-0.78 5.36,-1.52 8.25,-2.22 2.89,-0.7 5.93,-1.37 9.07,-1.98 3.14,-0.61 6.43,-1.19 9.79,-1.71 3.36,-0.52 6.85,-1 10.4,-1.43 3.55,-0.42 7.2,-0.8 10.89,-1.12 3.7,-0.32 7.48,-0.6 11.28,-0.81 3.8,-0.22 7.66,-0.39 11.53,-0.5 3.86,-0.1 7.77,-0.16 11.65,-0.16 3.88,0 7.79,0.06 11.65,0.16 3.87,0.11 7.73,0.28 11.53,0.5 3.8,0.21 7.58,0.49 11.28,0.81 3.69,0.32 7.34,0.7 10.89,1.12 3.55,0.43 7.04,0.91 10.4,1.43 3.36,0.52 6.65,1.1 9.79,1.71 3.14,0.61 6.18,1.28 9.07,1.98 2.89,0.7 5.65,1.44 8.25,2.22 2.6,0.77 5.06,1.59 7.35,2.44 2.28,0.84 4.41,1.72 6.35,2.63 1.94,0.91 3.72,1.84 5.3,2.8 1.58,0.95 2.98,1.94 4.18,2.93 1.2,0.99 2.22,2.01 3.02,3.03 0.81,1.03 1.42,2.06 1.83,3.1 0.41,1.04 0.51,2.62 0.61,3.14 0.1,0.52 0.1,-0.52 0,0"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path213"
+     style="stroke-linecap:round" />
+  <text
+     x="709.18127"
+     y="237.67508"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="20px"
+     fill="#364fc7"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text217">geo:Geometry</text>
+  <path
+     d="m 0,0 c 40.98,16.62 198.35,71.97 245.85,99.73 47.5,27.75 32.64,55.67 39.17,66.81"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     stroke-dasharray="8, 9"
+     id="path221"
+     transform="translate(474.18098,257.85089)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1162)" />
+  <path
+     d="m 270.24,140.43 c 4.34,7.66 8.68,15.32 14.78,26.11"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     id="path225"
+     transform="translate(474.18098,257.85089)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1141)" />
+  <path
+     d="m 290.48,137.04 c -1.6,8.66 -3.2,17.31 -5.46,29.5"
+     stroke="#000000"
+     stroke-width="1.5"
+     fill="none"
+     id="path229"
+     transform="translate(474.18098,257.85089)"
+     style="fill-opacity:0.5;stroke-linecap:round;stroke-opacity:0.5"
+     mask="url(#mask1122)" />
+  <text
+     x="720.03101"
+     y="350.07785"
+     font-family="Cascadia, 'Segoe UI Emoji'"
+     font-size="16px"
+     fill="#000000"
+     text-anchor="middle"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1333px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;fill-opacity:0.5;stroke-opacity:0.5"
+     direction="ltr"
+     dominant-baseline="text-before-edge"
+     id="text240">geo:hasSerialization</text>
+  <path
+     d="m 466.76998,42.861878 c 8.97,0 44.86,0 53.83,0 m -53.83,0 c 8.97,0 44.86,0 53.83,0"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path244"
+     style="stroke-linecap:round" />
+  <path
+     d="m 495.30998,52.071878 c 8.14,-2.97 16.28,-5.93 25.29,-9.21 m -25.29,9.21 c 5.95,-2.17 11.89,-4.33 25.29,-9.21"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path248"
+     style="stroke-linecap:round" />
+  <path
+     d="m 495.30998,33.651878 c 8.14,2.97 16.28,5.93 25.29,9.21 m -25.29,-9.21 c 5.95,2.17 11.89,4.33 25.29,9.21"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path252"
+     style="stroke-linecap:round" />
+  <mask
+     id="mask258" />
+  <path
+     d="m 476.19978,214.09086 c 18.79,-5.98 93.95,-29.91 112.73,-35.89 m -112.73,35.89 c 18.79,-5.98 93.95,-29.91 112.73,-35.89"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path260"
+     style="stroke-linecap:round" />
+  <path
+     d="m 565.17978,196.53086 c 5.07,-3.91 10.14,-7.83 23.75,-18.33 m -23.75,18.33 c 8.32,-6.42 16.64,-12.84 23.75,-18.33"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path264"
+     style="stroke-linecap:round" />
+  <path
+     d="m 558.95978,176.98086 c 6.4,0.26 12.8,0.52 29.97,1.22 m -29.97,-1.22 c 10.5,0.42 20.99,0.85 29.97,1.22"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path268"
+     style="stroke-linecap:round" />
+  <mask
+     id="mask274" />
+  <path
+     d="m 472.0496,243.92826 c 19.76,0 98.8,0 118.56,0 m -118.56,0 c 19.76,0 98.8,0 118.56,0"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path276"
+     style="stroke-linecap:round" />
+  <path
+     d="m 562.4196,254.18826 c 6.58,-2.39 13.16,-4.79 28.19,-10.26 m -28.19,10.26 c 6.75,-2.46 13.5,-4.91 28.19,-10.26"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path280"
+     style="stroke-linecap:round" />
+  <path
+     d="m 562.4196,233.66826 c 6.58,2.39 13.16,4.79 28.19,10.26 m -28.19,-10.26 c 6.75,2.46 13.5,4.91 28.19,10.26"
+     stroke="#364fc7"
+     stroke-width="1"
+     fill="none"
+     id="path284"
+     style="stroke-linecap:round" />
+  <mask
+     id="mask290" />
+</svg>

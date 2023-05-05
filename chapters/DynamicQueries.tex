@@ -63,7 +63,7 @@ Physical properties such as thermal, acoustic, structural, and others, or non-ph
 
 As such, the viewer is expected to comply with a multitude of requirements, which are not all covered in this thesis. Chapter \nameref{ch:modularApproach} thus proposes a modular approach, allowing for a step-by-step implementation of the viewer, starting with the most basic requirements, which are adopted in Chapter \nameref{ch:prototype}, while leaving room for future extensions.
 
-\section{In situ WKT location}
+\section{In situ WKT location} \label{sec:inSituWKT}
 % - limited to 2D
 % - viewer: knows location, AR: knnows 
 % - on building site location system 
@@ -80,12 +80,10 @@ Listing \ref{lst:GeoSPARQLauto} proposes a static query in which a location is f
 The query then combines two sets of so-called \enquote{entities}, represented in the graph as \mintinline{sparql}|bot:Element| or \mintinline{sparql}|bot:Space|, both of which are linked in the graph to their corresponding \ac{wkt} and geometric serialization using an \ac{omg} level 1 pattern explained in Figure \ref{fig:fogGom}. This pattern level links the literal directly to the entity, without the need for an intermediate node, but without the possibility to assign multiple serializations of the same type. The geometry literal is assigned using the \ac{fog} ontology, while the \ac{wkt} literal is assigned using the GeoSPARQL ontology, as illustrated in Figure \ref{fig:omg1}. As this last serialization requires a \ac{wkt} format, a literal assigned with \mintinline{sparql}|geo:asWKT| is required, and queried for in the query.
 
 \begin{figure}[H]
-    \begin{adjustwidth}{-0.8cm}{-0.8cm}
-        \centering
-        \includegraphics[width=0.8\textwidth]{figures/pdf/omg1.pdf}
-        \caption{omg1}
-        \label{fig:omg1}
-    \end{adjustwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/pdf/omg1.pdf}
+    \caption[Serialization, \acs{omg} level 1]{Serialization of a geometry using the \acs{omg} level 1 pattern.}
+    \label{fig:omg1}
 \end{figure}
 
 
@@ -93,7 +91,7 @@ The separation into two sets allows for querying entities that have a \ac{wkt} s
 
 After filtering out spaces, the geometry of which is not needed by the viewer, it filters the entities' geometry based on a list of implemented/accepted formats by the receiving viewer. These last consist of a list of \ac{fog} super-properties inferred by their assignment. In other words: a triple in the \ac{rdf} graph of the form \mintinline{sparql}|?entity fog:asObj_v3.0| \mintinline{sparql}|?geometry_data| infers \mintinline{sparql}|?entity fog:asObj ?geometry_data| (as shown in Figure \ref{fig:omg1}). This allows for the use of a single property to query related formats while still permitting the declaration of more specific formats if needed.
 
-In the end, the query returns a list of entities that are located in the same room as the observer, or are not located in a room but have a \ac{wkt} serialization that is validated by the GeoSPARQL filter function. This list can be used to cull the scene or to highlight the entities in the viewer. The query can be extended to include the \mintinline{sparql}|bot:Space| entities, which can be used to highlight the room in which the observer is located.
+In the end, the query returns a list of entities that are located in the same room as the observer, or are not located in a room but have a \ac{wkt} serialization that is validated by the GeoSPARQL filter function. Together with the needed metadata, which is further explained in Section \ref{sec:interactions}.
 
 \begin{listing}[H]
     \inputminted{sparql}{dynamicQueries/inSitu/query.rq}
@@ -105,7 +103,7 @@ In the end, the query returns a list of entities that are located in the same ro
 In the case of Listing \ref{lst:GeoSPARQLauto}, the GeoSPARQL \mintinline{sparql}|FILTER| uses the function \mintinline{sparql}|geof:sfWithin| to evaluate if the given point coordinates are within the \ac{wkt} serialization, which in most cases represents a \ac{wkt} polygon. For example:\\
 \mintinline{turtle}|"POLYGON ((40 10, 30 10, 30 40, 40 40, 40 10))"^^geo:wktLiteral|
 
-The use of GeoSPARQL results in a very efficient query, as the filtering is done directly in the query and does not require any post-processing. Although the lack of 3D capabilities is a limitation, it allows, in 2D to easily implement more complex algorithms leveraging the use of different functions. With which, together with a level 2 \ac{omg} pattern, \ac{lod} culling based on the distance to the observer can be implemented. 
+The use of GeoSPARQL results in a very efficient query, as the filtering is done directly in the query and does not require any post-processing. Although the lack of 3D capabilities is a limitation, it allows, in 2D to easily implement more complex algorithms leveraging the use of different functions. With which, together with a level 2 \ac{omg} pattern, \ac{lod} culling based on the distance to the observer can be implemented.
 
 Selecting rooms and entities outside the room in which the observer is present is also conceivable when leveraging the use of the \mintinline{sparql}|bot:adjacentZone| property. Or using the GeoSPARQL distance to a room.
 % query by distance, instance instead adjacent
@@ -119,6 +117,31 @@ Selecting rooms and entities outside the room in which the observer is present i
 %   - all spaces
 %   - combination of spaces
 % - sample queries
+In this culling approach, ray tracing is employed to assess the room where the observer is situated. As illustrated in Figure \ref{fig:3participants}, out of the three participants, only one utilizes a 3D engine—a component capable of handling geometric modeling operations, such as ray tracing—referred to as the 3D viewer. In essence, both the \ac{sparql} endpoint and the external database lack the ability to perform 3D operations or evaluations. Consequently, this approach capitalizes on the 3D viewer to pinpoint the room in which the observer is positioned.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/pdf/inViewer.pdf}
+    \caption{In viewer "bot:Space" identification, with raytracing}
+    \label{fig:raytrace}
+\end{figure}
+
+This process involves casting a ray from the observer's position both upwards and downwards, and evaluating the first intersection with a \mintinline{sparql}|bot:Space| entity. Unlike the previous approach, the geometry of the rooms themselves is required by the viewer, necessitating an initial query to load the rooms' geometry. By utilizing multiple layers in the viewer, the rooms' geometry can be concealed from the user while still being employed for ray tracing. Listing \ref{lst:findRoom} demonstrates the function used in this thesis prototype to assess the location. The scope of the picking is limited to the rooms using the cache's metadata, in this case \mintinline{ts}|lru: RefLRU|. Subsequently, two picking operations are carried out and compared, as depicted in Figure \ref{fig:raytrace}; if they match, the intersected room's \ac{uri} is returned.
+
+\begin{listing}[h]
+    \inputminted{ts}{dynamicQueries/inViewer/raytrace.ts}
+    \vspace{-0.7cm}
+    \caption{Typescript code for raytracing in viewer}
+    \label{lst:findRoom}
+\end{listing}
+
+Once the room is identified, the query in Listing \ref{lst:BOTauto} is executed to retrieve the entities located within the room. This is achieved by querying the \mintinline{sparql}|bot:containsElement| property of the room. Similar to the previous method, it necessitates the combination of two sets of entities in this case: those located in the room and in the adjacent rooms themselves. This enables the optimization of the viewer by evaluating only the adjacent rooms, rather than all the rooms in the database.
+
+The remainder of the query closely mirrors the previous one (Listing \ref{lst:GeoSPARQLauto}), with the distinction that it necessitates the additional storage of the \mintinline{sparql}|?botType| property to keep track of \ac{bot} classes and to identify \mintinline{sparql}|bot:Space| elements locally.
+
+Due to the absence of \mintinline{sparql}|bot:adjacentZone| relations in the database used for the prototype, the query is unable to directly query the adjacent rooms. Instead, the property \mintinline{sparql}|bot:adjacentElement| is employed to query related room's adjacent walls and, consequently, the corresponding rooms. The lack of \ac{bot} relations in the utilized database was identified as a recurring issue in this thesis. Chapter \ref{ch:discussion} delves into this problem in greater detail.
+
+This approach takes advantage of the 3D viewer and its engine to contribute to the culling process, although the first step requires downloading all the rooms' geometry. However, this step can be replaced by an initial manual localization by the user. By utilizing the adjacent rooms during subsequent queries, the impact on performance and resource usage remains minimal throughout the operation. In contrast to the \nameref{sec:inSituWKT}, this method is not limited to 2D but can be employed in 3D. However, it requires the geometry format of the room to be compatible with the viewer.
 
 \begin{listing}[H]
     \inputminted{sparql}{dynamicQueries/inViewer/query.rq}
@@ -127,13 +150,12 @@ Selecting rooms and entities outside the room in which the observer is present i
     \label{lst:BOTauto}
 \end{listing}
 
-
 \section{In query OBJ geometry filtering}
 % - no geometric but string analysis in query
 % - AABBox filtering of for example obj rooms
 % - all negative points
 
-\begin{listing}[H]
+\begin{listing}[h]
     \inputminted{sparql}{dynamicQueries/inQuery/query.rq}
     \vspace{-0.7cm}
     \caption{Querying in query OBJ geometry filtering}

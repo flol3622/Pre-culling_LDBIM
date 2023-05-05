@@ -62,6 +62,15 @@ flupke:coneOBJ_geometry-1 fog:asObj "https://..."^^xsd:anyURI ;
     \label{lst:fogInference}
 \end{listing}
 
+The possibility of introducing an external geometry location adds a new participant to Figure \ref{fig:firstIdea}, the external database, from which some files are expected to be fetched. This is illustrated in Figure \ref{fig:3participants}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/pdf/3participants.pdf}
+    \caption{Sequence diagram with external database - concept}
+    \label{fig:3participants}
+\end{figure}
+
 \cite{Bonduel2019} refers to the proposal of the \ac{lbd-cg} stated in \cite{holten2018opm} to write Linked Data patterns on three possible levels, \enquote{each having a different degree of complexity}. The first and second levels are illustrated in Figure \ref{fig:fogGom}. Level 2 allows assigning multiple geometry descriptions to a single object, each with, for example, a different \ac{lod}.
 
 \begin{figure}[H]
