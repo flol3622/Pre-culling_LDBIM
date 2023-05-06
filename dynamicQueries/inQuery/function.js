@@ -26,10 +26,10 @@ function insideObjAABBox(objString, point) {
   for (var i = 0; i < 3; i++) {
     var position = parseFloat(location[i]);
     if (position < AABOX[i][0] || position > AABOX[i][1]) {
-      return "outside";
+      return false;
     }
   }
-  return "inside";
+  return true;
 }
 
 function transpose(matrix) {

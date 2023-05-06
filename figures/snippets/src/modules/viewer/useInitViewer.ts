@@ -6,6 +6,9 @@ import {
   Viewer,
 } from "@xeokit/xeokit-sdk";
 import { useEffect } from "react";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { cleanStart, freezing } from "../atoms";
+import { RefLoaderTypes, RefViewer } from "../refTypes";
 
 export type LoaderType = {
   [key: string]: {
@@ -16,39 +19,40 @@ export type LoaderType = {
   };
 };
 
-export function useInitViewer(
-  viewer: Viewer | undefined,
-  loaderTypes: React.MutableRefObject<LoaderType | undefined>,
-  clean: any,
-  setFreeze: (state: boolean) => void
+export default function useInitViewer(
+  viewer: RefViewer,
+  loaderTypes: RefLoaderTypes
 ) {
+  const clean = useRecoilValue(cleanStart);
+  const setFreeze = useSetRecoilState(freezing);
+
   useEffect(() => {
     // freeze the query and endpoint inputs
     setFreeze(true);
     // clear the existing canvas
-    viewer?.scene.clear();
+    viewer.current?.scene.clear();
 
     // initialize the viewer
-    viewer = new Viewer({
+    viewer.current = new Viewer({
       canvasId: "myCanvas",
       transparent: true,
     });
 
     // initialize the navcube
-    new NavCubePlugin(viewer, {
+    new NavCubePlugin(viewer.current, {
       canvasId: "myNavCubeCanvas",
       visible: true,
     });
 
     // identify the scene and camera
-    const scene = viewer.scene;
+    const scene = viewer.current?.scene;
     const camera = scene.camera;
     camera.projection = "perspective";
 
     // initialize the loaders
-    const gltfLoader = new GLTFLoaderPlugin(viewer);
-    const objLoader = new OBJLoaderPlugin(viewer, {});
-    const stlLoader = new STLLoaderPlugin(viewer);
+    const gltfLoader = new GLTFLoaderPlugin(viewer.current);
+    const objLoader = new OBJLoaderPlugin(viewer.current, {});
+    const stlLoader = new STLLoaderPlugin(viewer.current);
 
     // store the loaders in a ref
     loaderTypes.current = {

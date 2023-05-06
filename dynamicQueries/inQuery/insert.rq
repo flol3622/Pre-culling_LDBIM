@@ -1,0 +1,7 @@
+PREFIX extfn:<http://www.ontotext.com/js#>
+
+INSERT DATA {
+    [] <http://www.ontotext.com/js#register> '''
+function insideObjAABBox(objString, point) { ... }
+'''
+}

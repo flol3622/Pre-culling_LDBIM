@@ -45,6 +45,7 @@
 \usepackage{listings}
 \usepackage{minted}
 \usepackage{caption}
+\usepackage{dirtree}
 \captionsetup{justification=centering, margin=2cm}
 \definecolor{mygray}{rgb}{0.95, 0.95, 0.95}
 \definecolor{codeBlue}{rgb}{0.16, 0.22, 0.69}
@@ -119,7 +120,9 @@ Master of Science in de ingenieurswetenschappen: architectuur
   \listoffigures
   \let\clearpage\relax
   \listoftables
+  \listoflistings
 }
+
 
 \newpage
 
@@ -131,11 +134,13 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \include{chapters/DynamicQueries.tex}
 \include{chapters/ModularApproach.tex}
 \include{chapters/Prototype.tex}
+\include{chapters/conclusion}
 
 
 \clearpage
 \chapter*{List of Acronyms}
 \begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
+  \acro{aabbox}[AABB]{Axis Aligned Bounding Box}
   \acro{aec}[AEC]{Architecture, Engineering and Construction}  
   \acro{ar}[AR]{Augmented Reality}
   \acro{ascii}[ASCII]{American Standard Code for Information Interchange}
@@ -147,6 +152,7 @@ Master of Science in de ingenieurswetenschappen: architectuur
   \acro{chc}[CHC]{Coherent Hierarchical Culling algorithm}
   \acro{cpu}[CPU]{Central Processing Unit}
   \acro{dc}[DC]{Drop Culling}
+  \acro{es5}[ES5]{ECMAScript 2009}
   \acro{fog}[FOG]{File Ontology for Geometry formats}
   \acro{gis}[GIS]{Geographic Information System}
   \acro{gltf}[GLTF]{GL Transmission Format}
@@ -189,6 +195,6 @@ Master of Science in de ingenieurswetenschappen: architectuur
 
 
 \appendix
-\include{chapters/Setup.tex}
+\include{chapters/AppendixA}
 
 \end{document}

@@ -1,39 +1,59 @@
 import { LRUMap } from "lru_map";
+import { useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import { cleanStart, lruLimit } from "./atoms";
+import { RefLRU, RefViewer } from "./refTypes";
 import { Datatype, Format } from "./viewer/types";
-import { useRef } from "react";
-import { Viewer } from "@xeokit/xeokit-sdk";
 
 export type MetadataLRU = {
   format: Format;
   datatype: Datatype;
+  botType?: string;
 };
 export type EntryLRU = {
   id: string;
   metadata: MetadataLRU;
 };
 
-export function useCacheManagement(limit: number, viewer: Viewer | undefined) {
-  const LRU = useRef<LRUMap<string, MetadataLRU>>(new LRUMap(limit));
+export default function useCacheManagement(viewer: RefViewer, LRU: RefLRU) {
+  const clean = useRecoilValue(cleanStart);
+  const limit = useRecoilValue(lruLimit);
 
-  LRU.current.shift = function () {
-    let entry = LRUMap.prototype.shift.call(this);
-    viewer?.scene.models[entry?.[0]]?.destroy();
-    return entry;
-  };
-
-  function clearLRU(): void {
+  // initialize the LRU cache
+  useEffect(() => {
+    console.log("cache initialized");
+    LRU.current = new LRUMap(limit);
     LRU.current.clear();
-  }
+  }, [limit]);
 
-  function addLRU(entity: EntryLRU): void {
-    LRU.current.set(entity.id, entity.metadata);
-  }
+  // clear the cache when the clean prop changes
+  useEffect(() => {
+    LRU.current?.clear();
+    console.log("cache cleared");
+  }, [clean]);
 
+  // evaluate need to add to Viewer, move entity to head of LRU
   function evalLRU(entity: EntryLRU): boolean {
-    if (LRU.current.get(entity.id) === entity.metadata) return false;
-    addLRU(entity);
+    const lruValue = LRU.current?.get(entity.id);
+    if (lruValue != undefined) {
+      if (JSON.stringify(lruValue) != JSON.stringify(entity.metadata)) {
+        viewer.current?.scene.models[entity.id]?.destroy();
+        return true;
+      } else {
+        return false;
+      }
+    }
+    LRU.current?.set(entity.id, entity.metadata);
     return true;
   }
 
-  return { clearLRU, evalLRU };
+  function syncViewer(): void {
+    const modelIds = viewer.current?.scene.modelIds;
+    if (!modelIds) return; // if no models
+    for (const id of modelIds) {
+      if (!LRU.current?.has(id)) viewer.current?.scene.models[id]?.destroy();
+    }
+  }
+
+  return { evalLRU, syncViewer }; // to use when loading a new model
 }
