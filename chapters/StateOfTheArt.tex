@@ -29,7 +29,7 @@ The \ac{bot} proposes a set of classes and properties, \enquote{which provides a
 \begin{figure}[H]
     \begin{adjustwidth}{-0.8cm}{-0.8cm}
         \centering
-        \input{figures/diagrams/bot.tex}
+        \input{figures/tex/bot.tex}
         \vspace{-0.3cm}
         \caption[Illustration of the \acs{bot} ontology]{Illustration of the \acs{bot} ontology, based on \cite{Rasmussen2020}.}
         \label{fig:bot}
@@ -77,7 +77,7 @@ The possibility of introducing an external geometry location adds a new particip
     \begin{adjustwidth}{-0.8cm}{-0.8cm}
         \centering
         \ttfamily
-        \input{figures/diagrams/fogGom.tex}
+        \input{figures/tex/fogGom.tex}
         \vspace{-0.3cm}
         \caption[Illustration of the \acs{fog} and \acs{omg} ontologies]{Illustration of Level 1 (left) and Level 2 (right) of the \acs{fog} and \acs{omg} ontologies, based on \cite{Bonduel2019}. \textcolor{red}{LOD can't be assigned to literal, needs to be changed}}
         \label{fig:fogGom}
@@ -122,12 +122,10 @@ Their study had two main goals. Firstly, evaluating existing viewers and their c
 Secondly, they implemented modern culling algorithms and strategies such as \ac{chc}++. The worst-case scenarios are shown in Figure \ref{fig:performanceJohansson} against the Solibri viewer. The results are quite promising, but as concluded by the authors, the gains are limited to the capacities of the \ac{gpu}, \ac{vram}, and \ac{ram}, as discussed in \ref{sec:researchQuestions}.
 
 \begin{figure}[H]
-    \begin{adjustwidth}{-0.8cm}{-0.8cm}
-        \centering
-        \input{figures/diagrams/JohanssonPerformances.tex}
-        \caption[Performance viewers]{Comparison in rendering performance.\\ from \cite{Johansson2015}}
-        \label{fig:performanceJohansson}
-    \end{adjustwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/pdf/JohanssonPerformances.pdf}
+    \caption[Performance viewers]{Comparison in rendering performance.\\ from \cite{Johansson2015}}
+    \label{fig:performanceJohansson}
 \end{figure}
 
 \section{Culling algorithms}\label{sec:historyCulling}
