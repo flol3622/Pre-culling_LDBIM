@@ -1,41 +1,42 @@
 \chapter{Prototype}
-% \usemintedstyle{default}
+\pagenumbering{roman}
 \setlength{\DTbaselineskip}{14pt}
+
 \begin{footnotesize}
   \dirtree{%
     .1 src/.
     .2 components/.
     .3 index.ts.
-    .3 Viewer.tsx.
-    .3 Navbar.tsx.
-    .3 QueryPannel.tsx.
-    .3 Queryinput.tsx.
-    .3 Divider.tsx.
-    .3 Button.tsx.
+    .3 \hyperref[sec:Viewer.tsx]{Viewer.tsx}.
+    .3 \hyperref[sec:Navbar.tsx]{Navbar.tsx}.
+    .3 \hyperref[sec:QueryPannel.tsx]{QueryPannel.tsx}.
+    .3 \hyperref[sec:Queryinput.tsx]{Queryinput.tsx}.
+    .3 \hyperref[sec:Divider.tsx]{Divider.tsx}.
+    .3 \hyperref[sec:Button.tsx]{Button.tsx}.
     .2 modules/.
     .3 atoms/.
     .4 index.ts.
-    .4 cleanStart.ts.
-    .4 endpoint.ts.
-    .4 query.ts.
-    .4 lru.ts.
-    .4 ui.ts.
+    .4 \hyperref[sec:cleanStart.ts]{cleanStart.ts}.
+    .4 \hyperref[sec:endpoint.ts]{endpoint.ts}.
+    .4 \hyperref[sec:query.ts]{query.ts}.
+    .4 \hyperref[sec:lru.ts]{lru.ts}.
+    .4 \hyperref[sec:ui.ts]{ui.ts}.
     .3 automations/.
     .4 index.ts.
-    .4 useAutomations.ts.
-    .4 BOT.ts.
-    .4 GeoSPARQL.ts.
-    .4 OBJ.ts.
+    .4 \hyperref[sec:useAutomations.ts]{useAutomations.ts}.
+    .4 \hyperref[sec:BOT.ts]{BOT.ts}.
+    .4 \hyperref[sec:GeoSPARQL.ts]{GeoSPARQL.ts}.
+    .4 \hyperref[sec:OBJ.ts]{OBJ.ts}.
     .3 viewer/.
     .4 index.ts.
-    .4 types.ts.
-    .4 useInitViewer.ts.
-    .4 useLoadGeometry.ts.
-    .3 fetchSPARQL.ts.
-    .3 useCacheManagement.ts.
-    .3 refTypes.ts.
+    .4 \hyperref[sec:types.ts]{types.ts}.
+    .4 \hyperref[sec:useInitViewer.ts]{useInitViewer.ts}.
+    .4 \hyperref[sec:useLoadGeometry.ts]{useLoadGeometry.ts}.
+    .3 \hyperref[sec:fetchSPARQL.ts]{fetchSPARQL.ts}.
+    .3 \hyperref[sec:useCacheManagement.ts]{useCacheManagement.ts}.
+    .3 \hyperref[sec:refTypes.ts]{refTypes.ts}.
     .2 pages/.
-    .3 index.tsx.
+    .3 \hyperref[sec:index.tsx]{index.tsx}.
   }
 \end{footnotesize}
 
@@ -45,56 +46,77 @@
   style=default
 }
 
-
 \section{Components}
 \subsection{Viewer}
+\label{sec:Viewer.tsx}
 \inputminted{tsx}{figures/snippets/src/components/Viewer.tsx}
 \subsection{Navbar}
+\label{sec:Navbar.tsx}
 \inputminted{tsx}{figures/snippets/src/components/Navbar.tsx}
 \subsection{QueryPannel}
+\label{sec:QueryPannel.tsx}
 \inputminted{tsx}{figures/snippets/src/components/QueryPannel.tsx}
 \subsection{Queryinput}
+\label{sec:Queryinput.tsx}
 \inputminted{tsx}{figures/snippets/src/components/Queryinput.tsx}
 \subsection{Divider}
+\label{sec:Divider.tsx}
 \inputminted{tsx}{figures/snippets/src/components/Divider.tsx}
 \subsection{Button}
+\label{sec:Button.tsx}
 \inputminted{tsx}{figures/snippets/src/components/Button.tsx}
 
 \section{Modules}
 \subsection{Atoms}
 \subsubsection{cleanStart}
+\label{sec:cleanStart.ts}
 \inputminted{ts}{figures/snippets/src/modules/atoms/cleanStart.ts}
 \subsubsection{endpoint}
+\label{sec:endpoint.ts}
 \inputminted{ts}{figures/snippets/src/modules/atoms/endpoint.ts}
 \subsubsection{query}
+\label{sec:query.ts}
 \inputminted{ts}{figures/snippets/src/modules/atoms/query.ts}
 \subsubsection{lru}
+\label{sec:lru.ts}
 \inputminted{ts}{figures/snippets/src/modules/atoms/lru.ts}
 \subsubsection{ui}
+\label{sec:ui.ts}
 \inputminted{ts}{figures/snippets/src/modules/atoms/ui.ts}
 \subsection{Automations}
 \subsubsection{useAutomations}
+\label{sec:useAutomations.ts}
 \inputminted{ts}{figures/snippets/src/modules/automations/useAutomations.ts}
 \subsubsection{BOT}
+\label{sec:BOT.ts}
 \inputminted{ts}{figures/snippets/src/modules/automations/BOT.ts}
 \subsubsection{GeoSPARQL}
+\label{sec:GeoSPARQL.ts}
 \inputminted{ts}{figures/snippets/src/modules/automations/GeoSPARQL.ts}
 \subsubsection{OBJ}
+\label{sec:OBJ.ts}
 \inputminted{ts}{figures/snippets/src/modules/automations/OBJ.ts}
 \subsection{Viewer}
 \subsubsection{types}
+\label{sec:types.ts}
 \inputminted{ts}{figures/snippets/src/modules/viewer/types.ts}
 \subsubsection{useInitViewer}
+\label{sec:useInitViewer.ts}
 \inputminted{ts}{figures/snippets/src/modules/viewer/useInitViewer.ts}
 \subsubsection{useLoadGeometry}
+\label{sec:useLoadGeometry.ts}
 \inputminted{ts}{figures/snippets/src/modules/viewer/useLoadGeometry.ts}
 \subsection{fetchSPARQL}
+\label{sec:fetchSPARQL.ts}
 \inputminted{ts}{figures/snippets/src/modules/fetchSPARQL.ts}
 \subsection{useCacheManagement}
+\label{sec:useCacheManagement.ts}
 \inputminted{ts}{figures/snippets/src/modules/useCacheManagement.ts}
 \subsection{refTypes}
+\label{sec:refTypes.ts}
 \inputminted{ts}{figures/snippets/src/modules/refTypes.ts}
 
 \section{Pages}
 \subsection{index}
+\label{sec:index.tsx}
 \inputminted{tsx}{figures/snippets/src/pages/index.tsx}

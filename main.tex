@@ -4,7 +4,8 @@
 
 \usepackage{fontspec}
 \setmainfont[
-  ItalicFont=SourceSerifPro-LightItalic.ttf
+  ItalicFont=SourceSerifPro-LightItalic.ttf,
+  BoldFont=SourceSerifPro-Regular.ttf,
 ]{SourceSerifPro-Light.ttf}
 \setsansfont{WorkSans-Regular.ttf}
 \usepackage[english]{babel}
@@ -84,6 +85,9 @@
 % for footnotes
 \counterwithout{footnote}{chapter}
 
+% for links
+\usepackage{hyperref}
+
 % ---------------------------------------------
 
 \thesubtitle{Linked Data}
@@ -116,6 +120,7 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \counterwithin{listing}{chapter}
 % hide link color in toc and list of figures
 {\hypersetup{hidelinks}
+  \pagenumbering{alph}
   \tableofcontents
   \listoffigures
   \let\clearpage\relax
@@ -141,7 +146,7 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \chapter*{List of Acronyms}
 \begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
   \acro{aabbox}[AABB]{Axis Aligned Bounding Box}
-  \acro{aec}[AEC]{Architecture, Engineering and Construction}  
+  \acro{aec}[AEC]{Architecture, Engineering and Construction}
   \acro{ar}[AR]{Augmented Reality}
   \acro{ascii}[ASCII]{American Standard Code for Information Interchange}
   \acro{bcf}[BCF]{\acs{bim} Collaboration Format}
@@ -167,6 +172,7 @@ Master of Science in de ingenieurswetenschappen: architectuur
   \acro{ldbim}[LDBIM]{Linked Data \acs{bim}}
   \acro{lod}[LOD]{Level of Detail}
   \acro{lru}[LRU]{Least Recently Used}
+  \acro{lfu}[LFU]{Least Frequently Used}
   \acro{mep}[MEP]{Mechanical, Electrical and Plumbing}
   \acro{nohc}[NOHC]{Near Optimal Hierarchical Culling}
   \acro{oc}[OC]{Occlusion Culling}
@@ -188,6 +194,9 @@ Master of Science in de ingenieurswetenschappen: architectuur
   \acro{wkt}[WKT]{Well-Known Text}
   \acro{xml}[XML]{Extensible Markup Language}
   \acro{xsd}[XSD]{\ac{xml} Schema Definition}
+  \acro{fifo}[FIFO]{First In First Out}
+  \acro{lifo}[LIFO]{Last In First Out}
+  \acro{mru}[MRU]{Most Recently Used}
 \end{acronym}
 
 \printbibliography[nottype=web_page, heading=bibintoc,title={References}]
