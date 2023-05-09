@@ -63,15 +63,20 @@ This last functionality requires the use of a cache replacement algorithm. The a
 \subsection{\acs{lru} algorithm}
 % - LRU principle
 % - develop needs
+As a possible cache replacement algorithm, the \ac{lru} algorithm limits the number of entities allowed in the viewer. It can be interpreted as a list in which new entities are added at the front of the list, and existing entries are also moved back to the front. The addition of a new entity thus shifts the existing entities back in the list. When an existing entity is viewed again, it moves back to the front of the list without shifting the tail of the list. When the list is full, the entity at the end of the list is removed from the viewer, as it is the least recently used entity \parencite{cacheAlgorigthms}.
 
-
+To implement this algorithm, the cache manager needs to store the metadata of each new entity, or if the entity already exists, compare the new metadata about it and move it to the front of the list, triggering the fetching modules.
 
 \section{Query processing}
 % - multiple sources
 
+The query processing module proposed by this thesis contains multiple sub-modules aiming to assemble the \ac{sparql} query from different sources, the ui, culling algorithm and other user specific settings.
+
 \subsection{Query builder}
 % - challenges that come with it
 % - abstraction of dynamic queries in algorithms, 
+
+The 
 
 \subsection{Query composer}
 % - combination af multiple queries
