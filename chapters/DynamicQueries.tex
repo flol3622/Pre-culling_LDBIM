@@ -1,4 +1,4 @@
-\chapter{Dynamic Queries}
+\chapter{Dynamic Queries} \label{ch:dynamicQueries}
 % structure of this chapter:
 % main = dynamic queries
 % Explain:
@@ -16,7 +16,7 @@ The structure is as follows: first, the requirements for the viewer are research
 
 % - importance of viewer
 % - refer to state of the art existing viewers
-\section{Requirements}
+\section{Requirements} \label{sec:viewerRequirements}
 % - different file formats, different sources.
 % - reusing first diagram
 % - why XEOKIT sdk (practical)
@@ -108,7 +108,7 @@ The use of GeoSPARQL results in a very efficient query, as the filtering is done
 Selecting rooms and entities outside the room in which the observer is present is also conceivable when leveraging the use of the \mintinline{sparql}|bot:adjacentZone| property. Or using the GeoSPARQL distance to a room.
 % query by distance, instance instead adjacent
 
-\section{In viewer "bot:Space" identification} \label{sec:inViewer}
+\section{In viewer \enquote{bot:Space} identification} \label{sec:inViewer}
 % - 1 database + 1 3D enabled instance (viewer) 
 %   => viewer can raytrace identify wright space (little computation)
 % - 2 layered viewer visible elements / invisible spaces
@@ -150,7 +150,7 @@ This approach takes advantage of the 3D viewer and its engine to contribute to t
     \label{lst:BOTauto}
 \end{listing}
 
-\section{In query OBJ geometry filtering}
+\section{In query OBJ geometry filtering} \label{sec:inQuery}
 % - no geometric but string analysis in query
 % - AABBox filtering of for example obj rooms
 % - all negative points
