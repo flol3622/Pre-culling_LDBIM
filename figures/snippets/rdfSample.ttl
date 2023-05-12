@@ -19,7 +19,7 @@ flupke:cubeGLTF omg:hasGeometry flupke:cubeGLTF_geometry-1 ;
     rdf:type bot:Element .
 
 flupke:coneOBJ_geometry-1 rdf:type omg:Geometry ;
-    fog:asObj_v3.0-obj "https://raw.githubusercontent.com/flol3622/AR-Linked-BIM-viewer/main/public/assets/database_1/coneOBJ.obj"^^xsd:anyURI .
+    fog:asObj_v3.0-obj "https://raw.githubusercontent.com/flol3622/LDBIM-viewer/main/public/assets/database_1/coneOBJ.obj"^^xsd:anyURI .
 
 flupke:cubeGLTF_geometry-1 rdf:type omg:Geometry ;
-    fog:asGltf_v1.0-gltf "https://raw.githubusercontent.com/flol3622/AR-Linked-BIM-viewer/main/public/assets/database_1/cubeGLTF.gltf"^^xsd:anyURI .
+    fog:asGltf_v1.0-gltf "https://raw.githubusercontent.com/flol3622/LDBIM-viewer/main/public/assets/database_1/cubeGLTF.gltf"^^xsd:anyURI .

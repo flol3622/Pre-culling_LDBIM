@@ -28,17 +28,6 @@ To bring this volume of geometric data in perspective, Table \ref{tab:sizeModels
 	\label{tab:sizeModels}
 \end{table}
 
-These models demonstrate how basic \ac{bim} models can already contain a significant amount of data. \ac{ldbim} will not only bring together new stakeholders but also be able to keep track of multiple geometry versions for each object, should they occur. Therefore, this thesis proposes a new approach to the visual querying of \ac{ldbim} models, wherein viewers will not have to load the entire model into memory. Instead, after filtering at the source, only the geometry needed for the visual tasks at hand will be loaded, while maintaining the original link to each resource for further processing and use cases. This filtering step is commonly referred to as culling in the computer graphics industry and is illustrated in Figures \ref{fig:firstIdea} and \ref{fig:cullingPrinciple}.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.4\textwidth]{figures/pdf/first idea.pdf}
-	\caption{Sequence diagram - basic concept}
-	\label{fig:firstIdea}
-\end{figure}
-
-Figure \ref{fig:firstIdea} illustrates the basic idea of this thesis, presenting an extra step in the communication between a user, represented here by a \ac{hhd}, and a database storing the model. An \ac{hhd} has been chosen to exemplify a low-powered device used in the field, which requires a lightweight 3D viewer to visualize and explore the digital twin of the building. The \ac{hhd} is assumed to have no knowledge of the \ac{ldbim} model and only receives the geometry that needs to be displayed from the database. On the other hand, the database is assumed to possess, or have access to, all the knowledge of the model and the necessary semantics to perform the culling. \textcolor{red}{In addition to the culling, Web of Data technologies behind \ac{ldbim} allow for a more flexible approach to data management. The expressive capabilities of \ac{sparql} enable complex and fine-grained queries, in contrast to current \ac{bim} approaches, for data retrieval. This offers a broad range of end-use cases tailored to multiple stakeholders. In this thesis, this translates to user or application-specific query adaptation capabilities.}
-
 \begin{figure}[h]
 	\centering
 	\input{figures/tex/cullingPrinciple.tex}
@@ -46,18 +35,30 @@ Figure \ref{fig:firstIdea} illustrates the basic idea of this thesis, presenting
 	\label{fig:cullingPrinciple}
 \end{figure}
 
-Figure \ref{fig:cullingPrinciple} showcases multiple culling techniques to showcase some culling principles. The first technique, \emph{frustum culling}, is used to determine which objects are visible to the user. The second technique, \emph{occlusion culling}, is used to determine which objects are occluded by or behind other objects. And lastly, \emph{back-face culling}, is used to determine which faces, and not whole objects, are facing away from the user.
+These models demonstrate how basic \ac{bim} models can already contain a significant amount of data. \ac{ldbim} will not only bring together new stakeholders but also be able to keep track of multiple geometry versions for each object, should they occur. Therefore, this thesis proposes a new approach to the visual querying of \ac{ldbim} models, wherein viewers will not have to load the entire model into memory. Instead, after filtering at the source, only the geometry needed for the visual tasks at hand will be loaded, while maintaining the original link to each resource for further processing and use cases. This filtering step is commonly referred to as culling in the computer graphics industry and is illustrated in Figure\ref{fig:cullingPrinciple}.
+
+Figure \ref{fig:cullingPrinciple} showcases multiple culling techniques to showcase some culling principles. The first technique, \textbf{frustum culling}, is used to determine which objects are visible to the user. The second technique, \textbf{occlusion culling}, is used to determine which objects are occluded by or behind other objects. And lastly, \textbf{back-face culling}, is used to determine which faces, and not whole objects, are facing away from the user.
+
+Figure \ref{fig:firstIdea} illustrates the basic idea of this thesis, presenting an extra step in the communication between a user, represented here by a \ac{hhd}, and a database storing the model. An \ac{hhd} has been chosen to exemplify a low-powered device used in the field, which requires a lightweight 3D viewer to visualize and explore the digital twin of the building. The \ac{hhd} is assumed to have no knowledge of the \ac{ldbim} model and only receives the geometry that needs to be displayed from the database. On the other hand, the database is assumed to possess, or have access to, all the knowledge of the model and the necessary semantics to perform the culling.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.38\textwidth]{figures/pdf/first idea.pdf}
+	\caption{Sequence diagram - basic concept}
+	\label{fig:firstIdea}
+\end{figure}
+
 
 \section{Research questions}\label{sec:researchQuestions}
-This thesis proposes the introduction of culling algorithm technology within the context of \ac{ldbim} to address the previously mentioned issue of the scene's size, by culling the scene at its source prior to sending it to the viewer. As culling algorithms have been extensively researched and continue to evolve, as described in section \ref{sec:historyCulling}, the research questions in this thesis concentrate on assessing the feasibility of introducing such algorithms in \ac{ldbim}. It aims to propose a set of possible solutions tailored to this specific problem, while highlighting possibilities for future research and specific use cases.
+This thesis proposes the introduction of culling algorithm technology within the context of \ac{ldbim} to address the previously mentioned issue of the scene's size, by culling the scene at its source prior to sending it to the viewer. As culling algorithms have been extensively researched and continue to evolve, as described in section \ref{sec:historyCulling}, the research questions in this thesis concentrate on assessing the feasibility of introducing such algorithms to \ac{ldbim}. It aims to propose a set of possible solutions tailored to this specific problem, while highlighting possibilities for future research and specific use cases.
 
 \subsection[Can \acs{ldbim} be culled?]{To what extent can \acs{ldbim} geometry be culled \\
 	to be streamed to lightweight viewers?}
 
-This thesis focuses on computing with data snippets or triples inside a \ac{ldbim} model, rather than within. This means that the smallest unit of data that can be culled is the one described in a single triple, which is, in the most likely scenario, a single \ac{lod} of a single element. It implies that geometry is defined and separated at the object level. Furthermore, this thesis will not address culling techniques such as back-face culling, as these will be left to the viewer itself, not the database.
+This thesis focuses on computing with data snippets or triples (Section \ref{subsec:rdfAndTriples}) inside a \ac{ldbim} model, rather than within. This means that the smallest unit of data that can be culled is the one described in a single triple, which is, in the most likely scenario, a single \ac{lod} of a single element. It implies that geometry is defined and separated at the object levell, not by faces. Consequently, this thesis will not address culling techniques such as back-face culling, as these will be left to the viewer itself, not the database.
 
 Determining the necessary data snippets for the viewer is a key question. The fundamental requirements for the viewer include, first, the geometry itself, which involves selecting the appropriate geometry format for the application as well as the additional visual information such as color, texture, etc. Second, the identifier of each element is of crucial importance in order to maintain the link to other semantic resources in the graph. This enables the viewer to retrieve those resources for a multitude of use cases, transforming it into a user-friendly visual query tool.
 
 \subsection[Can existing semantics be used?]{Can existing semantics and ontologies be used\\
 	to feed possible culling algorithms?}\label{subsec:rq2}
-Unlike the computer graphics industry, this interconnected context already contains both explicit and implicit relationships within the graph, the latter being derived through inferencing. This is similar to \cite{Johansson2009} and their paper where they utilized the semantics of a \ac{bim} model in \ac{ifc} format to develop culling techniques. However, this thesis will concentrate on the use of Semantic Web resources. As such, it will examine both \ac{aec}-specific and \ac{aec}-related ontologies, such as those related to \ac{gis}, to determine if they can be employed to feed culling algorithms.
+Unlike the computer graphics industry, this interconnected context already contains both explicit and implicit relationships within the graph, the latter being derived through inferencing (Section \ref{subsec:ontologies}). This is similar to \cite{Johansson2009} and their paper where they utilized the semantics of a \ac{bim} model in \ac{ifc} format to develop culling techniques. However, this thesis will concentrate on the use of Semantic Web resources. As such, it will examine both \ac{aec}-specific and \ac{aec}-related ontologies, such as those related to \ac{gis}, to determine if they can be employed to feed culling algorithms.

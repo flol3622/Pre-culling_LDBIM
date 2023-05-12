@@ -1,5 +1,5 @@
 \chapter{State of the art}
-As mentioned in \cite{Johansson2015}, existing research on the performance of currently used \ac{bim} viewers is quite limited. This state-of-the-art research will, therefore, focus on the overall features of some promising newer viewers and the ontologies that will be used in this thesis.
+As mentioned in \cite{Johansson2015}, existing research on the performance of currently used \ac{bim} viewers is quite limited. This state-of-the-art research will, therefore, focus on the overall features of some promising newer viewers and the ontologies/tools that will be used in this thesis.
 
 \section{Existing \acs{bim} viewers and ontologies}
 \subsection{Qoniq and \acs{lod} Streaming for \acs{bim}}
@@ -13,7 +13,7 @@ Their core research is developing a dynamic \ac{lod} streaming model. Starting f
 Unity was chosen as it allows for writing once and deploying everywhere. This means that the viewer can be used on any platform, including mobile devices and browsers. The performance results are thus related to the hardware capabilities of each device, with the exception of the browser, where the performance of Unity's WebGL build is limited to a scene size of 2Gb.\footcite{UnityWebGL}
 
 \subsubsection{Advantages and trade-offs}
-Being able to run on many platforms, offering a smooth viewer experience and a pleasing aesthetic makes it an ideal candidate for lightweight viewers on the job site. However, the \ac{lod} library has to be computed on every model update. The decimation algorithms are furthermore computational results that are not humanly reviewed. This means that the quality of the resulting meshes is not guaranteed for the lower \ac{lod}s, which are, as illustrated in Figure \ref{fig:bimGraph}, already modeled in previous design phases. \ac{ldbim} could, by interconnection, recall previous \ac{lod}s in the viewer's scene. Without the need for computational remodeling. Nevertheless, Qonic serves as this thesis's goal, outside the \ac{ldbim} context.
+Being able to run on many platforms, offering a smooth viewer experience and a pleasing aesthetic makes it an ideal candidate for lightweight viewers on the job site. However, the \ac{lod} library has to be computed on every model update. The decimation algorithms are furthermore computational results that are not humanly reviewed. This means that the quality of the resulting meshes is not guaranteed for the lower \ac{lod}s, which are, as illustrated in Figure \ref{fig:LOD}, already modeled in previous design phases. \ac{ldbim} could, by interconnection, recall previous \ac{lod}s in the viewer's scene. Without the need for computational remodeling. Nevertheless, Qonic's approach is already versioning-proof as later \ac{lod}'s may vary from the last design choices. They therefore serve as the goal of this thesis, outside the \ac{ldbim} context.
 
 \subsection{ld-bim.web.app}
 \enquote{The purpose of the app is to showcase our LBD toolset and to demonstrate the capabilities of Linked Building Data to newcomers.} \footcite{lbdimApp}
