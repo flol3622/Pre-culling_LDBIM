@@ -117,7 +117,7 @@
         \sffamily % Titlepage in sans serif font
     \fi
 
-    \includegraphics[height=3\gridunit]{\ugd@faculty-\ugd@language.pdf}%
+    \includegraphics[height=3\gridunit]{settings/\ugd@faculty-\ugd@language.pdf}%
 
     \makebox[\gridunit]{}% Left margin of 1 gridunit
     \colorbox{ugent-\ugd@faculty!30}{%
@@ -185,7 +185,7 @@
     \end{minipage}
     }%
 
-    \includegraphics[height=4\gridunit]{ugent-\ugd@language.pdf}%
+    \includegraphics[height=4\gridunit]{settings/ugent-\ugd@language.pdf}%
     \end{titlepage}
     \restoregeometry
 }

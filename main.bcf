@@ -2791,6 +2791,85 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="2">Werbrouck2018</bcf:citekey>
+    <bcf:citekey order="3">ldbimGroup</bcf:citekey>
+    <bcf:citekey order="4">Johansson2015</bcf:citekey>
+    <bcf:citekey order="5">Johansson2015</bcf:citekey>
+    <bcf:citekey order="6">Johansson2015</bcf:citekey>
+    <bcf:citekey order="7">Johansson2015</bcf:citekey>
+    <bcf:citekey order="8">CullingPrinciples</bcf:citekey>
+    <bcf:citekey order="9">CullingPrinciples</bcf:citekey>
+    <bcf:citekey order="10">Johansson2009</bcf:citekey>
+    <bcf:citekey order="11">w3c</bcf:citekey>
+    <bcf:citekey order="12">w3cInfering</bcf:citekey>
+    <bcf:citekey order="13">w3cQuery</bcf:citekey>
+    <bcf:citekey order="14">ontotextSpaql</bcf:citekey>
+    <bcf:citekey order="15">lod</bcf:citekey>
+    <bcf:citekey order="16">lod</bcf:citekey>
+    <bcf:citekey order="17">Johansson2015</bcf:citekey>
+    <bcf:citekey order="18">UnityWebGL</bcf:citekey>
+    <bcf:citekey order="19">lbdimApp</bcf:citekey>
+    <bcf:citekey order="20">lbdOntologies</bcf:citekey>
+    <bcf:citekey order="21">Rasmussen2020</bcf:citekey>
+    <bcf:citekey order="22">GodotPortal</bcf:citekey>
+    <bcf:citekey order="23">Johansson2015</bcf:citekey>
+    <bcf:citekey order="24">Rasmussen2020</bcf:citekey>
+    <bcf:citekey order="25">Rasmussen2020</bcf:citekey>
+    <bcf:citekey order="26">Bonduel2019</bcf:citekey>
+    <bcf:citekey order="27">xsd</bcf:citekey>
+    <bcf:citekey order="28">Bonduel2019</bcf:citekey>
+    <bcf:citekey order="29">fog</bcf:citekey>
+    <bcf:citekey order="30">Bonduel2019</bcf:citekey>
+    <bcf:citekey order="31">holten2018opm</bcf:citekey>
+    <bcf:citekey order="32">Bonduel2019</bcf:citekey>
+    <bcf:citekey order="33">Bonduel2019</bcf:citekey>
+    <bcf:citekey order="34">OGC2023SW</bcf:citekey>
+    <bcf:citekey order="35">OGC2023</bcf:citekey>
+    <bcf:citekey order="36">perry2012ogc</bcf:citekey>
+    <bcf:citekey order="37">Johansson2015</bcf:citekey>
+    <bcf:citekey order="38">Johansson2015</bcf:citekey>
+    <bcf:citekey order="39">Johansson2015</bcf:citekey>
+    <bcf:citekey order="40">Johansson2015</bcf:citekey>
+    <bcf:citekey order="41">Johansson2015</bcf:citekey>
+    <bcf:citekey order="42">Johansson2015</bcf:citekey>
+    <bcf:citekey order="43">Mattausch2008</bcf:citekey>
+    <bcf:citekey order="44">Bittner2004</bcf:citekey>
+    <bcf:citekey order="45">Michael2006</bcf:citekey>
+    <bcf:citekey order="46">fog</bcf:citekey>
+    <bcf:citekey order="47">bcf</bcf:citekey>
+    <bcf:citekey order="48">bcfOWL</bcf:citekey>
+    <bcf:citekey order="49">bcfCollab</bcf:citekey>
+    <bcf:citekey order="50">cacheAlgorigthms</bcf:citekey>
+    <bcf:citekey order="51">cacheAlgorigthms</bcf:citekey>
+    <bcf:citekey order="52">Werbrouck2018</bcf:citekey>
+    <bcf:citekey order="53">ldbimGroup</bcf:citekey>
+    <bcf:citekey order="54">Johansson2015</bcf:citekey>
+    <bcf:citekey order="55">CullingPrinciples</bcf:citekey>
+    <bcf:citekey order="56">Johansson2009</bcf:citekey>
+    <bcf:citekey order="57">w3c</bcf:citekey>
+    <bcf:citekey order="58">w3cInfering</bcf:citekey>
+    <bcf:citekey order="59">w3cQuery</bcf:citekey>
+    <bcf:citekey order="60">ontotextSpaql</bcf:citekey>
+    <bcf:citekey order="61">lod</bcf:citekey>
+    <bcf:citekey order="62">UnityWebGL</bcf:citekey>
+    <bcf:citekey order="63">lbdimApp</bcf:citekey>
+    <bcf:citekey order="64">lbdOntologies</bcf:citekey>
+    <bcf:citekey order="65">Rasmussen2020</bcf:citekey>
+    <bcf:citekey order="66">GodotPortal</bcf:citekey>
+    <bcf:citekey order="67">Bonduel2019</bcf:citekey>
+    <bcf:citekey order="68">xsd</bcf:citekey>
+    <bcf:citekey order="69">fog</bcf:citekey>
+    <bcf:citekey order="70">holten2018opm</bcf:citekey>
+    <bcf:citekey order="71">OGC2023SW</bcf:citekey>
+    <bcf:citekey order="72">OGC2023</bcf:citekey>
+    <bcf:citekey order="73">perry2012ogc</bcf:citekey>
+    <bcf:citekey order="74">Mattausch2008</bcf:citekey>
+    <bcf:citekey order="75">Bittner2004</bcf:citekey>
+    <bcf:citekey order="76">Michael2006</bcf:citekey>
+    <bcf:citekey order="77">bcf</bcf:citekey>
+    <bcf:citekey order="78">bcfOWL</bcf:citekey>
+    <bcf:citekey order="79">bcfCollab</bcf:citekey>
+    <bcf:citekey order="80">cacheAlgorigthms</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
@@ -2822,4 +2901,13 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nyt/global//global/global"
+                type="entry"
+                sortingtemplatename="nyt"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>

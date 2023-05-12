@@ -1,23 +1,24 @@
-\documentclass[12pt,a4paper,faculty=ea,language=en,doctype=report]{ugent-doc}
+\documentclass[12pt,a4paper,faculty=ea,language=en,doctype=report]{settings/ugent-doc}
 \geometry{bottom=2.5cm,top=2.5cm,left=2.5cm,right=2.5cm} 
 \renewcommand{\baselinestretch}{1.15}
 
 \usepackage{fontspec}
-\setmainfont[
-  ItalicFont=SourceSerifPro-LightItalic.ttf,
-  BoldFont=SourceSerifPro-Regular.ttf,
-]{SourceSerifPro-Light.ttf}
-\setsansfont{WorkSans-Regular.ttf}
+\setmainfont[ExternalLocation=fonts/]{SourceSerifPro-Light.ttf}
+[ItalicFont=SourceSerifPro-LightItalic.ttf,
+BoldFont=SourceSerifPro-Regular.ttf]
+
+\setsansfont[ExternalLocation=fonts/]{WorkSans-Regular.ttf}
+
 \usepackage[english]{babel}
 % \usepackage{libertine}
 % \usepackage{libertinust1math}
 \usepackage{amsmath} % math equations
 
 % code snippets
-\setmonofont[
-  ItalicFont=SourceCodePro-Italic.ttf,
-  BoldFont=SourceCodePro-SemiBold.ttf,
-]{SourceCodePro-Regular.ttf}
+\setmonofont[ExternalLocation=fonts/]{SourceCodePro-Regular.ttf}
+[ItalicFont=SourceCodePro-Italic.ttf,
+BoldFont=SourceCodePro-SemiBold.ttf]
+
 \usepackage{listings}
 
 % transcriptions:
@@ -122,99 +123,101 @@ Master of Science in de ingenieurswetenschappen: architectuur
 
 % ---------------------------------------------
 \begin{document}
-\includepdf[pages={1}]{titelblad.pdf}
+\includepdf[pages={1}]{chapters/pre/titelblad.pdf}
 \maketitle
 \renewcommand{\ULthickness}{1pt}
 \normalem
 \counterwithin{listing}{chapter}
-\include{chapters/Aknowledgements}
-\include{chapters/Preface}
-\include{chapters/Abstract.tex}
+\include{chapters/pre/A_Aknowledgements.tex}
+\include{chapters/pre/B_Preface.tex}
+\include{chapters/pre/C_Abstract.tex}
+\acresetall % reset acronyms
+\include{chapters/pre/D_ExtendedAbstract.tex}
 \acresetall
-\include{chapters/ExtendedAbstract.tex}
-\acresetall
+
 % hide link color in toc and list of figures
-% {\hypersetup{hidelinks}
-%   \tableofcontents
-%   \listoffigures
-%   \let\clearpage\relax
-%   \listoftables
-%   \listoflistings
-% }
+{\hypersetup{hidelinks}
+  \tableofcontents
+  \listoffigures
+  \let\clearpage\relax
+  \listoftables
+  \listoflistings
+}
 
-% \newpage
-% \include{chapters/Introduction.tex}
-% \include{chapters/LinkedData.tex}
-% \include{chapters/StateOfTheArt.tex}
-% \include{chapters/DynamicQueries.tex}
-% \include{chapters/ModularApproach.tex}
-% \include{chapters/Prototype.tex}
-% \include{chapters/conclusion}
-% 
-% 
-% \clearpage
-% \chapter*{List of Acronyms}
-% \begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
-%   \acro{aabbox}[AABB]{Axis Aligned Bounding Box}
-%   \acro{aec}[AEC]{Architecture, Engineering and Construction}
-%   \acro{ar}[AR]{Augmented Reality}
-%   \acro{ascii}[ASCII]{American Standard Code for Information Interchange}
-%   \acro{bcf}[BCF]{\acs{bim} Collaboration Format}
-%   \acro{bcfowl}[bcfOWL]{\acs{bim} Collaboration Format Ontology}
-%   \acro{bim}[BIM]{Building Information Modelling}
-%   \acro{bot}[BOT]{Building Topology Ontology}
-%   \acro{bvh}[BVH]{Bounding Volume Hierarchy}
-%   \acro{chc}[CHC]{Coherent Hierarchical Culling algorithm}
-%   \acro{cpu}[CPU]{Central Processing Unit}
-%   \acro{dc}[DC]{Drop Culling}
-%   \acro{es5}[ES5]{ECMAScript 2009}
-%   \acro{fog}[FOG]{File Ontology for Geometry formats}
-%   \acro{gis}[GIS]{Geographic Information System}
-%   \acro{gltf}[GLTF]{GL Transmission Format}
-%   \acro{gml}[GML]{Geography Markup Language}
-%   \acro{gpu}[GPU]{Graphics Processing Unit}
-%   \acro{hagi}[HAGI]{Hardware Accelerated Geometry Instancing}
-%   \acro{hhd}[HHD]{Hand Held Device}
-%   \acro{ifc}[IFC]{Industry Foundation Classes}
-%   \acro{ifcowl}[ifcOWL]{Industry Foundation Classes Ontology}
-%   \acro{json}[JSON]{JavaScript Object Notation}
-%   \acro{lbd-cg}[LBD-CG]{Linked Building Data Community Group}
-%   \acro{ldbim}[LDBIM]{Linked Data \acs{bim}}
-%   \acro{lod}[LOD]{Level of Detail}
-%   \acro{lru}[LRU]{Least Recently Used}
-%   \acro{lfu}[LFU]{Least Frequently Used}
-%   \acro{mep}[MEP]{Mechanical, Electrical and Plumbing}
-%   \acro{nohc}[NOHC]{Near Optimal Hierarchical Culling}
-%   \acro{oc}[OC]{Occlusion Culling}
-%   \acro{ogc}[OGC]{Open Geospatial Consortium}
-%   \acro{omg}[OMG]{Ontology for Managing Geometry}
-%   \acro{owl}[OWL]{Web Ontology Language}
-%   \acro{ram}[RAM]{Random Access Memory}
-%   \acro{rdf}[RDF]{Resource Description Framework}
-%   \acro{rdfs}[RDFS]{Resource Description Framework Schema}
-%   \acro{sdk}[SDK]{Software Development Kit}
-%   \acro{sparql}[SPARQL]{SPARQL Protocol and \acs{rdf} Query Language}
-%   \acro{sql}[SQL]{Structured Query Language}
-%   \acro{ui}[UI]{User Interface}
-%   \acro{uml}[UML]{Unified Modelling Language}
-%   \acro{uri}[URI]{Uniform Resource Identifier}
-%   \acro{vfc}[VFC]{View Frustum Culling}
-%   \acro{vram}[VRAM]{Video Random Access Memory}
-%   \acro{w3c}[W3C]{World Wide Web Consortium}
-%   \acro{wkt}[WKT]{Well-Known Text}
-%   \acro{xml}[XML]{Extensible Markup Language}
-%   \acro{xsd}[XSD]{\ac{xml} Schema Definition}
-%   \acro{fifo}[FIFO]{First In First Out}
-%   \acro{lifo}[LIFO]{Last In First Out}
-%   \acro{mru}[MRU]{Most Recently Used}
-% \end{acronym}
-
-% \printbibliography[nottype=web_page, heading=bibintoc,title={References}]
-% \printbibliography[type=web_page, heading=bibintoc, title={Referenced websites}]
+\newpage
+\include{chapters/main/1_Introduction.tex}
+\include{chapters/main/2_LinkedData.tex}
+\include{chapters/main/3_StateOfTheArt.tex}
+\include{chapters/main/4_DynamicQueries.tex}
+\include{chapters/main/5_ModularApproach.tex}
+\include{chapters/main/6_Prototype.tex}
+\include{chapters/main/7_conclusion.tex}
+\include{chapters/main/8_FutureWork.tex}
 
 
-% \appendix
-% \include{chapters/AppendixA}
-% \include{chapters/AppendixB}
+\clearpage
+\chapter*{List of Acronyms}
+\begin{acronym}[JSONP]\itemsep2pt\hypersetup{hidelinks}
+  \acro{aabbox}[AABB]{Axis Aligned Bounding Box}
+  \acro{aec}[AEC]{Architecture, Engineering and Construction}
+  \acro{ar}[AR]{Augmented Reality}
+  \acro{ascii}[ASCII]{American Standard Code for Information Interchange}
+  \acro{bcf}[BCF]{\acs{bim} Collaboration Format}
+  \acro{bcfowl}[bcfOWL]{\acs{bim} Collaboration Format Ontology}
+  \acro{bim}[BIM]{Building Information Modelling}
+  \acro{bot}[BOT]{Building Topology Ontology}
+  \acro{bvh}[BVH]{Bounding Volume Hierarchy}
+  \acro{chc}[CHC]{Coherent Hierarchical Culling algorithm}
+  \acro{cpu}[CPU]{Central Processing Unit}
+  \acro{dc}[DC]{Drop Culling}
+  \acro{es5}[ES5]{ECMAScript 2009}
+  \acro{fifo}[FIFO]{First In First Out}
+  \acro{fog}[FOG]{File Ontology for Geometry formats}
+  \acro{gis}[GIS]{Geographic Information System}
+  \acro{gltf}[GLTF]{GL Transmission Format}
+  \acro{gml}[GML]{Geography Markup Language}
+  \acro{gpu}[GPU]{Graphics Processing Unit}
+  \acro{hagi}[HAGI]{Hardware Accelerated Geometry Instancing}
+  \acro{hhd}[HHD]{Hand Held Device}
+  \acro{ifc}[IFC]{Industry Foundation Classes}
+  \acro{ifcowl}[ifcOWL]{Industry Foundation Classes Ontology}
+  \acro{json}[JSON]{JavaScript Object Notation}
+  \acro{lbd-cg}[LBD-CG]{Linked Building Data Community Group}
+  \acro{ldbim}[LDBIM]{Linked Data \acs{bim}}
+  \acro{lfu}[LFU]{Least Frequently Used}
+  \acro{lifo}[LIFO]{Last In First Out}
+  \acro{lod}[LOD]{Level of Detail}
+  \acro{lru}[LRU]{Least Recently Used}
+  \acro{mep}[MEP]{Mechanical, Electrical and Plumbing}
+  \acro{mru}[MRU]{Most Recently Used}
+  \acro{nohc}[NOHC]{Near Optimal Hierarchical Culling}
+  \acro{oc}[OC]{Occlusion Culling}
+  \acro{ogc}[OGC]{Open Geospatial Consortium}
+  \acro{omg}[OMG]{Ontology for Managing Geometry}
+  \acro{owl}[OWL]{Web Ontology Language}
+  \acro{ram}[RAM]{Random Access Memory}
+  \acro{rdf}[RDF]{Resource Description Framework}
+  \acro{rdfs}[RDFS]{Resource Description Framework Schema}
+  \acro{sdk}[SDK]{Software Development Kit}
+  \acro{sparql}[SPARQL]{SPARQL Protocol and \acs{rdf} Query Language}
+  \acro{sql}[SQL]{Structured Query Language}
+  \acro{ui}[UI]{User Interface}
+  \acro{uml}[UML]{Unified Modelling Language}
+  \acro{uri}[URI]{Uniform Resource Identifier}
+  \acro{vfc}[VFC]{View Frustum Culling}
+  \acro{vram}[VRAM]{Video Random Access Memory}
+  \acro{w3c}[W3C]{World Wide Web Consortium}
+  \acro{wkt}[WKT]{Well-Known Text}
+  \acro{xml}[XML]{Extensible Markup Language}
+  \acro{xsd}[XSD]{\ac{xml} Schema Definition}
+\end{acronym}
+
+\printbibliography[nottype=web_page, heading=bibintoc,title={References}]
+\printbibliography[type=web_page, heading=bibintoc, title={Referenced websites}]
+
+
+\appendix
+\include{chapters/after/AppendixA}
+\include{chapters/after/AppendixB}
 
 \end{document}

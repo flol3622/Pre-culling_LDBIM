@@ -6,11 +6,18 @@
         "**/*.blg": true,
         "**/*.gz": true,
         "**/*.lof": true,
+        "**/*.lol": true,
+        "**/*.lot": true,
         "**/*.log": true,
         "**/*.out": true,
         "**/*.toc": true,
         "**/*.xml": true,
         "**/*.ist": true,
-        "**/*.synctex": true,
+        "**/*.pyg": true,
+        "**/*.synctex*": true,
+        "**/*.pytxcode": true,
+        "**/*.config.json": true,
+        "**/_minted-main": true,
+
     }
 }
