@@ -144,18 +144,29 @@ The prototype was developed using the href{https://nextjs.org/}{Next.js framewor
 \end{itemize}
 
 \subsection{Specialized packages}
-\subsection{lru\_map}
+\subsubsection{lru\_map}
 The efficient \ac{lru} algorithm used in the caching algorithm is the \href{https://github.com/rsms/js-lru}{lru\_map} package by Rasmus Andersson. This package was chosen for its simplicity and efficiency, as it implements a double-linked list which prevents the need for shifting the list when an item is accessed. This reduces the load on the lightweight viewer, ensuring optimal performance.
 
-\subsection{fetch-sparql-endpoint}
-% npm package by Ruben Taelman from 
-% a Web postdoctoral researcher at IDLab, Ghent University – imec, Belgium
-% https://github.com/rubensworks/fetch-sparql-endpoint.js
-% https://www.rubensworks.net/
-The \href{https://github.com/rubensworks/fetch-sparql-endpoint.js}{fetch-sparql-endpoint} package, developed by Ruben Taelman, a Web postdoctoral researcher at IDLab, Ghent University – imec, Belgium\footcite{RubenTaelman}, is used in the prototype's \ac{sparql} fetcher module to manage communication with the \ac{sparql} endpoint. This package facilitates the process of sending queries to and receiving responses from the endpoint, providing a simple and effective way to interact with the \ac{rdf} database.
+\subsubsection{fetch-sparql-endpoint}
+The \href{https://github.com/rubensworks/fetch-sparql-endpoint.js}{fetch-sparql-endpoint} package, developed by Ruben Taelman, a Web postdoctoral researcher at IDLab, Ghent University – imec \footcite{RubenTaelman}, is used in the prototype's \ac{sparql} fetcher module to manage communication with the \ac{sparql} endpoint. This package facilitates the process of sending queries to and receiving responses from the endpoint, providing a simple and effective way to interact with the \ac{rdf} database.
 
 \subsection{Xeokit-\acs{sdk}}
 
+Following \cite{Malcolm2021} and their \ac{lbd} Server, this thesis' prototype uses the \href{http://xeokit.io/index.html}{Xeokit SDK}, an \enquote{open source 3D graphics SDK from xeolabs for BIM and AEC.}\footcite{xeokit}. This \ac{sdk}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        BCF Viewpoints & IFC & GLTF \\
+        CityJSON       & OBJ & STL  \\
+        3DXML          & XKT & LAS  \\
+        \bottomrule
+    \end{tabular}
+    \caption[Supported formats in Xeokit \acs{sdk}]{Supported formats in Xeokit \acs{sdk}.\footnotemark}
+    \label{tab:xeokitFormats}
+\end{table}
+\footnotetext{\cite{xeokit}}
 
 \section{Structure}
 
