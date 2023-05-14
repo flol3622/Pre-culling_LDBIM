@@ -1,6 +1,7 @@
 \chapter{Python scripts}
 
 \section{\acs{wkt} visualisation}
+\label{sec:wktVisualisation}
 \begin{minted}{python}
 import matplotlib.pyplot as plt
 import rdflib
@@ -106,3 +107,36 @@ showRoom("inst:level_1xS3BCk291UvhgP2dvNMKI", "room_1xS3BCk291UvhgP2dvNvkw")
   \centering
   \includegraphics[width=0.7\textwidth]{figures/png/WKT output/output4.png}
 \end{figure}
+
+\section{Geometry extraction}
+\label{sec:pyhtonExtraction}
+\begin{minted}{python}
+  import rdflib
+  
+  g = rdflib.Graph()
+  qres = g.query("""
+  PREFIX props: <https://w3id.org/props#>
+  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX bot: <https://w3id.org/bot#>
+  PREFIX fog: <https://w3id.org/fog#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  SELECT ?s ?o
+  WHERE {
+    SERVICE <http://localhost:7200/repositories/duplex-v1> {
+      ?s fog:asObj ?o .
+      filter(datatype(?o)=xsd:string)
+    }
+  }
+  # LIMIT 10
+  """)
+  
+  for row in qres:
+      name = row.s.replace("https://172.16.10.122:8080/projects/1001/", "")
+      name = name.replace("%", "-") # for github user content
+      extention = ".obj"
+      directory = "out/"
+      fileName = directory + name + extention
+      file = open(fileName, "w")
+      file.write(row.o)
+      file.close()
+  \end{minted}

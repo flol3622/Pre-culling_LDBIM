@@ -7,3 +7,8 @@
 \contentsline {listing}{\numberline {4.4}{\ignorespaces Querying in query OBJ geometry filtering\relax }}{25}{listing.4.4}%
 \contentsline {listing}{\numberline {4.5}{\ignorespaces Inserting new javascript function in GraphDB\relax }}{26}{listing.4.5}%
 \contentsline {listing}{\numberline {4.6}{\ignorespaces Querying in situ WKT location\relax }}{27}{listing.4.6}%
+\contentsline {listing}{\numberline {6.1}{\ignorespaces Inserting \acs {fog} relations}}{34}{listing.6.1}%
+\contentsline {listing}{\numberline {6.2}{\ignorespaces \acs {sparql} query to extract geometries.\relax }}{35}{listing.6.2}%
+\contentsline {listing}{\numberline {6.3}{\ignorespaces Inserting external links with \acs {fog}\relax }}{35}{listing.6.3}%
+\contentsline {listing}{\numberline {6.4}{\ignorespaces Inserting \acs {wkt} literals}}{36}{listing.6.4}%
+\contentsline {listing}{\numberline {6.5}{\ignorespaces Fixing \acs {wkt} syntax.\relax }}{36}{listing.6.5}%

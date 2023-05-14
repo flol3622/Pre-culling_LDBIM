@@ -1,4 +1,163 @@
 \chapter{Prototype} \label{ch:prototype}
+%  link to github repo
+The code for the prototype developed in this thesis is available at:\\
+\url{https://github.com/flol3622/LDBIM-viewer}.
+
+\section{Database design}
+% choice base db -> Mads Holten Rasmussen 
+The database used in this thesis is based on the database developed by Mads Holten Rasmussen and made available at:\\
+\url{https://github.com/MadsHolten/BOT-Duplex-house/tree/master/Model%20files/LBD}
+
+It was chosen as a starting point, as it firstly contained \ac{bot} descriptions and relations between entities which are heavily utilized by this thesis' algorithm. Secondly, it was selected because it already contained geometry descriptions of those entities. And lastly, because it also contained \ac{wkt} serializations of walls, rooms, and floor entities. Although the size of the model it describes is small, too small to evaluate culling performance, no other suitable database meeting the requirements was found.
+
+Nevertheless, some changes had to be made to accommodate the needs of this thesis. This section will describe these changes.
+
+\subsection{GraphDB}
+% custom functions
+% ease of use and installation
+% geosparql support
+To host the database, and exercise the role of the \ac{sparql} endpoint, a GraphDB instance was run locally to store, query, modify, and extract the semantic data. "GraphDB is an enterprise ready Semantic Graph Database, compliant with W3C Standards."\footcite{graphdb} It was chosen for its ease of use and installation, its support for the GeoSPARQL extension (Section \ref{sec:inSituWKT}), as well as the possibility to create custom functions in JavaScript (Section \ref{sec:inQuery}).
+
+To comply with the requirements of the algorithm, the structure of the database had to be altered to resemble the one illustrated in Figure \ref{fig:omg1}. Figure \ref{fig:dbadaptation} illustrates the changes made to the database, where the existing data was used to describe new relations needed for this thesis.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/pdf/dbadaptation.pdf}
+    \caption[Database adaptation]{Database adaptation to Figure \ref{fig:omg1}.}
+    \label{fig:dbadaptation}
+\end{figure}
+
+\subsection{3D geometries}
+%  started from obj, faced problems, switched to stl, rescaled, on github as external db
+Listing \ref{lst:insertFOG} demonstrates how the \ac{fog} ontology was implemented in the \ac{rdf} database. The following subsections detail the additional steps taken to adapt the database specifically to the requirements of the viewer used.
+
+\begin{listing}[H]
+    \begin{minted}{sparql}
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX fog: <https://w3id.org/fog#>
+
+INSERT { ?s fog:asObj_v3.0 ?o . }
+WHERE { ?s bot:hasSimple3DModel ?o . }
+    \end{minted}
+    \caption[Inserting \acs{fog} relations]{Inserting \acs{fog} relations into the database.}
+    \label{lst:insertFOG}
+\end{listing}
+
+\subsubsection{Extracting geometries from \ac{rdf} database}
+Due to the inability to display OBJ literals in the utilized viewer, the geometries had to be extracted from the database and stored as separate files. This was accomplished using a Python script (Appendix \ref{sec:pyhtonExtraction}), which extracted the geometries from the database using Listing \ref{lst:extractGeometries} and stored them as separate files.
+
+\begin{listing}[H]
+    \begin{minted}{sparql}
+SELECT ?s ?o
+WHERE {
+    SERVICE <http://localhost:7200/repositories/duplex-v1> {
+    ?s fog:asObj ?o .
+    filter(datatype(?o)=xsd:string)
+    }
+}
+    \end{minted}
+    \caption{\acs{sparql} query to extract geometries.}
+    \label{lst:extractGeometries}
+\end{listing}
+
+
+\subsubsection{Rescaling geometries}
+Rescaling the entities to fit the viewer's coordinate system was performed using the open-source 3D modeling software, Blender. This software allowed for the batch import, rescale, and export of the different entities. However, batch export into multiple files was restricted to the STL file format. The individual files were then uploaded to the \href{https://github.com/flol3622/LDBIM-viewer}{GitHub repository} of the prototype, which functions as an external database.
+
+\subsubsection{Inserting data}
+
+The new external files were then referenced in the database using the \ac{sparql} query in Listing \ref{lst:insertLinks}. This query designated the literal's datatype as \mintinline{turtle}|xsd:anyURI| (Section \ref{sec:fog}), which the prototype would later use to treat the resource as a link to an external file (Section \ref{sec:databaseFetcher}).
+
+\begin{listing}[H]
+    \begin{minted}{sparql}
+PREFIX fog: <https://w3id.org/fog#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT { ?s fog:asStl_v1.0-ascii ?newURI }
+WHERE { 
+    ?s fog:asObj_v3.0 ?o .
+    FILTER (datatype(?o) = xsd:anyURI)
+    BIND (REPLACE(STR(?s), "https://172.16.10.122:8080/projects/1001/", "") AS ?localName)
+    BIND (REPLACE(STR(?localName), "%", "-") AS ?newLocalName)
+    BIND (CONCAT("https://raw.githubusercontent.com/flol3622/LDBIM-viewer/main/public/assets/duplex-v1/stl_m/", ?newLocalName, ".stl") AS ?uriString)
+    
+    BIND (STRDT(?uriString, xsd:anyURI) AS ?newURI)
+}
+    \end{minted}
+    \caption{Inserting external links with \acs{fog}}
+    \label{lst:insertLinks}
+\end{listing}
+
+\subsection{\acs{wkt} serialisation}
+
+Similarly to the geometries, the \ac{wkt} literals were implemented using the GeoSPARQL ontology, as shown in Listing \ref{lst:insertWKT}.
+
+\begin{listing}[H]
+    \begin{minted}{sparql}
+PREFIX props: <https://w3id.org/props#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+INSERT { ?s geo:asWKT ?o . }
+WHERE{ ?s props:hasSimple2DBoundary ?o . }
+    \end{minted}
+    \caption[Inserting \acs{wkt} literals]{Inserting \acs{wkt} literals using GeoSPARQL.}
+    \label{lst:insertWKT}
+\end{listing}
+
+\subsubsection{Syntax correction}
+
+A Python script was created (see Appendix \ref{sec:wktVisualisation}) to experiment with the \ac{wkt} literals. This script visualized the \ac{wkt} literals using the matplotlib package. This revealed syntax errors in the \ac{wkt} literals, which were corrected using the query in Listing \ref{lst:fixWKT} to enable the use of GeoSPARQL functions. This query modifies the \ac{wkt} literals from the format: \mintinline{turtle}|"POLYGON (x1 y1, x2 y2 ,...)"^^geo:wktLiteral| to:\\
+\mintinline{turtle}|"POLYGON ((x1 y1, x2 y2 ,...))"^^geo:wktLiteral|. The adjustment adds an extra pair of parentheses to the POLYGON definition, adhering to the correct syntax for a \ac{wkt} Polygon literal as defined by the GeoSPARQL standard.
+
+\begin{listing}[H]
+    \begin{minted}{sparql}
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+DELETE { ?room geo:asWKT ?old_wkt . }
+INSERT { ?room geo:asWKT ?new_wkt . }
+WHERE {
+    ?room geo:asWKT ?old_wkt .
+    BIND(str(?old_wkt) as ?old_lit)
+    FILTER (
+        STRSTARTS(?old_lit, "POLYGON (") &&
+        !STRSTARTS(?old_lit, "POLYGON ((")
+    )
+    BIND (STRDT(CONCAT("POLYGON (", SUBSTR(?old_lit, 9), ")"), geo:wktLiteral) AS ?new_wkt
+    )
+}
+    \end{minted}
+    \caption{Fixing \acs{wkt} syntax.}
+    \label{lst:fixWKT}
+\end{listing}
+
+\section{Web Development Stack}
+The prototype was developed using the href{https://nextjs.org/}{Next.js framework}, which is built on top of React, a popular JavaScript library for building component-based web applications. This choice adheres to the modular approach explained in Chapter \ref{ch:modularApproach}. Next.js and the following tools or libraries were chosen for their popularity and ease of use within the React ecosystem:
+
+\begin{itemize}
+    \item \href{https://recoiljs.org/}{Recoil:} As a state management library, Recoil was used to manage and exchange data between the different modules. It provides a simple and efficient way to share state across components.
+
+    \item \href{https://tailwindcss.com/}{Tailwind CSS:} Adopted for styling the \ac{ui} components, Tailwind CSS facilitates rapid prototyping and easy customization of the \ac{ui}.
+
+    \item \href{https://icons.radix-ui.com/}{Radix Icons:} The Radix Icons library provided the icons used in the \ac{ui} components.
+
+    \item \href{https://mui.com/}{Material UI:} This popular React \ac{ui} library was employed for the more complex \ac{ui} components. Material UI offers a large library of pre-built components that are easy to use and customize, aligning with the best practices for web \ac{ui} design.
+\end{itemize}
+
+\subsection{Specialized packages}
+\subsection{lru\_map}
+The efficient \ac{lru} algorithm used in the caching algorithm is the \href{https://github.com/rsms/js-lru}{lru\_map} package by Rasmus Andersson. This package was chosen for its simplicity and efficiency, as it implements a double-linked list which prevents the need for shifting the list when an item is accessed. This reduces the load on the lightweight viewer, ensuring optimal performance.
+
+\subsection{fetch-sparql-endpoint}
+% npm package by Ruben Taelman from 
+% a Web postdoctoral researcher at IDLab, Ghent University – imec, Belgium
+% https://github.com/rubensworks/fetch-sparql-endpoint.js
+% https://www.rubensworks.net/
+The \href{https://github.com/rubensworks/fetch-sparql-endpoint.js}{fetch-sparql-endpoint} package, developed by Ruben Taelman, a Web postdoctoral researcher at IDLab, Ghent University – imec, Belgium\footcite{RubenTaelman}, is used in the prototype's \ac{sparql} fetcher module to manage communication with the \ac{sparql} endpoint. This package facilitates the process of sending queries to and receiving responses from the endpoint, providing a simple and effective way to interact with the \ac{rdf} database.
+
+\subsection{Xeokit-\acs{sdk}}
+
+
+\section{Structure}
 
 \begin{figure}[H]
     \centering
@@ -6,39 +165,3 @@
     \caption[Interactions prototype]{Conceptual diagram of the interactions between the moduwithin the prototype, based on Figure \ref{fig:interactionModules}.}
     \label{fig:interactionPrototype}
 \end{figure}
-
-\section{Database design}
-
-\section{Web Development Stack}
-% describe specific technologies/ Modern Web Development Tools used
-\subsection{Next.js}
-% why
-% react based
-% server side rendering
-% easy deploy to vercel
-
-\subsection{Recoil}
-% why
-% state management importance in such app
-
-\subsection{lru\_map}
-% npm package by Rasmus Andersson from https://github.com/rsms/js-lru
-% advantage of lru without list shifting
-% => why used
-
-\subsection{fetch-sparql-endpoint}
-% npm package by Ruben Taelman from 
-% a Web postdoctoral researcher at IDLab, Ghent University – imec, Belgium
-% https://github.com/rubensworks/fetch-sparql-endpoint.js
-% https://www.rubensworks.net/
-
-
-\subsection{Xeokit-\acs{sdk}}
-
-\subsection{\acs{ui} tools}
-% importance of visual design
-
-\subsubsection{Tailwindcss}
-\subsubsection{Radix}
-%% mentioned for use of icon library
-\subsubsection{Material UI}

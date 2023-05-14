@@ -43,7 +43,7 @@ As mentioned above, the \ac{sparql} fetcher retrieves data from the \ac{sparql} 
 
 Serving two main functions but only communicating with one web instance, the choice was made to combine the two functions into one module. This allows for sharing the same authentication and error handling procedures.
 
-\subsection{Database fetcher}
+\subsection{Database fetcher} \label{sec:databaseFetcher}
 % - handles back and forth communication with external database
 % - authentication
 This module, triggered by the cache manager, retrieves the geometry files from an external file server/database. Similar to the \ac{sparql} fetcher, it is responsible for authentication and error handling. It is also responsible for the interpretation of the results, dispatching the geometry files to the viewer for rendering.
@@ -100,5 +100,3 @@ All the modules come together in one flexible framework illustrated in Figure \r
   \caption[Interactions modular framework]{Conceptual diagram of the interactions between the modules.}
   \label{fig:interactionModules}
 \end{figure}
-
-\section{Sequences}
