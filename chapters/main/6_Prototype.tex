@@ -151,8 +151,7 @@ The efficient \ac{lru} algorithm used in the caching algorithm is the \href{http
 The \href{https://github.com/rubensworks/fetch-sparql-endpoint.js}{fetch-sparql-endpoint} package, developed by Ruben Taelman, a Web postdoctoral researcher at IDLab, Ghent University – imec \footcite{RubenTaelman}, is used in the prototype's \ac{sparql} fetcher module to manage communication with the \ac{sparql} endpoint. This package facilitates the process of sending queries to and receiving responses from the endpoint, providing a simple and effective way to interact with the \ac{rdf} database.
 
 \subsection{Xeokit-\acs{sdk}}
-
-Following \cite{Malcolm2021} and their \ac{lbd} Server, this thesis' prototype uses the \href{http://xeokit.io/index.html}{Xeokit SDK}, an \enquote{open source 3D graphics SDK from xeolabs for BIM and AEC.}\footcite{xeokit}. This \ac{sdk}
+Following \cite{Malcolm2021} and their \ac{lbd} Server, the prototype of this thesis utilizes the \href{http://xeokit.io/index.html}{Xeokit SDK}, described as an \enquote{open source 3D graphics SDK from xeolabs for BIM and AEC}\footcite{xeokit}. This \ac{sdk} supports an extensive array of 3D formats employed in the \ac{aec} industry, as detailed in Table \ref{tab:xeokitFormats}. It also supplies the necessary tools to construct the viewer module in accordance with the requirements described in Section \ref{sec:viewerRequirements}.
 
 \begin{table}[H]
     \centering
@@ -169,10 +168,19 @@ Following \cite{Malcolm2021} and their \ac{lbd} Server, this thesis' prototype u
 \footnotetext{\cite{xeokit}}
 
 \section{Structure}
+The prototype's design, translated into the conceptual modular approach discussed in Chapter \ref{ch:modularApproach}, is depicted in Figure \ref{fig:interactionPrototype}. The four main modules are further dissected into components developed using the previously mentioned tools and libraries. These fall into one of three categories:
+
+\begin{itemize}
+    \item \textbf{React components:} These are the \ac{ui} components that are rendered in the browser. They display output elements and/or receive user input.
+    \item \textbf{React hooks:} These are functions used to manage the state of the application. They store and update data, which is then passed to the React components.
+    \item \textbf{JavaScript functions:} These are standalone functions used to perform specific tasks, such as fetching or computing data.
+\end{itemize}
+
+In the case of the GeoSPARQLauto module, which executes a culling technique based on the \ac{wkt} serialization as proposed in Section \ref{sec:inSituWKT}, the query processing module receives localisation data from the viewer module. This data passes through the useAutomations hook, which manages the different culling algorithms. The QueryPanel component allows selection between the culling algorithms and the user-defined query from the QueryInput component. This selector stores the final query, which triggers the useLoadGeometry hook from the viewer module. This hook uses the getEntities function to fetch data from the \ac{sparql} endpoint, which then communicates with the evalLRU function from the cache manager for entity approval. Upon approval, the useLoadGeometry hook fetches the geometry data using the getGeometry function, retrieving a geometry literal or an \ac{uri}. It then sends it to the viewer for loading into the scene. The loading occurs within Xeokit's loading plugins, which accept literal values or \ac{uri}s and fetch the external files independently. Once all the entities are loaded, the viewer's scene is compared to the updated \ac{lru} list using the syncViewer function to remove obsolete entities.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/pdf/interactions_prototype.pdf}
-    \caption[Interactions prototype]{Conceptual diagram of the interactions between the moduwithin the prototype, based on Figure \ref{fig:interactionModules}.}
+    \caption[Interactions prototype]{Conceptual diagram of the interactions between the modules within the prototype when using a dynamic query algorithm, such as GeoSPARQLauto, based on Figure \ref{fig:interactionModules}.}
     \label{fig:interactionPrototype}
 \end{figure}
