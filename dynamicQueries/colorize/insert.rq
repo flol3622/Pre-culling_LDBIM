@@ -1,0 +1,6 @@
+PREFIX inst: <https://172.16.10.122:8080/projects/1001/>
+PREFIX flupke: <https://flupke.archi/thesis/#>
+
+INSERT DATA {
+	inst:wall_1xS3BCk291UvhgP2dvNrGN flupke:color "[0.0, 1.0, 0.0]"
+}

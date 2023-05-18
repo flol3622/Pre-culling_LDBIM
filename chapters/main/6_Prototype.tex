@@ -184,3 +184,21 @@ In the case of the GeoSPARQLauto module, which executes a culling technique base
     \caption[Interactions prototype]{Conceptual diagram of the interactions between the modules within the prototype when using a dynamic query algorithm, such as GeoSPARQLauto, based on Figure \ref{fig:interactionModules}.}
     \label{fig:interactionPrototype}
 \end{figure}
+
+\section{Semantic visualisation}
+The cache management module is constructed such that the \ac{lru} list stores metadata about the entities, with the key of each entry representing its \ac{uri} and the value being a JavaScript object containing, in the current state of the prototype, the datatype and format of the geometry. This object is therefore extendable to accommodate properties such as the non-geometrical ones described in Section \ref{sec:beyondGeometry}.
+
+\begin{listing}[H]
+    \inputminted{json}{dynamicQueries/colorize/entry.json}
+    \caption[LRU entry]{Example of an entry in the \ac{lru} list.}
+    \label{lst:lruEntry}
+\end{listing}
+
+To illustrate this proposal, a triple containing color data was inserted into the database, with the query used shown in Listing \ref{lst:colorInsert}. The entry in Listing \ref{lst:lruEntry} displays the metadata stored in the \ac{lru} list for this entity. The color data is then applied to the geometry using the Xeokit \ac{api}. Since the latter does not allow color assignment during entity loading, the color is applied after the entity is loaded, within the syncViewer function (see Appendix \ref{sec:cache.ts}).
+
+\begin{listing}[H]
+    \inputminted{sparql}{dynamicQueries/colorize/insert.rq}
+    \caption[Insert color data]{Insertion of color data into the database.}
+    \label{lst:colorInsert}
+\end{listing}
+

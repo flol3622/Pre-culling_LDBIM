@@ -11,3 +11,5 @@
 \contentsline {listing}{\numberline {6.3}{\ignorespaces Inserting external links with \acs {fog}\relax }}{35}{listing.6.3}%
 \contentsline {listing}{\numberline {6.4}{\ignorespaces Inserting \acs {wkt} literals}}{36}{listing.6.4}%
 \contentsline {listing}{\numberline {6.5}{\ignorespaces Fixing \acs {wkt} syntax.\relax }}{36}{listing.6.5}%
+\contentsline {listing}{\numberline {6.6}{\ignorespaces LRU entry}}{39}{listing.6.6}%
+\contentsline {listing}{\numberline {6.7}{\ignorespaces Insert color data}}{40}{listing.6.7}%

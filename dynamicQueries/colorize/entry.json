@@ -1,0 +1,6 @@
+{ "key": "https://172.16.10.122:8080/projects/1001/wall_1xS3BCk291UvhgP2dvNrGN",
+  "value": {
+    "format": "https://w3id.org/fog#asStl",
+    "datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+    "botType": "https://w3id.org/bot#Element",
+    "color": "[0.0, 1.0, 0.0]" }}

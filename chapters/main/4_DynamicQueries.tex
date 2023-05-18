@@ -40,7 +40,7 @@ A viewer designed to visualize data stored in an \ac{rdf} graph is required to u
 \end{table}
 \footnotetext{\cite{fog}}
 
-\section{Beyond geometry}
+\section{Beyond geometry} \label{sec:beyondGeometry}
 % - possibilities of viewer extends classical approach
 This section highlights the adavantages a viewer based on Linked Data has over a viewer based on traditional file-based systems, by extenting the thought of a 3D viewer to its ability to visualise non geometric data from its source. \ac{ldbim} links geometrical entities to their corresponding semantic data, which can be visualised in the viewer. This allows for the visualisation of data that is not directly related to the geometry of the building elements, such as the physical properties of a wall or the cost of a door. The possibilities are endless, as long as the data is available in the \ac{rdf} graph. The following sections will discuss different possible implementations.
 
@@ -61,7 +61,7 @@ When examining semantics such as physical properties of entities, free from geom
 
 Physical properties such as thermal, acoustic, structural, and others, or non-physical properties like cost, time, and pathologies, can all be described and linked in the \ac{rdf} graph. The expressive capabilities of \ac{sparql} enable complex and fine-grained queries, offering application-specific query creation about these properties. By selecting a specific subset or combining them, a user or developer can transform the viewer into a powerful tool.
 
-As such, the viewer is expected to comply with a multitude of requirements, which are not all covered in this thesis. Chapter \nameref{ch:modularApproach} thus proposes a modular approach, allowing for a step-by-step implementation of the viewer, starting with the most basic requirements, which are adopted in Chapter \nameref{ch:prototype}, while leaving room for future extensions.
+As such, the viewer is expected to comply with a multitude of requirements, which are not all covered in this thesis. Chapter \nameref{ch:modularApproach} thus proposes a modular approach, allowing for a step-by-step implementation of the viewer, starting with the most basic requirements, which are adopted in Chapter \nameref{ch:prototype}, while leaving room for future extensions. 
 
 \section{In situ WKT location} \label{sec:inSituWKT}
 % - limited to 2D
