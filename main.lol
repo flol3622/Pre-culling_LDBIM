@@ -13,3 +13,4 @@
 \contentsline {listing}{\numberline {6.5}{\ignorespaces Fixing \acs {wkt} syntax.\relax }}{36}{listing.6.5}%
 \contentsline {listing}{\numberline {6.6}{\ignorespaces LRU entry}}{39}{listing.6.6}%
 \contentsline {listing}{\numberline {6.7}{\ignorespaces Insert color data}}{40}{listing.6.7}%
+\contentsline {listing}{\numberline {6.8}{\ignorespaces \acs {lru} entry type}}{40}{listing.6.8}%

@@ -2,7 +2,7 @@
 % restating idea and goals/ question in one text
 % - To what extent can LDBIM geometry be culled to be streamed to lightweight viewers?
 % - Can existing semantics and ontologies be used to feed possible culling algorithms?
-This thesis has investigated the possibility of culling geometry from a LDBIM to be streamed to lightweight viewers. The goal was to reduce the amount of data within the viewer itself, as current in-viewer culling techniques encounter bottlenecks when the scene continues to grow in size. Two main questions were posed:
+This thesis has explored the feasibility of culling geometry from an \ac{ldbim} graph for streaming to lightweight viewers. The goal was to minimize the volume of data within the viewer itself, as existing in-viewer culling techniques encounter processing limitations when the scene continues to expand in size, particularly when managing non-active parts of the scene. Two primary questions were therefore posed:
 
 \begin{enumerate}
     \item To what extent can LDBIM geometry be culled to be streamed to lightweight viewers? (Section \ref{subsec:rq1})
@@ -12,24 +12,26 @@ This thesis has investigated the possibility of culling geometry from a LDBIM to
 Both questions were initially explored by reviewing the current state of the art in the field of Semantic Web and culling algorithms. This evolved into a hands-on approach, where the development of a prototype led to new insights.
 
 \section{Object-level Culling}
-Employing existing ontologies such as \ac{fog} and \ac{omg} enabled the definition of geometry at the object level, which identified the smallest units that can be culled. As a result, this thesis did not address culling techniques such as back-face culling, as these are handled by the viewer itself, not the database. These ontologies, although not specifically explored in this thesis, also allow the linking of auxiliary geometry files, such as texture maps, to the entities. Future research could explore the possibilities of implementing these auxiliary geometry data in the viewer, utilizing the \ac{omg} level 2 data pattern, thereby enhancing the visual quality of the resulting scene.
+Employing existing ontologies such as \ac{fog} and \ac{omg} enabled the definition of geometry at the object level, which identified the smallest units that can be culled . As a result, this thesis did not address culling techniques such as back-face culling, as these are handled by the viewer itself, not the database. These ontologies, although not specifically explored in this thesis, also allow the linking of auxiliary geometry files, such as texture maps, to the entities. Future research could explore the possibilities of implementing these auxiliary geometry data in the viewer, utilizing the \ac{omg} level 2 data pattern, thereby enhancing the visual quality of the resulting scene.
 
 \section{Culling Algorithms}
 Three culling algorithms were proposed, each performing culling operations in radically different ways, showcasing the possibilities of culling by constructing \ac{sparql} queries.
 
 The first algorithm (Section \ref{sec:inSituWKT}) utilizes the \ac{wkt} serialization of \ac{bot} rooms to evaluate GeoSPARQL functions. This approach highlighted the lack of 3D operations in GeoSPARQL, indicating a crucial need in the \ac{aec} industry for a standard for 3D spatial operations in \ac{sparql}, which, as of now, does not exist.
 
-The second algorithm (Section \ref{sec:inViewer}) leveraged the viewer's 3D engine capabilities to perform 3D operations not feasible with the first algorithm. It utilized raytracing to determine the room in which the observer was located. Although this algorithm offloaded 3D operations from the database to the viewer, which appears counter-intuitive to the thesis's objective, the operations were optimized to use as little computing power as possible.
+The second algorithm (Section \ref{sec:inViewer}) leveraged the viewer's 3D engine capabilities to perform 3D operations not feasible with the first algorithm. It utilized raytracing to determine the room in which the observer was located. Although this algorithm offloaded 3D operations from the database to the viewer, which appears counter-intuitive to the thesis's objective, the operations were optimized to use as little computing power as possible by performing the raytracing only on a subset of rooms in the scene.
 
 The third algorithm (Section \ref{sec:inQuery}) proposes a method to implement 3D operations in the form of string operations within the \ac{sparql} query itself. As \ac{sparql} string operations are limited, a custom JavaScript function was added to the \ac{sparql} endpoint. However, the implementation is specific to the endpoint used in this thesis, GraphDB, as no standard exists for custom functions in \ac{sparql} endpoints. The developed function is also limited to the analysis of the OBJ geometry format, but similar functions could be developed for other formats.
 
-All options utilized the \ac{bot} ontology to zoom out from the object-level to cull at the room-level, leveraging the inherent underlying hierarchy of \ac{bim} models which is described in the graph using the \ac{bot} ontology. It was found to produce coherent results and reduce the computational resources needed for the culling. However, these relations are only important when inside the building and become irrelevant when outside the building. Further research could explore the potential of culling algorithms for scenarios outside the building.
+All options utilized the \ac{bot} ontology to zoom out from the object-level to cull at the room-level, leveraging the inherent underlying hierarchy of \ac{bim} models which is described in the graph using the \ac{bot} ontology. It was found to produce coherent results and reduce the computational resources needed for the culling. However, this hierarchy is only important when inside the building and becomes irrelevant when outside the building. Further research could explore the potential of culling algorithms for scenarios outside the building.
 
-% not corrected:
+\section{Modular approach}
+
 % - modular approach:
 % -- successfull showcasing 
 % -- shows it actually works
 % -- room for further improvement, in very step, from cache mangagement algorithm to when th equery has to run again
+
 
 % - database:
 % -- starintg from existing db from Mads Holten: relativaly easy
