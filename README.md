@@ -2,7 +2,7 @@
 
 ## Demo
 ### Basic use case
-https://github.com/flol3622/LDBIM-viewer/DEMO/DEMO_basic.mp4
+https://github.com/flol3622/Pre-culling_LDBIM/blob/main/DEMO/DEMO_GEO.mp4
 
 ### Semantic driven filtering
 https://github.com/flol3622/LDBIM-viewer/DEMO/DEMO_filter.mp4
