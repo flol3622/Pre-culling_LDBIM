@@ -185,8 +185,14 @@ In the case of the GeoSPARQLauto module, which executes a culling technique base
     \label{fig:interactionPrototype}
 \end{figure}
 
-\section{Semantic visualisation}
-The cache management module is constructed such that the \ac{lru} list stores metadata about the entities, with the key of each entry representing its \ac{uri} and the value being a JavaScript object containing, in the current state of the prototype, the datatype and format of the geometry. This object is therefore extendable to accommodate properties such as the non-geometrical ones described in Section \ref{sec:beyondGeometry}.
+\section{Semantic visualisation} \label{sec:semanticVis}
+The cache management module is constructed such that the \ac{lru} list stores metadata about the entities, with the key of each entry representing its \ac{uri} and the value being a JavaScript object containing, in the current state of the prototype, the datatype and format of the geometry. Therefore, this object can be extended to accommodate properties such as the non-geometrical ones described in Section \ref{sec:beyondGeometry}, as illustrated in its type description in Listing \ref{lst:lruType}.
+
+\begin{listing}[H]
+    \inputminted{ts}{dynamicQueries/colorize/type.ts}
+    \caption[\acs{lru} entry type]{Type of the \ac{lru} entries.}
+    \label{lst:lruType}
+\end{listing}
 
 \begin{listing}[H]
     \inputminted{json}{dynamicQueries/colorize/entry.json}
@@ -202,9 +208,5 @@ To illustrate this proposal, a triple containing color data was inserted into th
     \label{lst:colorInsert}
 \end{listing}
 
-\begin{listing}[H]
-    \inputminted{ts}{dynamicQueries/colorize/type.ts}
-    \caption[\acs{lru} entry type]{Type of the \ac{lru} entries.}
-    \label{lst:lruType}
-\end{listing}
+
 

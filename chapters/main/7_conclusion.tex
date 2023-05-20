@@ -26,11 +26,30 @@ The third algorithm (Section \ref{sec:inQuery}) proposes a method to implement 3
 All options utilized the \ac{bot} ontology to zoom out from the object-level to cull at the room-level, leveraging the inherent underlying hierarchy of \ac{bim} models which is described in the graph using the \ac{bot} ontology. It was found to produce coherent results and reduce the computational resources needed for the culling. However, this hierarchy is only important when inside the building and becomes irrelevant when outside the building. Further research could explore the potential of culling algorithms for scenarios outside the building.
 
 \section{Modular approach}
-
 % - modular approach:
 % -- successfull showcasing 
 % -- shows it actually works
 % -- room for further improvement, in very step, from cache mangagement algorithm to when th equery has to run again
+% -- https://github.com/flol3622/Pre-culling_LDBIM#demo
+
+The modular approach (Chapter \ref{ch:modularApproach}) presented in this thesis' prototype (Chapter \ref{ch:prototype}) was found to be successful in showcasing the feasibility of culling geometry from an \ac{ldbim} graph. It also highlighted the need for further research in each step of the process, from the cache management to the moment when the query has to run again. But showcases a strong foundation for future development and research.
+
+\subsection{Prototype}
+The main features of the prototype are showcased at:\\
+\url{https://github.com/flol3622/Pre-culling_LDBIM#demo}\\
+The following features are presented:
+
+\begin{itemize}
+    \item \textbf{Basic use case:} The basic use case is presented where the entire building is loaded with a maximum number of entities set to 20. The user can navigate through the building and entities are loaded on demand. The user can also change the maximum number of entities to be loaded at once.
+    \item \textbf{Different sources and formats:} The prototype can load different sources and formats. A database of abstract shapes is selected which holds STL, OBJ and GLTF geometry files as literals or as links to external files on GitHub. (Section \ref{sec:viewerRequirements})
+    \item \textbf{Semantic-driven filtering:} With the aid of semantics, the user can filter the entities to load in the viewer. This example filters the entities to only show the ones with \mintinline{sparql}|rdf:type prod:Window|.
+    \item \textbf{Semantic-driven colorization:} Semantics associated with each entity can be used to colorize the entities in the viewer. This example colorizes the entities based on their \mintinline{sparql}|flupke:color| property which holds a color code. (Sections \ref{sec:visualSemantic}, \ref{sec:semanticVis})
+    \item \textbf{In-query, OBJ-string analytics} A first culling algorithm is showcased where the \mintinline{sparql}|bot:Space| entities are filtered based on their OBJ definition, which is analyzed by the endpoint using a string operation. The cache management mechanism is also visualized as the viewer's scene does not exceed an entity count of 20. (Section \ref{sec:inQuery})
+    \item \textbf{In situ, GeoSPARQL} This second culling algorithm uses GeoSPARQL functions. As the GeoSPARQL functions are limited to 2D space, the viewer hovering over a \mintinline{sparql}|bot:Space| triggers the loading of this last. (Section \ref{sec:inSituWKT})
+\end{itemize}
+
+The source code is available at:\\
+\url{https://github.com/flol3622/LDBIM-viewer}\\
 
 
 % - database:

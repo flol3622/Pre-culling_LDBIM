@@ -93,6 +93,13 @@ After filtering out spaces, the geometry of which is not needed by the viewer, i
 
 In the end, the query returns a list of entities that are located in the same room as the observer, or are not located in a room but have a \ac{wkt} serialization that is validated by the GeoSPARQL filter function. Together with the needed metadata, which is further explained in Section \ref{sec:interactions}.
 
+\begin{listing}[H]
+    \inputminted{sparql}{dynamicQueries/inSitu/query.rq}
+    \vspace{-0.7cm}
+    \caption{Dynamic culling query using GeoSPARQL}
+    \label{lst:GeoSPARQLauto}
+\end{listing}
+
 In the case of Listing \ref{lst:GeoSPARQLauto}, the GeoSPARQL \mintinline{sparql}|FILTER| uses the function \mintinline{sparql}|geof:sfWithin| to evaluate if the given point coordinates are within the \ac{wkt} serialization, which in most cases represents a \ac{wkt} polygon. For example:\\
 \mintinline{turtle}|"POLYGON ((40 10, 30 10, 30 40, 40 40, 40 10))"^^geo:wktLiteral|
 
