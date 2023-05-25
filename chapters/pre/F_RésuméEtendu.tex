@@ -1,0 +1,63 @@
+\newgeometry{bottom=2cm,top=2cm,left=1.5cm,right=1.5cm}
+\begin{center}
+    \sffamily
+    \huge Résumé détaillé
+
+    \Large Philippe Soubrier
+
+    \normalsize
+    Promoteur : Prof.\ Ing.-arch.\ Paulus Present\
+    Superviseurs : Ing.-arch.\ Jeroen Werbrouck, Prof.\ dr.\ Ing.\ arch.\ Ruben Verstraeten
+\end{center}
+\begin{refsection}
+    \defbibheading{bibliography}[]{}
+    \begin{multicols}{2}
+        \small
+        \titlespacing\subsection{0pt}{5pt}{2pt}
+        \emph{Résumé} \textbf{
+            - Cette thèse aborde le problème de la visualisation de modèles \ac{bim} complexes sur des appareils à capacités limitées dans le secteur de l'\ac{aec}, en introduisant le \enquote{pre-culling} pour réduire la scène 3D au champ de vision de l'observateur. En utilisant des technologies du \emph{Semantic Web} comme \ac{rdf} et \ac{sparql}, les modèles \ac{bim} sont stockés et demandés en tant que bases de données, ce qui facilite leur segmentation.
+        }
+
+        \emph{Mots clés} \textbf{
+            - Linked Data, visualiseurs minimalistes, culling, BIM, SPARQL
+        }
+
+        L'industrie de l'\ac{aec} a subi d'importantes transformations technologiques ces dernières décennies. L'arrivée de la modélisation 3D a provoqué un grand changement dans l'industrie, marquant une nouvelle ère de représentation des données géométriques. L'introduction subséquente du \ac{bim} a servi de dépôt polyvalent pour la sémantique provenant de différentes applications tout au long du processus de conception et de construction, y compris mais sans s'y limiter, l'estimation des coûts, l'analyse énergétique et la planification de la production. Cependant, comme \cite{Werbrouck2018} l'a souligné, le prochain défi pour l'industrie de l'\ac{aec} réside dans la nature spécifique du domaine des solutions logicielles \ac{bim} actuelles, qui restent inaccessibles à d'autres disciplines. Ce problème de gestion des données est actuellement abordé par le \ac{lbd-cg} et des institutions académiques comme l'Université de Gand, qui exploitent le potentiel des technologies du \emph{Semantic Web} pour une gestion des données plus intégrée et efficace, permettant une collaboration interdisciplinaire. Le terme \ac{ldbim} est utilisé dans cette thèse pour désigner ce jalon émergent.
+
+        Parallèlement à cette évolution, en tandem avec la quantité croissante de données sémantiques, les données géométriques décrivant un modèle \ac{bim} augmentent également en taille et en complexité. Cela rend la tâche de visualisation de plus en plus complexe sur les nouveaux appareils à ressources limitées utilisés dans l'industrie. De tels appareils, par exemple, les smartphones et les tablettes, deviennent de plus en plus populaires sur les chantiers de construction. Les solutions existantes utilisent une étape de filtrage dans le processus de visualisation, connue sous le nom de culling. Cette étape de calcul nécessite le traitement de l'ensemble du fichier 3D ou de la scène pour la rogner jusqu'au frustum de vue de l'observateur \parencite{Johansson2015}. Cette opération produit une scène 3D minimale, qui est ensuite utilisée pour le processus de rendu nettement plus gourmand en ressources.
+
+        Un goulot d'étranglement se produit lorsque la scène 3D initiale, sur laquelle le processus de culling in-viewer est effectué, devient trop volumineuse pour que l'appareil puisse la gérer. En solution à ce problème, cette thèse propose l'utilisation d'une étape de \textbf{pré-culling}. Dans ce processus, et avec l'aide des technologies du Web sémantique, un modèle \ac{bim} est stocké et interrogé comme une base de données partitionnée. En séparant le stockage du modèle \ac{bim} et donc en déchargeant la tâche computationnellement intensive de culling vers un serveur de stockage dans une étape préliminaire de culling, la quantité de données qui doit être traitée par l'appareil de visualisation est minimisée.
+
+        Cette thèse examinera donc dans quelle mesure la géométrie \ac{ldbim} peut être pré-élaguée. Elle étudiera la taille minimale de la géométrie qui peut être définie dans une base de données \ac{rdf}. À cette fin, les ontologies existantes dans le domaine de l'\ac{aec} ou des domaines connexes tels que l'\ac{gis} seront explorées. Ces ontologies seront également examinées pour leur potentiel d'utilisation au sein des algorithmes de culling, à l'instar des travaux de \cite{Johansson2009}. Dans leur article, ils ont exploité la sémantique d'un modèle \ac{bim} au format \ac{ifc} pour alimenter les algorithmes de culling. Comme les modèles \ac{bim} possèdent une hiérarchie sous-jacente inhérente de \ac{bvh}, ceux-ci peuvent être utilisés dans les algorithmes modernes de culling in-viewer tels que le \ac{chc}++ \parencite{Johansson2015}.
+
+        \subsection*{Plan}
+        \textsf{Chapitre \ref{ch:introduction} -}
+        Ce chapitre d'introduction présente la motivation de cette thèse et les questions de recherche. Il introduit également le concept de culling et donne un aperçu de la structure de la thèse.
+
+        \textsf{Chapitre \ref{ch:linkedData} -}
+        En guise d'introduction au Web sémantique, ce chapitre présente les principes des données liées utilisées dans cette thèse. De plus, il explique la complexité et la taille des modèles \ac{bim} au sein des bases de données du Web sémantique, qui sont représentés comme des graphes \ac{rdf}.
+
+        \textsf{Chapitre \ref{ch:stateOfTheArt} -}
+        \cite{Johansson2015} a souligné qu'il y a une pénurie de recherches explorant les performances des visualiseurs \ac{bim} actuels. Ainsi, cette recherche sur l'état de l'art vise à se concentrer sur les caractéristiques globales de certains visualiseurs plus récents et prometteurs ainsi que sur les ontologies/outils qui seront utilisés dans cette thèse.
+
+        \textsf{Chapitre \ref{ch:dynamicQueries} -}
+        Le concept de requêtes dynamiques est introduit dans ce chapitre. Ces dernières représentent la génération automatique de requêtes responsables de l'alimentation des algorithmes de culling, afin d'obtenir les données nécessaires pour visualiser la scène visible pour l'observateur. Par conséquent, tout d'abord, les besoins d'un visualiseur \ac{ldbim} sont explorés, ce qui se trouve à la base du processus. Deuxièmement, trois approches où l'action de culling est effectuée sont présentées : dans la requête, dans le visualiseur, et in situ. Chaque approche met en évidence les possibilités de culling en construisant des requêtes \ac{sparql}.
+
+        \textsf{Chapitre \ref{ch:modularApproach} -}
+        En plus du culling proprement dit, ce chapitre propose une approche modulaire pour mettre en œuvre le processus de culling dans un visualiseur \ac{ldbim}. Cette base solide sert de cadre pour la recherche future. Informé par le prototype de cette thèse, il identifie les différents composants nécessaires pour créer un visualiseur \ac{ldbim} et intégrer le processus de culling en son sein. Il dissèque le cadre du visualiseur en quatre composants principaux : le visualiseur lui-même, le gestionnaire de cache, le processeur de requêtes, et le récupérateur de données.
+
+        \textsf{Chapitre \ref{ch:prototype} -}
+        Pour démontrer la faisabilité du processus de culling proposé, un prototype est développé dans ce chapitre. Ce prototype est une preuve de concept qui met en œuvre l'approche modulaire présentée dans le chapitre précédent au sein d'un visualiseur basé sur le web. Il démontre la faisabilité des requêtes dynamiques proposées et démontre également le potentiel d'extension pour mettre en œuvre la visualisation sémantique des sémantiques associées dans la base de données \ac{rdf}.
+
+        \subsection*{Conclusion}
+        \textsf{Chapitre \ref{ch:conclusion} -} Cette thèse a montré qu'il est possible d'élaguer les graphes \ac{ldbim} pour réduire la taille de la scène qu'un visualiseur léger doit gérer afin de visualiser un modèle de bâtiment stocké dans une base de données utilisant les technologies du Web sémantique. Elle a également présenté plusieurs approches pour effectuer le culling, chacune avec ses propres avantages et inconvénients, ainsi qu'une approche modulaire pour mettre en œuvre l'ensemble du processus dans un visualiseur web. Cette technologie s'est avérée être une solution viable pour répondre aux besoins exigeants de l'industrie de l'\ac{aec} lors de la visualisation de grands modèles \ac{bim}. Et elle présente une base solide pour se développer dans un ensemble diversifié de cas d'utilisation et de scénarios nécessitant une représentation visuelle 3D.
+    \end{multicols}
+    \subsection*{Références}
+    \small
+    {\renewcommand*{\bibfont}{\small}
+        \printbibliography}
+
+    \textsf{Démonstration :} \url{https://github.com/flol3622/Pre-culling_LDBIM#demo}\\
+    \textsf{Prototype :} \url{https://github.com/flol3622/LDBIM-viewer}
+\end{refsection}
+\restoregeometry
