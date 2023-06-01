@@ -18,6 +18,7 @@
         "**/*.pytxcode": true,
         "**/*.config.json": true,
         "**/_minted-main": true,
+        "**/_minted-main-book": true,
 
     }
 }
