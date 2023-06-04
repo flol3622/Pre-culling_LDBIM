@@ -1,8 +1,6 @@
 PREFIX bot: <https://w3id.org/bot#>
 PREFIX fog: <https://w3id.org/fog#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX inst: <https://172.16.10.122:8080/projects/1001/>
 

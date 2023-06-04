@@ -1,22 +1,17 @@
 \chapter{Prototype} \label{ch:prototype}
-%  link to github repo
 The code for the prototype developed in this thesis is available at:\\
 \url{https://github.com/flol3622/LDBIM-viewer}.
 
 \section{Database design}
-% choice base db -> Mads Holten Rasmussen 
 The database used in this thesis is based on the database developed by Mads Holten Rasmussen and made available at:\\
 \url{https://github.com/MadsHolten/BOT-Duplex-house/tree/master/Model%20files/LBD}
 
-It was chosen as a starting point, as it firstly contained \ac{bot} descriptions and relations between entities which are heavily utilized by this thesis' algorithm. Secondly, it was selected because it already contained geometry descriptions of those entities. And lastly, because it also contained \ac{wkt} serializations of walls, rooms, and floor entities. Although the size of the model it describes is small, too small to evaluate culling performance, no other suitable database meeting the requirements was found.
+It was chosen as a starting point, as it already contained \ac{bot} descriptions and relations between entities which are heavily utilized by this thesis' algorithm. Additionally, it was selected because it already contained geometry descriptions of those entities. As well as containing \ac{wkt} serializations of walls, rooms, and floor entities. Although the size of the model it describes is small, too small to evaluate culling performance, no other suitable database meeting the requirements was found.
 
 Nevertheless, some changes had to be made to accommodate the needs of this thesis. This section will describe these changes.
 
 \subsection{GraphDB}
-% custom functions
-% ease of use and installation
-% geosparql support
-To host the database, and exercise the role of the \ac{sparql} endpoint, a GraphDB instance was run locally to store, query, modify, and extract the semantic data. "GraphDB is an enterprise ready Semantic Graph Database, compliant with W3C Standards."\footcite{graphdb} It was chosen for its ease of use and installation, its support for the GeoSPARQL extension (Section \ref{sec:inSituWKT}), as well as the possibility to create custom functions in JavaScript (Section \ref{sec:inQuery}).
+To host the database, and exercise the role of the \ac{sparql} endpoint, a GraphDB instance was run locally to store, query, modify, and extract the semantic data. \enquote{GraphDB is an enterprise ready Semantic Graph Database, compliant with W3C Standards}\footcite{graphdb} It was chosen for its simple installationa and application, its support for the GeoSPARQL extension (Section \ref{sec:inSituWKT}), as well as the possibility to create custom functions in JavaScript (Section \ref{sec:inQuery}).
 
 To comply with the requirements of the algorithm, the structure of the database had to be altered to resemble the one illustrated in Figure \ref{fig:omg1}. Figure \ref{fig:dbadaptation} illustrates the changes made to the database, where the existing data was used to describe new relations needed for this thesis.
 
@@ -28,8 +23,7 @@ To comply with the requirements of the algorithm, the structure of the database 
 \end{figure}
 
 \subsection{3D geometries}
-%  started from obj, faced problems, switched to stl, rescaled, on github as external db
-Listing \ref{lst:insertFOG} demonstrates how the \ac{fog} ontology was implemented in the \ac{rdf} database. The following subsections detail the additional steps taken to adapt the database specifically to the requirements of the viewer used.
+Listing \ref{lst:insertFOG} demonstrates how the \ac{fog} ontology was implemented in the \ac{rdf} database. The following subsections describe the additional steps taken to adapt the database to the specific requirements of the viewer used.
 
 \begin{listing}[H]
     \begin{minted}{sparql}
@@ -62,11 +56,11 @@ WHERE {
 
 
 \subsubsection{Rescaling geometries}
-Rescaling the entities to fit the viewer's coordinate system was performed using the open-source 3D modeling software, Blender. This software allowed for the batch import, rescale, and export of the different entities. However, batch export into multiple files was restricted to the STL file format. The individual files were then uploaded to the \href{https://github.com/flol3622/LDBIM-viewer}{GitHub repository} of the prototype, which functions as an external database.
+Rescaling the entities to fit the viewer's coordinate system was executed by using the open-source 3D modeling software, Blender. This software allowed for the batch import, rescale, and export of the different entities. However, batch export into multiple files was restricted to the STL file format only. After which, the individual files were uploaded to the \href{https://github.com/flol3622/LDBIM-viewer}{GitHub repository} of the prototype, which functioned as an external database.
 
 \subsubsection{Inserting data}
 
-The new external files were then referenced in the database using the \ac{sparql} query in Listing \ref{lst:insertLinks}. This query designated the literal's datatype as \mintinline{turtle}|xsd:anyURI| (Section \ref{sec:fog}), which the prototype would later use to treat the resource as a link to an external file (Section \ref{sec:databaseFetcher}).
+The new external files were inserted in the database using the \ac{sparql} query in Listing \ref{lst:insertLinks}. This query designated the literal's datatype as \mintinline{turtle}|xsd:anyURI| (Section \ref{sec:fog}), which the prototype would later use to treat the resource as a link to an external file (Section \ref{sec:databaseFetcher}).
 
 \begin{listing}[H]
     \begin{minted}{sparql}
@@ -106,8 +100,8 @@ WHERE{ ?s props:hasSimple2DBoundary ?o . }
 
 \subsubsection{Syntax correction}
 
-A Python script was created (see Appendix \ref{sec:wktVisualisation}) to experiment with the \ac{wkt} literals. This script visualized the \ac{wkt} literals using the matplotlib package. This revealed syntax errors in the \ac{wkt} literals, which were corrected using the query in Listing \ref{lst:fixWKT} to enable the use of GeoSPARQL functions. This query modifies the \ac{wkt} literals from the format: \mintinline{turtle}|"POLYGON (x1 y1, x2 y2 ,...)"^^geo:wktLiteral| to:\\
-\mintinline{turtle}|"POLYGON ((x1 y1, x2 y2 ,...))"^^geo:wktLiteral|. The adjustment adds an extra pair of parentheses to the POLYGON definition, adhering to the correct syntax for a \ac{wkt} Polygon literal as defined by the GeoSPARQL standard.
+A Python script was created (see Appendix \ref{sec:wktVisualisation}) to experiment with the \ac{wkt} literals. This script visualized the \ac{wkt} literals using the matplotlib package. This revealed syntax errors in the \ac{wkt} literals, which were corrected using the query in Listing \ref{lst:fixWKT}, to enable the use of GeoSPARQL functions. The query modifies the \ac{wkt} literals from the format: \mintinline{turtle}|"POLYGON (x1 y1, x2 y2 ,...)"^^geo:wktLiteral| to:\\
+\mintinline{turtle}|"POLYGON ((x1 y1, x2 y2 ,...))"^^geo:wktLiteral|. The adjustment adds an extra pair of parentheses to the POLYGON definition, adhering to the correct syntax for a \ac{wkt} Polygon literal, as defined by the GeoSPARQL standard.
 
 \begin{listing}[H]
     \begin{minted}{sparql}
@@ -131,7 +125,7 @@ WHERE {
 \end{listing}
 
 \section{Web Development Stack}
-The prototype was developed using the href{https://nextjs.org/}{Next.js framework}, which is built on top of React, a popular JavaScript library for building component-based web applications. This choice adheres to the modular approach explained in Chapter \ref{ch:modularApproach}. Next.js and the following tools or libraries were chosen for their popularity and ease of use within the React ecosystem:
+The prototype was developed using the \href{https://nextjs.org/}{Next.js framework}, which is built on top of React, a popular JavaScript library for building component-based web applications. This choice adheres to the modular approach explained in Chapter \ref{ch:modularApproach}. Next.js and the following tools or libraries were chosen for their popularity and ease of use within the React ecosystem:
 
 \begin{itemize}
     \item \href{https://recoiljs.org/}{Recoil:} As a state management library, Recoil was used to manage and exchange data between the different modules. It provides a simple and efficient way to share state across components.
@@ -148,7 +142,7 @@ The prototype was developed using the href{https://nextjs.org/}{Next.js framewor
 The efficient \ac{lru} algorithm used in the caching algorithm is the \href{https://github.com/rsms/js-lru}{lru\_map} package by Rasmus Andersson. This package was chosen for its simplicity and efficiency, as it implements a double-linked list which prevents the need for shifting the list when an item is accessed. This reduces the load on the lightweight viewer, ensuring optimal performance.
 
 \subsubsection{fetch-sparql-endpoint}
-The \href{https://github.com/rubensworks/fetch-sparql-endpoint.js}{fetch-sparql-endpoint} package, developed by Ruben Taelman, a Web postdoctoral researcher at IDLab, Ghent University – imec \footcite{RubenTaelman}, is used in the prototype's \ac{sparql} fetcher module to manage communication with the \ac{sparql} endpoint. This package facilitates the process of sending queries to and receiving responses from the endpoint, providing a simple and effective way to interact with the \ac{rdf} database.
+The \href{https://github.com/rubensworks/fetch-sparql-endpoint.js}{fetch-sparql-endpoint} package, developed by Ruben Taelman, a Web postdoctoral researcher at IDLab, Ghent University – imec \footcite{RubenTaelman}, is used in the prototype's \ac{sparql} fetcher module to manage communication with the \ac{sparql} endpoint. This package facilitates the process of sending queries to, and receiving responses from the endpoint, providing a simple and effective way to interact with the \ac{rdf} database.
 
 \subsection{Xeokit-\acs{sdk}}
 Following \cite{Malcolm2021} and their \ac{lbd} Server, the prototype of this thesis utilizes the \href{http://xeokit.io/index.html}{Xeokit SDK}, described as an \enquote{open source 3D graphics SDK from xeolabs for BIM and AEC}\footcite{xeokit}. This \ac{sdk} supports an extensive array of 3D formats employed in the \ac{aec} industry, as detailed in Table \ref{tab:xeokitFormats}. It also supplies the necessary tools to construct the viewer module in accordance with the requirements described in Section \ref{sec:viewerRequirements}.
@@ -171,12 +165,12 @@ Following \cite{Malcolm2021} and their \ac{lbd} Server, the prototype of this th
 The prototype's design, translated into the conceptual modular approach discussed in Chapter \ref{ch:modularApproach}, is depicted in Figure \ref{fig:interactionPrototype}. The four main modules are further dissected into components developed using the previously mentioned tools and libraries. These fall into one of three categories:
 
 \begin{itemize}
-    \item \textbf{React components:} These are the \ac{ui} components that are rendered in the browser. They display output elements and/or receive user input.
-    \item \textbf{React hooks:} These are functions used to manage the state of the application. They store and update data, which is then passed to the React components.
-    \item \textbf{JavaScript functions:} These are standalone functions used to perform specific tasks, such as fetching or computing data.
+    \item \textbf{React components:} The \ac{ui} components that are rendered in the browser. They display output elements and/or receive user input.
+    \item \textbf{React hooks:} The functions used to manage the state of the application. They store and update data, which is passed on to the React components.
+    \item \textbf{JavaScript functions:} Standalone functions used to perform specific tasks, such as fetching or computing data.
 \end{itemize}
 
-In the case of the GeoSPARQLauto module, which executes a culling technique based on the \ac{wkt} serialization as proposed in Section \ref{sec:inSituWKT}, the query processing module receives localisation data from the viewer module. This data passes through the useAutomations hook, which manages the different culling algorithms. The QueryPanel component allows selection between the culling algorithms and the user-defined query from the QueryInput component. This selector stores the final query, which triggers the useLoadGeometry hook from the viewer module. This hook uses the getEntities function to fetch data from the \ac{sparql} endpoint, which then communicates with the evalLRU function from the cache manager for entity approval. Upon approval, the useLoadGeometry hook fetches the geometry data using the getGeometry function, retrieving a geometry literal or an \ac{uri}. It then sends it to the viewer for loading into the scene. The loading occurs within Xeokit's loading plugins, which accept literal values or \ac{uri}s and fetch the external files independently. Once all the entities are loaded, the viewer's scene is compared to the updated \ac{lru} list using the syncViewer function to remove obsolete entities.
+In the case of the GeoSPARQLauto module, which executes a culling technique based on the \ac{wkt} serialization as proposed in Section \ref{sec:inSituWKT}, the query processing module receives localisation data from the viewer module. This data passes through the useAutomations hook, which manages the different culling algorithms. The QueryPanel component allows selection between the culling algorithms and the user-defined query from the QueryInput component. This selector stores the final query, which triggers the useLoadGeometry hook from the viewer module. This hook uses the getEntities function to fetch data from the \ac{sparql} endpoint, which then communicates with the evalLRU function from the cache manager for entity approval. Upon approval, the useLoadGeometry hook fetches the geometry data using the getGeometry function, retrieving a geometry literal or an \ac{uri}. The hook then send it to the viewer for loading into the scene. The loading occurs within Xeokit's loading plugins, which accept literal values or \ac{uri}s and fetch the external files independently. Once all the entities are loaded, the viewer's scene is compared to the updated \ac{lru} list, using the syncViewer function to remove obsolete entities.
 
 \begin{figure}[H]
     \centering
@@ -186,13 +180,13 @@ In the case of the GeoSPARQLauto module, which executes a culling technique base
 \end{figure}
 
 \section{Semantic visualisation} \label{sec:semanticVis}
-The cache management module is constructed such that the \ac{lru} list stores metadata about the entities, with the key of each entry representing its \ac{uri} and the value being a JavaScript object containing, in the current state of the prototype, the datatype and format of the geometry. Therefore, this object can be extended to accommodate properties such as the non-geometrical ones described in Section \ref{sec:beyondGeometry}, as illustrated in its type description in Listing \ref{lst:lruType}.
-
 \begin{listing}[H]
     \inputminted{ts}{dynamicQueries/colorize/type.ts}
     \caption[\acs{lru} entry type]{Type of the \ac{lru} entries, extendible to include additional metadata.}
     \label{lst:lruType}
 \end{listing}
+
+The cache management module is constructed in such a way that the \ac{lru} list stores metadata about the entities. Each entry in the cache management module is stored with a unique identifier, represented by its \ac{uri}. This identifier serves as the key for each entry. Correspondingly, the value of each entry is represented as a JavaScript object. As of the current state of the prototype, this object contains details such as the datatype and the format of the geometry. Therefore, this object can be extended to accommodate properties such as the non-geometrical ones described in Section \ref{sec:beyondGeometry}, as illustrated in its type description in Listing \ref{lst:lruType}.
 
 \begin{listing}[H]
     \inputminted{json}{dynamicQueries/colorize/entry.json}
@@ -208,5 +202,18 @@ To illustrate this proposal, a triple containing color data was inserted into th
     \label{lst:colorInsert}
 \end{listing}
 
+\section{Functionalities and Demonstration}
+The main features of the prototype are available at:\\
+\url{https://github.com/flol3622/Pre-culling_LDBIM#demo}\\
+The following features were presented:
 
+\begin{itemize}
+    \item \textbf{Basic use case:} The basic use case is presented where the entire building is loaded with a maximum number of entities set to 20. The user can navigate through the building and entities are loaded on demand. The user can also change the maximum number of entities to be loaded at once.
+    \item \textbf{Different sources and formats:} The prototype can load different sources and formats. A database of abstract shapes is selected which holds STL, OBJ and GLTF geometry files as literals or as links to external files on GitHub. (Section \ref{sec:viewerRequirements})
+    \item \textbf{Semantic-driven filtering:} With the aid of semantics, the user can filter the entities to load in the viewer. This example filters the entities to only show the ones with \mintinline{sparql}|rdf:type prod:Window|.
+    \item \textbf{Semantic-driven colorization:} Semantics associated with each entity can be used to colorize the entities in the viewer. This example colorizes the entities based on their \mintinline{sparql}|flupke:color| property which holds a color code. (Sections \ref{sec:visualSemantic}, \ref{sec:semanticVis})
+    \item \textbf{In-query, OBJ-string analytics} A first culling algorithm is showcased where the \mintinline{sparql}|bot:Space| entities are filtered based on their OBJ definition, which is analyzed by the endpoint using a string operation. The cache management mechanism is also visualized as the viewer's scene does not exceed an entity count of 20. (Section \ref{sec:inQuery})
+    \item \textbf{In situ, GeoSPARQL} This second culling algorithm uses GeoSPARQL functions. As the GeoSPARQL functions are limited to 2D space, the viewer hovering over a \mintinline{sparql}|bot:Space| triggers the loading of this last. (Section \ref{sec:inSituWKT})
+\end{itemize}
 
+The source code is available at: \url{https://github.com/flol3622/LDBIM-viewer}

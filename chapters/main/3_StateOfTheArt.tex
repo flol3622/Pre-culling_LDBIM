@@ -1,24 +1,24 @@
 \chapter{State of the art} \label{ch:stateOfTheArt}
-As mentioned in \cite{Johansson2015}, existing research on the performance of currently used \ac{bim} viewers is quite limited. This state-of-the-art research will, therefore, focus on the overall features of some promising newer viewers and the ontologies/tools that will be used in this thesis.
+As mentioned in \cite{Johansson2015}, existing research on the performance of currently used \ac{bim} viewers is quite limited. Given the scarcity of further literature on the subject, this thesis will present a state-of-the-art research focusing on the overall features of some promising new viewers, as well as the ontologies and tools that will be utilized.
 
 \section{Existing \acs{bim} viewers and ontologies}
 \subsection{Qoniq and \acs{lod} Streaming for \acs{bim}}
-Qonic focuses on developing an open platform \ac{bim} viewer. With the use of Unity to enable cross-platform compatibility, they focused on two main aspects: performance and aesthetics. The latter refers to the visual quality of the viewer, offering both a seamless experience for the viewer as well as a pleasant one, with, for example, the implementation of ambient lighting and shadow castings. The first and most researched aspect of their viewer, the performance, is mainly focusing on a \ac{lod} culling algorithm.
+Qonic focuses on developing an open platform \ac{bim} viewer. With the use of Unity to enable cross-platform compatibility, Qonic focused on two main aspects: performance and aesthetics. The latter refers to the visual quality of the viewer, offering both a seamless experience for the viewer as well as a pleasant one, with, for example, the implementation of ambient lighting and shadow castings. The first and most researched aspect of their viewer, the performance, is mainly focusing on a \ac{lod} culling algorithm.
 \\(T. Strobbe, personal communication, November 25, 2022)
 
 \subsubsection{Qoniq's approach to \acs{lod} streaming}
-Their core research is developing a dynamic \ac{lod} streaming model. Starting from the geometry and semantics of an \ac{ifc} file, they compute an \ac{lod} hierarchy tree of the model. Through multiple mesh decimation algorithms, they reduce the number of triangles of each object's mesh, regardless of the semantics associated with that object. On top of that, a filtering algorithm is implemented in the streaming model to filter out objects, regarding their semantics, that are not relevant to the current camera position. In doing so, they both reduce the size of models far from the viewpoint and evaluate the need to show certain objects based on their nature, extracted from semantics in the \ac{ifc} file, and their distance to the camera. The resulting dynamic \ac{lod} streaming model is reevaluated at each camera move in Unity.
-\\(T. Strobbe, personal communication, November 25, 2022)
+Qonic's core research is developing a dynamic \ac{lod} streaming model. Starting from the geometry and semantics of an \ac{ifc} file, they compute an \ac{lod} hierarchy tree of the model. Through multiple mesh decimation algorithms, Qonic is able to reduce the number of triangles of each object's mesh, regardless of the semantics associated with that object. Additionally, a filtering algorithm is implemented in the streaming model to filter out objects, regarding their semantics, that are not relevant to the current camera position. In doing so, they both reduce models further away from the viewpoint. They also evaluate the need to show certain objects based on their nature, extracted from semantics in the \ac{ifc} file, and their distance to the camera. The resulting dynamic \ac{lod} streaming model is reevaluated at each camera move in Unity.
+\footnote{T. Strobbe, personal communication, November 25, 2022}
 
-Unity was chosen as it allows for writing once and deploying everywhere. This means that the viewer can be used on any platform, including mobile devices and browsers. The performance results are thus related to the hardware capabilities of each device, with the exception of the browser, where the performance of Unity's WebGL build is limited to a scene size of 2Gb.\footcite{UnityWebGL}
+Unity was chosen as it allows for writing once and deploying everywhere. This means that the viewer can be used on any platform, including mobile devices and browsers. Thus, the performance results are influenced by the hardware capabilities of each device, with the exception of the brower's perfomance, which is limited to a scene size of 2Gb for Unity's WebGL build.\footcite{UnityWebGL}
 
-\subsubsection{Advantages and trade-offs}
-Being able to run on many platforms, offering a smooth viewer experience and a pleasing aesthetic makes it an ideal candidate for lightweight viewers on the job site. However, the \ac{lod} library has to be computed on every model update. The decimation algorithms are furthermore computational results that are not humanly reviewed. This means that the quality of the resulting meshes is not guaranteed for the lower \ac{lod}s, which are, as illustrated in Figure \ref{fig:LOD}, already modeled in previous design phases. \ac{ldbim} could, by interconnection, recall previous \ac{lod}s in the viewer's scene. Without the need for computational remodeling. Nevertheless, Qonic's approach is already versioning-proof as later \ac{lod}'s may vary from the last design choices. They therefore serve as the goal of this thesis, outside the \ac{ldbim} context.
+\subsubsection{Advantages and disadvantages}
+Being able to run on many platforms, offering a smooth viewer experience and a pleasing aesthetic makes it an ideal candidate for lightweight viewers on the job site. However, the \ac{lod} library has to be computed on every model update. Furthermore, the decimation algorithms are computational results that are not humanly reviewed. This means that the quality of the resulting meshes is not guaranteed for the lower \ac{lod}s, which are, as illustrated in Figure \ref{fig:LOD}, already modeled in previous design phases. \ac{ldbim} could, by interconnection, recall previous \ac{lod}s in the viewer's scene. Without the need for computational remodeling. Nevertheless, Qonic's approach is already versioning-flexible as later \ac{lod}'s may vary from the last design choices. The replication of their approach will therefore serve as the goal of this thesis, specifically within the\ac{ldbim} context.
 
 \subsection{ld-bim.web.app}
 \enquote{The purpose of the app is to showcase our LBD toolset and to demonstrate the capabilities of Linked Building Data to newcomers.} \footcite{lbdimApp}
 
-\url{https://ld-bim.web.app/} demonstrates a viewer built around an \ac{rdf} database. It separates the data from an \ac{ifc} file into semantics, stored in the previously mentioned graph, and a glTF model, together with a \ac{json} file containing a reference table. Extra local or remote graphs can be added to the \ac{ui}. As it contains a \ac{sparql} engine to query and visualize, in the form of highlighting, the results of the query in a 3D viewer. The viewer is based on the ifc.js project, which is itself based on the three.js 3D JavaScript library.
+\url{https://ld-bim.web.app/} demonstrates a viewer built around an \ac{rdf} database. It separates the data from an \ac{ifc} file into semantics, stored in the previously mentioned graph, and a glTF model, together with a \ac{json} file containing a reference table. Extra local or remote graphs can be added to the \ac{ui}. As it contains a \ac{sparql} engine to query and visualize, in the form of highlighting, the results of the query in a 3D viewer. The viewer is based on the ifc.js project, which is based on the three.js 3D JavaScript library.
 
 \subsection{\acs{aec} related ontologies}
 As mentioned in the second research question \ref{subsec:rq2}, this section will discuss \ac{aec}-related technologies that are actively researched by the \ac{lbd-cg}\footcite{lbdOntologies}.
@@ -62,7 +62,7 @@ flupke:coneOBJ_geometry-1 fog:asObj "https://..."^^xsd:anyURI ;
     \label{lst:fogInference}
 \end{listing}
 
-The possibility of introducing an external geometry location adds a new participant to Figure \ref{fig:firstIdea}, the external database, from which some files are expected to be fetched. This is illustrated in Figure \ref{fig:3participants}.
+The possibility of introducing an external geometry location adds a new participant to the external database, Figure \ref{fig:firstIdea}, from which some files are expected to be fetched. This is illustrated in Figure \ref{fig:3participants}.
 
 \begin{figure}[H]
     \centering
@@ -84,15 +84,15 @@ The possibility of introducing an external geometry location adds a new particip
 \end{figure}
 
 \subsection{\acs{gis} related ontologies}
-The technological field of study, \acf{gis}, is closely related to the \ac{bim} domain. The central standards organization, \ac{ogc}, which actively maintains the \ac{gis} standards, is also prominent in the Semantic Web scene. They recognize widely adopted standards such as GeoSPARQL.\footcite{OGC2023SW}
+The technological field of study, \acf{gis}, is closely related to the \ac{bim} domain. The central standards organization \ac{ogc}, which actively maintains the \ac{gis} standards, is also prominent in the Semantic Web scene. They recognize widely adopted standards such as GeoSPARQL.\footcite{OGC2023SW}
 
 \subsubsection{GeoSPARQL}
 \enquote{The OGC GeoSPARQL standard supports representing and querying geospatial data on the Semantic Web. GeoSPARQL defines a vocabulary for representing geospatial data in RDF, and it defines an extension to the SPARQL query language for processing geospatial data. In addition, GeoSPARQL is designed to accommodate systems based on qualitative spatial reasoning and systems based on quantitative spatial computations.} \footcite{OGC2023}
 
-As multiple triplestores and \ac{sparql} endpoints support the GeoSPARQL extension, it is a viable candidate for spatial and \ac{lod} culling algorithms. Such algorithms require spatial data, such as the distance from the viewpoint to the object. Spatial query functions proposed in this extension are needed for this purpose. The functions can compute on nodes of geospatial geometry as if they are expressed using \ac{wkt} or the \ac{gml}. These expressions can be assigned by using the predicates \mintinline{turtle}|geo:asWKT| or \mintinline{turtle}|geo:asGML|. However, GeoSPARQL comes with some limitations that are less prevalent in the \ac{gis} domain, which mostly requires 2D data \parencite{perry2012ogc}, in contrast to \ac{bim} where 3D distance functions would be needed. Despite such limitations, GeoSPARQL remains a viable solution for spatial querying, and workarounds could be employed to address them.
+As multiple triplestores and \ac{sparql} endpoints support the GeoSPARQL extension, it is a viable candidate for spatial and \ac{lod} culling algorithms. Such algorithms require spatial data, such as the distance from the viewpoint to the object. Spatial query functions proposed in this extension are needed for culling algorithms. The functions can compute on nodes of geospatial geometry as if they are expressed using \ac{wkt} or the \ac{gml}. These expressions can be assigned by using the predicates \mintinline{turtle}|geo:asWKT| or \mintinline{turtle}|geo:asGML|. However, GeoSPARQL comes with some limitations that are less prevalent in the \ac{gis} domain, which mostly requires 2D data \parencite{perry2012ogc}, in contrast to \ac{bim} where 3D distance functions would be needed. Despite such limitations, GeoSPARQL remains a viable solution for spatial querying, and workarounds could be employed to address them.
 
 \section{On the market viewers comparison}
-\cite{Johansson2015} mentioned in their paper the lack of research about objective \ac{bim} viewers comparison and made one as a result. The size of the model they tested can be found in Table \ref{tab:sizeModels}. They evaluted the following viewers:
+\cite{Johansson2015} described a lack of research on objective \ac{bim} viewers being compared. To address this, they conducted a comparative analysis. The size of the model they tested can be found in Table \ref{tab:sizeModels}. They evaluated the following viewers:
 \begin{itemize}
     \item DDS CAD Viewer
     \item Tekla BIMsight
@@ -101,7 +101,7 @@ As multiple triplestores and \ac{sparql} endpoints support the GeoSPARQL extensi
 \end{itemize}
 
 \subsection{General Features}
-Their study had two main goals. Firstly, evaluating existing viewers and their capabilities, they identified the acceleration techniques used, which are presented in Table \ref{tab:accelerationTechniques}.
+Their study had two main goals. Firstly, evaluating existing viewers and their capabilities. The acceleration techniques used were identified and displayed in Table \ref{tab:accelerationTechniques}.
 
 \begin{table}[H]
     \centering
@@ -118,7 +118,7 @@ Their study had two main goals. Firstly, evaluating existing viewers and their c
     \label{tab:accelerationTechniques}
 \end{table}
 
-Secondly, they implemented modern culling algorithms and strategies such as \ac{chc}++. The worst-case scenarios are shown in Figure \ref{fig:performanceJohansson} against the Solibri viewer. The results are quite promising, but as concluded by the authors, the gains are limited to the capacities of the \ac{gpu}, \ac{vram}, and \ac{ram}.
+Secondly, they implemented modern culling algorithms and strategies such as \ac{chc}++. The worst-case scenarios against the Solibri viewer, as presented in their paper, are shown in Figure \ref{fig:performanceJohansson}. The results are quite promising, but as concluded by the authors, the gains are limited to the capacities of the \ac{gpu}, \ac{vram}, and \ac{ram}.
 
 \begin{figure}[H]
     \centering
@@ -128,4 +128,4 @@ Secondly, they implemented modern culling algorithms and strategies such as \ac{
 \end{figure}
 
 \section{Culling algorithms}\label{sec:historyCulling}
-\cite{Johansson2015} presented in their paper a new \ac{bim} viewer equipped with the powerful \ac{chc}++. This is a third-generation occlusion culling algorithm developed by \cite{Mattausch2008}, the first being the \ac{chc} \parencite{Bittner2004}, followed by the \ac{nohc} \parencite{Michael2006}. Their conclusion stated that although occlusion culling is very efficient, it is still bound to the scene size, which is limited by hardware capabilities. More precisely, the \ac{gpu}, \ac{vram}, and \ac{ram} capacities.
+\cite{Johansson2015} presented a new \ac{bim} viewer equipped with the powerful \ac{chc}++. This is a third-generation occlusion culling algorithm developed by \cite{Mattausch2008}, the first being the \ac{chc} \parencite{Bittner2004}, followed by the \ac{nohc} \parencite{Michael2006}. Their conclusion stated that although occlusion culling is very efficient, it is still bound to the scene size, which is limited by hardware capabilities. More precisely, the \ac{gpu}, \ac{vram}, and \ac{ram} capacities.

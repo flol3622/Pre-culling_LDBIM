@@ -1,8 +1,8 @@
 \chapter{Linked Data} \label{ch:linkedData}
-As mentioned in the \nameref{sec:intro}, the evolution from \ac{bim} to \ac{ldbim} represents an evolution of the data \textbf{management} layer. This layer utilizes \emph{Linked Data} which, as stated by the \ac{w3c}, is a collection of interrelated datasets on the Web, formatted in a standard way that is accessible and manageable by Semantic Web tools. The same applies to the relationships among them.\footcite{w3c} The following collection of Semantic Web technologies explores the required environment to achieve this goal.
+As mentioned in the \nameref{sec:intro}, the evolution from \ac{bim} to \ac{ldbim} represents an evolution of the data \textbf{management} layer. This layer utilizes \emph{Linked Data} which, as stated by the \ac{w3c}, is a collection of interrelated datasets on the web, all formatted in a standardized manner, making it accessible and manageable by Semantic Web tools. The same applies to the relationships among them.\footcite{w3c} The following collection of Semantic Web technologies explores the required environment to achieve this goal.
 
 \section{\acs{rdf} and triples} \label{subsec:rdfAndTriples}
-At the core of the Semantic Web is the \ac{rdf}, a data model for describing resources on the Web. RDF is a graph data model that consists of \textbf{triples}, which are statements about resources. A triple consists of a subject, a predicate, and an object. The subject is the resource that is being described, the predicate is the property of the subject, and the object is the value of the property. Both the predicate and the object can, in turn, become the subjects of other triples. Listing \ref{lst:rdfSample} shows an example of an \ac{rdf} database described in the Turtle format.
+At the core of the Semantic Web is the \ac{rdf}, a data model for describing resources on the Web. RDF is a graph data model that consists of \textbf{triples}, which are statements about resources. A triple consists of a subject, a predicate, and an object. The subject is the resource that is being described, the predicate is the property of the subject, and the object is the value of the property. Both the predicate and the object can, in turn, become the subjects of other triples.
 
 \begin{figure}[H]
     \centering
@@ -16,7 +16,7 @@ The basic, yet versatile, structure of a triple is illustrated in Figure \ref{fi
 \begin{listing}[H]
     \inputminted{turtle}{figures/snippets/rdfSample.ttl}
     \vspace{-0.7cm}
-    \caption{Example of an \acs{rdf} database in turtle format}
+    \caption[Example of an \acs{rdf} database in \acs{turtle} format]{Example of an \acs{rdf} database in the \ac{turtle} format}
     \label{lst:rdfSample}
 \end{listing}
 
