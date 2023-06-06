@@ -143,7 +143,7 @@
             }
 
             % Info boxes at specific positions
-            \vspace*{6cm}
+            \vspace*{6.5cm}
             \normalsize
             \textbf{\fontsize{13pt}{16pt}\selectfont\@infoboxa}
 
