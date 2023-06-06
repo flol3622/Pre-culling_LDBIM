@@ -1,136 +1,20 @@
 % pdf version
 \documentclass[12pt,a4paper]{settings/ugent-doc}
-\geometry{bottom=2.5cm,top=2.5cm,left=2.5cm,right=2.5cm} 
 
-\renewcommand{\baselinestretch}{1.15}
-
-\usepackage{fontspec}
-\setmainfont[ExternalLocation=fonts/]{SourceSerifPro-Light.ttf}
-[ItalicFont=SourceSerifPro-LightItalic.ttf,
-BoldFont=SourceSerifPro-Regular.ttf,
-BoldItalicFont=SourceSerifPro-Italic.ttf]
-
-\setsansfont[ExternalLocation=fonts/]{WorkSans-Regular.ttf}
-[BoldFont=WorkSans-Medium.ttf]
-
-\usepackage[main=english,french,dutch]{babel}
-% \usepackage{libertine}
-% \usepackage{libertinust1math}
-\usepackage{amsmath} % math equations
-
-% code snippets
-\setmonofont[ExternalLocation=fonts/]{SourceCodePro-Regular.ttf}
-[ItalicFont=SourceCodePro-Italic.ttf,
-BoldFont=SourceCodePro-SemiBold.ttf]
-
-\usepackage{listings}
-
-% transcriptions:
-\usepackage{xparse}
-\usepackage{enumitem}
-
-% acronyms
-\usepackage[printonlyused,withpage]{acronym}
-
-% figures
-\usepackage{graphicx} 
-\usepackage{changepage}
-\usepackage{pgfplots}
-\graphicspath{{./figures/}}
-
-% Bibliography
-\usepackage[backend=biber, style=apa, sorting=nyt, hyperref=true]{biblatex} 
-\addbibresource{references.bib}
-\usepackage{csquotes} % Suggested when using babel+biblatex
-
-% Ugent specific
-\usepackage[colorlinks=true, allcolors=ugentblue]{hyperref} % Hyperreferences
-\usepackage[parfill]{parskip} % Whitespace between paragraphs and no indentation
-
-% code snippets
-\usepackage{listings}
-\usepackage{minted}
-\usepackage{caption}
-\usepackage{dirtree}
-\captionsetup{justification=centering, margin=2cm}
-\definecolor{mygray}{rgb}{0.95, 0.95, 0.95}
-\definecolor{codeBlue}{rgb}{0.16, 0.22, 0.69}
-\definecolor{codeGreen}{rgb}{0.16, 0.6, 0.44}
-\setminted{
-  breaklines=true,
-  breakanywhere=true,
-  fontsize=\footnotesize,
-  bgcolor={mygray},
-  style=lovelace
-}
-\makeatletter
-\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
-\makeatother
-\dontdofcolorbox
-
-% styling table of contents
-% \setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
-
-% hbox warning margin
-\hfuzz=2pt
-
-% for diagrams using Mathcha
-\usepackage{tikz}
-\usepackage{pgf-umlsd}
-\usepgflibrary{arrows} % for pgf-uml
-
-% for diagrams using svg
-% \usepackage{svg} -> manual conversion to pdf using inkscape
-% -> use \includegraphics{... .pdf}
-
-% for tables
-\usepackage{booktabs}
-
-% for footnotes
-\counterwithout{footnote}{chapter}
-
-% for links
-\usepackage{hyperref}
-
-% extended abstract
-\usepackage{multicol}
-\setlength{\columnsep}{5mm}
-\usepackage{lipsum}
-
-% titel blad
-\usepackage{pdfpages}
-
-% ---------------------------------------------
-
+\thetitle{Pre-culling geometric linked building data \newline for lightweight viewers}
 \thesubtitle{Linked Data}
-\usepackage{ulem} % for colored underline
-\renewcommand{\ULthickness}{2pt} % adjust thickness of underline
-\thetitle{\uline{\color{ugentblue} Pre-culling geometric linked building data\\ for lightweight viewers}}
-\infoboxa{Master's dissertation submitted in order to obtain the academic degree of \\
-Master of Science in de ingenieurswetenschappen: architectuur
-}
-\infoboxb{Supervisor:
-\begin{tabular}[t]{lll}
-    Prof.\ ir.-arch.\ Paulus Present\\ % note syntax 'short space'
-\end{tabular}
-}
-\infoboxc{Counselors: 
-\begin{tabular}[t]{lll}
-    Ir.-arch.\ Jeroen Werbrouck\\ % note syntax 'short space'
-    Prof.\ dr.\ ir.\ arch.\ Ruben Verstraeten
-\end{tabular}
-}
-
+\infoboxa{Master's dissertation submitted in order to obtain the academic degree of\\ Master of Science in de ingenieurswetenschappen: architectuur}
+\infoboxb{Prof.\ ir.-arch.\ Paulus Present}
+\infoboxc{Ir.-arch.\ Jeroen Werbrouck\\ Prof.\ dr.\ ir.\ arch.\ Ruben Verstraeten}
 \infoboxd{Philippe Soubrier 01702837 philippe.soubrier@ugent.be}
-\infoboxe{Academic year: 2022--2023}
+\infoboxe{2022--2023}
 
 % ---------------------------------------------
+
 \begin{document}
 % \includepdf[pages={1}]{chapters/pre/titelblad.pdf}
 \maketitle
-\normalem
-\counterwithin{listing}{chapter}
+
 \include{chapters/pre/A_Aknowledgements.tex}
 \include{chapters/pre/B_Preface.tex}
 \acresetall % reset acronyms
