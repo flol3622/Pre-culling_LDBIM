@@ -1,24 +1,17 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ugent-doc}
+\ProvidesClass{ugent-doc}[2023/06/06 ugent-doc]
+\LoadClass[12pt,a4paper]{report}
 
 \RequirePackage{kvoptions}
 \RequirePackage{geometry}
 \RequirePackage{calc}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
+\RequirePackage[sf]{titlesec}
+\RequirePackage{tcolorbox}
+\RequirePackage{anyfontsize}
 
-\SetupKeyvalOptions{family=ugd,prefix=ugd@}
 
-\DeclareStringOption[en]{language}[en]
-\DeclareStringOption[report]{doctype}[report]
-\DeclareBoolOption[true]{sftitles}
-\ProcessKeyvalOptions*
-
-\LoadClass[\@unusedoptionlist]{\ugd@doctype}
-
-\ifugd@sftitles
-    \RequirePackage[sf]{titlesec}
-\fi
 
 \definecolor{ugentblue}{RGB}{30,100,200}
 \definecolor{ugentwhite}{RGB}{255,255,255}
@@ -39,23 +32,6 @@
 \def\@infoboxc{}
 \def\@infoboxd{}
 \def\@infoboxe{}
-
-\newlength{\longedge}
-\setlength{\longedge}{\maxof{\paperheight}{\paperwidth}}
-\newlength{\gridunit}
-\setlength{\gridunit}{\longedge/28}
-\newlength{\subpaperheight}
-\setlength{\subpaperheight}{\paperheight-7\gridunit}
-\newlength{\subpaperwidth}
-\setlength{\subpaperwidth}{\paperwidth-\gridunit}
-
-\newcommand{\mystrut}[1][-.5]{\rule[#1\gridunit]{0pt}{0pt}}
-
-\renewcommand{\baselinestretch}{1.15}
-\geometry{bottom=2.5cm,top=2.5cm,left=3cm,right=2cm}
-
-\usepackage{tcolorbox}
-\usepackage{anyfontsize}
 
 \renewcommand\maketitle{
     \begin{titlepage}%
