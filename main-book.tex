@@ -1,227 +1,71 @@
 % book version
-\documentclass[12pt,a4paper,twoside,openright,faculty=ea,language=en,doctype=report]{settings/ugent-doc}
+% ---------------------------------------------
+% Document class and title information
+% ---------------------------------------------
+\documentclass[12pt,a4paper,twoside,openright]{settings/ugent-doc}
 \geometry{bottom=2.5cm,top=2.5cm,inner=3cm,outer=2cm} 
 
+\thetitle{Pre-culling geometric linked building data \newline for lightweight viewers}
+\thesubtitle{Linked Data}
+\infoboxa{Master's dissertation submitted in order to obtain the academic degree of\\ Master of Science in de ingenieurswetenschappen: architectuur}
+\infoboxb{Prof.\ ir.-arch.\ Paulus Present}
+\infoboxc{Ir.-arch.\ Jeroen Werbrouck\\ Prof.\ dr.\ ir.\ arch.\ Ruben Verstraeten}
+\infoboxd{Philippe Soubrier 01702837 philippe.soubrier@ugent.be}
+\infoboxe{2022--2023}
 
-\renewcommand{\baselinestretch}{1.15}
-
-\usepackage{fontspec}
-\setmainfont[ExternalLocation=fonts/]{SourceSerifPro-Light.ttf}
-[ItalicFont=SourceSerifPro-LightItalic.ttf,
-BoldFont=SourceSerifPro-Regular.ttf,
-BoldItalicFont=SourceSerifPro-Italic.ttf]
-
-\setsansfont[ExternalLocation=fonts/]{WorkSans-Regular.ttf}
-
-\usepackage[main=english,french,dutch]{babel}
-% \usepackage{libertine}
-% \usepackage{libertinust1math}
-\usepackage{amsmath} % math equations
-
-% code snippets
-\setmonofont[ExternalLocation=fonts/]{SourceCodePro-Regular.ttf}
-[ItalicFont=SourceCodePro-Italic.ttf,
-BoldFont=SourceCodePro-SemiBold.ttf]
-
-\usepackage{listings}
-
-% transcriptions:
-\usepackage{xparse}
-\usepackage{enumitem}
-
-% acronyms
-\usepackage[printonlyused,withpage]{acronym}
-
-% figures
-\usepackage{graphicx} 
-\usepackage{changepage}
-\usepackage{pgfplots}
-\graphicspath{{./figures/}}
-
-% Bibliography
-\usepackage[backend=biber, style=apa, sorting=nyt, hyperref=true]{biblatex} 
-\addbibresource{references.bib}
-\usepackage{csquotes} % Suggested when using babel+biblatex
-
-% Ugent specific
-\usepackage[colorlinks=true, allcolors=ugentblue]{hyperref} % Hyperreferences
-\usepackage[parfill]{parskip} % Whitespace between paragraphs and no indentation
-
-% code snippets
-\usepackage{listings}
-\usepackage{minted}
-\usepackage{caption}
-\usepackage{dirtree}
-\captionsetup{justification=centering, margin=2cm}
-\definecolor{mygray}{rgb}{0.95, 0.95, 0.95}
-\definecolor{codeBlue}{rgb}{0.16, 0.22, 0.69}
-\definecolor{codeGreen}{rgb}{0.16, 0.6, 0.44}
-\setminted{
-  breaklines=true,
-  breakanywhere=true,
-  fontsize=\footnotesize,
-  bgcolor={mygray},
-  style=lovelace
-}
-\makeatletter
-\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
-\makeatother
-\dontdofcolorbox
-
-% styling table of contents
-% \setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
-
-% hbox warning margin
-\hfuzz=2pt
-
-% for diagrams using Mathcha
-\usepackage{tikz}
-\usepackage{pgf-umlsd}
-\usepgflibrary{arrows} % for pgf-uml
-
-% for diagrams using svg
-% \usepackage{svg} -> manual conversion to pdf using inkscape
-% -> use \includegraphics{... .pdf}
-
-% for tables
-\usepackage{booktabs}
-
-% for footnotes
-\counterwithout{footnote}{chapter}
-
-% for links
-\usepackage{hyperref}
-
-% extended abstract
-\usepackage{multicol}
-\setlength{\columnsep}{5mm}
-\usepackage{lipsum}
-
-% titel blad
-\usepackage{pdfpages}
 
 % ---------------------------------------------
-
-\thesubtitle{Linked Data}
-\usepackage{ulem} % for colored underline
-\renewcommand{\ULthickness}{2pt} % adjust thickness of underline
-\thetitle{\uline{\color{ugentblue} Pre-culling geometric linked building data\\ for lightweight viewers}}
-\infoboxa{\bfseries\large Master's dissertation submitted in order to obtain the academic degree of \\
-Master of Science in de ingenieurswetenschappen: architectuur
-}
-\infoboxb{Supervisor:
-\begin{tabular}[t]{lll}
-    Prof.\ ir.-arch.\ Paulus Present\\ % note syntax 'short space'
-\end{tabular}
-}
-\infoboxc{Counselors: 
-\begin{tabular}[t]{lll}
-    Ir.-arch.\ Jeroen Werbrouck\\ % note syntax 'short space'
-    Prof.\ dr.\ ir.\ arch.\ Ruben Verstraeten
-\end{tabular}
-}
-
-\infoboxd{Philippe Soubrier 01702837 philippe.soubrier@ugent.be}
-\infoboxe{Academic year: 2022--2023}
-
+% Start of document
 % ---------------------------------------------
 \begin{document}
 \maketitle
-\normalem
-\counterwithin{listing}{chapter}
 
+% ---------------------------------------------
+% Pre-chapter includes and settings
+% ---------------------------------------------
 \hbox{}\newpage
 \include{chapters/pre/A_Aknowledgements.tex}
 \include{chapters/pre/B_Preface.tex}
-\acresetall % reset acronyms
+\acresetall
 \include{chapters/pre/C_Abstract.tex}
 \acresetall
 
+% Extended abstracts in different languages
 \newpage
 \newgeometry{bottom=2cm,top=2cm,inner=2cm,outer=1cm,twoside=true}
 \include{chapters/pre/D_ExtendedAbstract.tex}
 \acresetall
 \include{chapters/pre/E_UitgebreidAbstract.tex}
 \acresetall
-
 \hbox{}\newpage
 \include{chapters/pre/F_RésuméEtendu.tex}
 \acresetall
 \restoregeometry
+
 \selectlanguage{english}
 
-% hide link color in toc and list of figures
-{\makeatletter\@openrightfalse
-  \hbox{}\newpage
-  \hypersetup{hidelinks}
+% ---------------------------------------------
+% Table of contents, list of figures, tables and listings
+% ---------------------------------------------
+\makeatletter\@openrightfalse
+\hbox{}\newpage
 
+{\hypersetup{hidelinks}
   \tableofcontents
+  \addtocontents{toc}{\vspace{-1.5cm}}
   \listoffigures
   \let\clearpage\relax
   \listoftables
   \listoflistings
-
-  \hbox{}\newpage
-  \chapter*{List of Acronyms}
-  \begin{acronym}[JSONP]\itemsep2pt
-    \acro{aabbox}[AABB]{Axis Aligned Bounding Box}
-    \acro{aec}[AEC]{Architecture, Engineering and Construction}
-    \acro{ar}[AR]{Augmented Reality}
-    \acro{api}[API]{Application Programming Interface}
-    \acro{ascii}[ASCII]{American Standard Code for Information Interchange}
-    \acro{bcf}[BCF]{\acs{bim} Collaboration Format}
-    \acro{bcfowl}[bcfOWL]{\acs{bim} Collaboration Format Ontology}
-    \acro{bim}[BIM]{Building Information Modelling}
-    \acro{bot}[BOT]{Building Topology Ontology}
-    \acro{bvh}[BVH]{Bounding Volume Hierarchy}
-    \acro{chc}[CHC]{Coherent Hierarchical Culling algorithm}
-    \acro{cpu}[CPU]{Central Processing Unit}
-    \acro{dc}[DC]{Drop Culling}
-    \acro{es5}[ES5]{ECMAScript 2009}
-    \acro{fifo}[FIFO]{First In First Out}
-    \acro{fog}[FOG]{File Ontology for Geometry formats}
-    \acro{fm}[FM]{Facility Management}
-    \acro{gis}[GIS]{Geographic Information System}
-    \acro{gltf}[GLTF]{GL Transmission Format}
-    \acro{gml}[GML]{Geography Markup Language}
-    \acro{gpu}[GPU]{Graphics Processing Unit}
-    \acro{hagi}[HAGI]{Hardware Accelerated Geometry Instancing}
-    \acro{hhd}[HHD]{Hand Held Device}
-    \acro{ifc}[IFC]{Industry Foundation Classes}
-    \acro{ifcowl}[ifcOWL]{Industry Foundation Classes Ontology}
-    \acro{json}[JSON]{JavaScript Object Notation}
-    \acro{lbd}[LBD]{Linked Building Data}
-    \acro{lbd-cg}[LBD-CG]{Linked Building Data Community Group}
-    \acro{ldbim}[LDBIM]{Linked Data \acs{bim}}
-    \acro{lfu}[LFU]{Least Frequently Used}
-    \acro{lifo}[LIFO]{Last In First Out}
-    \acro{lod}[LOD]{Level of Detail}
-    \acro{lru}[LRU]{Least Recently Used}
-    \acro{mep}[MEP]{Mechanical, Electrical and Plumbing}
-    \acro{mru}[MRU]{Most Recently Used}
-    \acro{nohc}[NOHC]{Near Optimal Hierarchical Culling}
-    \acro{oc}[OC]{Occlusion Culling}
-    \acro{ogc}[OGC]{Open Geospatial Consortium}
-    \acro{omg}[OMG]{Ontology for Managing Geometry}
-    \acro{owl}[OWL]{Web Ontology Language}
-    \acro{ram}[RAM]{Random Access Memory}
-    \acro{rdf}[RDF]{Resource Description Framework}
-    \acro{rdfs}[RDFS]{Resource Description Framework Schema}
-    \acro{sdk}[SDK]{Software Development Kit}
-    \acro{sparql}[SPARQL]{SPARQL Protocol and \acs{rdf} Query Language}
-    \acro{sql}[SQL]{Structured Query Language}
-    \acro{ui}[UI]{User Interface}
-    \acro{uml}[UML]{Unified Modelling Language}
-    \acro{uri}[URI]{Uniform Resource Identifier}
-    \acro{vfc}[VFC]{View Frustum Culling}
-    \acro{vram}[VRAM]{Video Random Access Memory}
-    \acro{w3c}[W3C]{World Wide Web Consortium}
-    \acro{wkt}[WKT]{Well-Known Text}
-    \acro{xml}[XML]{Extensible Markup Language}
-    \acro{xsd}[XSD]{\ac{xml} Schema Definition}
-  \end{acronym}
 }
+\hbox{}\newpage
+\include{settings/acronyms}
+\@openrighttrue
+\makeatother
+
+% ---------------------------------------------
+% Main chapters
+% ---------------------------------------------
 
 \newpage
 \include{chapters/main/1_Introduction.tex}
@@ -232,13 +76,15 @@ Master of Science in de ingenieurswetenschappen: architectuur
 \include{chapters/main/6_Prototype.tex}
 \include{chapters/main/7_conclusion.tex}
 
-{\makeatletter\@openrightfalse
-  \hbox{}\newpage
-  \newgeometry{bottom=2.5cm,top=-0.6cm,inner=3cm,outer=2cm,twoside=true}
-  \printbibliography[nottype=online, heading=bibintoc,title={References}]
-  \printbibliography[type=online, heading=bibintoc, title={Referenced websites}]
-  \restoregeometry
-}
+% ---------------------------------------------
+% Bibliography and appendices
+% ---------------------------------------------
+\makeatletter\@openrightfalse
+\newgeometry{bottom=2.5cm,top=-0.6cm,inner=3cm,outer=2cm,twoside=true}
+\printbibliography[nottype=online, heading=bibintoc,title={References}]
+\printbibliography[type=online, heading=bibintoc, title={Referenced websites}]
+\restoregeometry
+\makeatother
 
 \appendix
 \include{chapters/after/AppendixA}
