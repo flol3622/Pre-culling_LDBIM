@@ -38,7 +38,7 @@ When examining semantics such as physical properties of entities, free from geom
 
 Physical properties such as thermal, acoustic, structural, and others, or non-physical properties like cost, time, and pathologies, can all be described and linked in the \ac{rdf} graph. The expressive capabilities of \ac{sparql} enable the formulation of complex and fine-grained queries, allowing for the creation of application-specific queries about these properties. By selecting a specific subset or combining them, a user or developer can transform the viewer into a powerful visual tool.
 
-As such, the viewer is expected to comply with a multitude of requirements, which are not all covered in this thesis. Chapter \nameref{ch:modularApproach} proposes a modular approach, allowing for a step-by-step implementation of the viewer, starting with the most basic requirements, which are adopted in Chapter \nameref{ch:prototype}, while leaving room for future extensions. 
+As such, the viewer is expected to comply with a multitude of requirements, which are not all covered in this thesis. Chapter \nameref{ch:modularApproach} proposes a modular approach, allowing for a step-by-step implementation of the viewer, starting with the most basic requirements, which are adopted in Chapter \nameref{ch:prototype}, while leaving room for future extensions.
 
 \section{In situ WKT location} \label{sec:inSituWKT}
 The first type of dynamic query identifies the room in which the observer/camera is located using the \ac{wkt} serialization of \mintinline{sparql}|bot:Space| entities. It proposes to base its culling algorithm on super-elements such as rooms, thus grouping the scene into a limited number of elements within meaningful boundaries. As entities are primarily viewed within their allocated rooms, this approach takes advantage of the spatial organization of buildings using the \ac{bot} ontology. Moreover, not all building elements have a meaningful \ac{wkt} serialization (e.g., a door), which makes the use of super-elements necessary.
@@ -115,6 +115,13 @@ This ray tracing identification approach takes advantage of the 3D viewer and it
 \section{In query OBJ geometry filtering} \label{sec:inQuery}
 The last approach is similar to the previous one, by also relying on the existing 3D geometry of the rooms, not their additional \ac{wkt} serialization. In contrast to the in viewer \enquote{bot:Space} identification \ref{sec:inViewer}, the computation is offloaded to the \ac{sparql} endpoint. Because an endpoint is unable to perform geometric operations, a string analysis is performed instead.
 
+\begin{listing}[H]
+    \inputminted{sparql}{dynamicQueries/inQuery/insert.rq}
+    \vspace{-0.7cm}
+    \caption{Inserting new javascript function in GraphDB}
+    \label{lst:graphdbNewFunction}
+\end{listing}
+
 The idea proposed by this thesis is to evaluate a string value, the literal representing the geometry, within a single \ac{sparql} query. As complicated string operations are difficult to perform with native \ac{sparql} functions, a custom JavaScript function is added to the \ac{sparql} endpoint. This function is then called within the query, as illustrated in Listing \ref{lst:OBJauto}. The prototype of this thesis used GraphDB as its \ac{sparql} endpoint and \ac{rdf} database, which allows the addition of user-defined functions. Listing \ref{lst:graphdbNewFunction} demonstrates the addition of the function to the endpoint.
 
 \begin{listing}[H]
@@ -125,13 +132,6 @@ The idea proposed by this thesis is to evaluate a string value, the literal repr
 \end{listing}
 
 The function itself (Appendix \ref{sec:customFunction}) evaluates whether a given point is inside a geometry, by extracting the vertex coordinates of the geometry literal to build an \ac{aabbox} in the form of a $3\times2$ matrix, representing both a minimum and maximum value for each of the three axes. After which, it evaluates each point's coordinates against the given interval, returning a boolean value. The returned boolean can be interpreted by the \mintinline{sparql}|FILTER| clause inside the query, as illustrated in Listing \ref{lst:OBJauto}.
-
-\begin{listing}[H]
-    \inputminted{sparql}{dynamicQueries/inQuery/insert.rq}
-    \vspace{-0.7cm}
-    \caption{Inserting new javascript function in GraphDB}
-    \label{lst:graphdbNewFunction}
-\end{listing}
 
 The advantages of this technique are that, similar to the previous proposal, 3D culling is achievable, there is no need for an extra serialization such as \ac{wkt}, and the computation is offloaded to the \ac{sparql} endpoint. On the other hand, the flexibility of this approach is enhanced by the ability to evaluate multiple geometry formats. This allows the addition of newer functions to interpret these formats, without being limited by the viewer's capabilities. This builds upon the concept of an all-knowing database serving a knowledge-free viewer (Section \ref{sec:proposal}). Although the possibility of allowing the JavaScript functions to fetch external files was not tested in this thesis, it could be a potential extension.
 

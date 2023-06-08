@@ -45,8 +45,8 @@ Due to the inability to display OBJ literals in the utilized viewer, the geometr
 SELECT ?s ?o
 WHERE {
     SERVICE <http://localhost:7200/repositories/duplex-v1> {
-    ?s fog:asObj ?o .
-    filter(datatype(?o)=xsd:string)
+        ?s fog:asObj ?o .
+        filter(datatype(?o)=xsd:string)
     }
 }
     \end{minted}

@@ -1,7 +1,7 @@
 % The document class
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{settings/ugent-doc}[2023/06/06 ugent-doc]
-\LoadClass[12pt,a4paper,twoside,openright]{report}
+\LoadClass[12pt,a4paper]{report}
 
 % --------------------------------
 %    Package imports
