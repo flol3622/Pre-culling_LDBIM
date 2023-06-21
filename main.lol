@@ -1,5 +1,5 @@
 \contentsline {listing}{\numberline {2.1}{\ignorespaces Example of an \acs {rdf} database in \acs {turtle} format}}{6}{listing.2.1}%
-\contentsline {listing}{\numberline {3.1}{\ignorespaces Example of \acs {fog} usage\relax }}{13}{listing.3.1}%
+\contentsline {listing}{\numberline {3.1}{\ignorespaces Example of \acs {fog} usage\relax }}{12}{listing.3.1}%
 \contentsline {listing}{\numberline {3.2}{\ignorespaces \acs {fog} inference examples\relax }}{13}{listing.3.2}%
 \contentsline {listing}{\numberline {4.1}{\ignorespaces Dynamic culling query using GeoSPARQL\relax }}{21}{listing.4.1}%
 \contentsline {listing}{\numberline {4.2}{\ignorespaces Typescript code for ray tracing in viewer\relax }}{23}{listing.4.2}%
