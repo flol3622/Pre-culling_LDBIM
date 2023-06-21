@@ -6,12 +6,12 @@ The code for the prototype developed in this thesis is available at:\\
 The database used in this thesis is based on the database developed by Mads Holten Rasmussen and made available at:\\
 \url{https://github.com/MadsHolten/BOT-Duplex-house/tree/master/Model%20files/LBD}
 
-It was chosen as a starting point, as it already contained \ac{bot} descriptions and relations between entities which are heavily utilized by this thesis' algorithm. Additionally, it was selected because it already contained geometry descriptions of those entities. As well as containing \ac{wkt} serializations of walls, rooms, and floor entities. Although the size of the model it describes is small, too small to evaluate culling performance, no other suitable database meeting the requirements was found.
+It was chosen as a starting point, as it already contained \ac{bot} descriptions and relations between entities which are heavily utilized by this thesis' algorithms. Additionally, it was selected because it already contained geometry descriptions of those entities. As well as containing \ac{wkt} serializations of walls, rooms, and floor entities. Although the size of the model it describes is small, too small to evaluate culling performance, no other suitable database meeting the requirements was found.
 
 Nevertheless, some changes had to be made to accommodate the needs of this thesis. This section will describe these changes.
 
 \subsection{GraphDB}
-To host the database, and exercise the role of the \ac{sparql} endpoint, a GraphDB instance was run locally to store, query, modify, and extract the semantic data. \enquote{GraphDB is an enterprise ready Semantic Graph Database, compliant with W3C Standards}\footcite{graphdb} It was chosen for its simple installationa and application, its support for the GeoSPARQL extension (Section \ref{sec:inSituWKT}), as well as the possibility to create custom functions in JavaScript (Section \ref{sec:inQuery}).
+To host the database, and exercise the role of the \ac{sparql} endpoint, a GraphDB instance was run locally to store, query, modify, and extract the semantic data. \enquote{GraphDB is an enterprise ready Semantic Graph Database, compliant with W3C Standards}\footcite{graphdb} It was chosen for its simple installation and application, its support for the GeoSPARQL extension (Section \ref{sec:inSituWKT}), as well as the possibility to create custom functions in JavaScript (Section \ref{sec:inQuery}).
 
 To comply with the requirements of the algorithm, the structure of the database had to be altered to resemble the one illustrated in Figure \ref{fig:omg1}. Figure \ref{fig:dbadaptation} illustrates the changes made to the database, where the existing data was used to describe new relations needed for this thesis.
 
@@ -82,7 +82,7 @@ WHERE {
     \label{lst:insertLinks}
 \end{listing}
 
-\subsection{\acs{wkt} serialisation}
+\subsection{\acs{wkt} serialization}
 
 Similarly to the geometries, the \ac{wkt} literals were implemented using the GeoSPARQL ontology, as shown in Listing \ref{lst:insertWKT}.
 
@@ -139,13 +139,13 @@ The prototype was developed using the \href{https://nextjs.org/}{Next.js framewo
 
 \subsection{Specialized packages}
 \subsubsection{lru\_map}
-The efficient \ac{lru} algorithm used in the caching algorithm is the \href{https://github.com/rsms/js-lru}{lru\_map} package by Rasmus Andersson. This package was chosen for its simplicity and efficiency, as it implements a double-linked list which prevents the need for shifting the list when an item is accessed. This reduces the load on the lightweight viewer, ensuring optimal performance.
+The efficient \ac{lru} algorithm used in the caching algorithm is the \href{https://github.com/rsms/js-lru}{lru\_map} package by Rasmus Andersson \footcite{rsms}. This package was chosen for its simplicity and efficiency, as it implements a double-linked list which prevents the need for shifting the list when an item is accessed. This reduces the load on the lightweight viewer, ensuring optimal performance.
 
 \subsubsection{fetch-sparql-endpoint}
 The \href{https://github.com/rubensworks/fetch-sparql-endpoint.js}{fetch-sparql-endpoint} package, developed by Ruben Taelman, a Web postdoctoral researcher at IDLab, Ghent University – imec \footcite{RubenTaelman}, is used in the prototype's \ac{sparql} fetcher module to manage communication with the \ac{sparql} endpoint. This package facilitates the process of sending queries to, and receiving responses from the endpoint, providing a simple and effective way to interact with the \ac{rdf} database.
 
 \subsection{Xeokit-\acs{sdk}}
-Following \cite{Malcolm2021} and their \ac{lbd} Server, the prototype of this thesis utilizes the \href{http://xeokit.io/index.html}{Xeokit SDK}, described as an \enquote{open source 3D graphics SDK from xeolabs for BIM and AEC}\footcite{xeokit}. This \ac{sdk} supports an extensive array of 3D formats employed in the \ac{aec} industry, as detailed in Table \ref{tab:xeokitFormats}. It also supplies the necessary tools to construct the viewer module in accordance with the requirements described in Section \ref{sec:viewerRequirements}.
+Following \cite{Malcolm2021} and their \ac{lbd} Server, the prototype of this thesis utilizes the \href{http://xeokit.io/index.html}{Xeokit SDK}, described as an \enquote{open source 3D graphics SDK from Xeolabs for BIM and AEC}\footcite{xeokit}. This \ac{sdk} supports an extensive array of 3D formats employed in the \ac{aec} industry, as detailed in Table \ref{tab:xeokitFormats}. It also supplies the necessary tools to construct the viewer module in accordance with the requirements described in Section \ref{sec:viewerRequirements}.
 
 \begin{table}[H]
     \centering

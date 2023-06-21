@@ -1,10 +1,10 @@
 \chapter{Dynamic Queries} \label{ch:dynamicQueries}
-This chapter introduces the concept of dynamic querying. In this thesis, it refers to the automatic generation of queries responsible for obtaining the data needed to visualize building elements from a \ac{bim} model within an \ac{rdf} graph. The examples are presented as static SPARQL queries, since the automation itself depends on the implementation or framework used. A link to the appendix is provided, where the implementation within the prototype of this thesis is explained.
+This chapter introduces the concept of dynamic querying. In this thesis, it refers to the automatic generation of queries responsible for obtaining the data needed to visualize building elements from a \ac{bim} model within a \ac{rdf} graph. The examples are presented as static SPARQL queries, since the automation itself depends on the implementation or framework used. The implementation within the prototype of this thesis is developed in Appendix \ref{appendix:prototype}.
 
 The structure is as follows: firstly, the requirements for the viewer are researched, as its functioning will dictate the output of the queries. Secondly, the capabilities of the viewer are explored in relation to the visualization of semantic data, thus emphasizing the added value of working with Linked Data. Third, three types of dynamic queries for culling are presented, each with its own advantages and disadvantages.
 
 \section{Requirements} \label{sec:viewerRequirements}
-A viewer designed to visualize data stored in an \ac{rdf} graph is required to understand the data stored within it. Therefore, the requirements for the viewer align with those of its source, the \ac{rdf} graph. Section \ref{sec:fog}, which discusses the use of both the \ac{fog} and \ac{omg} ontologies, offers an overview of the available options in terms of file format and file source. The \ac{fog} ontology supports the description of a wide range of geometry formats, as illustrated in Table \ref{tab:geometryFormats}. In conjunction with the \ac{omg} ontology, which allows for the description of the file source using the datatype of the literal, it can be concluded that the viewer should be able to handle a broad spectrum of file formats, preferably described in the \ac{fog} ontology, and accept both remote files and literal values.
+A viewer designed to visualize data stored in a \ac{rdf} graph is required to understand the data stored within it. Therefore, the requirements for the viewer align with those of its source, the \ac{rdf} graph. Section \ref{sec:fog}, which discusses the use of both the \ac{fog} and \ac{omg} ontologies, offers an overview of the available options in terms of file format and file source. The \ac{fog} ontology supports the description of a wide range of geometry formats, as illustrated in Table \ref{tab:geometryFormats}. In conjunction with the \ac{omg} ontology, which allows for the description of the file source using the datatype of the literal, it can be concluded that the viewer should be able to handle a broad spectrum of file formats, preferably described in the \ac{fog} ontology, and accept both remote files and literal values.
 
 \begin{table}[H]
     \centering
@@ -25,7 +25,7 @@ A viewer designed to visualize data stored in an \ac{rdf} graph is required to u
 \footnotetext{\cite{fog}}
 
 \section{Beyond geometry} \label{sec:beyondGeometry}
-This section highlights the advantages a viewer based on Linked Data has over a viewer based on traditional file-based systems, by extending the thought of a 3D viewer to its ability to visualise non geometric data from its source. \ac{ldbim} links geometrical entities to their corresponding semantic data, which can be visualised in the viewer. This allows for the visualisation of data that is not directly related to the geometry of the building elements, such as the physical properties of a wall or the cost of a door. The possibilities are endless, as long as the data is available in the \ac{rdf} graph. The following sections will discuss different possible implementations.
+This section highlights the advantages a viewer based on Linked Data has over a viewer based on traditional file-based systems, by extending the thought of a 3D viewer to its ability to visualise non-geometric data from its source. \ac{ldbim} links geometrical entities to their corresponding semantic data, which can be visualised in the viewer. This allows for the visualisation of data that is not directly related to the geometry of the building elements, such as the physical properties of a wall or the cost of a door. The possibilities are endless, as long as the data is available in the \ac{rdf} graph. The following sections will discuss different possible implementations.
 
 
 \subsection{\acs{bcf} integration} \label{sec:bcf}
@@ -38,7 +38,7 @@ When examining semantics such as physical properties of entities, free from geom
 
 Physical properties such as thermal, acoustic, structural, and others, or non-physical properties like cost, time, and pathologies, can all be described and linked in the \ac{rdf} graph. The expressive capabilities of \ac{sparql} enable the formulation of complex and fine-grained queries, allowing for the creation of application-specific queries about these properties. By selecting a specific subset or combining them, a user or developer can transform the viewer into a powerful visual tool.
 
-As such, the viewer is expected to comply with a multitude of requirements, which are not all covered in this thesis. Chapter \nameref{ch:modularApproach} proposes a modular approach, allowing for a step-by-step implementation of the viewer, starting with the most basic requirements, which are adopted in Chapter \nameref{ch:prototype}, while leaving room for future extensions.
+As such, the viewer is expected to comply with a multitude of requirements, which are not all covered in this thesis. Chapter \ref{ch:modularApproach} proposes a modular approach, allowing for a step-by-step implementation of the viewer, starting with the most basic requirements, which are adopted in Chapter \ref{ch:prototype}, while leaving room for future extensions.
 
 \section{In situ WKT location} \label{sec:inSituWKT}
 The first type of dynamic query identifies the room in which the observer/camera is located using the \ac{wkt} serialization of \mintinline{sparql}|bot:Space| entities. It proposes to base its culling algorithm on super-elements such as rooms, thus grouping the scene into a limited number of elements within meaningful boundaries. As entities are primarily viewed within their allocated rooms, this approach takes advantage of the spatial organization of buildings using the \ac{bot} ontology. Moreover, not all building elements have a meaningful \ac{wkt} serialization (e.g., a door), which makes the use of super-elements necessary.
@@ -86,7 +86,7 @@ This process involves casting a ray from the observer's position both upwards an
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/pdf/inViewer.pdf}
-    \caption{In viewer \enquote{bot:Space} identification, with raytracing}
+    \caption{In viewer \enquote{bot:Space} identification, with ray tracing}
     \label{fig:raytrace}
 \end{figure}
 
@@ -113,12 +113,12 @@ This ray tracing identification approach takes advantage of the 3D viewer and it
 \end{listing}
 
 \section{In query OBJ geometry filtering} \label{sec:inQuery}
-The last approach is similar to the previous one, by also relying on the existing 3D geometry of the rooms, not their additional \ac{wkt} serialization. In contrast to the in viewer \enquote{bot:Space} identification \ref{sec:inViewer}, the computation is offloaded to the \ac{sparql} endpoint. Because an endpoint is unable to perform geometric operations, a string analysis is performed instead.
+The last approach is similar to the previous one, by also relying on the existing 3D geometry of the rooms, not their additional \ac{wkt} serialization. In contrast to the in viewer \enquote{bot:Space} identification, see section \ref{sec:inViewer}, the computation is offloaded to the \ac{sparql} endpoint. Because an endpoint is unable to perform geometric operations, a string analysis is performed instead.
 
 \begin{listing}[H]
     \inputminted{sparql}{dynamicQueries/inQuery/insert.rq}
     \vspace{-0.7cm}
-    \caption{Inserting new javascript function in GraphDB}
+    \caption{Inserting new JavaScript function in GraphDB}
     \label{lst:graphdbNewFunction}
 \end{listing}
 
@@ -133,6 +133,6 @@ The idea proposed by this thesis is to evaluate a string value, the literal repr
 
 The function itself (Appendix \ref{sec:customFunction}) evaluates whether a given point is inside a geometry, by extracting the vertex coordinates of the geometry literal to build an \ac{aabbox} in the form of a $3\times2$ matrix, representing both a minimum and maximum value for each of the three axes. After which, it evaluates each point's coordinates against the given interval, returning a boolean value. The returned boolean can be interpreted by the \mintinline{sparql}|FILTER| clause inside the query, as illustrated in Listing \ref{lst:OBJauto}.
 
-The advantages of this technique are that, similar to the previous proposal, 3D culling is achievable, there is no need for an extra serialization such as \ac{wkt}, and the computation is offloaded to the \ac{sparql} endpoint. On the other hand, the flexibility of this approach is enhanced by the ability to evaluate multiple geometry formats. This allows the addition of newer functions to interpret these formats, without being limited by the viewer's capabilities. This builds upon the concept of an all-knowing database serving a knowledge-free viewer (Section \ref{sec:proposal}). Although the possibility of allowing the JavaScript functions to fetch external files was not tested in this thesis, it could be a potential extension.
+The advantages of this technique are that, similar to the previous proposal, 3D culling is achievable, there is no need for an extra serialization such as \ac{wkt}, and the computation is offloaded to the \ac{sparql} endpoint. Furthermore, the flexibility of this approach is enhanced by the ability to evaluate multiple geometry formats. This allows the addition of newer functions to interpret these formats, without being limited by the viewer's capabilities. This builds upon the concept of an all-knowing database serving a knowledge-free viewer (Section \ref{sec:proposal}). Although the possibility of allowing the JavaScript functions to fetch external files was not tested in this thesis, it could be a potential extension.
 
 However, the function used was tailored specifically for the \ac{sparql} endpoint used in this thesis, GraphDB, and would need to be adapted to other endpoints since no standard for user-defined functions was found during the research. Additionally, the JavaScript function was limited during the development of the prototype to a restricted scope of the JavaScript language, resembling the \ac{es5} version, which reduced the possibilities and optimization of the function.
