@@ -55,14 +55,14 @@
 
 % Fonts
 \setmainfont[ExternalLocation=fonts/]{SourceSerifPro-Light.ttf}
-    [ItalicFont=SourceSerifPro-LightItalic.ttf,
+[ItalicFont=SourceSerifPro-LightItalic.ttf,
     BoldFont=SourceSerifPro-Regular.ttf,
     BoldItalicFont=SourceSerifPro-Italic.ttf]
 \setmonofont[ExternalLocation=fonts/]{SourceCodePro-Regular.ttf}
-    [ItalicFont=SourceCodePro-Italic.ttf,
+[ItalicFont=SourceCodePro-Italic.ttf,
     BoldFont=SourceCodePro-SemiBold.ttf]
 \setsansfont[ExternalLocation=fonts/]{WorkSans-Regular.ttf}
-    [BoldFont=WorkSans-Medium.ttf]
+[BoldFont=WorkSans-Medium.ttf]
 
 % Text formatting
 \renewcommand{\baselinestretch}{1.15} % Line spacing
@@ -71,11 +71,11 @@
 % Code formatting
 \captionsetup{justification=centering, margin=2cm}
 \setminted{
-  breaklines=true,
-  breakanywhere=true,
-  fontsize=\footnotesize,
-  bgcolor={mygray},
-  style=lovelace
+    breaklines=true,
+    breakanywhere=true,
+    fontsize=\footnotesize,
+    bgcolor={mygray},
+    style=lovelace
 }
 
 % Bibliography
@@ -143,7 +143,7 @@
             }
 
             % Info boxes at specific positions
-            \vspace*{6.5cm}
+            \vspace*{6cm}
             \normalsize
             \textbf{\fontsize{13pt}{16pt}\selectfont\@infoboxa}
 
@@ -152,7 +152,7 @@
                 \@infoboxb
             \end{tabular}
 
-            Counselors: 
+            Counselors:
             \begin{tabular}[t]{lll}
                 \@infoboxc
             \end{tabular}
