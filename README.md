@@ -1,3 +1,48 @@
+# LaTeX Thesis Report Template With Devcontainer Integration
+This repository is an optimized solution for those who wish to write thesis reports using LaTeX. It not only offers a comprehensive LaTeX template, but also instructions for seamless utilization and modification within a development container (devcontainer).
+
+## LaTeX Features 
+- Custom UGent-style title page
+- Well-organized folder structure for images, chapters, appendices, etc.
+- Easy-to-use bibliography setup
+- Custom font setup (Work Sans, Source Code Pro, Source Serif Pro)
+- Examples of tables, figures, equations, listings, acronyms, and more
+- Custom layout for extended abstracts
+- Multilingual support (Dutch, English, French)
+
+## Devcontainer Features
+- LuaLaTeX 2022
+- LaTeX compiler and workshop
+- Python for LaTeX linting
+- TeX Live Utility (tlmgr) for LaTeX package management
+- Comprehensive set of required LaTeX packages
+- Integrated spell checker
+- Aesthetically pleasing light theme for VSCode
+- Excalidraw plugin for intuitive diagram creation
+- Git integration for efficient version control
+- Jupyter notebook integration for Python code development and testing
+- GitHub Copilot support
+
+## Prerequisites
+- [Docker](https://www.docker.com/products/docker-desktop/)
+- [VSCode](https://code.visualstudio.com/)
+    - [VSCode Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
+## Initial Setup
+### Step-by-Step Guide
+1. **In VSCode:**
+    1. Open the command palette using `Ctrl+Shift+P`.
+    2. Input `Devcontainer: Clone Repository in Container Volume...`.
+    3. Paste the link to this repository: `https://github.com/flol3622/Pre-culling_LDBIM`.
+    4. Click on `+ Create a new volume...`.
+    5. Enter a unique name for the volume (e.g., "thesis").
+    6. Wait while the devcontainer builds.
+2. **Once the devcontainer is built:**
+    1. Open a new terminal (`Terminal > New Terminal`).
+    2. Configure git with your name: `git config --global user.name "[Your Name]"`.
+    3. Configure git with your email: `git config --global user.email "[Your Email]"`.
+
+
 # Pre-Culling Linked Data BIM
 This project demonstrates various features and functionalities of a pre-culling linked data building information model (BIM).
 
