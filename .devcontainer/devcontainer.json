@@ -109,7 +109,7 @@
     },
     "ghcr.io/devcontainers/features/python:1": {}
   },
-  "image": "ghcr.io/torbenwetter/iu-latex-container-image:main",
+  "image": "ghcr.io/torbenwetter/iu-latex-container-image:latest",
   "name": "Thesis",
   "postCreateCommand": "tlmgr option repository ftp://tug.org/historic/systems/texlive/2022/tlnet-final && tlmgr update --self && tlmgr install parskip acronym titlesec amsmath anyfontsize booktabs calc caption changepage csquotes dirtree enumitem fontspec geometry graphicx kvoptions lipsum listings minted multicol pdfpages pgf-umlsd tcolorbox tikz ulem xcolor xparse bigfoot babel-french babel-dutch hyphen-dutch hyphen-french environ pdflscape"
 }
