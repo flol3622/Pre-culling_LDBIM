@@ -100,5 +100,6 @@
     }
   },
   "name": "Thesis",
+  "dockerFile": "../Dockerfile",
   "postCreateCommand": "tlmgr install parskip acronym titlesec amsmath anyfontsize booktabs calc caption changepage csquotes dirtree enumitem fontspec geometry graphicx kvoptions lipsum listings minted multicol pdfpages pgf-umlsd tcolorbox tikz ulem xcolor xparse bigfoot babel-french babel-dutch hyphen-dutch hyphen-french environ pdflscape"
 }
